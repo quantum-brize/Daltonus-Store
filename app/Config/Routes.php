@@ -5,5 +5,5 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Admin\Admin_Controller::index');
+$routes->get('/', 'Frontend\Frontend_Controller::index');
 
