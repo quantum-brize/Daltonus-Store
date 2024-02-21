@@ -130,6 +130,17 @@ define('EVENT_PRIORITY_NORMAL', 100);
  * @deprecated Use \CodeIgniter\Events\Events::PRIORITY_HIGH instead.
  */
 define('EVENT_PRIORITY_HIGH', 10);
+//////////////////////////////////////////////__DATABASE
+defined('BASE_URL') || define('BASE_URL', 'http://localhost:8080/' );
+
+
+//////////////////////////////////////////////__URL
+defined('DB_TEST_hostname') || define('DB_TEST_hostname', 'https://server14.hostingraja.org/');
+defined('DB_TEST_username') || define('DB_TEST_username', 'jungleef');
+defined('DB_TEST_password') || define('DB_TEST_password', 'Y-eCdY3Jts5#');
+defined('DB_TEST_database') || define('DB_TEST_database', 'jungleef_DEV_daltonusstore');
+defined('DB_TEST_DBDriver') || define('DB_TEST_DBDriver', 'MySQLi');
+
 
 
 
