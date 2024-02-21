@@ -1,0 +1,67 @@
+CRITICAL - 2024-02-21 06:44:10 --> Error: Cannot instantiate abstract class App\Controllers\BaseController
+in SYSTEMPATH\CodeIgniter.php on line 913.
+ 1 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\xampp\\htdocs\\boilerplate-CI_4\\public\\index.php')
+CRITICAL - 2024-02-21 06:46:12 --> Error: Cannot instantiate abstract class App\Controllers\BaseController
+in SYSTEMPATH\CodeIgniter.php on line 913.
+ 1 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\xampp\\htdocs\\boilerplate-CI_4\\public\\index.php')
+CRITICAL - 2024-02-21 06:50:28 --> Error: Cannot instantiate abstract class App\Controllers\BaseController
+in SYSTEMPATH\CodeIgniter.php on line 913.
+ 1 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 3 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\xampp\\htdocs\\boilerplate-CI_4\\public\\index.php')
+CRITICAL - 2024-02-21 06:52:26 --> TypeError: App\Controllers\Main_Controller::index(): Return value must be of type string, none returned
+in APPPATH\Controllers\Main_Controller.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Main_Controller->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Main_Controller))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\xampp\\htdocs\\boilerplate-CI_4\\public\\index.php')
+CRITICAL - 2024-02-21 07:01:58 --> CodeIgniter\Router\Exceptions\RouterException: The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\api/Api_Controller::index"
+in SYSTEMPATH\Router\Router.php on line 479.
+ 1 SYSTEMPATH\Router\Router.php(479): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\api/Api_Controller::index')
+ 2 SYSTEMPATH\Router\Router.php(186): CodeIgniter\Router\Router->checkRoutes('/')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('/')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\xampp\\htdocs\\boilerplate-CI_4\\public\\index.php')
+CRITICAL - 2024-02-21 07:06:53 --> Error: Class "App\Controllers\Api\Main_Controller" not found
+in APPPATH\Controllers\Api\Api_Controller.php on line 5.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('E:\\xampp\\htdocs\\boilerplate-CI_4\\app\\Controllers\\Api\\Api_Controller.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Api\\Api_Controller')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Api\\Api_Controller')
+ 5 SYSTEMPATH\CodeIgniter.php(899): class_exists('\\App\\Controllers\\Api\\Api_Controller', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\xampp\\htdocs\\boilerplate-CI_4\\public\\index.php')
+CRITICAL - 2024-02-21 07:08:11 --> Error: Class "Main_Controller" not found
+in APPPATH\Controllers\Api\Api_Controller.php on line 6.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('E:\\xampp\\htdocs\\boilerplate-CI_4\\app\\Controllers\\Api\\Api_Controller.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Api\\Api_Controller')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Api\\Api_Controller')
+ 5 SYSTEMPATH\CodeIgniter.php(899): class_exists('\\App\\Controllers\\Api\\Api_Controller', true)
+ 6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\xampp\\htdocs\\boilerplate-CI_4\\public\\index.php')
+CRITICAL - 2024-02-21 08:03:35 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "test.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('test.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('test', [], true)
+ 3 APPPATH\Controllers\Main_Controller.php(11): view('test', [])
+ 4 APPPATH\Controllers\Admin\Admin_Controller.php(10): App\Controllers\Main_Controller->load_page('test', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Admin\Admin_Controller->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Admin_Controller))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('E:\\xampp\\htdocs\\boilerplate-CI_4\\public\\index.php')
