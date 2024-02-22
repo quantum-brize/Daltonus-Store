@@ -116,31 +116,38 @@ defined('EXIT_DATABASE') || define('EXIT_DATABASE', 8);       // database error
 defined('EXIT__AUTO_MIN') || define('EXIT__AUTO_MIN', 9);      // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX') || define('EXIT__AUTO_MAX', 125);    // highest automatically-assigned error code
 
-/**
- * @deprecated Use \CodeIgniter\Events\Events::PRIORITY_LOW instead.
- */
 define('EVENT_PRIORITY_LOW', 200);
-
-/**
- * @deprecated Use \CodeIgniter\Events\Events::PRIORITY_NORMAL instead.
- */
 define('EVENT_PRIORITY_NORMAL', 100);
-
-/**
- * @deprecated Use \CodeIgniter\Events\Events::PRIORITY_HIGH instead.
- */
 define('EVENT_PRIORITY_HIGH', 10);
+
+
+
+
 //////////////////////////////////////////////__DATABASE
 defined('BASE_URL') || define('BASE_URL', 'http://localhost:8080/' );
 
 
-//////////////////////////////////////////////__URL
-defined('DB_TEST_hostname') || define('DB_TEST_hostname', 'https://server14.hostingraja.org/');
+//////////////////////////////////////////////__DB
+defined('DB_TEST_hostname') || define('DB_TEST_hostname', '103.92.235.18');
 defined('DB_TEST_username') || define('DB_TEST_username', 'jungleef');
 defined('DB_TEST_password') || define('DB_TEST_password', 'Y-eCdY3Jts5#');
 defined('DB_TEST_database') || define('DB_TEST_database', 'jungleef_DEV_daltonusstore');
 defined('DB_TEST_DBDriver') || define('DB_TEST_DBDriver', 'MySQLi');
 
+//////////////////////////////////////////////__TABLE
+defined('TABLE_USERS')      || define('TABLE_USERS', 'users');
+
+
+//////////////////////////////////////////////__UID_PRIFIX
+defined('UID_USER')         || define('UID_USER', 'USR');
+
+
+//////////////////////////////////////////////__STATUS
+defined('STATUS_PENDING')   || define('STATUS_PENDING', 'pending');
+
+
+//////////////////////////////////////////////__TYPE
+defined('TYPE_USER')        || define('TYPE_USER', 'user');
 
 
 

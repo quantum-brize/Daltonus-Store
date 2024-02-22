@@ -8,6 +8,10 @@ use CodeIgniter\Router\RouteCollection;
 
 // Frontend Routes
 $routes->get('/',                       'Frontend\Frontend_Controller::index');
+$routes->get('/login',                  'Frontend\Frontend_Controller::load_login');
+$routes->get('/sign-up',                'Frontend\Frontend_Controller::load_signup');
+$routes->post('/sign-up-action',        'Frontend\Frontend_Controller::handle_signup');
+
 
 
 // Admin Routes
@@ -15,9 +19,14 @@ $routes->get('/admin',                  'Admin\Admin_Controller::index');
 $routes->get('/admin/login',            'Admin\Admin_Controller::load_login');
 
 
-// Vendor Routes
-$routes->get('/vendor',                 'Vendor\Vendor_Controller::index');
 
 
 // Api Routes
 $routes->get('/api',                    'Api\Api_Controller::index');
+
+
+
+// Vendor Routes
+$routes->get('/vendor',                 'Vendor\Vendor_Controller::index');
+
+
