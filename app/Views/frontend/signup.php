@@ -22,6 +22,14 @@
     <!-- custom Css-->
     <link href="<?= base_url() ?>assets_admin/css/custom.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <style>
+        #alert {
+            position: fixed;
+            width: 500px;
+            top: 10px;
+            z-index: 1000;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,21 +50,26 @@
         <!-- auth page content -->
         <div class="auth-page-content">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="text-center mt-sm-5 mb-4 text-white-50">
-                            <div>
-                                <a href="index.html" class="d-inline-block auth-logo">
-                                    <img src="<?= base_url() ?>assets_admin/images/logo-light.png" alt="" height="20">
-                                </a>
+                <div class="row justify-content-center">
+                    <div id="alert">
+
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center mt-sm-5 mb-4 text-white-50">
+                                <div>
+                                    <a href="index.html" class="d-inline-block auth-logo">
+                                        <img src="<?= base_url() ?>assets_admin/images/logo-light.png" alt=""
+                                            height="20">
+                                    </a>
+                                </div>
+                                <p class="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
                             </div>
-                            <p class="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
                         </div>
                     </div>
-                </div>
-                <!-- end row -->
+                    <!-- end row -->
 
-                <div class="row justify-content-center">
+
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card mt-4 card-bg-fill">
 
@@ -181,6 +194,8 @@
         </div>
         <!-- end auth page content -->
 
+
+
         <!-- footer -->
         <footer class="footer">
             <div class="container">
@@ -200,6 +215,8 @@
     </div>
     <!-- end auth-page-wrapper -->
 
+
+
     <!-- JAVASCRIPT -->
     <script src="<?= base_url() ?>assets_admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url() ?>assets_admin/libs/simplebar/simplebar.min.js"></script>
@@ -215,25 +232,27 @@
     <!-- validation init -->
     <script src="<?= base_url() ?>assets_admin/js/pages/form-validation.init.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- prismjs plugin -->
+    <script src="<?= base_url() ?>/libs/prismjs/prism.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
-            $('#password-addon').on('click', function(){
-                if($('#password-input').attr('type') == 'password'){
-                    $('#password-input').attr('type','text') 
-                }else{
-                    $('#password-input').attr('type','password') 
+            $('#password-addon').on('click', function () {
+                if ($('#password-input').attr('type') == 'password') {
+                    $('#password-input').attr('type', 'text')
+                } else {
+                    $('#password-input').attr('type', 'password')
 
                 }
             })
 
-            $('#confirm-password-addon').on('click', function(){
-                if($('#confirm-password-input').attr('type') == 'password'){
-                    $('#confirm-password-input').attr('type','text') 
-                }else{
-                    $('#confirm-password-input').attr('type','password') 
+            $('#confirm-password-addon').on('click', function () {
+                if ($('#confirm-password-input').attr('type') == 'password') {
+                    $('#confirm-password-input').attr('type', 'text')
+                } else {
+                    $('#confirm-password-input').attr('type', 'password')
 
                 }
             })
@@ -252,88 +271,69 @@
                 console.log(userName);
                 console.log(password);
                 console.log(confirmPassword);
-
                 if (userEmail.length < 1) {
-                    Toastify({
-                        text: "Please Enter Your Email",
-                        duration: 3000,
-                        close: true,
-                        gravity: "top", // `top` or `bottom`
-                        position: "center", // `left`, `center` or `right`
-                        stopOnFocus: true, // Prevents dismissing of toast on hover
-                        style: {
-                            background: "radial-gradient(circle at 10.6% 22.1%, rgb(206, 18, 18) 0%, rgb(122, 21, 21) 100.7%)"
-                        },
-                    }).showToast();
-                }else if(phone < 10){
-                    Toastify({
-                        text: "Please Enter a valid phone number",
-                        duration: 3000,
-                        close: true,
-                        gravity: "top", // `top` or `bottom`
-                        position: "center", // `left`, `center` or `right`
-                        stopOnFocus: true, // Prevents dismissing of toast on hover
-                        style: {
-                            background: "radial-gradient(circle at 10.6% 22.1%, rgb(206, 18, 18) 0%, rgb(122, 21, 21) 100.7%)"
-                        },
-                    }).showToast();
-                }else if (userName.length < 1) {
-                    Toastify({
-                        text: "Please Enter User Name",
-                        duration: 3000,
-                        close: true,
-                        gravity: "top", // `top` or `bottom`
-                        position: "center", // `left`, `center` or `right`
-                        stopOnFocus: true, // Prevents dismissing of toast on hover
-                        style: {
-                            background: "radial-gradient(circle at 10.6% 22.1%, rgb(206, 18, 18) 0%, rgb(122, 21, 21) 100.7%)"
-                        },
-                    }).showToast();
+                    $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                        <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Please Enter Your Email
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>`)
+                } else if (phone < 10) {
+                    $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                        <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Please Enter a valid Number
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>`)
+                } else if (userName.length < 1) {
+                    $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                        <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Please Enter User Name
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>`)
                 } else if (password.length < 6) {
-                    Toastify({
-                        text: "Password Must Be Six Characters Long",
-                        duration: 3000,
-                        close: true,
-                        gravity: "top", // `top` or `bottom`
-                        position: "center", // `left`, `center` or `right`
-                        stopOnFocus: true, // Prevents dismissing of toast on hover
-                        style: {
-                            background: "radial-gradient(circle at 10.6% 22.1%, rgb(206, 18, 18) 0%, rgb(122, 21, 21) 100.7%)"
-                        },
-                    }).showToast();
-                }else if(password != confirmPassword){
-                    Toastify({
-                        text: "Passwords dont match",
-                        duration: 3000,
-                        close: true,
-                        gravity: "top", // `top` or `bottom`
-                        position: "center", // `left`, `center` or `right`
-                        stopOnFocus: true, // Prevents dismissing of toast on hover
-                        style: {
-                            background: "radial-gradient(circle at 10.6% 22.1%, rgb(206, 18, 18) 0%, rgb(122, 21, 21) 100.7%)"
-                        },
-                    }).showToast();
-                }else{
+                    $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                        <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Password Must Be Six Characters Long
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>`)
+                } else if (password != confirmPassword) {
+                    $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                        <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Passwords Dont Match
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>`)
+                } else {
 
                     $.ajax({
-                        url: '<?=base_url('sign-up-action')?>',
+                        url: '<?= base_url('sign-up-action') ?>',
                         method: 'POST',
                         data: {
-                            user_name : userName,
-                            email : userEmail,
-                            password : confirmPassword,
-                            number : phone
+                            user_name: userName,
+                            email: userEmail,
+                            password: confirmPassword,
+                            number: phone
                         },
-                        beforeSend: function(){
-
+                        beforeSend: function () {
+                            $('#sign-up-btn').html(`<div class="spinner-border text-light" role="status">
+                                                    <span class="sr-only">Loading...</span>
+                                                </div>`)
                         },
-                        success : function(resp){
-
+                        success: function (resp) {
+                            resp = JSON.parse(resp)
+                            if (resp.status == true) {
+                                $('#alert').html(`<div class="alert alert-secondary alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                                        <i class="ri-mail-send-fill label-icon"></i><strong>Mail Send</strong> - OTP sent To Your Email
+                                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                    </div>`)
+                                
+                            }else{
+                                $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                                    <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>`)
+                            }
                         },
-                        error: function(err){
-                            console.log(err)
-                        }
+                    }).done(function() {
+                        $('#sign-up-btn').html(`Sign Up`)
                     })
+                        .fail(function (error) {
+                            // Handle errors here
+                            console.log(error);
+                        });
 
                 }
 
