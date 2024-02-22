@@ -239,6 +239,8 @@
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
+
+            // for show and hide password
             $('#password-addon').on('click', function () {
                 if ($('#password-input').attr('type') == 'password') {
                     $('#password-input').attr('type', 'text')
@@ -256,10 +258,10 @@
 
                 }
             })
+            // for show and hide password
 
 
-
-
+            
             $('#sign-up-btn').on('click', function () {
                 let userEmail = $('#useremail').val();
                 let userName = $('#username').val();
@@ -319,21 +321,20 @@
                                                         <i class="ri-mail-send-fill label-icon"></i><strong>Mail Send</strong> - OTP sent To Your Email
                                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                     </div>`)
-                                
-                            }else{
+                                window.location.href = '<?= base_url('verify-otp') ?>';
+                            } else {
                                 $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
                                                     <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>`)
                             }
                         },
-                    }).done(function() {
+                    }).done(function () {
                         $('#sign-up-btn').html(`Sign Up`)
-                    })
-                        .fail(function (error) {
-                            // Handle errors here
-                            console.log(error);
-                        });
+                    }).fail(function (error) {
+                        // Handle errors here
+                        console.log(error);
+                    });
 
                 }
 

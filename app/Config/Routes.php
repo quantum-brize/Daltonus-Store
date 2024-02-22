@@ -10,6 +10,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/',                       'Frontend\Frontend_Controller::index');
 $routes->get('/login',                  'Frontend\Frontend_Controller::load_login');
 $routes->get('/sign-up',                'Frontend\Frontend_Controller::load_signup');
+$routes->get('/verify-otp',             'Frontend\Frontend_Controller::load_otp');
 $routes->post('/sign-up-action',        'Frontend\Frontend_Controller::handle_signup');
 
 

@@ -19,6 +19,11 @@ class Frontend_Controller extends Main_Controller
         echo view('frontend/signup');
     }
 
+    public function load_otp(){
+        echo view('frontend/otp');
+    }
+
+
     public function handle_signup(){
         $response =[
             "status" => false,
