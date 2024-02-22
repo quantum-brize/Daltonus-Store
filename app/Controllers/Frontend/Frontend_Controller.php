@@ -3,6 +3,7 @@
 namespace App\Controllers\Frontend;
 use App\Controllers\Main_Controller;
 use App\Models\UsersModel;
+use App\Models\OtpModel;
 class Frontend_Controller extends Main_Controller
 {
     public function index(): void
@@ -52,6 +53,18 @@ class Frontend_Controller extends Main_Controller
                 "type"  => TYPE_USER
             ];
             $UsersModel->insert($userData);
+            $OtpModel = new OtpModel();
+
+            
+            //$otp = $this->generate_otp();
+            $otp = 1234;
+            $otpData = [
+                "uid" => $this->generate_uid(UID_OTP),
+                "user_id" => $userData['uid'],
+                "otp" =>  $otp
+            ];
+            $OtpModel->insert($otpData);
+            
             $response['status'] = true;
             $response['message'] = 'OTP send to Your Email';
         }

@@ -50,4 +50,9 @@ class Main_Controller extends BaseController
 	{
 		return $purpose . $this->uid() . date('Ymd');
 	}
+
+	public function generate_otp(){
+		return rand(1000, 9999);
+	}
+
 }

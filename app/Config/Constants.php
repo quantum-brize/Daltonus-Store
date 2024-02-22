@@ -136,10 +136,12 @@ defined('DB_TEST_DBDriver') || define('DB_TEST_DBDriver', 'MySQLi');
 
 //////////////////////////////////////////////__TABLE
 defined('TABLE_USERS')      || define('TABLE_USERS', 'users');
+defined('TABLE_OTP')        || define('TABLE_OTP', 'otp');
 
 
 //////////////////////////////////////////////__UID_PRIFIX
 defined('UID_USER')         || define('UID_USER', 'USR');
+defined('UID_OTP')          || define('UID_OTP', 'OTP');
 
 
 //////////////////////////////////////////////__STATUS
