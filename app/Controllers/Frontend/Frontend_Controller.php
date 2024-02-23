@@ -85,20 +85,16 @@ class Frontend_Controller extends Main_Controller
         $OtpModel = new OtpModel();
         $OtpModel->where('user_id', $this->request->getPost('user_id'));
         $latestOtp = $OtpModel->orderBy('created_at', 'DESC')->first();
-        if($latestOtp['otp'] == $this->request->getPost('otp')){
-            $dataToUpdate = [
-                'status' => 'active',
-            ];
-           
+        if($latestOtp['otp'] == $this->request->getPost('otp')){  
             $usersModel = new UsersModel();
-            $usersModel->setUserActive($latestOtp['user_id'], $dataToUpdate);
+            $usersModel->setUserActive($latestOtp['user_id'], ['status' => 'active']);
             $session = \Config\Services::session();
             
             $session->set(SES_USER_USER_ID, $latestOtp['user_id']);
             $session->set(SES_USER_TYPE, 'user');
 
-            $this->pr($session->get(SES_USER_TYPE));
-            $this->prd($session->get(SES_USER_USER_ID));
+            //$this->pr($session->get(SES_USER_TYPE));
+            //$this->prd($session->get(SES_USER_USER_ID));
             $response =[
                 "status" => true,
                 "message"=> "OTP MATCHED",
@@ -110,7 +106,7 @@ class Frontend_Controller extends Main_Controller
     }
 
     public function signup_success(){
-
+        echo view('frontend/signup_success');
     }
 
 }

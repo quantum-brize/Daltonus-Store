@@ -229,7 +229,7 @@
                                                         <i class="ri-mail-send-fill label-icon"></i><strong>OTP Matched</strong>
                                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                     </div>`)
-                                window.location.href = `<?= base_url('verify-otp?user_id=') ?>${resp.user_id}`;
+                                window.location.href = `<?= base_url('sign-up-success') ?>`;
                             } else {
                                 $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
                                                     <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}
