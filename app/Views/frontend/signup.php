@@ -25,9 +25,13 @@
     <style>
         #alert {
             position: fixed;
-            width: 500px;
             top: 10px;
             z-index: 1000;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 0px;
         }
     </style>
 </head>
@@ -233,7 +237,7 @@
     <script src="<?= base_url() ?>assets_admin/js/pages/form-validation.init.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- prismjs plugin -->
-    <script src="<?= base_url() ?>/libs/prismjs/prism.js"></script>
+    <script src="<?= base_url() ?>assets_admin/libs/prismjs/prism.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -313,6 +317,8 @@
                             $('#sign-up-btn').html(`<div class="spinner-border text-light" role="status">
                                                     <span class="sr-only">Loading...</span>
                                                 </div>`)
+                            $('#sign-up-btn').attr('disabled', true);
+
                         },
                         success: function (resp) {
                             resp = JSON.parse(resp)
@@ -321,19 +327,28 @@
                                                         <i class="ri-mail-send-fill label-icon"></i><strong>Mail Send</strong> - OTP sent To Your Email
                                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                     </div>`)
-                                window.location.href = '<?= base_url('verify-otp') ?>';
+                                window.location.href = `<?= base_url('verify-otp?user_id=')?>${resp.user_id}`;
                             } else {
                                 $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
                                                     <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>`)
                             }
+                            $('#sign-up-btn').attr('disabled', false);
+
                         },
+                        complete :function(){
+                            $('#sign-up-btn').html(`Sign Up`)
+                            $('#sign-up-btn').attr('disabled', false);
+
+                        }
                     }).done(function () {
                         $('#sign-up-btn').html(`Sign Up`)
+                        $('#sign-up-btn').attr('disabled', false);
                     }).fail(function (error) {
                         // Handle errors here
                         console.log(error);
+                        $('#sign-up-btn').html(`Sign Up`)
                     });
 
                 }

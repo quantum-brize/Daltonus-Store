@@ -28,7 +28,8 @@ class Frontend_Controller extends Main_Controller
     public function handle_signup(){
         $response =[
             "status" => false,
-            "message"=> ""
+            "message"=> "",
+            "user_id"=> ""
         ];
 
         $UsersModel = new UsersModel();
@@ -67,9 +68,36 @@ class Frontend_Controller extends Main_Controller
             
             $response['status'] = true;
             $response['message'] = 'OTP send to Your Email';
+            $response['user_id'] = $userData['uid'];
         }
         echo json_encode($response);
        
+    }
+
+    public function verify_otp(){
+        $response =[
+            "status" => false,
+            "message"=> "OTP NOT MATCHED",
+            "user_id"=> ""
+        ];
+        $OtpModel = new OtpModel();
+        $OtpModel->where('user_id', $this->request->getPost('user_id'));
+        $latestOtp = $OtpModel->orderBy('created_at', 'DESC')->first();
+        if($latestOtp['otp'] == $this->request->getPost('otp')){
+            $dataToUpdate = [
+                'status' => 'active',
+            ];
+           
+            $usersModel = new UsersModel();
+            $usersModel->setUserActive($latestOtp['user_id'], $dataToUpdate);
+            $response =[
+                "status" => true,
+                "message"=> "OTP MATCHED",
+                "user_id"=> $this->request->getPost('user_id')
+            ];
+        }
+        echo json_encode($response);
+
     }
 
 }

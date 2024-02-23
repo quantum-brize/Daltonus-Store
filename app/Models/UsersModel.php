@@ -39,4 +39,20 @@ class UsersModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+
+    public function setUserActive($userId, $data)
+{
+    $db = \Config\Database::connect();
+    
+    // Assuming you have a table named 'users'
+    $builder = $db->table('users');
+
+    // Your condition (e.g., update record where user_id = $userId)
+    $builder->where('uid', $userId);
+
+    // The data you want to update
+    $builder->update($data);
+}
+
 }
