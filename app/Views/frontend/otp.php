@@ -220,7 +220,7 @@
                             $('#confirm-btn').html(`<div class="spinner-border text-light" role="status">
                                                     <span class="sr-only">Loading...</span>
                                                 </div>`)
-                            $('#confirm-btn').attr('disabled', false);
+                            $('#confirm-btn').attr('disabled', true);
                         },
                         success: function (resp) {
                             resp = JSON.parse(resp)
@@ -229,7 +229,7 @@
                                                         <i class="ri-mail-send-fill label-icon"></i><strong>OTP Matched</strong>
                                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                     </div>`)
-                                //window.location.href = `<?= base_url('verify-otp?user_id=') ?>${resp.user_id}`;
+                                window.location.href = `<?= base_url('verify-otp?user_id=') ?>${resp.user_id}`;
                             } else {
                                 $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
                                                     <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}

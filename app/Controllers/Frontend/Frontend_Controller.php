@@ -6,11 +6,13 @@ use App\Models\UsersModel;
 use App\Models\OtpModel;
 class Frontend_Controller extends Main_Controller
 {
+    
+
     public function index(): void
     {
         $this->load_page('/frontend/home',PAGE_DATA_FRONTEND);
     }
-
+  
 
 
     public function load_login(){
@@ -90,6 +92,13 @@ class Frontend_Controller extends Main_Controller
            
             $usersModel = new UsersModel();
             $usersModel->setUserActive($latestOtp['user_id'], $dataToUpdate);
+            $session = \Config\Services::session();
+            
+            $session->set(SES_USER_USER_ID, $latestOtp['user_id']);
+            $session->set(SES_USER_TYPE, 'user');
+
+            $this->pr($session->get(SES_USER_TYPE));
+            $this->prd($session->get(SES_USER_USER_ID));
             $response =[
                 "status" => true,
                 "message"=> "OTP MATCHED",
@@ -97,6 +106,10 @@ class Frontend_Controller extends Main_Controller
             ];
         }
         echo json_encode($response);
+
+    }
+
+    public function signup_success(){
 
     }
 

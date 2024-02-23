@@ -153,6 +153,9 @@ defined('TYPE_USER')        || define('TYPE_USER', 'user');
 
 
 
+//////////////////////////////////////////////__SESSION
+defined('SES_USER_USER_ID')  || define('SES_USER_USER_ID', 'USER_user_id');
+defined('SES_USER_TYPE')     || define('SES_USER_TYPE', 'USER_user_id');
 
 
 //////////////////////////////////////////////__PAGEDATA
