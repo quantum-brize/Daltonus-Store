@@ -422,7 +422,7 @@
                                         Step Verify</a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="auth-logout-basic.html" data-key="t-logout">Logout</a>
+                                    <a class="nav-link" href="<?=base_url('logout')?>" data-key="t-logout">Logout</a>
                                 </li>
                                 <li>
                                     <a class="nav-link" href="auth-404.html" data-key="t-error-404">Error 404</a>
@@ -602,7 +602,7 @@
                             class="badge bg-success-subtle text-success mt-1 float-end">New</span><i
                             class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Settings</span></a>
-                    <a class="dropdown-item" href="auth-logout-basic.html"><i
+                    <a class="dropdown-item" href="<?=base_url('logout')?>"><i
                             class="bi bi-box-arrow-right text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle" data-key="t-logout">Logout</span></a>
                 </div>

@@ -340,16 +340,16 @@
                         complete :function(){
                             $('#sign-up-btn').html(`Sign Up`)
                             $('#sign-up-btn').attr('disabled', false);
-
+                        },
+                        error: function(){
+                            $('#sign-up-btn').html(`Sign Up`)
+                            $('#sign-up-btn').attr('disabled', false);
+                            $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                                    <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Internal Srver Error
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>`)
                         }
-                    }).done(function () {
-                        $('#sign-up-btn').html(`Sign Up`)
-                        $('#sign-up-btn').attr('disabled', false);
-                    }).fail(function (error) {
-                        // Handle errors here
-                        console.log(error);
-                        $('#sign-up-btn').html(`Sign Up`)
-                    });
+                    })
 
                 }
 
