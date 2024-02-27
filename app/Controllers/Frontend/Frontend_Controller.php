@@ -16,11 +16,12 @@ class Frontend_Controller extends Main_Controller
     }
 
 
-    public function logout(){
+    public function logout()
+    {
         $session = \Config\Services::session();
 
         $session->remove(SES_USER_USER_ID);
-        $session->remove(SES_USER_TYPE); 
+        $session->remove(SES_USER_TYPE);
         return redirect()->to('login');
     }
 
@@ -37,7 +38,6 @@ class Frontend_Controller extends Main_Controller
     {
         echo view('frontend/otp');
     }
-
 
     public function handle_signup()
     {
@@ -101,13 +101,13 @@ class Frontend_Controller extends Main_Controller
         $UsersModel = new UsersModel();
 
         $UsersData = $UsersModel
-                        ->where('password', md5($password))
-                        ->groupStart()
-                            ->where('email', $email_number)
-                            ->orWhere('number', $email_number)
-                        ->groupEnd()
-                        ->get()
-                        ->getResultArray();
+            ->where('password', md5($password))
+            ->groupStart()
+            ->where('email', $email_number)
+            ->orWhere('number', $email_number)
+            ->groupEnd()
+            ->get()
+            ->getResultArray();
         $UsersData = !empty($UsersData[0]) ? $UsersData[0] : null;
         if (!empty($UsersData)) {
             $session = \Config\Services::session();
@@ -152,4 +152,61 @@ class Frontend_Controller extends Main_Controller
         echo view('frontend/signup_success');
     }
 
+    public function load_forgot_password()
+    {
+        echo view('frontend/forgot_password');
+    }
+
+    public function send_otp()
+    {
+        $response = [
+            "status" => false,
+            "message" => "Invalid Email",
+            "user_id" => ""
+        ];
+        $email = $this->request->getPost('email');
+        $UsersModel = new UsersModel();
+        $recordEmail = $UsersModel->where(['email' => $email])->get()->getResultArray();
+        if (!empty($recordEmail)) {
+            $OtpModel = new OtpModel();
+            //$otp = $this->generate_otp();
+            $otp = 1234;
+            $otpData = [
+                "uid" => $this->generate_uid(UID_OTP),
+                "user_id" => $recordEmail[0]['uid'],
+                "otp" => $otp
+            ];
+            $OtpModel->insert($otpData);
+            $response = [
+                "status" => true,
+                "message" => "OTP Sent To Your email",
+                "user_id" => $recordEmail[0]['uid']
+            ];
+        }
+
+        echo json_encode($response);
+    }
+
+    public function change_password()
+    {
+        echo view('frontend/change_password');
+    }
+    public function handle_change_password(){
+        $response = [
+            "status" => false,
+            "message" => "password not changed",
+        ];
+        $user_id  = $this->request->getPost('user_id');
+        $password = md5($this->request->getPost('password'));
+
+        $UsersModel = new UsersModel();
+        $change = $UsersModel->set('password', $password)          
+                            ->where('uid', $user_id) 
+                            ->update();
+        $response['status']  = $change == '1';
+        $response['message'] = $response['status'] ? "Password Changed Seccessfully" : "Password Not Changed";
+
+        echo json_encode($response);
+
+    }
 }

@@ -88,8 +88,8 @@
 
                                         <div class="mb-3">
                                             <div class="float-end">
-                                                <a href="auth-pass-reset-basic.html" class="text-muted">Forgot
-                                                    password?</a>
+                                                <a href="<?=base_url('forgot-password')?>" class="text-muted">Forgot
+                                                    Password?</a>
                                             </div>
                                             <label class="form-label" for="password-input">Password</label>
                                             <div class="position-relative auth-pass-inputgroup mb-3">
@@ -105,8 +105,7 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" value=""
                                                 id="auth-remember-check">
-                                            <label class="form-check-label" for="auth-remember-check">Remember
-                                                me</label>
+                                            <label class="form-check-label" for="auth-remember-check">Remember me</label>
                                         </div>
 
                                         <div class="mt-4">
