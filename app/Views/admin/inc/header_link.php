@@ -30,7 +30,7 @@
     <?php
         if(!empty($header_link)){
             foreach($header_link as $link){
-                require_once(APPPATH . 'views/admin/css/js/'.$link);
+                require_once(APPPATH . 'views/admin/css/'.$link);
             }
         }
     ?>

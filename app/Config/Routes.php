@@ -28,6 +28,7 @@ $routes->get('/admin',                  'Admin\Admin_Controller::index');
 $routes->get('/admin/login',            'Admin\Admin_Controller::load_login');
 $routes->get('/admin/logout',           'Admin\Admin_Controller::logout');
 $routes->post('/admin/login-action',    'Admin\Admin_Controller::handle_login');
+$routes->get('/admin/categories',       'Admin\Category_Controller::index');
 
 
 

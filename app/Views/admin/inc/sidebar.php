@@ -85,6 +85,13 @@
                         <span data-key="t-dashboards">Dashboard</span>
                     </a>
                 </li>
+
+                <li>
+                    <a class="nav-link menu-link <?=isset($sidebar['categories']) ? 'active' : ''?>" href="<?=base_url('/admin/categories')?>">
+                        <span data-key="t-dashboards">Categories</span>
+                    </a>
+                </li>
+
                 <!-- end Dashboard Menu -->
 
 

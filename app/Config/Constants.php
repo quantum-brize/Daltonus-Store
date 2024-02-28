@@ -123,11 +123,11 @@ define('EVENT_PRIORITY_HIGH', 10);
 
 
 
-//////////////////////////////////////////////__DATABASE
+//////////////////////////////////////////////__URL
 defined('BASE_URL') || define('BASE_URL', 'http://localhost:8080/' );
 
 
-//////////////////////////////////////////////__DB
+//////////////////////////////////////////////__DATABASE
 defined('DB_TEST_hostname') || define('DB_TEST_hostname', '103.92.235.18');
 defined('DB_TEST_username') || define('DB_TEST_username', 'jungleef');
 defined('DB_TEST_password') || define('DB_TEST_password', 'Y-eCdY3Jts5#');
@@ -137,19 +137,25 @@ defined('DB_TEST_DBDriver') || define('DB_TEST_DBDriver', 'MySQLi');
 //////////////////////////////////////////////__TABLE
 defined('TABLE_USERS')      || define('TABLE_USERS', 'users');
 defined('TABLE_OTP')        || define('TABLE_OTP', 'otp');
+defined('TABLE_CATEGORIES')        || define('TABLE_CATEGORIES', 'categories');
 
 
 //////////////////////////////////////////////__UID_PRIFIX
 defined('UID_USER')         || define('UID_USER', 'USR');
 defined('UID_OTP')          || define('UID_OTP', 'OTP');
+defined('UID_CATEGORY')     || define('UID_CATEGORY', 'CAT');
 
 
 //////////////////////////////////////////////__STATUS
 defined('STATUS_PENDING')   || define('STATUS_PENDING', 'pending');
+defined('STATUS_ACTIVE')    || define('STATUS_ACTIVE', 'active');
+defined('STATUS_DEACTIVE')  || define('STATUS_DEACTIVE', 'deactive');
 
 
 //////////////////////////////////////////////__TYPE
 defined('TYPE_USER')        || define('TYPE_USER', 'user');
+defined('TYPE_ADMIN')       || define('TYPE_ADMIN', 'admin');
+defined('TYPE_VENDOR')      || define('TYPE_VENDOR', 'vendor');
 
 
 
