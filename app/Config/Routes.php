@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-
+$routes->setAutoRoute(true);
 // Frontend Routes
 $routes->get('/',                       'Frontend\Frontend_Controller::index');
 $routes->get('/login',                  'Frontend\Frontend_Controller::load_login');
@@ -26,6 +26,8 @@ $routes->post('/verify-otp-action',     'Frontend\Frontend_Controller::verify_ot
 // Admin Routes
 $routes->get('/admin',                  'Admin\Admin_Controller::index');
 $routes->get('/admin/login',            'Admin\Admin_Controller::load_login');
+$routes->get('/admin/logout',           'Admin\Admin_Controller::logout');
+$routes->post('/admin/login-action',    'Admin\Admin_Controller::handle_login');
 
 
 

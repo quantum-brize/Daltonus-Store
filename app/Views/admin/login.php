@@ -114,7 +114,8 @@
                                         </div>
 
                                         <div class="mt-4">
-                                            <button class="btn btn-success w-100" type="submit" id="login_btn">Sign In</button>
+                                            <button class="btn btn-success w-100" type="submit" id="login_btn">Sign
+                                                In</button>
                                         </div>
                                     </div>
                                 </div>
@@ -166,6 +167,14 @@
     <script src="https://code.jquery.com/jquery.min.js"></script>
 
     <script>
+        $('#password-addon').on('click', function () {
+            if ($('#password-input').attr('type') == 'password') {
+                $('#password-input').attr('type', 'text')
+            } else {
+                $('#password-input').attr('type', 'password')
+
+            }
+        })
 
         $('#login_btn').on('click', function () {
             let email = $('#email').val()
@@ -176,26 +185,40 @@
                                                     <i class="ri-alert-line label-icon"></i><strong>Please Enter Your Email</strong>
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>`)
-            }else if(password.length < 1){
+            } else if (password.length < 1) {
                 $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
                                                     <i class="ri-alert-line label-icon"></i><strong>Please Enter Your Password</strong>
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>`)
-            }else{
+            } else {
 
                 $.ajax({
-                    url: "<?=base_url('admin-login-action')?>",
+                    url: "<?= base_url('admin/login-action') ?>",
                     method: "POST",
                     data: {
                         email: email,
-                        password:password
+                        password: password
                     },
-                    beforeSend: function(){
+                    beforeSend: function () {
                         $('#login_btn').html(`<div class="spinner-border text-light" role="status"></div>`)
                         //$('#login_btn').attr('disabled', true);
                     },
-                    success: function(){
-
+                    success: function (resp) {
+                        resp = JSON.parse(resp)
+                        if (resp.status == true) {
+                            $('#alert').html(`<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                                        <i class="ri-checkbox-circle-fill label-icon"></i><strong>${resp.message}</strong>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                    </div>`) 
+                            window.location.href = `<?= base_url('admin')?>`;
+                        } else {
+                            $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                                    <i class="ri-alert-line label-icon"></i><strong> ${resp.message}</strong>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>`)
+                        }
+                        $('#login_btn').html(`Sign In`)
+                        $('#login_btn').attr('disabled', false);
                     },
                     complete: function () {
                         $('#login_btn').html(`Sign In`)
@@ -205,7 +228,7 @@
                         $('#login_btn').html(`Sign In`)
                         $('#login_btn').attr('disabled', false);
                         $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
-                                                    <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Internal Srver Error
+                                                    <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Internal Server Error
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>`)
                     }

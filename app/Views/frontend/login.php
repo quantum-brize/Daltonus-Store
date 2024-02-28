@@ -225,7 +225,7 @@
                         $('#sign-in-btn').html(`Sign In`)
                         $('#sign-in-btn').attr('disabled', false);
                         $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
-                                                    <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Internal Srver Error
+                                                    <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Internal Server Error
                                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                 </div>`)
                     }

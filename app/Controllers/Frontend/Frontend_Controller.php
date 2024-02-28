@@ -102,6 +102,8 @@ class Frontend_Controller extends Main_Controller
 
         $UsersData = $UsersModel
             ->where('password', md5($password))
+            ->where('type', 'user')
+            ->where('status', 'active')
             ->groupStart()
             ->where('email', $email_number)
             ->orWhere('number', $email_number)
