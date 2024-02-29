@@ -2,7 +2,6 @@
 namespace App\Controllers\Admin;
 use App\Controllers\Admin\Admin_Controller;
 
-
 class Category_Controller extends Admin_Controller{
 
     public function index(): void
@@ -27,6 +26,8 @@ class Category_Controller extends Admin_Controller{
         $this->isAuth('/admin/categories',$data);
     }
 
+
+ 
 
 
 }

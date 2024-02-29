@@ -32,10 +32,9 @@ $routes->get('/admin/categories',       'Admin\Category_Controller::index');
 
 
 
-
 // Api Routes
-$routes->get('/api',                    'Api\Api_Controller::index');
-
+$routes->get('/api',                     'Api\Api_Controller::index');
+$routes->get('/api/categories',          'Api\Category_Controller::GET_categories');
 
 
 // Vendor Routes
