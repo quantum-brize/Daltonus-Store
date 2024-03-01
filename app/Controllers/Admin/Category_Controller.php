@@ -10,7 +10,7 @@ class Category_Controller extends Admin_Controller{
         $data = [
             'data_page' => [],
             'data_header' => [
-                'header_link' => [],
+                'header_link' => ['categories_css.php'],
                 'title' => 'Categories',
                 'header' => [],
                 'sidebar' => ['categories'=>true],

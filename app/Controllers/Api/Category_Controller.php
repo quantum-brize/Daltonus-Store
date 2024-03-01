@@ -46,6 +46,12 @@ class Category_Controller extends Api_Controller
         return $result;
     }
 
+    private function getCategory($parent_id = null)
+    {
+        $categoriesModel = new CategoriesModel();
+        $categories = $parent_id == null ? $categoriesModel->where('parent_id', '')->findAll() : $categoriesModel->where('parent_id', $parent_id)->findAll();
+        return $categories;
+    }
 
 
 
@@ -55,12 +61,32 @@ class Category_Controller extends Api_Controller
 
 
 
-    
+
+
+    public function GET_category()
+    {
+        $parent_id = !empty($this->request->getGet('parent_id'))? $this->request->getGet('parent_id'): null;
+        $category = $this->getCategory($parent_id);
+        $response =[
+            'status' => !empty($category),
+            'message' => !empty($category) ? 'categories found' : 'categories not found',
+            'data' => !empty($category) ? $category : null
+        ];
+        return $this->response->setJSON($response);
+    }
+
     public function GET_categories()
     {
+        
         $visited = [];
         $categoriesTree = $this->getCategoriesTree(null, $visited);
-        return $this->response->setJSON($categoriesTree);
+        $response =[
+            'status' => !empty($categoriesTree),
+            'message' => !empty($categoriesTree) ? 'categories found' : 'categories not found',
+            'data' => !empty($categoriesTree) ? $categoriesTree : null
+        ];
+
+        return $this->response->setJSON($response);
     }
 
 

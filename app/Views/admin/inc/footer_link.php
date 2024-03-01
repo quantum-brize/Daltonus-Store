@@ -18,10 +18,14 @@
 
     <!-- Dashboard init -->
     <script src="<?=base_url()?>/assets_admin/js/pages/dashboard-ecommerce.init.js"></script>
-
+    
     <!-- App js -->
+    
     <script src="<?=base_url()?>/assets_admin/js/app.js"></script>
-    <?require_once(APPPATH . 'views/inc/main_js.php');?>
+    <!-- jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <?php require_once(APPPATH . 'views/inc/main_js.php');?>
 
     <?php
         if(!empty($footer_link)){
