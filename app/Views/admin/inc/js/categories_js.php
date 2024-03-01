@@ -3,11 +3,81 @@
     get_parent_categories();
     function get_parent_categories() {
         $.ajax({
-            url: '<?= base_url('/api/categories/all') ?>',
+            url: '<?= base_url('/api/categories') ?>',
             type: "GET",
             success: function (resp) {
                 console.log(resp);
-                generateAccordion(resp.data, "accordion");
+                if (resp.status) {
+
+                    if (resp.data.length > 0) {
+                        let html = ''
+                        $.each(resp.data, (index, category) => {
+                            html += ` <div class="accordion-item" id="${category.uid}-category-id">
+                                        <h2 class="accordion-header" id="${category.uid}-category-id-heading">
+                                            <input 
+                                                type="text" 
+                                                class="form-control fs-15" 
+                                                disabled 
+                                                value="${category.name}" 
+                                                id="${category.uid}-category-input"
+                                            >
+                                            <button 
+                                                class="btn btn-success" 
+                                                id="save-category-btn" 
+                                                onclick="save_category('null',${$("#" +category.uid +"-category-input").val()},save-category-btn')" 
+                                                hidden>
+                                                <i class="ri-save-line fs-15"></i>
+                                            </button>
+                                            <button 
+                                                class="btn btn-info" 
+                                                id="update-category-btn" 
+                                                onclick="update_category('category-input','save-category-btn')">
+                                                <i class="ri-edit-line fs-15"></i>
+                                            </button>
+                                            <button 
+                                                class="btn btn-danger" 
+                                                id="delete-category-btn"
+                                                onclick="delete_category('category-input')">
+                                                <i class="ri-delete-bin-line fs-15"></i>
+                                            </button>
+                                            <button 
+                                                class="accordion-button collapsed fs-15 fw-500" 
+                                                type="button" 
+                                                data-bs-toggle="collapse" 
+                                                data-bs-target="#${category.uid}-collapse" 
+                                                aria-expanded="false" 
+                                                aria-controls="${category.uid}-collapse-accordion-body-id" 
+                                                onclick="getSubCategory('${category.uid}','collapse-accordion-body-id')">
+                                            </button>
+                                        </h2>
+                                        <div 
+                                            id="${category.uid}-collapse" 
+                                            class="accordion-collapse collapse" 
+                                            aria-labelledby="${category.uid}-category-id-heading"
+                                            data-bs-parent="#${category.uid}-category-id">
+                                            <div class="collapse-accordion-body" id="${category.uid}-collapse-accordion-body-id">
+
+                                                
+
+                                            </div>
+                                        </div>
+                                    </div>`
+                        })
+                        html += ` <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <input type="text" class="form-control fs-15" id="new-category-input">
+                                        <button class="btn btn-success" onclick="add_category('null','new-category-input')">
+                                            <i class="ri-add-fill fs-15"></i>
+                                        </button>
+                                    </h2>
+                                </div>`
+                        $('#accordion').html(html)
+
+                    }
+
+                }
+
+
             },
             error: function (err) {
                 console.log(err);
@@ -15,41 +85,93 @@
         });
     }
 
-    function generateAccordion(data, parentId = "accordion") {
-        $.each(data, function (index, category) {
-            const categoryId = `category-${category.uid}`;
-            const accordionId = `${parentId}-${index}`;
+    // function getSubCategory(parent_id, body_id) {
+    //     $.ajax({
+    //         url: '<?= base_url('/api/categories') ?>',
+    //         data: {
+    //             parent_id: parent_id
+    //         },
+    //         type: "GET",
+    //         success: function (resp) {
+    //             console.log(resp)
+    //             if (resp.status) {
 
-            const accordionItem = $(`<div class="accordion-item" id="${categoryId}"></div>`);
-            const accordionHeader = $(`<h2 class="accordion-header" id="${accordionId}-heading"></h2>`);
-            const categoryInput = $(`<input type="text" class="form-control fs-15" disabled value="${category.name}" id="${categoryId}-input">`);
-            const saveButton = $(`<button class="btn btn-success" id="save-${categoryId}-btn" onclick="save_category('${categoryId}-input', 'save-${categoryId}-btn')" hidden>
-                                    <i class="ri-save-line fs-15"></i>
-                                </button>`);
-            const updateButton = $(`<button class="btn btn-info" id="update-${categoryId}-btn" onclick="update_category('${categoryId}-input', 'save-${categoryId}-btn')">
-                                    <i class="ri-edit-line fs-15"></i>
-                                </button>`);
-            const deleteButton = $(`<button class="btn btn-danger" id="delete-${categoryId}-btn" onclick="delete_category('${categoryId}-input')">
-                                    <i class="ri-delete-bin-line fs-15"></i>
-                                </button>`);
-            const accordionButton = $(`<button class="accordion-button collapsed fs-15 fw-500" type="button" data-bs-toggle="collapse" data-bs-target="#${accordionId}-collapse" aria-expanded="false" aria-controls="${accordionId}-collapse">${category.name}</button>`);
-            const accordionCollapse = $(`<div id="${accordionId}-collapse" class="accordion-collapse collapse" aria-labelledby="${accordionId}-heading" data-bs-parent="#${parentId}"></div>`);
-            const accordionBody = $(`<div class="${categoryId}-accordion-body"></div>`);
+    //                 if (resp.data.length > 0) {
+    //                     let html = ' <div class="accordion" style="padding: 10px 10px 10px 30px">'
+    //                     $.each(resp.data, (index, category) => {
+    //                         html += ` <div class="accordion-item" id="${category.uid}-category-id">
+    //                                     <h2 class="accordion-header" id="${category.uid}-category-id-heading">
+    //                                         <input 
+    //                                             type="text" 
+    //                                             class="form-control fs-15" 
+    //                                             disabled 
+    //                                             value="${category.name}" 
+    //                                             id="${category.uid}-category-input"
+    //                                         >
+    //                                         <button 
+    //                                             class="btn btn-success" 
+    //                                             id="${category.uid}-save-category-btn" 
+    //                                             onclick="save_category('${category.uid}-category-input','${category.uid}-save-category-btn')" 
+    //                                             hidden>
+    //                                             <i class="ri-save-line fs-15"></i>
+    //                                         </button>
+    //                                         <button 
+    //                                             class="btn btn-info" 
+    //                                             id="${category.uid}-update-category-btn" 
+    //                                             onclick="update_category('${category.uid}-category-input','${category.uid}-save-category-btn')">
+    //                                             <i class="ri-edit-line fs-15"></i>
+    //                                         </button>
+    //                                         <button 
+    //                                             class="btn btn-danger" 
+    //                                             id="${category.uid}-delete-category-btn"
+    //                                             onclick="delete_category('${category.uid}-category-input')">
+    //                                             <i class="ri-delete-bin-line fs-15"></i>
+    //                                         </button>
+    //                                         <button 
+    //                                             class="accordion-button collapsed fs-15 fw-500" 
+    //                                             type="button" 
+    //                                             data-bs-toggle="collapse" 
+    //                                             data-bs-target="#${category.uid}-collapse" 
+    //                                             aria-expanded="false" 
+    //                                             aria-controls="collapse" 
+    //                                             onclick="getSubCategory('${category.uid}','${category.uid}-collapse-accordion-body-id')">
+    //                                         </button>
+    //                                     </h2>
+    //                                     <div id="${category.uid}-collapse" class="accordion-collapse collapse" aria-labelledby="${category.uid}-category-id-heading"
+    //                                         data-bs-parent="#${category.uid}-category-id">
+    //                                         <div class="${category.uid}-collapse-accordion-body" id="${category.uid}-collapse-accordion-body-id">
 
-            accordionHeader.append(categoryInput, saveButton, updateButton, deleteButton, accordionButton);
-            accordionCollapse.append(accordionBody);
-            accordionItem.append(accordionHeader, accordionCollapse);
+                                                
 
-            if (category.subCategories.length > 0) {
-                generateAccordion(category.subCategories, categoryId);
-            }
+    //                                         </div>
+    //                                     </div>
+    //                                 </div>`
+    //                     })
+    //                     html += ` <div class="accordion-item">
+    //                                 <h2 class="accordion-header">
+    //                                     <input type="text" class="form-control fs-15" id="new-category-input">
+    //                                     <button class="btn btn-success" onclick="add_category('null','new-category-input')">
+    //                                         <i class="ri-add-fill fs-15"></i>
+    //                                     </button>
+    //                                 </h2>
+    //                             </div>
+    //                         </div>`
+    //                     $(`#${body_id}`).html(html)
 
-            $(`#${parentId}`).append(accordionItem);
-        });
+    //                 }
+
+    //             }
+    //         }
+
+
+    //     })
+
+    // }
+
+
+    function delete_category(input_id) {
+        console.log(input_id)
     }
-
-
-
 
 
 
