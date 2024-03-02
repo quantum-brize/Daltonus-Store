@@ -36,6 +36,9 @@ $routes->get('/admin/categories',       'Admin\Category_Controller::index');
 $routes->get('/api',                     'Api\Api_Controller::index');
 $routes->get('/api/categories/all',      'Api\Category_Controller::GET_categories');
 $routes->get('/api/categories',          'Api\Category_Controller::GET_category');
+$routes->post('/api/category/add',       'Api\Category_Controller::POST_add_category');
+$routes->post('/api/category/update',    'Api\Category_Controller::POST_update_category');
+$routes->post('/api/category/delete',    'Api\Category_Controller::POST_delete_category');
 
 
 // Vendor Routes

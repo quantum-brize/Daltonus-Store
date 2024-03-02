@@ -49,18 +49,90 @@ class Category_Controller extends Api_Controller
     private function getCategory($parent_id = null)
     {
         $categoriesModel = new CategoriesModel();
-        $categories = $parent_id == null ? $categoriesModel->where('parent_id', '')->findAll() : $categoriesModel->where('parent_id', $parent_id)->findAll();
+        $categories = $parent_id == null ? $categoriesModel->where('parent_id', 'null')->findAll() : $categoriesModel->where('parent_id', $parent_id)->findAll();
         return $categories;
+    }
+
+    private function addCategory($parent_id,$category_name){
+        $data = [
+            'uid' => $this->generate_uid(UID_CATEGORY),
+            'name' => $category_name,
+            'parent_id'=>!empty($parent_id) ? $parent_id : ''
+        ];
+        $categoriesModel = new CategoriesModel();
+        $add = $categoriesModel->insert($data);
+        if($add){
+            return $data;
+        }else{
+            return $data;
+        }
+    }
+
+    private function deleteCategory($category_id){
+        
+
+        $categoriesModel = new CategoriesModel();
+        $categoriesModel->where('parent_id', $category_id)->delete();
+        $deleted = $categoriesModel->where('uid', $category_id)->delete();
+      
+        return $deleted;
+
+    }
+
+
+    private function updateCategory($category_id,$name){
+
+        $categoriesModel = new CategoriesModel();     
+        $category = $categoriesModel->where('uid', $category_id)->first();
+        if ($category) {
+            // Update the properties of the loaded record
+            $category['name'] = $name;
+            // Save the changes
+            $categoriesModel->save($category);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
 
 
 
+    public function POST_delete_category(){
+        $category_id = $this->request->getPost('category_id');
+        $delete = $this->deleteCategory($category_id);
+        $response =[
+            'status' => $delete,
+            'message' => $delete ? 'categories deletd' : 'categories not deletd',
+        ];
+        return $this->response->setJSON($response);
+    }
 
 
 
+    public function POST_add_category(){
+        $parent_id = !empty($this->request->getPost('parent_id'))? $this->request->getPost('parent_id'): null;
+        $category_name = !empty($this->request->getPost('category_name'))? $this->request->getPost('category_name'): null;
+        $addData = $this->addCategory($parent_id,$category_name);
+        $response =[
+            'status' => !empty($addData),
+            'message' => !empty($addData) ? 'categories added' : 'categories not added',
+            'data' => $addData
+        ];
+        return $this->response->setJSON($response);
+    }
 
+    public function POST_update_category(){
+        $category_id = $this->request->getPost('category_id');
+        $name = $this->request->getPost('name');
+        $update = $this->updateCategory($category_id,$name);
+        $response =[
+            'status' => $update,
+            'message' => $update ? 'categories updated' : 'categories not updated',
+        ];
+        return $this->response->setJSON($response);
+    }
 
 
     public function GET_category()
