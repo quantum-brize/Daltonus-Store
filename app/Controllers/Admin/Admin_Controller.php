@@ -30,7 +30,7 @@ class Admin_Controller extends Main_Controller
     public function isAuth($page,$data){
         $session = \Config\Services::session();
         if(empty($session->get(SES_ADMIN_USER_ID))){
-            return redirect()->route('admin/login');
+            return $this->load_login();
         }else{
             $this->load_page($page,$data);
         }

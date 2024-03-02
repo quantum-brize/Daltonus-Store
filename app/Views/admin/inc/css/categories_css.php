@@ -6,6 +6,9 @@
         padding: 10px;
         gap: 10px;
     }
+    .accordion-item{
+        padding: 0px 20px 10px 20px;
+    }
     .form-control.fs-15{
         width: initial
     }
