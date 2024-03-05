@@ -29,6 +29,12 @@
 
     <?require_once(APPPATH . 'views/inc/main_css.php');?>
     <?php
+        if(!empty($header_asset_link)){
+            foreach($header_asset_link as $link){
+                echo "<link href='".base_url().$link."' rel='stylesheet' type='text/css'>";
+            }
+        }
+
         if(!empty($header_link)){
             foreach($header_link as $link){
                 require_once(APPPATH . 'views/admin/inc/css/'.$link);

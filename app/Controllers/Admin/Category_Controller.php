@@ -26,6 +26,7 @@ class Category_Controller extends Admin_Controller{
         $this->isAuth('/admin/categories',$data);
     }
 
+    
 
  
 

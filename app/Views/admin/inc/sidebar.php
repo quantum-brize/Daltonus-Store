@@ -30,7 +30,8 @@
         <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             <span class="d-flex align-items-center gap-2">
-                <img class="rounded header-profile-user" src="assets_admin/images/users/avatar-1.jpg" alt="Header Avatar">
+                <img class="rounded header-profile-user" src="assets_admin/images/users/avatar-1.jpg"
+                    alt="Header Avatar">
                 <span class="text-start">
                     <span class="d-block fw-medium sidebar-user-name-text">Anna Adame</span>
                     <span class="d-block fs-14 sidebar-user-name-sub-text"><i
@@ -80,16 +81,51 @@
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
 
                 <li class="nav-item ">
-                    <a class="nav-link menu-link <?=isset($sidebar['dashboard']) ? 'active' : ''?>" href="<?=base_url('admin')?>">
+                    <a class="nav-link menu-link <?= isset($sidebar['dashboard']) ? 'active' : '' ?>"
+                        href="<?= base_url('admin') ?>">
                         <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Dashboard</span>
                     </a>
                 </li>
 
                 <li class="nav-item ">
-                    <a class="nav-link menu-link <?=isset($sidebar['categories']) ? 'active' : ''?>" href="<?=base_url('admin/categories')?>">
+                    <a class="nav-link menu-link <?= isset($sidebar['categories']) ? 'active' : '' ?>"
+                        href="<?= base_url('admin/categories') ?>">
                         <i class="bx bx-category"></i> <span data-key="t-widgets">Categories</span>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link <?= isset($sidebar['products']) ? 'active' : '' ?>" 
+                        href="#sidebarProduct" 
+                        data-bs-toggle="collapse" 
+                        role="button"
+                        aria-expanded="<?= isset($sidebar['products']) ? 'true' : 'false' ?>" 
+                        aria-controls="sidebarProduct">
+                        <i class="ri-archive-line"></i> 
+                        <span>Products</span>
+                    </a>
+                    <div class="<?= isset($sidebar['products']) ? '' : 'collapse' ?> menu-dropdown" id="sidebarProduct">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="<?=base_url('/admin/products')?>" class="nav-link"> 
+                                    All Products
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?=base_url('/admin/products/add')?>" class="nav-link">
+                                    Add Product
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">
+                                    Inventory
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </li> <!-- end Dashboard Menu -->
+
             </ul>
         </div>
         <!-- Sidebar -->

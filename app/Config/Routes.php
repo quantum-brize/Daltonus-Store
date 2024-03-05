@@ -29,7 +29,8 @@ $routes->get('/admin/login',            'Admin\Admin_Controller::load_login');
 $routes->get('/admin/logout',           'Admin\Admin_Controller::logout');
 $routes->post('/admin/login-action',    'Admin\Admin_Controller::handle_login');
 $routes->get('/admin/categories',       'Admin\Category_Controller::index');
-
+$routes->get('/admin/products',         'Admin\Product_Controller::index');
+$routes->get('/admin/products/add',     'Admin\Product_Controller::product_add');
 
 
 // Api Routes

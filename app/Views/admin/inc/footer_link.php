@@ -25,9 +25,16 @@
     <!-- jQuery from CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+
+
     <?php require_once(APPPATH . 'views/inc/main_js.php');?>
 
     <?php
+        if(!empty($footer_asset_link)){
+            foreach($footer_asset_link as $link){
+                echo "<script src='".base_url().$link."'></script>";
+            }
+        }
         if(!empty($footer_link)){
             foreach($footer_link as $link){
                 require_once(APPPATH . 'views/admin/inc/js/'.$link);
