@@ -12,6 +12,10 @@ class Admin_Controller extends Main_Controller
             'data_page' => [],
             'data_header' => [
                 'header_link' => [],
+                'header_asset_link' => [
+                    'assets_admin/libs/jsvectormap/css/jsvectormap.min.css',
+                    'assets_admin/libs/swiper/swiper-bundle.min.css'
+                ],
                 'title' => 'Dashboard',
                 'header' => [],
                 'sidebar' => ['dashboard'=>true],
@@ -19,6 +23,13 @@ class Admin_Controller extends Main_Controller
             ],
             'data_footer' => [
                 'footer_link' => ['dashboard_js.php'],
+                'footer_asset_link' => [
+                    'assets_admin/libs/apexcharts/apexcharts.min.js',
+                    'assets_admin/libs/jsvectormap/js/jsvectormap.min.js',
+                    'assets_admin/libs/jsvectormap/maps/world-merc.js',
+                    'assets_admin/libs/swiper/swiper-bundle.min.js',
+                    'assets_admin/js/pages/dashboard-ecommerce.init.js'
+                ],
                 'footer' => [],
                 'site' => 'admin'
             ]

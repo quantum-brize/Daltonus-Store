@@ -45,16 +45,24 @@ class Product_Controller extends Admin_Controller{
         $data = [
             'data_page' => [],
             'data_header' => [
-                'header_link' => ['products_css.php'],
-                'header_asset_link' => [],
+                'header_link' => ['products_add_css.php'],
+                'header_asset_link' => [
+                    'assets_admin/libs/dropzone/dropzone.css'
+                ],
                 'title' => 'Products | Add',
                 'header' => [],
                 'sidebar' => ['products'=>true],
                 'site' => 'admin'
             ],
             'data_footer' => [
-                'footer_link' => ['products_js.php'],
-                'footer_asset_link'=> [],
+                'footer_link' => ['products_add_js.php'],
+                'footer_asset_link'=> [
+                    'assets_admin/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js',
+                    'assets_admin/libs/dropzone/dropzone-min.js',
+                    'assets_admin/js/pages/ecommerce-product-create.init.js',
+                    'assets_admin/js/app.js',
+
+                ],
                 'footer' => [],
                 'site' => 'admin'
             ]
