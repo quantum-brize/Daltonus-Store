@@ -93,7 +93,7 @@
                 </script>
                 © Toner. Design &amp; Develop by
                 <a href="https://themesbrand.com/" target="_blank"
-                    class="text-reset text-decoration-underline">Themesbrand</a>
+                    class="text-reset text-decoration-underline">daltonusstore</a>
             </div>
             <div class="col-sm-6">
                 <div class="text-sm-end d-none d-sm-block">

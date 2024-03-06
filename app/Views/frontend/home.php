@@ -930,7 +930,7 @@
                                             class="avatar-sm rounded" />
                                         <div class="flex-grow-1 ms-3">
                                             <h5 class="mb-2 fs-16">George Obrien</h5>
-                                            <p class="text-muted mb-0">Velzon User</p>
+                                            <p class="text-muted mb-0">daltonusstore User</p>
                                         </div>
                                     </div>
                                 </div>
@@ -952,7 +952,7 @@
                                             class="avatar-sm rounded" />
                                         <div class="flex-grow-1 ms-3">
                                             <h5 class="mb-2 fs-16">Chadwick A. Scott</h5>
-                                            <p class="text-muted mb-0">Velzon User</p>
+                                            <p class="text-muted mb-0">daltonusstore User</p>
                                         </div>
                                     </div>
                                 </div>
@@ -996,7 +996,7 @@
                                             class="avatar-sm rounded" />
                                         <div class="flex-grow-1 ms-3">
                                             <h5 class="mb-2 fs-16">Mary Atkinson</h5>
-                                            <p class="text-muted mb-0">Velzon User</p>
+                                            <p class="text-muted mb-0">daltonusstore User</p>
                                         </div>
                                     </div>
                                 </div>

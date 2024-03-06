@@ -80,7 +80,7 @@
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
                                     <h5 class="text-primary">Create New Account</h5>
-                                    <p class="text-muted">Get your free velzon account now</p>
+                                    <p class="text-muted">Get your free daltonusstore account now</p>
                                 </div>
                                 <div class="p-2 mt-4">
                                     <div class="needs-validation" novalidate>
@@ -148,7 +148,7 @@
                                         </div>
                                         <div class="mb-4">
                                             <p class="mb-0 fs-12 text-muted fst-italic">By registering you agree to the
-                                                Velzon <a href="#"
+                                            daltonusstore <a href="#"
                                                     class="text-primary text-decoration-underline fst-normal fw-medium">Terms
                                                     of Use</a></p>
                                         </div>
@@ -207,8 +207,8 @@
                     <div class="col-lg-12">
                         <div class="text-center">
                             <p class="mb-0 text-muted">&copy;
-                                <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i
-                                    class="mdi mdi-heart text-danger"></i> by Themesbrand
+                                <script>document.write(new Date().getFullYear())</script> daltonusstore. Crafted with <i
+                                    class="mdi mdi-heart text-danger"></i> by daltonusstore
                             </p>
                         </div>
                     </div>
