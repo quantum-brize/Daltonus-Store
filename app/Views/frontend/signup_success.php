@@ -8,18 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?=base_url()?>assets_admin/images/favicon.ico">
+    <link rel="shortcut icon" href="<?=base_url()?>public/assets_admin/images/favicon.ico">
 
     <!-- Layout config Js -->
-    <script src="<?=base_url()?>assets_admin/js/layout.js"></script>
+    <script src="<?=base_url()?>public/assets_admin/js/layout.js"></script>
     <!-- Bootstrap Css -->
-    <link href="<?=base_url()?>assets_admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url()?>public/assets_admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="<?=base_url()?>assets_admin/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url()?>public/assets_admin/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="<?=base_url()?>assets_admin/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url()?>public/assets_admin/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="<?=base_url()?>assets_admin/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?=base_url()?>public/assets_admin/css/custom.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -45,7 +45,7 @@
                         <div class="text-center mt-sm-5 mb-4 text-white-50">
                             <div>
                                 <a href="index.html" class="d-inline-block auth-logo">
-                                    <img src="<?=base_url()?>assets_admin/images/logo-light.png" alt="" height="20">
+                                    <img src="<?=base_url()?>public/assets_admin/images/logo-light.png" alt="" height="20">
                                 </a>
                             </div>
                             <p class="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
@@ -102,19 +102,19 @@
     <!-- end auth-page-wrapper -->
 
     <!-- JAVASCRIPT -->
-    <script src="<?=base_url()?>assets_admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?=base_url()?>assets_admin/libs/simplebar/simplebar.min.js"></script>
-    <script src="<?=base_url()?>assets_admin/libs/node-waves/waves.min.js"></script>
-    <script src="<?=base_url()?>assets_admin/libs/feather-icons/feather.min.js"></script>
-    <script src="<?=base_url()?>assets_admin/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="<?=base_url()?>assets_admin/js/plugins.js"></script>
+    <script src="<?=base_url()?>public/assets_admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=base_url()?>public/assets_admin/libs/simplebar/simplebar.min.js"></script>
+    <script src="<?=base_url()?>public/assets_admin/libs/node-waves/waves.min.js"></script>
+    <script src="<?=base_url()?>public/assets_admin/libs/feather-icons/feather.min.js"></script>
+    <script src="<?=base_url()?>public/assets_admin/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="<?=base_url()?>public/assets_admin/js/plugins.js"></script>
 
     <!-- particles js -->
-    <script src="<?=base_url()?>assets_admin/libs/particles.js/particles.js"></script>
+    <script src="<?=base_url()?>public/assets_admin/libs/particles.js/particles.js"></script>
     <!-- particles app js -->
-    <script src="<?=base_url()?>assets_admin/js/pages/particles.app.js"></script>
+    <script src="<?=base_url()?>public/assets_admin/js/pages/particles.app.js"></script>
     <!-- password-addon init -->
-    <script src="<?=base_url()?>assets_admin/js/pages/password-addon.init.js"></script>
+    <script src="<?=base_url()?>public/assets_admin/js/pages/password-addon.init.js"></script>
 </body>
 
 </html>

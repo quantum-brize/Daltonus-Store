@@ -13,15 +13,15 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
     <!-- Layout config Js -->
-    <script src="<?= base_url() ?>assets_admin/js/layout.js"></script>
+    <script src="<?= base_url() ?>public/assets_admin/js/layout.js"></script>
     <!-- Bootstrap Css -->
-    <link href="<?= base_url() ?>assets_admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>public/assets_admin/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="<?= base_url() ?>assets_admin/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>public/assets_admin/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="<?= base_url() ?>assets_admin/css/app.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>public/assets_admin/css/app.min.css" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-    <link href="<?= base_url() ?>assets_admin/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?= base_url() ?>public/assets_admin/css/custom.min.css" rel="stylesheet" type="text/css" />
     <style>
         #alert {
             position: fixed;
@@ -60,7 +60,7 @@
                         <div class="text-center mt-sm-5 mb-4 text-white-50">
                             <div>
                                 <a href="index.html" class="d-inline-block auth-logo">
-                                    <img src="assets_admin/images/logo-light.png" alt="" height="20">
+                                    <img src="public/assets_admin/images/logo-light.png" alt="" height="20">
                                 </a>
                             </div>
 
@@ -91,10 +91,6 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <div class="float-end">
-                                                <a href="auth-pass-reset-basic.html" class="text-muted">Forgot
-                                                    password?</a>
-                                            </div>
                                             <label class="form-label" for="password-input">Password</label>
                                             <div class="position-relative auth-pass-inputgroup mb-3">
                                                 <input type="password" class="form-control pe-5 password-input"
@@ -151,12 +147,12 @@
     <!-- end auth-page-wrapper -->
 
     <!-- JAVASCRIPT -->
-    <script src="<?= base_url() ?>assets_admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="<?= base_url() ?>assets_admin/libs/simplebar/simplebar.min.js"></script>
-    <script src="<?= base_url() ?>assets_admin/libs/node-waves/waves.min.js"></script>
-    <script src="<?= base_url() ?>assets_admin/libs/feather-icons/feather.min.js"></script>
-    <script src="<?= base_url() ?>assets_admin/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="<?= base_url() ?>assets_admin/js/plugins.js"></script>
+    <script src="<?= base_url() ?>public/assets_admin/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url() ?>public/assets_admin/libs/simplebar/simplebar.min.js"></script>
+    <script src="<?= base_url() ?>public/assets_admin/libs/node-waves/waves.min.js"></script>
+    <script src="<?= base_url() ?>public/assets_admin/libs/feather-icons/feather.min.js"></script>
+    <script src="<?= base_url() ?>public/assets_admin/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="<?= base_url() ?>public/assets_admin/js/plugins.js"></script>
 
     <!-- particles js -->
     <script src="<?= base_url() ?>assets/libs/particles.js/particles.js"></script>

@@ -3,10 +3,10 @@
     <div class="container">
         <a class="navbar-brand d-none d-lg-block" href="index.html">
             <div class="logo-dark">
-                <img src="../assets/images/logo-dark-1.png" alt="" height="25" />
+                <img src="<?=base_url()?>public/assets/images/logo-dark-1.png" alt="" height="25" />
             </div>
             <div class="logo-light">
-                <img src="../assets/images/logo-light-1.png" alt="" height="25" />
+                <img src="<?=base_url()?>public/assets/images/logo-light-1.png" alt="" height="25" />
             </div>
         </a>
         <button class="btn btn-soft-primary btn-icon d-lg-none" type="button" data-bs-toggle="collapse"
@@ -18,8 +18,8 @@
             <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0" id="navigation-menu">
                 <li class="nav-item d-block d-lg-none">
                     <a class="d-block p-3 h-auto text-center" href="index.html">
-                        <img src="../assets/images/logo-dark-1.png" alt="" height="25" class="card-logo-dark mx-auto" />
-                        <img src="../assets/images/logo-light-1.png" alt="" height="25"
+                        <img src="<?=base_url()?>public/assets/images/logo-dark-1.png" alt="" height="25" class="card-logo-dark mx-auto" />
+                        <img src="<?=base_url()?>public/assets/images/logo-light-1.png" alt="" height="25"
                             class="card-logo-light mx-auto" />
                     </a>
                 </li>
@@ -55,7 +55,7 @@
                         <div class="row g-0 g-lg-4">
                             <div class="col-lg-2 d-none d-lg-block">
                                 <div class="card rounded-start rounded-0 border-0 h-100 mb-0 overflow-hidden" style="
-                        background-image: url('../assets/images/ecommerce/img-1.jpg');
+                        background-image: url('<?=base_url()?>public/assets/images/ecommerce/img-1.jpg');
                         background-size: cover;
                       ">
                                     <div class="bg-overlay bg-light bg-opacity-25"></div>
@@ -197,36 +197,36 @@
                                     <div class="row g-2">
                                         <div class="col-lg-4">
                                             <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="../assets/images/brands/img-8.png" alt="" class="avatar-sm" />
+                                                <img src="<?=base_url()?>public/assets/images/brands/img-8.png" alt="" class="avatar-sm" />
                                             </a>
                                         </div>
                                         <div class="col-lg-4">
                                             <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="../assets/images/brands/img-2-1.png" alt=""
+                                                <img src="<?=base_url()?>public/assets/images/brands/img-2-1.png" alt=""
                                                     class="avatar-sm" />
                                             </a>
                                         </div>
                                         <div class="col-lg-4">
                                             <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="../assets/images/brands/img-3-1.png" alt=""
+                                                <img src="<?=base_url()?>public/assets/images/brands/img-3-1.png" alt=""
                                                     class="avatar-sm" />
                                             </a>
                                         </div>
                                         <div class="col-lg-4">
                                             <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="../assets/images/brands/img-4-1.png" alt=""
+                                                <img src="<?=base_url()?>public/assets/images/brands/img-4-1.png" alt=""
                                                     class="avatar-sm" />
                                             </a>
                                         </div>
                                         <div class="col-lg-4">
                                             <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="../assets/images/brands/img-5-1.png" alt=""
+                                                <img src="<?=base_url()?>public/assets/images/brands/img-5-1.png" alt=""
                                                     class="avatar-sm" />
                                             </a>
                                         </div>
                                         <div class="col-lg-4">
                                             <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="../assets/images/brands/img-6-1.png" alt=""
+                                                <img src="<?=base_url()?>public/assets/images/brands/img-6-1.png" alt=""
                                                     class="avatar-sm" />
                                             </a>
                                         </div>
@@ -245,7 +245,7 @@
                         <div class="row g-0 g-lg-4">
                             <div class="col-lg-5 d-none d-lg-block">
                                 <div class="card rounded-start rounded-0 border-0 h-100 mb-0 overflow-hidden" style="
-                        background-image: url('../assets/images/ecommerce/img-2.jpg');
+                        background-image: url('<?=base_url()?>public/assets/images/ecommerce/img-2.jpg');
                         background-size: cover;
                       ">
                                     <div class="bg-overlay bg-primary" style="opacity: 0.9"></div>
@@ -573,7 +573,7 @@
             <div class="dropdown header-item dropdown-hover-end">
                 <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="../assets/images/users/avatar-1-1.jpg"
+                    <img class="rounded-circle header-profile-user" src="<?=base_url()?>public/assets/images/users/avatar-1-1.jpg"
                         alt="Header Avatar" />
                 </button>
                 <!-- <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -628,7 +628,7 @@
                         <div class="flex-shrink-0">
                             <div class="avatar-md" style="height: 100%">
                                 <div class="avatar-title bg-warning-subtle rounded-3">
-                                    <img src="../assets/images/products/img-4-1.png" alt="" class="avatar-sm" />
+                                    <img src="<?=base_url()?>public/assets/images/products/img-4-1.png" alt="" class="avatar-sm" />
                                 </div>
                             </div>
                         </div>
@@ -665,7 +665,7 @@
                         <div class="flex-shrink-0">
                             <div class="avatar-md" style="height: 100%">
                                 <div class="avatar-title bg-info-subtle rounded-3">
-                                    <img src="../assets/images/products/img-1-1.png" alt="" class="avatar-sm" />
+                                    <img src="<?=base_url()?>public/assets/images/products/img-1-1.png" alt="" class="avatar-sm" />
                                 </div>
                             </div>
                         </div>
@@ -702,7 +702,7 @@
                         <div class="flex-shrink-0">
                             <div class="avatar-md" style="height: 100%">
                                 <div class="avatar-title bg-danger-subtle rounded-3">
-                                    <img src="../assets/images/products/img-6-1.png" alt="" class="avatar-sm" />
+                                    <img src="<?=base_url()?>public/assets/images/products/img-6-1.png" alt="" class="avatar-sm" />
                                 </div>
                             </div>
                         </div>
@@ -739,7 +739,7 @@
                         <div class="flex-shrink-0">
                             <div class="avatar-md" style="height: 100%">
                                 <div class="avatar-title bg-primary-subtle rounded-3">
-                                    <img src="../assets/images/products/img-8-1.png" alt="" class="avatar-sm" />
+                                    <img src="<?=base_url()?>public/assets/images/products/img-8-1.png" alt="" class="avatar-sm" />
                                 </div>
                             </div>
                         </div>
@@ -886,7 +886,7 @@
                             </h5>
                             <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
                                 <div class="d-flex align-items-center">
-                                    <img src="../assets/images/users/avatar-1-1.jpg" alt=""
+                                    <img src="<?=base_url()?>public/assets/images/users/avatar-1-1.jpg" alt=""
                                         class="avatar-xs rounded-circle flex-shrink-0 me-2" />
                                     <div>
                                         <h6 class="mb-0">Ayaan Bowen</h6>
@@ -896,7 +896,7 @@
                             </a>
                             <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
                                 <div class="d-flex align-items-center">
-                                    <img src="../assets/images/users/avatar-7-1.jpg" alt=""
+                                    <img src="<?=base_url()?>public/assets/images/users/avatar-7-1.jpg" alt=""
                                         class="avatar-xs rounded-circle flex-shrink-0 me-2" />
                                     <div>
                                         <h6 class="mb-0">Alexander Kristi</h6>
@@ -906,7 +906,7 @@
                             </a>
                             <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
                                 <div class="d-flex align-items-center">
-                                    <img src="../assets/images/users/avatar-5-1.jpg" alt=""
+                                    <img src="<?=base_url()?>public/assets/images/users/avatar-5-1.jpg" alt=""
                                         class="avatar-xs rounded-circle flex-shrink-0 me-2" />
                                     <div>
                                         <h6 class="mb-0">Alan Carla</h6>
@@ -985,7 +985,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="p-4 pb-0">
-                            <img src="../assets/images/subscribe.png" alt="" class="img-fluid" />
+                            <img src="<?=base_url()?>public/assets/images/subscribe.png" alt="" class="img-fluid" />
                         </div>
                     </div>
                 </div>
@@ -1024,7 +1024,7 @@
                         <li class="chat-list left">
                             <div class="conversation-list">
                                 <div class="chat-avatar">
-                                    <img src="../assets/images/logo-sm-1.png" alt="" />
+                                    <img src="<?=base_url()?>public/assets/images/logo-sm-1.png" alt="" />
                                 </div>
                                 <div class="user-chat-content">
                                     <div class="ctext-wrap">
@@ -1099,7 +1099,7 @@
                         <li class="chat-list left">
                             <div class="conversation-list">
                                 <div class="chat-avatar">
-                                    <img src="../assets/images/logo-sm-1.png" alt="" />
+                                    <img src="<?=base_url()?>public/assets/images/logo-sm-1.png" alt="" />
                                 </div>
                                 <div class="user-chat-content">
                                     <div class="ctext-wrap">

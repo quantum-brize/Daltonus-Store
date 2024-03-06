@@ -3,7 +3,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="ecommerce-home bg-danger-subtle" style="
-                background-image: url('../assets/images/ecommerce/home/img-1.png');
+                background-image: url('<?=base_url()?>public/assets/images/ecommerce/home/img-1.png');
               ">
                     <div class="container">
                         <div class="row justify-content-end">
@@ -29,7 +29,7 @@
             </div>
             <div class="carousel-item">
                 <div class="ecommerce-home bg-primary-subtle" style="
-                background-image: url('../assets/images/ecommerce/home/img-2.png');
+                background-image: url('<?=base_url()?>public/assets/images/ecommerce/home/img-2.png');
               ">
                     <div class="container">
                         <div class="row">
@@ -57,7 +57,7 @@
             </div>
             <div class="carousel-item">
                 <div class="ecommerce-home" style="
-                background-image: url('../assets/images/ecommerce/home/img-6.jpg');
+                background-image: url('<?=base_url()?>public/assets/images/ecommerce/home/img-6.jpg');
                 background-size: cover;
               ">
                     <div class="container">
@@ -105,7 +105,7 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="d-flex align-items-center gap-3">
                     <div class="flex-shrink-0">
-                        <img src="../assets/images/ecommerce/fast-delivery.png" alt="" class="avatar-sm" />
+                        <img src="<?=base_url()?>public/assets/images/ecommerce/fast-delivery.png" alt="" class="avatar-sm" />
                     </div>
                     <div class="flex-grow-1">
                         <h5 class="fs-15">Fast &amp; Secure Delivery</h5>
@@ -116,7 +116,7 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="d-flex align-items-center gap-3">
                     <div class="flex-shrink-0">
-                        <img src="../assets/images/ecommerce/returns.png" alt="" class="avatar-sm" />
+                        <img src="<?=base_url()?>public/assets/images/ecommerce/returns.png" alt="" class="avatar-sm" />
                     </div>
                     <div class="flex-grow-1">
                         <h5 class="fs-15">2 Days Return Policy</h5>
@@ -127,7 +127,7 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="d-flex align-items-center gap-3">
                     <div class="flex-shrink-0">
-                        <img src="../assets/images/ecommerce/guarantee-certificate.png" alt="" class="avatar-sm" />
+                        <img src="<?=base_url()?>public/assets/images/ecommerce/guarantee-certificate.png" alt="" class="avatar-sm" />
                     </div>
                     <div class="flex-grow-1">
                         <h5 class="fs-15">Money Back Guarantee</h5>
@@ -138,7 +138,7 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="d-flex align-items-center gap-3">
                     <div class="flex-shrink-0">
-                        <img src="../assets/images/ecommerce/24-hours-support.png" alt="" class="avatar-sm" />
+                        <img src="<?=base_url()?>public/assets/images/ecommerce/24-hours-support.png" alt="" class="avatar-sm" />
                     </div>
                     <div class="flex-grow-1">
                         <h5 class="fs-15">24 X 7 Service</h5>
@@ -155,7 +155,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <a href="#!" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
-                    <img src="../assets/images/ecommerce/features/img-3.jpg" class="img-fluid rounded" alt="" />
+                    <img src="<?=base_url()?>public/assets/images/ecommerce/features/img-3.jpg" class="img-fluid rounded" alt="" />
                     <div class="bg-overlay blue"></div>
                     <div class="product-content p-4">
                         <p class="text-uppercase text-white mb-2">Up to 50-70%</p>
@@ -170,7 +170,7 @@
             </div>
             <div class="col-lg-6">
                 <a href="#!" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
-                    <img src="../assets/images/ecommerce/features/img-1.jpg" class="img-fluid rounded" alt="" />
+                    <img src="<?=base_url()?>public/assets/images/ecommerce/features/img-1.jpg" class="img-fluid rounded" alt="" />
                     <div class="product-content p-4">
                         <p class="text-uppercase fw-medium text-secondary mb-2">
                             Summer Sales
@@ -232,7 +232,7 @@
                         <div class="card overflow-hidden">
                             <div class="bg-warning-subtle rounded-top py-4">
                                 <div class="gallery-product">
-                                    <img src="../assets/images/products/img-6-1.png" alt=""
+                                    <img src="<?=base_url()?>public/assets/images/products/img-6-1.png" alt=""
                                         style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                 </div>
                                 <p class="fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">
@@ -288,7 +288,7 @@
                         <div class="card overflow-hidden">
                             <div class="bg-info-subtle rounded-top py-4">
                                 <div class="gallery-product">
-                                    <img src="../assets/images/products/img-7-1.png" alt=""
+                                    <img src="<?=base_url()?>public/assets/images/products/img-7-1.png" alt=""
                                         style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                 </div>
                                 <div class="gallery-product-actions">
@@ -337,7 +337,7 @@
                         <div class="card overflow-hidden">
                             <div class="bg-danger-subtle rounded-top py-4">
                                 <div class="gallery-product">
-                                    <img src="../assets/images/products/img-1-1.png" alt=""
+                                    <img src="<?=base_url()?>public/assets/images/products/img-1-1.png" alt=""
                                         style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                 </div>
                                 <div class="gallery-product-actions">
@@ -390,7 +390,7 @@
                         <div class="card overflow-hidden">
                             <div class="bg-warning-subtle rounded-top py-4">
                                 <div class="gallery-product">
-                                    <img src="../assets/images/products/img-2-1.png" alt=""
+                                    <img src="<?=base_url()?>public/assets/images/products/img-2-1.png" alt=""
                                         style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                 </div>
                                 <div class="gallery-product-actions">
@@ -440,7 +440,7 @@
                         <div class="card overflow-hidden">
                             <div class="bg-danger-subtle rounded-top py-4">
                                 <div class="gallery-product">
-                                    <img src="../assets/images/products/img-3-1.png" alt=""
+                                    <img src="<?=base_url()?>public/assets/images/products/img-3-1.png" alt=""
                                         style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                 </div>
                                 <p class="fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">
@@ -493,7 +493,7 @@
                         <div class="card overflow-hidden">
                             <div class="bg-success-subtle rounded-top py-4">
                                 <div class="gallery-product">
-                                    <img src="../assets/images/products/img-4-1.png" alt=""
+                                    <img src="<?=base_url()?>public/assets/images/products/img-4-1.png" alt=""
                                         style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                 </div>
                                 <div class="gallery-product-actions">
@@ -547,7 +547,7 @@
                         <div class="card overflow-hidden">
                             <div class="bg-info-subtle rounded-top py-4">
                                 <div class="gallery-product">
-                                    <img src="../assets/images/products/img-8-1.png" alt=""
+                                    <img src="<?=base_url()?>public/assets/images/products/img-8-1.png" alt=""
                                         style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                 </div>
                                 <div class="gallery-product-actions">
@@ -597,7 +597,7 @@
                         <div class="card overflow-hidden">
                             <div class="bg-danger-subtle rounded-top py-4">
                                 <div class="gallery-product">
-                                    <img src="../assets/images/products/img-5-1.png" alt=""
+                                    <img src="<?=base_url()?>public/assets/images/products/img-5-1.png" alt=""
                                         style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                 </div>
                                 <p class="fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0">
@@ -694,7 +694,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="mt-lg-n5">
-                    <img src="../assets/images/ecommerce/home/cta.png" alt="" class="mt-lg-n4" />
+                    <img src="<?=base_url()?>public/assets/images/ecommerce/home/cta.png" alt="" class="mt-lg-n4" />
                 </div>
             </div>
         </div>
@@ -728,7 +728,7 @@
                             <div class="card overflow-hidden">
                                 <div class="bg-dark-subtle rounded-top py-4">
                                     <div class="gallery-product">
-                                        <img src="../assets/images/products/img-9-1.png" alt=""
+                                        <img src="<?=base_url()?>public/assets/images/products/img-9-1.png" alt=""
                                             style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                     </div>
                                 </div>
@@ -760,7 +760,7 @@
                             <div class="card overflow-hidden">
                                 <div class="bg-warning-subtle rounded-top py-4">
                                     <div class="gallery-product">
-                                        <img src="../assets/images/products/img-10-1.png" alt=""
+                                        <img src="<?=base_url()?>public/assets/images/products/img-10-1.png" alt=""
                                             style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                     </div>
                                 </div>
@@ -792,7 +792,7 @@
                             <div class="card overflow-hidden">
                                 <div class="bg-primary-subtle rounded-top py-4">
                                     <div class="gallery-product">
-                                        <img src="../assets/images/products/img-11-1.png" alt=""
+                                        <img src="<?=base_url()?>public/assets/images/products/img-11-1.png" alt=""
                                             style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                     </div>
                                 </div>
@@ -824,7 +824,7 @@
                             <div class="card overflow-hidden">
                                 <div class="bg-danger-subtle rounded-top py-4">
                                     <div class="gallery-product">
-                                        <img src="../assets/images/products/img-12.png" alt=""
+                                        <img src="<?=base_url()?>public/assets/images/products/img-12.png" alt=""
                                             style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                     </div>
                                 </div>
@@ -856,7 +856,7 @@
                             <div class="card overflow-hidden">
                                 <div class="bg-secondary-subtle rounded-top py-4">
                                     <div class="gallery-product">
-                                        <img src="../assets/images/products/img-14-1.png" alt=""
+                                        <img src="<?=base_url()?>public/assets/images/products/img-14-1.png" alt=""
                                             style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                     </div>
                                 </div>
@@ -926,7 +926,7 @@
                                 </div>
                                 <div class="pt-4">
                                     <div class="d-flex align-items-center mt-4 pt-1">
-                                        <img src="../assets/images/users/avatar-2-1.jpg" alt=""
+                                        <img src="<?=base_url()?>public/assets/images/users/avatar-2-1.jpg" alt=""
                                             class="avatar-sm rounded" />
                                         <div class="flex-grow-1 ms-3">
                                             <h5 class="mb-2 fs-16">George Obrien</h5>
@@ -948,7 +948,7 @@
                                 </div>
                                 <div class="pt-4">
                                     <div class="d-flex align-items-center mt-4 pt-1">
-                                        <img src="../assets/images/users/avatar-7-1.jpg" alt=""
+                                        <img src="<?=base_url()?>public/assets/images/users/avatar-7-1.jpg" alt=""
                                             class="avatar-sm rounded" />
                                         <div class="flex-grow-1 ms-3">
                                             <h5 class="mb-2 fs-16">Chadwick A. Scott</h5>
@@ -971,7 +971,7 @@
                                 </div>
                                 <div class="pt-4">
                                     <div class="d-flex align-items-center mt-4 pt-1">
-                                        <img src="../assets/images/users/avatar-8-1.jpg" alt=""
+                                        <img src="<?=base_url()?>public/assets/images/users/avatar-8-1.jpg" alt=""
                                             class="avatar-sm rounded" />
                                         <div class="flex-grow-1 ms-3">
                                             <h5 class="mb-2 fs-16">Tommy Moreno</h5>
@@ -992,7 +992,7 @@
                                 </div>
                                 <div class="pt-4">
                                     <div class="d-flex align-items-center mt-4 pt-1">
-                                        <img src="../assets/images/users/avatar-10-1.jpg" alt=""
+                                        <img src="<?=base_url()?>public/assets/images/users/avatar-10-1.jpg" alt=""
                                             class="avatar-sm rounded" />
                                         <div class="flex-grow-1 ms-3">
                                             <h5 class="mb-2 fs-16">Mary Atkinson</h5>
@@ -1013,7 +1013,7 @@
             <div class="col">
                 <div class="client-images">
                     <a href="#!">
-                        <img src="../assets/images/clients/paypal.svg" alt="client-img"
+                        <img src="<?=base_url()?>public/assets/images/clients/paypal.svg" alt="client-img"
                             class="mx-auto img-fluid d-block" />
                     </a>
                 </div>
@@ -1021,7 +1021,7 @@
             <div class="col">
                 <div class="client-images">
                     <a href="#!">
-                        <img src="../assets/images/clients/walmart.svg" alt="client-img"
+                        <img src="<?=base_url()?>public/assets/images/clients/walmart.svg" alt="client-img"
                             class="mx-auto img-fluid d-block" />
                     </a>
                 </div>
@@ -1029,7 +1029,7 @@
             <div class="col">
                 <div class="client-images">
                     <a href="#!">
-                        <img src="../assets/images/clients/spotify.svg" alt="client-img"
+                        <img src="<?=base_url()?>public/assets/images/clients/spotify.svg" alt="client-img"
                             class="mx-auto img-fluid d-block" />
                     </a>
                 </div>
@@ -1037,7 +1037,7 @@
             <div class="col">
                 <div class="client-images">
                     <a href="#!">
-                        <img src="../assets/images/clients/shopify.svg" alt="client-img"
+                        <img src="<?=base_url()?>public/assets/images/clients/shopify.svg" alt="client-img"
                             class="mx-auto img-fluid d-block" />
                     </a>
                 </div>
@@ -1045,7 +1045,7 @@
             <div class="col">
                 <div class="client-images">
                     <a href="#!">
-                        <img src="../assets/images/clients/lenovo.svg" alt="client-img"
+                        <img src="<?=base_url()?>public/assets/images/clients/lenovo.svg" alt="client-img"
                             class="mx-auto img-fluid d-block" />
                     </a>
                 </div>
@@ -1073,7 +1073,7 @@
         <div class="row mt-5">
             <div class="col-lg-4">
                 <div class="card overflow-hidden">
-                    <img src="../assets/images/small/img-3.jpg" class="img-fluid" alt="" />
+                    <img src="<?=base_url()?>public/assets/images/small/img-3.jpg" class="img-fluid" alt="" />
                     <div class="card-body">
                         <div class="entry-meta">
                             <a href="#!" class="text-muted">12 <i class="mdi mdi-like"></i> Like</a>
@@ -1104,7 +1104,7 @@
 
             <div class="col-lg-4">
                 <div class="card overflow-hidden">
-                    <img src="../assets/images/small/img-8.jpg" class="img-fluid" alt="" />
+                    <img src="<?=base_url()?>public/assets/images/small/img-8.jpg" class="img-fluid" alt="" />
                     <div class="card-body">
                         <div class="entry-meta">
                             <a href="#!" class="text-muted">24 <i class="mdi mdi-like"></i> Like</a>
@@ -1135,7 +1135,7 @@
 
             <div class="col-lg-4">
                 <div class="card overflow-hidden">
-                    <img src="../assets/images/small/img-6.jpg" class="img-fluid" alt="" />
+                    <img src="<?=base_url()?>public/assets/images/small/img-6.jpg" class="img-fluid" alt="" />
                     <div class="card-body">
                         <div class="entry-meta">
                             <a href="#!" class="text-muted">48 <i class="mdi mdi-like"></i> Like</a>
@@ -1194,7 +1194,7 @@
             <div class="col">
                 <div class="insta-img">
                     <a href="#!" class="stretched-link">
-                        <img src="../assets/images/ecommerce/instagram/img-1.jpg" class="img-fluid" alt="" />
+                        <img src="<?=base_url()?>public/assets/images/ecommerce/instagram/img-1.jpg" class="img-fluid" alt="" />
                         <i class="ri-instagram-line"></i>
                     </a>
                 </div>
@@ -1203,7 +1203,7 @@
             <div class="col">
                 <div class="insta-img">
                     <a href="#!" class="stretched-link">
-                        <img src="../assets/images/ecommerce/instagram/img-2.jpg" class="img-fluid" alt="" />
+                        <img src="<?=base_url()?>public/assets/images/ecommerce/instagram/img-2.jpg" class="img-fluid" alt="" />
                         <i class="ri-instagram-line"></i>
                     </a>
                 </div>
@@ -1212,7 +1212,7 @@
             <div class="col d-none d-md-block">
                 <div class="insta-img">
                     <a href="#!" class="stretched-link">
-                        <img src="../assets/images/ecommerce/instagram/img-3.jpg" class="img-fluid" alt="" />
+                        <img src="<?=base_url()?>public/assets/images/ecommerce/instagram/img-3.jpg" class="img-fluid" alt="" />
                         <i class="ri-instagram-line"></i>
                     </a>
                 </div>
@@ -1221,7 +1221,7 @@
             <div class="col d-none d-md-block">
                 <div class="insta-img">
                     <a href="#!" class="stretched-link">
-                        <img src="../assets/images/ecommerce/instagram/img-4.jpg" class="img-fluid" alt="" />
+                        <img src="<?=base_url()?>public/assets/images/ecommerce/instagram/img-4.jpg" class="img-fluid" alt="" />
                         <i class="ri-instagram-line"></i>
                     </a>
                 </div>
@@ -1229,7 +1229,7 @@
             <div class="col d-none d-lg-block">
                 <div class="insta-img">
                     <a href="#!" class="stretched-link">
-                        <img src="../assets/images/ecommerce/instagram/img-5.jpg" class="img-fluid" alt="" />
+                        <img src="<?=base_url()?>public/assets/images/ecommerce/instagram/img-5.jpg" class="img-fluid" alt="" />
                         <i class="ri-instagram-line"></i>
                     </a>
                 </div>
@@ -1237,7 +1237,7 @@
             <div class="col d-none d-lg-block">
                 <div class="insta-img">
                     <a href="#!" class="stretched-link">
-                        <img src="../assets/images/ecommerce/instagram/img-6.jpg" class="img-fluid" alt="" />
+                        <img src="<?=base_url()?>public/assets/images/ecommerce/instagram/img-6.jpg" class="img-fluid" alt="" />
                         <i class="ri-instagram-line"></i>
                     </a>
                 </div>

@@ -10,22 +10,22 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
     <meta content="Themesbrand" name="author">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?=base_url()?>/assets_admin/images/favicon.ico">
+    <link rel="shortcut icon" href="<?=base_url()?>public/assets_admin/images/favicon.ico">
 
     <!-- Layout config Js -->
-    <script src="<?=base_url()?>/assets_admin/js/layout.js"></script>
+    <script src="<?=base_url()?>public/assets_admin/js/layout.js"></script>
     <!-- Bootstrap Css -->
-    <link href="<?=base_url()?>/assets_admin/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url()?>public/assets_admin/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <!-- Icons Css -->
-    <link href="<?=base_url()?>/assets_admin/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url()?>public/assets_admin/css/icons.min.css" rel="stylesheet" type="text/css">
     <!-- App Css-->
-    <link href="<?=base_url()?>/assets_admin/css/app.min.css" rel="stylesheet" type="text/css">
-    <link href="<?=base_url()?>/assets_admin/css/custom.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url()?>public/assets_admin/css/app.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url()?>public/assets_admin/css/custom.min.css" rel="stylesheet" type="text/css">
     <?require_once(APPPATH . 'views/inc/main_css.php');?>
     <?php
         if(!empty($header_asset_link)){
             foreach($header_asset_link as $link){
-                echo "<link href='".base_url().$link."' rel='stylesheet' type='text/css'>";
+                echo "<link href='".base_url().'public/'.$link."' rel='stylesheet' type='text/css'>";
             }
         }
 

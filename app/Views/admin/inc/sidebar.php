@@ -5,19 +5,19 @@
         <!-- Dark Logo-->
         <a href="index.html" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="assets_admin/images/logo-sm.png" alt="" height="22">
+                <img src="<?=base_url()?>public/assets_admin/images/logo-sm.png" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="assets_admin/images/logo-dark.png" alt="" height="17">
+                <img src="<?=base_url()?>public/assets_admin/images/logo-dark.png" alt="" height="17">
             </span>
         </a>
         <!-- Light Logo-->
         <a href="index.html" class="logo logo-light">
             <span class="logo-sm">
-                <img src="assets_admin/images/logo-sm.png" alt="" height="22">
+                <img src="<?=base_url()?>public/assets_admin/images/logo-sm.png" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="assets_admin/images/logo-light.png" alt="" height="17">
+                <img src="<?=base_url()?>public/assets_admin/images/logo-light.png" alt="" height="17">
             </span>
         </a>
         <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -30,7 +30,7 @@
         <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown" data-bs-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             <span class="d-flex align-items-center gap-2">
-                <img class="rounded header-profile-user" src="assets_admin/images/users/avatar-1.jpg"
+                <img class="rounded header-profile-user" src="<?=base_url()?>public/assets_admin/images/users/avatar-1.jpg"
                     alt="Header Avatar">
                 <span class="text-start">
                     <span class="d-block fw-medium sidebar-user-name-text">Anna Adame</span>
@@ -82,14 +82,14 @@
 
                 <li class="nav-item ">
                     <a class="nav-link menu-link <?= isset($sidebar['dashboard']) ? 'active' : '' ?>"
-                        href="<?= base_url('admin') ?>">
+                        href="<?=base_url('admin') ?>">
                         <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Dashboard</span>
                     </a>
                 </li>
 
                 <li class="nav-item ">
                     <a class="nav-link menu-link <?= isset($sidebar['categories']) ? 'active' : '' ?>"
-                        href="<?= base_url('admin/categories') ?>">
+                        href="<?=base_url('admin/categories') ?>">
                         <i class="bx bx-category"></i> <span data-key="t-widgets">Categories</span>
                     </a>
                 </li>

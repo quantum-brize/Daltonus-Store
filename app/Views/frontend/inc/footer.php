@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="footer-info">
-                    <img src="../assets/images/logo-light-1.png" alt="" height="28" class="logo-light" />
-                    <img src="../assets/images/logo-dark-1.png" alt="" height="28" class="logo-dark" />
+                    <img src="<?=base_url()?>public/assets/images/logo-light-1.png" alt="" height="28" class="logo-light" />
+                    <img src="<?=base_url()?>public/assets/images/logo-dark-1.png" alt="" height="28" class="logo-dark" />
                     <p class="footer-desc mt-4 mb-2 me-3">
                         Toner provides best fashion experience for both men and women at
                         best pricing. We follow New fashion approach to give best
@@ -99,19 +99,19 @@
                 <div class="text-sm-end d-none d-sm-block">
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item">
-                            <a href="#!"><img src="../assets/images/ecommerce/payment/visa.png" alt=""
+                            <a href="#!"><img src="<?=base_url()?>public/assets/images/ecommerce/payment/visa.png" alt=""
                                     height="30" /></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="#!"><img src="../assets/images/ecommerce/payment/discover.png" alt=""
+                            <a href="#!"><img src="<?=base_url()?>public/assets/images/ecommerce/payment/discover.png" alt=""
                                     height="30" /></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="#!"><img src="../assets/images/ecommerce/payment/american-express-1.png" alt=""
+                            <a href="#!"><img src="<?=base_url()?>public/assets/images/ecommerce/payment/american-express-1.png" alt=""
                                     height="30" /></a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="#!"><img src="../assets/images/ecommerce/payment/paypal.png" alt=""
+                            <a href="#!"><img src="<?=base_url()?>public/assets/images/ecommerce/payment/paypal.png" alt=""
                                     height="30" /></a>
                         </li>
                     </ul>
