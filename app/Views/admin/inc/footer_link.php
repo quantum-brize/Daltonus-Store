@@ -12,7 +12,7 @@
 
 
 
-    <?php require_once(APPPATH . 'views/inc/main_js.php');?>
+    <?php require_once('../../inc/main_js.php');?>
 
     <?php
         if(!empty($footer_asset_link)){
@@ -22,7 +22,7 @@
         }
         if(!empty($footer_link)){
             foreach($footer_link as $link){
-                require_once(APPPATH . 'views/admin/inc/js/'.$link);
+                require_once('js/'.$link);
             }
         }
     ?>
