@@ -12,7 +12,7 @@
 
 
 
-    <?php require_once('../../inc/main_js.php');?>
+    <?php //require_once('../../inc/main_js.php');?>
 
     <?php
         if(!empty($footer_asset_link)){
