@@ -35,9 +35,22 @@
             }
         }
     ?>
-
+    <style>
+        #alert {
+            position: fixed;
+            top: 10px;
+            z-index: 10000;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 0px;
+        }
+    </style>
 
 </head>
 
 <body>
-    
+<div id="alert">
+
+</div>

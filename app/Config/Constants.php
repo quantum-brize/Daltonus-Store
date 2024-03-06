@@ -137,7 +137,7 @@ defined('DB_TEST_DBDriver') || define('DB_TEST_DBDriver', 'MySQLi');
 //////////////////////////////////////////////__TABLE
 defined('TABLE_USERS')      || define('TABLE_USERS', 'users');
 defined('TABLE_OTP')        || define('TABLE_OTP', 'otp');
-defined('TABLE_CATEGORIES')        || define('TABLE_CATEGORIES', 'categories');
+defined('TABLE_CATEGORIES') || define('TABLE_CATEGORIES', 'categories');
 
 
 //////////////////////////////////////////////__UID_PRIFIX
