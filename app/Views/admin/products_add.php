@@ -28,100 +28,21 @@
                                 <label class="form-label" for="product-title-input">Product Title</label>
                                 <input type="hidden" class="form-control" id="formAction" name="formAction" value="add">
                                 <input type="text" class="form-control d-none" id="product-id-input">
-                                <input type="text" class="form-control" id="product-title-input" value="" placeholder="Enter product title" required="">
+                                <input type="text" class="form-control" id="product-title-input" value=""
+                                    placeholder="Enter product title" required="">
                                 <div class="invalid-feedback">Please Enter a product title.</div>
                             </div>
                             <div>
                                 <label>Product Description</label>
 
                                 <div id="ckeditor-classic">
-                                   
+
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- end card -->
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Product Gallery</h5>
-                        </div>
-                        <div class="card-body">
-                            <div class="mb-4">
-                                <h5 class="fs-14 mb-1">Product Image</h5>
-                                <p class="text-muted">Add Product main Image.</p>
-                                <div class="text-center">
-                                    <div class="position-relative d-inline-block">
-                                        <div class="position-absolute top-100 start-100 translate-middle">
-                                            <label for="product-image-input" class="mb-0" data-bs-toggle="tooltip"
-                                                data-bs-placement="right" title="Select Image">
-                                                <div class="avatar-xs">
-                                                    <div
-                                                        class="avatar-title bg-light border rounded-circle text-muted cursor-pointer">
-                                                        <i class="ri-image-fill"></i>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                            <input class="form-control d-none" value="" id="product-image-input"
-                                                type="file" accept="image/png, image/gif, image/jpeg">
-                                        </div>
-                                        <div class="avatar-lg">
-                                            <div class="avatar-title bg-light rounded">
-                                                <img src="" id="product-img" class="avatar-md h-auto">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <h5 class="fs-14 mb-1">Product Gallery</h5>
-                                <p class="text-muted">Add Product Gallery Images.</p>
-
-                                <div class="dropzone">
-                                    <div class="fallback">
-                                        <input name="file" type="file" multiple="multiple">
-                                    </div>
-                                    <div class="dz-message needsclick">
-                                        <div class="mb-3">
-                                            <i class="display-4 text-muted ri-upload-cloud-2-fill"></i>
-                                        </div>
-
-                                        <h5>Drop files here or click to upload.</h5>
-                                    </div>
-                                </div>
-
-                                <ul class="list-unstyled mb-0" id="dropzone-preview">
-                                    <li class="mt-2" id="dropzone-preview-list">
-                                        <!-- This is used as the file preview template -->
-                                        <div class="border rounded">
-                                            <div class="d-flex p-2">
-                                                <div class="flex-shrink-0 me-3">
-                                                    <div class="avatar-sm bg-light rounded">
-                                                        <img data-dz-thumbnail="" class="img-fluid rounded d-block"
-                                                            src="#" alt="Product-Image">
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <div class="pt-1">
-                                                        <h5 class="fs-14 mb-1" data-dz-name="">&nbsp;</h5>
-                                                        <p class="fs-13 text-muted mb-0" data-dz-size=""></p>
-                                                        <strong class="error text-danger"
-                                                            data-dz-errormessage=""></strong>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-shrink-0 ms-3">
-                                                    <button data-dz-remove=""
-                                                        class="btn btn-sm btn-danger">Delete</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <!-- end dropzon-preview -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end card -->
 
                     <div class="card">
                         <div class="card-header">
@@ -164,15 +85,8 @@
                                     <!-- end row -->
 
                                     <div class="row">
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="mb-3">
-                                                <label class="form-label" for="stocks-input">Stocks</label>
-                                                <input type="text" class="form-control" id="stocks-input"
-                                                    placeholder="Stocks" required="">
-                                                <div class="invalid-feedback">Please Enter a product stocks.</div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
+
+                                        <div class="col-lg-6 ">
                                             <div class="mb-3">
                                                 <label class="form-label" for="product-price-input">Price</label>
                                                 <div class="input-group has-validation mb-3">
@@ -185,7 +99,7 @@
 
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-sm-6">
+                                        <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label class="form-label" for="product-discount-input">Discount</label>
                                                 <div class="input-group mb-3">
@@ -194,14 +108,6 @@
                                                         placeholder="Enter discount" aria-label="discount"
                                                         aria-describedby="product-discount-addon">
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="mb-3">
-                                                <label class="form-label" for="orders-input">Orders</label>
-                                                <input type="text" class="form-control" id="orders-input"
-                                                    placeholder="Orders" required="">
-                                                <div class="invalid-feedback">Please Enter a product orders.</div>
                                             </div>
                                         </div>
                                         <!-- end col -->
@@ -246,9 +152,7 @@
                         <!-- end card body -->
                     </div>
                     <!-- end card -->
-                    <div class="text-end mb-3">
-                        <button class="btn btn-success w-sm" id="product_add_btn">Submit</button>
-                    </div>
+
                 </div>
                 <!-- end col -->
 
@@ -328,7 +232,7 @@
                             <div class="hstack gap-3 align-items-start">
                                 <div class="flex-grow-1">
                                     <input class="form-control" data-choices="" data-choices-multiple-remove="true"
-                                        placeholder="Enter tags" type="text" value="Cotton">
+                                        placeholder="Enter tags" type="text" value="">
                                 </div>
                             </div>
                         </div>
@@ -336,18 +240,6 @@
                     </div>
                     <!-- end card -->
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Product Short Description</h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="text-muted mb-2">Add short description for product</p>
-                            <textarea class="form-control" placeholder="Must enter minimum of a 100 characters"
-                                rows="3"></textarea>
-                        </div>
-                        <!-- end card body -->
-                    </div>
-                    <!-- end card -->
 
                 </div>
                 <!-- end col -->
@@ -355,7 +247,9 @@
             <!-- end row -->
 
         </div>
-
+        <div class="text-start mb-3">
+            <button class="btn btn-success w-sm" id="product_add_btn">Submit</button>
+        </div>
     </div>
     <!-- container-fluid -->
 </div>

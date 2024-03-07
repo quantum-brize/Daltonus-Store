@@ -859,7 +859,7 @@
                         <button type="button" class="btn material-shadow-none" id="page-header-user-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="d-flex align-items-center">
-                                <img class="rounded-circle header-profile-user" src="<?=base_url()?><?=base_url()?>public/assets_admin/images/users/avatar-1.jpg"
+                                <img class="rounded-circle header-profile-user" src="<?=base_url()?><?=base_url()?>public/assets/images/users/avatar-1.jpg"
                                     alt="Header Avatar" />
                                 <span class="text-start ms-xl-2">
                                     <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Anna

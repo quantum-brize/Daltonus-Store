@@ -3,15 +3,16 @@
 namespace App\Controllers\Api;
 
 use App\Models\CategoriesModel;
+use App\Models\CommonModel;
 
 class Category_Controller extends Api_Controller
 {
     public function index(): void
     {
-        echo 'api';
+        echo 'CATEGORY';
     }
 
-    private function getCategoriesTree($parent_id = null, &$visited = [])
+    private function getCategoriesTree($parent_id)
     {
         $categoriesModel = new CategoriesModel();
         $categories = $parent_id == null ? $categoriesModel->findAll() : $categoriesModel->where('parent_id', $parent_id)->findAll();
@@ -19,13 +20,8 @@ class Category_Controller extends Api_Controller
         $result = [];
 
         foreach ($categories as $category) {
-            // Skip if the category has already been visited
-            if (in_array($category['uid'], $visited)) {
-                continue;
-            }
 
-            $visited[] = $category['uid'];
-            $subcategories = $this->getCategoriesTree($category['uid'], $visited);
+            $subcategories = $this->getCategoriesTree($category['uid']);
 
             // Include only top-level categories that have subcategories
             if ($parent_id === null && !empty($subcategories)) {
@@ -46,6 +42,8 @@ class Category_Controller extends Api_Controller
         return $result;
     }
 
+
+
     private function getCategory($parent_id = null)
     {
         $categoriesModel = new CategoriesModel();
@@ -53,36 +51,39 @@ class Category_Controller extends Api_Controller
         return $categories;
     }
 
-    private function addCategory($parent_id,$category_name){
+    private function addCategory($parent_id, $category_name)
+    {
         $data = [
             'uid' => $this->generate_uid(UID_CATEGORY),
             'name' => $category_name,
-            'parent_id'=>!empty($parent_id) ? $parent_id : ''
+            'parent_id' => !empty($parent_id) ? $parent_id : ''
         ];
         $categoriesModel = new CategoriesModel();
         $add = $categoriesModel->insert($data);
-        if($add){
+        if ($add) {
             return $data;
-        }else{
+        } else {
             return $data;
         }
     }
 
-    private function deleteCategory($category_id){
-        
+    private function deleteCategory($category_id)
+    {
+
 
         $categoriesModel = new CategoriesModel();
         $categoriesModel->where('parent_id', $category_id)->delete();
         $deleted = $categoriesModel->where('uid', $category_id)->delete();
-      
+
         return $deleted;
 
     }
 
 
-    private function updateCategory($category_id,$name){
+    private function updateCategory($category_id, $name)
+    {
 
-        $categoriesModel = new CategoriesModel();     
+        $categoriesModel = new CategoriesModel();
         $category = $categoriesModel->where('uid', $category_id)->first();
         if ($category) {
             // Update the properties of the loaded record
@@ -99,10 +100,11 @@ class Category_Controller extends Api_Controller
 
 
 
-    public function POST_delete_category(){
+    public function POST_delete_category()
+    {
         $category_id = $this->request->getPost('category_id');
         $delete = $this->deleteCategory($category_id);
-        $response =[
+        $response = [
             'status' => $delete,
             'message' => $delete ? 'categories deletd' : 'categories not deletd',
         ];
@@ -111,11 +113,12 @@ class Category_Controller extends Api_Controller
 
 
 
-    public function POST_add_category(){
-        $parent_id = !empty($this->request->getPost('parent_id'))? $this->request->getPost('parent_id'): null;
-        $category_name = !empty($this->request->getPost('category_name'))? $this->request->getPost('category_name'): null;
-        $addData = $this->addCategory($parent_id,$category_name);
-        $response =[
+    public function POST_add_category()
+    {
+        $parent_id = !empty($this->request->getPost('parent_id')) ? $this->request->getPost('parent_id') : null;
+        $category_name = !empty($this->request->getPost('category_name')) ? $this->request->getPost('category_name') : null;
+        $addData = $this->addCategory($parent_id, $category_name);
+        $response = [
             'status' => !empty($addData),
             'message' => !empty($addData) ? 'categories added' : 'categories not added',
             'data' => $addData
@@ -123,11 +126,12 @@ class Category_Controller extends Api_Controller
         return $this->response->setJSON($response);
     }
 
-    public function POST_update_category(){
+    public function POST_update_category()
+    {
         $category_id = $this->request->getPost('category_id');
         $name = $this->request->getPost('name');
-        $update = $this->updateCategory($category_id,$name);
-        $response =[
+        $update = $this->updateCategory($category_id, $name);
+        $response = [
             'status' => $update,
             'message' => $update ? 'categories updated' : 'categories not updated',
         ];
@@ -137,9 +141,9 @@ class Category_Controller extends Api_Controller
 
     public function GET_category()
     {
-        $parent_id = !empty($this->request->getGet('parent_id'))? $this->request->getGet('parent_id'): null;
+        $parent_id = !empty($this->request->getGet('parent_id')) ? $this->request->getGet('parent_id') : null;
         $category = $this->getCategory($parent_id);
-        $response =[
+        $response = [
             'status' => !empty($category),
             'message' => !empty($category) ? 'categories found' : 'categories not found',
             'data' => !empty($category) ? $category : null
@@ -149,15 +153,16 @@ class Category_Controller extends Api_Controller
 
     public function GET_categories()
     {
-        
+
         $visited = [];
-        $categoriesTree = $this->getCategoriesTree(null, $visited);
-        $response =[
+        $categoriesTree = $this->getCategoriesTree(null);
+        $response = [
             'status' => !empty($categoriesTree),
             'message' => !empty($categoriesTree) ? 'categories found' : 'categories not found',
             'data' => !empty($categoriesTree) ? $categoriesTree : null
         ];
-
+        $CommonModel = new CommonModel();
+        $data = $CommonModel->customQuery('SELECT * FROM `categories`');
         return $this->response->setJSON($response);
     }
 

@@ -327,7 +327,7 @@
 
     function save_category(category_id, input_id, save_btn_id) {
         $.ajax({
-            url: '/api/category/update',
+            url: '<?=base_url('/api/category/update')?>',
             type: 'POST',
             data: {
                 category_id: category_id,

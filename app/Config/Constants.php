@@ -124,8 +124,8 @@ define('EVENT_PRIORITY_HIGH', 10);
 
 
 //////////////////////////////////////////////__URL
-defined('BASE_URL') || define('BASE_URL', 'https://daltonusstore.com' );
-//defined('BASE_URL') || define('BASE_URL', 'http://localhost/Daltonus-Store' );
+//defined('BASE_URL') || define('BASE_URL', 'https://daltonusstore.com' );
+defined('BASE_URL') || define('BASE_URL', 'http://localhost/Daltonus-Store' );
 
 
 //////////////////////////////////////////////__DATABASE

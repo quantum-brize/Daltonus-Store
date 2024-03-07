@@ -40,14 +40,16 @@ class Product_Controller extends Admin_Controller{
     }
 
     
-    public function product_add(){
+    public function load_product_add(){
         $data = PAGE_DATA_ADMIN;
         $data = [
             'data_page' => [],
             'data_header' => [
                 'header_link' => ['products_add_css.php'],
                 'header_asset_link' => [
-                    'assets_admin/libs/dropzone/dropzone.css'
+                    'assets_admin/libs/dropzone/dropzone.css',
+                    'assets_admin/libs/filepond/filepond.min.css',
+                    'assets_admin/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css',
                 ],
                 'title' => 'Products | Add',
                 'header' => [],
@@ -61,7 +63,11 @@ class Product_Controller extends Admin_Controller{
                     'assets_admin/libs/dropzone/dropzone-min.js',
                     'assets_admin/js/pages/ecommerce-product-create.init.js',
                     'assets_admin/js/app.js',
-
+                    'assets_admin/libs/filepond/filepond.min.js',
+                    'assets_admin/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js',
+                    'assets_admin/libs/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js',
+                    'assets_admin/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js',
+                    'assets_admin/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js'
                 ],
                 'footer' => [],
                 'site' => 'admin'
