@@ -31,6 +31,7 @@ class Product_Controller extends Api_Controller
 
         $data = [];
         $product_data = $this->add_product($data);
+        $this->prd($this->request->getPost());
         $response = [
             'status' => !empty($product_data),
             'message' => !empty($product_data) ? 'product added' : 'cannot not add product',

@@ -12,8 +12,20 @@
 
 
     $('#product_add_btn').on('click', function () {
-        let title = $('#product-title-input').val()
-        let details = editor.getData()
+        let title               = $('#product-title-input').val()
+        let details             = editor.getData()
+        let categoryId          = $('#choices-category-input').val()
+        let publishDate         = $('#datepicker-publish-input').val()
+        let productTags         = $('#product-tags-input').val()
+        let visibility          = $('#choices-publish-visibility-input').val()
+        let status              = $('#choices-publish-status-input').val()
+        let manufacturerName    = $('#manufacturer-name-input').val()
+        let manufacturerBrand   = $('#manufacturer-brand-input').val()
+        let metaTitle           = $('#meta-title-input').val()
+        let metaKeywords        = $('#meta-keywords-input').val()
+        let metaDescription     = $('#meta-description-input').val()
+        let price               = $('#product-price-input').val()
+        let discount            = $('#product-discount-input').val()
 
         // if(title.length < 1){
         //     $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
@@ -47,7 +59,7 @@
 
             },
             success: function (resp) {
-
+                console.log(resp)
             },
             error: function (err) {
                 console.log(err)

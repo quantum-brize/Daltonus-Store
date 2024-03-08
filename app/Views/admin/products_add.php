@@ -167,9 +167,9 @@
 
                                 <select class="form-select" id="choices-publish-status-input" data-choices=""
                                     data-choices-search-false="">
-                                    <option value="Published" selected="">Published</option>
-                                    <option value="Scheduled">Scheduled</option>
-                                    <option value="Draft">Draft</option>
+                                    <option value="published" selected="">Published</option>
+                                    <option value="scheduled">Scheduled</option>
+                                    <option value="draft">Draft</option>
                                 </select>
                             </div>
 
@@ -177,8 +177,8 @@
                                 <label for="choices-publish-visibility-input" class="form-label">Visibility</label>
                                 <select class="form-select" id="choices-publish-visibility-input" data-choices=""
                                     data-choices-search-false="">
-                                    <option value="Public" selected="">Public</option>
-                                    <option value="Hidden">Hidden</option>
+                                    <option value="public" selected="">Public</option>
+                                    <option value="hidden">Hidden</option>
                                 </select>
                             </div>
                         </div>
@@ -224,7 +224,7 @@
                             <div class="hstack gap-3 align-items-start">
                                 <div class="flex-grow-1">
                                     <input class="form-control" data-choices="" data-choices-multiple-remove="true"
-                                        placeholder="Enter tags" type="text" value="">
+                                        placeholder="Enter tags" type="text" value="" id="product-tags-input">
                                 </div>
                             </div>
                         </div>
