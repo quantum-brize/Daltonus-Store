@@ -345,19 +345,19 @@
                                         aria-expanded="false" data-key="t-grid-view">Grid View</a>
                                     <ul class="dropdown-menu submenu">
                                         <li>
-                                            <a class="nav-link" href="product-grid-defualt.html"
+                                            <a class="nav-link" href="<?= base_url('product-grid-default')?>"
                                                 data-key="t-default">default</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="product-grid-sidebar-banner.html"
+                                            <a class="nav-link" href="<?= base_url('product-grid-sidebar-banner')?>"
                                                 data-key="t-sidebar-with-banner">Sidebar with Banner</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="product-grid-right.html"
+                                            <a class="nav-link" href="<?= base_url('product-grid-right')?>"
                                                 data-key="t-right-sidebar">Right Sidebar</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="product-grid.html" data-key="t-no-sidebar">No
+                                            <a class="nav-link" href="<?= base_url('product-grid')?>" data-key="t-no-sidebar">No
                                                 Sidebar</a>
                                         </li>
                                     </ul>
@@ -367,25 +367,25 @@
                                         aria-expanded="false" data-key="t-list-view">List View</a>
                                     <ul class="dropdown-menu submenu">
                                         <li>
-                                            <a class="nav-link" href="product-list-defualt.html"
+                                            <a class="nav-link" href="<?= base_url('product-list-default')?>"
                                                 data-key="t-default">default</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="product-list-left.html"
+                                            <a class="nav-link" href="<?= base_url('product-list-left')?>"
                                                 data-key="t-left-sidebar">Left Sidebar</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="product-list-right.html"
+                                            <a class="nav-link" href="<?= base_url('product-list-right')?>"
                                                 data-key="t-right-sidebar">Right Sidebar</a>
-                                        </li>
+                                         </li>
                                         <li>
-                                            <a class="nav-link" href="product-list.html" data-key="t-no-sidebar">No
+                                            <a class="nav-link" href="<?= base_url('product-list')?>" data-key="t-no-sidebar">No
                                                 Sidebar</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="product-details.html" data-key="t-product-details">Product
+                                    <a class="nav-link" href="<?= base_url('product-details')?>" data-key="t-product-details">Product
                                         Details</a>
                                 </li>
                             </ul>
@@ -395,7 +395,7 @@
                                 data-key="t-users">Users</a>
                             <ul class="dropdown-menu submenu">
                                 <li>
-                                    <a class="nav-link" href="account.html" data-key="t-my-account">My Account</a>
+                                    <a class="nav-link" href="<?= base_url('users-account')?>" data-key="t-my-account">My Account</a>
                                 </li>
                                 <li>
                                     <a class="nav-link" href="auth-signin-basic.html" data-key="t-sign-in">Sign
@@ -437,17 +437,17 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="products-category.html" class="nav-link" data-key="t-categories">Categories</a>
+                            <a href="<?= base_url('product-category')?>" class="nav-link" data-key="t-categories">Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a href="about-us.html" class="nav-link" data-key="t-about">About</a>
+                            <a href="<?= base_url('about-us')?>" class="nav-link" data-key="t-about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="purchase-guide.html" class="nav-link" data-key="t-purchase-guide">Purchase
+                            <a href="<?= base_url('purchase-guide')?>" class="nav-link" data-key="t-purchase-guide">Purchase
                                 Guide</a>
                         </li>
                         <li class="nav-item">
-                            <a href="terms-conditions.html" class="nav-link" data-key="t-terms-of-service">Terms of
+                            <a href="<?= base_url('terms-conditions')?>" class="nav-link" data-key="t-terms-of-service">Terms of
                                 Service</a>
                         </li>
                         <li class="nav-item">
