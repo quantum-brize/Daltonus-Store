@@ -209,16 +209,8 @@
                         <div class="card-body">
                             <p class="text-muted mb-2"> <a href="#" class="float-end text-decoration-underline">Add
                                     New</a>Select product category</p>
-                            <select class="form-select" id="choices-category-input" name="choices-category-input"
-                                data-choices="" data-choices-search-false="">
-                                <option value="Appliances">Appliances</option>
-                                <option value="Automotive Accessories">Automotive Accessories</option>
-                                <option value="Electronics">Electronics</option>
-                                <option value="Fashion">Fashion</option>
-                                <option value="Furniture">Furniture</option>
-                                <option value="Grocery">Grocery</option>
-                                <option value="Kids">Kids</option>
-                                <option value="Watches">Watches</option>
+                            <select class="form-select" id="choices-category-input" name="choices-category-input" data-choices="" data-choices-search-false="">
+                                
                             </select>
                         </div>
                         <!-- end card body -->

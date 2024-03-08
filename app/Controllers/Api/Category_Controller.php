@@ -96,6 +96,36 @@ class Category_Controller extends Api_Controller
         }
     }
 
+    public function getCategorySingle(){
+        $categoriesModel = new CategoriesModel();
+        $category = $categoriesModel->whereNotIn('parent_id', ['null'])->findAll();
+        return $category;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -163,6 +193,17 @@ class Category_Controller extends Api_Controller
         ];
         $CommonModel = new CommonModel();
         $data = $CommonModel->customQuery('SELECT * FROM `categories`');
+        return $this->response->setJSON($response);
+    }
+
+    public function GET_category_single(){
+
+        $category = $this->getCategorySingle();
+        $response = [
+            'status' => !empty($category),
+            'message' => !empty($category) ? 'categories found' : 'categories not found',
+            'data' => !empty($category) ? $category : null
+        ];
         return $this->response->setJSON($response);
     }
 
