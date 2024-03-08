@@ -21,6 +21,7 @@
         //                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         //                     </div>`)
         // }else{
+        //
         // }
 
         $.ajax({
@@ -28,7 +29,19 @@
             type: "POST",
             data: {
                 title: title,
-
+                details: details,
+                categoryId: categoryId,
+                productTags: productTags,
+                status: status,
+                visibility: visibility,
+                publishDate: publishDate,
+                manufacturerName: manufacturerName,
+                manufacturerBrand: manufacturerBrand,
+                price: price,
+                discount: discount,
+                metaTitle: metaTitle,
+                metaKeywords: metaKeywords,
+                metaDescription: metaDescription
             },
             beforeSend: function () {
 
