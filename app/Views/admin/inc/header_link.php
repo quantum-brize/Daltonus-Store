@@ -21,7 +21,7 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
     <meta content="Themesbrand" name="author">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?= base_url() ?>public/assets_admin/images/favicon.ico">
+    <link rel="shortcut icon" href="<?= base_url() ?>public/assets_admin/images/quamtambrize_logo.jpg">
 
     <!-- Bootstrap Css -->
     <link href="<?= base_url() ?>public/assets_admin/css/bootstrap.min.css" rel="stylesheet" type="text/css">
