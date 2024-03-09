@@ -2,6 +2,10 @@
 
 namespace App\Controllers\Api;
 
+use App\Models\ProductModel;
+use App\Models\ProductItemModel;
+use App\Models\ProductConfigModel;
+use App\Models\CommonModel;
 
 
 class Product_Controller extends Api_Controller
@@ -28,6 +32,9 @@ class Product_Controller extends Api_Controller
             $resp['message'] = 'Set The Price Of Your Product';
         } else if (empty($this->request->getPost('categoryId'))) {
             $resp['message'] = 'Set The Category Of Your Product';
+        }else{
+            
+
         }
 
 

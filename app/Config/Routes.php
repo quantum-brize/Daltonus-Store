@@ -21,12 +21,12 @@ $routes->post('/send-otp',                      'Frontend\Frontend_Controller::s
 $routes->get('/verify-otp',                     'Frontend\Frontend_Controller::load_otp');
 $routes->post('/verify-otp-action',             'Frontend\Frontend_Controller::verify_otp');
 $routes->get('/product/list',                   'Frontend\ProductController::product_list_left');
-$routes->get('/product/details',                 'Frontend\ProductController::product_details');
-$routes->get('/product/category',                'Frontend\ProductController::product_category');
-$routes->get('/users/account',                   'Frontend\Frontend_Controller::account');
-$routes->get('/about-us',                        'Frontend\Frontend_Controller::about_us');
-$routes->get('/purchase-guide',                  'Frontend\Frontend_Controller::purchase_guide');
-$routes->get('/terms-conditions',                 'Frontend\Frontend_Controller::terms_conditions');
+$routes->get('/product/details',                'Frontend\ProductController::product_details');
+$routes->get('/product/category',               'Frontend\ProductController::product_category');
+$routes->get('/users/account',                  'Frontend\Frontend_Controller::account');
+$routes->get('/about-us',                       'Frontend\Frontend_Controller::about_us');
+$routes->get('/purchase-guide',                 'Frontend\Frontend_Controller::purchase_guide');
+$routes->get('/terms-conditions',               'Frontend\Frontend_Controller::terms_conditions');
 
 
 
