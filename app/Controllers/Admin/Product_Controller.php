@@ -29,7 +29,6 @@ class Product_Controller extends Admin_Controller{
                     'assets_admin/libs/wnumb/wNumb.min.js',
                     'assets_admin/libs/gridjs/gridjs.umd.js',
                     'assets_admin/js/pages/ecommerce-product-list.init.js',
-                    'assets_admin/js/app.js',
                 ],
                 'footer' => [],
                 'site' => 'admin'
@@ -46,11 +45,7 @@ class Product_Controller extends Admin_Controller{
             'data_page' => [],
             'data_header' => [
                 'header_link' => ['products_add_css.php'],
-                'header_asset_link' => [
-                    'assets_admin/libs/dropzone/dropzone.css',
-                    'assets_admin/libs/filepond/filepond.min.css',
-                    'assets_admin/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.css',
-                ],
+                'header_asset_link' => [],
                 'title' => 'Products | Add',
                 'header' => [],
                 'sidebar' => ['products'=>true],
@@ -58,17 +53,7 @@ class Product_Controller extends Admin_Controller{
             ],
             'data_footer' => [
                 'footer_link' => ['products_add_js.php'],
-                'footer_asset_link'=> [
-                    'assets_admin/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js',
-                    'assets_admin/libs/dropzone/dropzone-min.js',
-                    'assets_admin/js/pages/ecommerce-product-create.init.js',
-                    'assets_admin/js/app.js',
-                    'assets_admin/libs/filepond/filepond.min.js',
-                    'assets_admin/libs/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js',
-                    'assets_admin/libs/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js',
-                    'assets_admin/libs/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js',
-                    'assets_admin/libs/filepond-plugin-file-encode/filepond-plugin-file-encode.min.js'
-                ],
+                'footer_asset_link'=> ['assets_admin/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js',],
                 'footer' => [],
                 'site' => 'admin'
             ]

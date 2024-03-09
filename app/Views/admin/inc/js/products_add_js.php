@@ -32,9 +32,6 @@
         //                         <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Please Add Product Title
         //                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         //                     </div>`)
-        // }else{
-        //
-        // }
 
         $.ajax({
             url: "<?= base_url('/api/product/add') ?>",

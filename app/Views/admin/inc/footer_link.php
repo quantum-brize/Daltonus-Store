@@ -4,7 +4,6 @@
     <script src="<?=base_url()?>public/assets_admin/libs/node-waves/waves.min.js"></script>
     <script src="<?=base_url()?>public/assets_admin/libs/feather-icons/feather.min.js"></script>
     <script src="<?=base_url()?>public/assets_admin/js/pages/plugins/lord-icon-2.1.0.js"></script>
-    <script src="<?=base_url()?>public/assets_admin/js/plugins.js"></script>
     <!-- App js -->
     <script src="<?=base_url()?>public/assets_admin/js/app.js"></script>
     <!-- jQuery from CDN -->
