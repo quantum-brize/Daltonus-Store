@@ -29,61 +29,11 @@ class Frontend_Controller extends Main_Controller
     {
         $this->load_page('/frontend/terms_conditions', PAGE_DATA_FRONTEND);
     }
-    /**PRODUCT */
-    public function product_grid_default(): void
-    {
-        $this->load_page('/frontend/product/product_grid_default', PAGE_DATA_FRONTEND);
-    }
-
-    public function product_grid_sidebar_banner(): void
-    {
-        $this->load_page('/frontend/product/product_grid_sidebar_banner', PAGE_DATA_FRONTEND);
-    }
-
-    public function product_grid_right(): void
-    {
-        $this->load_page('/frontend/product/product_grid_right', PAGE_DATA_FRONTEND);
-    }
-
-    public function product_grid(): void
-    {
-        $this->load_page('/frontend/product/product_grid', PAGE_DATA_FRONTEND);
-    }
-
-    public function product_list_default(): void
-    {
-        $this->load_page('/frontend/product/product_list_default', PAGE_DATA_FRONTEND);
-    }
-
-    public function product_list_left(): void
-    {
-        $this->load_page('/frontend/product/product_list_left', PAGE_DATA_FRONTEND);
-    }
-
-    public function product_list_right(): void
-    {
-        $this->load_page('/frontend/product/product_list_right', PAGE_DATA_FRONTEND);
-    }
-
-    public function product_list(): void
-    {
-        $this->load_page('/frontend/product/product_list', PAGE_DATA_FRONTEND);
-    }
-
-    public function product_details(): void
-    {
-        $this->load_page('/frontend/product/product_details', PAGE_DATA_FRONTEND);
-    }
-
-    public function product_category(): void
-    {
-        $this->load_page('/frontend/product/products_category', PAGE_DATA_FRONTEND);
-    }
 
     /**USERS */
     public function account(): void
     {
-        $this->load_page('/frontend/users/account', PAGE_DATA_FRONTEND);
+        $this->load_page('/frontend/account', PAGE_DATA_FRONTEND);
     }
 
 

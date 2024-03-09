@@ -340,7 +340,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
                                 data-key="t-products">Products</a>
                             <ul class="dropdown-menu submenu">
-                                <li class="dropdown dropdown-hover">
+                                <!-- <li class="dropdown dropdown-hover">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                                         aria-expanded="false" data-key="t-grid-view">Grid View</a>
                                     <ul class="dropdown-menu submenu">
@@ -361,31 +361,31 @@
                                                 Sidebar</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                                 <li class="dropdown dropdown-hover">
-                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                                    <a href="<?= base_url('product-list')?>" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                                         aria-expanded="false" data-key="t-list-view">List View</a>
                                     <ul class="dropdown-menu submenu">
                                         <li>
-                                            <a class="nav-link" href="<?= base_url('product-list-default')?>"
+                                            <a class="nav-link" href="<?= base_url('product/list')?>"
                                                 data-key="t-default">default</a>
                                         </li>
-                                        <li>
-                                            <a class="nav-link" href="<?= base_url('product-list-left')?>"
+                                        <!-- <li>
+                                            <a class="nav-link" href="<?= base_url('')?>"
                                                 data-key="t-left-sidebar">Left Sidebar</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="<?= base_url('product-list-right')?>"
+                                            <a class="nav-link" href="<?= base_url('')?>"
                                                 data-key="t-right-sidebar">Right Sidebar</a>
                                          </li>
                                         <li>
-                                            <a class="nav-link" href="<?= base_url('product-list')?>" data-key="t-no-sidebar">No
+                                            <a class="nav-link" href="<?= base_url('')?>" data-key="t-no-sidebar">No
                                                 Sidebar</a>
-                                        </li>
+                                        </li> -->
                                     </ul>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="<?= base_url('product-details')?>" data-key="t-product-details">Product
+                                    <a class="nav-link" href="<?= base_url('product/details')?>" data-key="t-product-details">Product
                                         Details</a>
                                 </li>
                             </ul>
@@ -395,7 +395,7 @@
                                 data-key="t-users">Users</a>
                             <ul class="dropdown-menu submenu">
                                 <li>
-                                    <a class="nav-link" href="<?= base_url('users-account')?>" data-key="t-my-account">My Account</a>
+                                    <a class="nav-link" href="<?= base_url('users/account')?>" data-key="t-my-account">My Account</a>
                                 </li>
                                 <li>
                                     <a class="nav-link" href="auth-signin-basic.html" data-key="t-sign-in">Sign
@@ -437,7 +437,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('product-category')?>" class="nav-link" data-key="t-categories">Categories</a>
+                            <a href="<?= base_url('product/category')?>" class="nav-link" data-key="t-categories">Categories</a>
                         </li>
                         <li class="nav-item">
                             <a href="<?= base_url('about-us')?>" class="nav-link" data-key="t-about">About</a>

@@ -20,20 +20,13 @@ $routes->post('/change-password-action',        'Frontend\Frontend_Controller::h
 $routes->post('/send-otp',                      'Frontend\Frontend_Controller::send_otp');
 $routes->get('/verify-otp',                     'Frontend\Frontend_Controller::load_otp');
 $routes->post('/verify-otp-action',             'Frontend\Frontend_Controller::verify_otp');
-$routes->get('/product-grid-default',           'Frontend\Frontend_Controller::product_grid_default');
-$routes->get('/product-grid-sidebar-banner',    'Frontend\Frontend_Controller::product_grid_sidebar_banner');
-$routes->get('/product-grid-right',             'Frontend\Frontend_Controller::product_grid_right');
-$routes->get('/product-grid',                   'Frontend\Frontend_Controller::product_grid');
-$routes->get('/product-list-default',           'Frontend\Frontend_Controller::product_list_default');
-$routes->get('/product-list-left',              'Frontend\Frontend_Controller::product_list_left');
-$routes->get('/product-list-right',             'Frontend\Frontend_Controller::product_list_right');
-$routes->get('/product-list',                   'Frontend\Frontend_Controller::product_list');
-$routes->get('/product-details',                 'Frontend\Frontend_Controller::product_details');
-$routes->get('/product-category',                'Frontend\Frontend_Controller::product_category');
-$routes->get('/users-account',                   'Frontend\Frontend_Controller::account');
+$routes->get('/product/list',                   'Frontend\ProductController::product_list_left');
+$routes->get('/product/details',                 'Frontend\ProductController::product_details');
+$routes->get('/product/category',                'Frontend\ProductController::product_category');
+$routes->get('/users/account',                   'Frontend\Frontend_Controller::account');
 $routes->get('/about-us',                        'Frontend\Frontend_Controller::about_us');
 $routes->get('/purchase-guide',                  'Frontend\Frontend_Controller::purchase_guide');
-$routes->get('/terms-conditions',                  'Frontend\Frontend_Controller::terms_conditions');
+$routes->get('/terms-conditions',                 'Frontend\Frontend_Controller::terms_conditions');
 
 
 
