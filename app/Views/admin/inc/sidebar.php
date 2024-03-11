@@ -132,6 +132,36 @@
                         <i class="ri ri-survey-line"></i> <span data-key="t-widgets">Orders</span>
                     </a>
                 </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link <?= isset($sidebar['users']) ? 'active' : '' ?>" 
+                        href="#sidebarUser" 
+                        data-bs-toggle="collapse" 
+                        role="button"
+                        aria-expanded="<?= isset($sidebar['users']) ? 'true' : 'false' ?>" 
+                        aria-controls="sidebarUser">
+                        <i class="bx bx-user"></i> 
+                        <span>Users</span>
+                    </a>
+                    <div class="<?= isset($sidebar['users']) ? '' : 'collapse' ?> menu-dropdown" id="sidebarUser">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="<?=base_url('/admin/users/customers')?>" class="nav-link"> 
+                                    Customers
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?=base_url('/admin/users/vendors')?>" class="nav-link">
+                                    Vendors
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </li>
+
+
             </ul>
         </div>
         <!-- Sidebar -->

@@ -40,6 +40,9 @@ $routes->get('/admin/products',                 'Admin\Product_Controller::index
 $routes->get('/admin/products/add',             'Admin\Product_Controller::load_product_add');
 $routes->get('/admin/orders',                   'Admin\Orders_Controller::index');
 
+$routes->get('/admin/users/customers',          'Admin\Orders_Controller::index');
+$routes->get('/admin/users/vendors',            'Admin\Orders_Controller::index');
+
 
 
 // Api Routes
