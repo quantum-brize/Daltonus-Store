@@ -38,6 +38,7 @@ $routes->post('/admin/login-action',            'Admin\Admin_Controller::handle_
 $routes->get('/admin/categories',               'Admin\Category_Controller::index');
 $routes->get('/admin/products',                 'Admin\Product_Controller::index');
 $routes->get('/admin/products/add',             'Admin\Product_Controller::load_product_add');
+$routes->get('/admin/orders',                   'Admin\Orders_Controller::index');
 
 
 

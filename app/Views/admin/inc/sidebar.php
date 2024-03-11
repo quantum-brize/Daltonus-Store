@@ -124,8 +124,14 @@
                         </ul>
                     </div>
 
-                </li> <!-- end Dashboard Menu -->
+                </li> 
 
+                <li class="nav-item ">
+                    <a class="nav-link menu-link <?= isset($sidebar['orders']) ? 'active' : '' ?>"
+                        href="<?=base_url('admin/orders') ?>">
+                        <i class="ri ri-survey-line"></i> <span data-key="t-widgets">Orders</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
