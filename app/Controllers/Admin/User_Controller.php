@@ -4,13 +4,7 @@ use App\Controllers\Admin\Admin_Controller;
 
 class User_Controller extends Admin_Controller{
 
-    public function index(){
-       return 'users';
-    }
-
-    
-
-    public function load_customer(){
+    public function index(): void{
         $data = PAGE_DATA_ADMIN;
         $data = [
             'data_page' => [],
@@ -31,6 +25,29 @@ class User_Controller extends Admin_Controller{
         $this->isAuth('/admin/customers',$data);
     }
 
+    
+
+    public function load_customer(){
+        $data = PAGE_DATA_ADMIN;
+        $data = [
+            'data_page' => [],
+            'data_header' => [
+                'header_link' => ['customer_css.php'],
+                'title' => 'Customer',
+                'header' => [],
+                'sidebar' => ['users'=>true],
+                'site' => 'admin'
+            ],
+            'data_footer' => [
+                'footer_link' => ['customer_js.php'],
+                'footer' => [],
+                'site' => 'admin'
+            ]
+        ];
+
+        $this->isAuth('/admin/customers',$data);
+    }
+
     public function load_vendor(){
         $data = PAGE_DATA_ADMIN;
         $data = [
@@ -39,7 +56,7 @@ class User_Controller extends Admin_Controller{
                 'header_link' => ['vendor_css.php'],
                 'title' => 'Vendor',
                 'header' => [],
-                'sidebar' => ['vendor'=>true],
+                'sidebar' => ['users'=>true],
                 'site' => 'admin'
             ],
             'data_footer' => [
@@ -49,7 +66,7 @@ class User_Controller extends Admin_Controller{
             ]
         ];
 
-        $this->isAuth('/admin/vendor',$data);
+        $this->isAuth('/admin/vendors',$data);
     }
  
 

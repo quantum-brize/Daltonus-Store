@@ -8,11 +8,11 @@ use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\UsersModel;
 use App\Models\OtpModel;
 
-class ProductController extends Main_Controller
+class Product_Controller extends Main_Controller
 {
-    public function product_list_left(): void
+    public function product_list(): void
     {
-        $this->load_page('/frontend/product_list_left', PAGE_DATA_FRONTEND);
+        $this->load_page('/frontend/product_list', PAGE_DATA_FRONTEND);
     }
     
     public function product_details(): void

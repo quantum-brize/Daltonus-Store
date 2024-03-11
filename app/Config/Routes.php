@@ -20,9 +20,9 @@ $routes->post('/change-password-action',        'Frontend\Frontend_Controller::h
 $routes->post('/send-otp',                      'Frontend\Frontend_Controller::send_otp');
 $routes->get('/verify-otp',                     'Frontend\Frontend_Controller::load_otp');
 $routes->post('/verify-otp-action',             'Frontend\Frontend_Controller::verify_otp');
-$routes->get('/product/list',                   'Frontend\ProductController::product_list_left');
-$routes->get('/product/details',                'Frontend\ProductController::product_details');
-$routes->get('/product/category',               'Frontend\ProductController::product_category');
+$routes->get('/product/list',                   'Frontend\Product_Controller::product_list');
+$routes->get('/product/details',                'Frontend\Product_Controller::product_details');
+$routes->get('/product/category',               'Frontend\Product_Controller::product_category');
 $routes->get('/users/account',                  'Frontend\Frontend_Controller::account');
 $routes->get('/about-us',                       'Frontend\Frontend_Controller::about_us');
 $routes->get('/purchase-guide',                 'Frontend\Frontend_Controller::purchase_guide');
@@ -39,9 +39,8 @@ $routes->get('/admin/categories',               'Admin\Category_Controller::inde
 $routes->get('/admin/products',                 'Admin\Product_Controller::index');
 $routes->get('/admin/products/add',             'Admin\Product_Controller::load_product_add');
 $routes->get('/admin/orders',                   'Admin\Orders_Controller::index');
-
-$routes->get('/admin/users/customers',          'Admin\Orders_Controller::index');
-$routes->get('/admin/users/vendors',            'Admin\Orders_Controller::index');
+$routes->get('/admin/users/customers',          'Admin\User_Controller::load_customer');
+$routes->get('/admin/users/vendors',            'Admin\User_Controller::load_vendor');
 
 
 
