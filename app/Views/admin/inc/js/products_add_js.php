@@ -27,12 +27,6 @@
         let price               = $('#product-price-input').val()
         let discount            = $('#product-discount-input').val()
 
-        // if(title.length < 1){
-        //     $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
-        //                         <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Please Add Product Title
-        //                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        //                     </div>`)
-
         $.ajax({
             url: "<?= base_url('/api/product/add') ?>",
             type: "POST",
@@ -56,6 +50,14 @@
 
             },
             success: function (resp) {
+                let html = ''
+            
+                html += `<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                            <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>`
+                
+                $('#alert').html(html)
                 console.log(resp)
             },
             error: function (err) {
@@ -72,7 +74,6 @@
             success: function (resp) {
                 let html = '<option value="">Select-category</option>'
                 if (resp.status) {
-                    console.log(resp.data);
                     $.each(resp.data, function (key, val) {
                         html += `<option value="${val.uid}">${val.name}</option>`
                     })

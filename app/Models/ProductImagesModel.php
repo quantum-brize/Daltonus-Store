@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ProductModel extends Model
+class ProductImagesModel extends Model
 {
-    protected $table            = TABLE_PRODUCT;
+    protected $table            = TABLE_PRODUCT_IMAGE;
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';

@@ -47,7 +47,7 @@
     <style>
         #alert {
             position: fixed;
-            top: 10px;
+            top: 80px;
             z-index: 10000;
             width: 100%;
             display: flex;

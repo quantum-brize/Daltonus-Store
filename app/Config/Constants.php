@@ -136,15 +136,25 @@ defined('DB_TEST_database') || define('DB_TEST_database', 'jungleef_DEV_daltonus
 defined('DB_TEST_DBDriver') || define('DB_TEST_DBDriver', 'MySQLi');
 
 //////////////////////////////////////////////__TABLE
-defined('TABLE_USERS')      || define('TABLE_USERS', 'users');
-defined('TABLE_OTP')        || define('TABLE_OTP', 'otp');
-defined('TABLE_CATEGORIES') || define('TABLE_CATEGORIES', 'categories');
+defined('TABLE_USERS')              || define('TABLE_USERS', 'users');
+defined('TABLE_OTP')                || define('TABLE_OTP', 'otp');
+defined('TABLE_CATEGORIES')         || define('TABLE_CATEGORIES', 'categories');
+defined('TABLE_PRODUCT')            || define('TABLE_PRODUCT', 'product');
+defined('TABLE_PRODUCT_METADETALS') || define('TABLE_PRODUCT_METADETALS', 'product_meta_detalis');
+defined('TABLE_PRODUCT_ITEM')       || define('TABLE_PRODUCT_ITEM', 'product_item');
+defined('TABLE_PRODUCT_CONFIG')     || define('TABLE_PRODUCT_CONFIG', 'product_config');
+defined('TABLE_PRODUCT_IMAGE')      || define('TABLE_PRODUCT_IMAGE', 'product_images');
+defined('TABLE_VARIATION')          || define('TABLE_VARIATION', 'variation');
+defined('TABLE_VARIATION_OPTON')    || define('TABLE_VARIATION_OPTON', 'variation_option');
 
 
 //////////////////////////////////////////////__UID_PRIFIX
 defined('UID_USER')         || define('UID_USER', 'USR');
 defined('UID_OTP')          || define('UID_OTP', 'OTP');
 defined('UID_CATEGORY')     || define('UID_CATEGORY', 'CAT');
+defined('UID_PRODUCT')      || define('UID_PRODUCT', 'PRO');
+defined('UID_PRODUCT_ITEM') || define('UID_PRODUCT_ITEM', 'PRI');
+defined('UID_PRODUCT_META') || define('UID_PRODUCT_META', 'PRM');
 
 
 //////////////////////////////////////////////__STATUS

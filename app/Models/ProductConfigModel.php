@@ -6,12 +6,12 @@ use CodeIgniter\Model;
 
 class ProductConfigModel extends Model
 {
-    protected $table            = 'product_config';
+    protected $table            = TABLE_PRODUCT_CONFIG;
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
-    protected $protectFields    = true;
+    protected $protectFields    = false;
     protected $allowedFields    = [];
 
     protected bool $allowEmptyInserts = false;
