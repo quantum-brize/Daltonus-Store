@@ -47,6 +47,8 @@
                 metaDescription: metaDescription
             },
             beforeSend: function () {
+                $('#product_add_btn').html(`<div class="spinner-border" role="status"></div>`)
+                $('#product_add_btn').attr('disabled', true)
 
             },
             success: function (resp) {
@@ -71,6 +73,7 @@
                     $('#meta-description-input').val(``)
                     $('#product-price-input').val(``)
                     $('#product-discount-input').val(``)
+                   
                 }else{
                     html += `<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
                                 <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}
@@ -78,12 +81,16 @@
                             </div>`
                 }
 
-                
+
                 $('#alert').html(html)
                 console.log(resp)
             },
             error: function (err) {
                 console.log(err)
+            },
+            complete: function(){
+                $('#product_add_btn').html(`submit`)
+                $('#product_add_btn').attr('disabled', false)
             }
         })
     })

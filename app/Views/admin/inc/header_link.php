@@ -55,6 +55,9 @@
             justify-content: center;
             left: 0px;
         }
+        /* .simplebar-content{
+            position: fixed;
+        } */
     </style>
     <script>
         sessionStorage.setItem("data-bs-theme", "dark")

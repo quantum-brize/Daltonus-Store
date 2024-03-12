@@ -81,15 +81,55 @@ class Product_Controller extends Api_Controller
 
             $resp['status'] = true;
             $resp['message'] = 'Product added';
-            $resp['data']   = ['product_id' => $produt_data['uid']];
+            $resp['data'] = ['product_id' => $produt_data['uid']];
         }
-
-
-
-
         return $resp;
+    }
+
+    private function products($data)
+    {
+        $resp = [
+            'status' => false,
+            'message' => 'Product not Found',
+            'data' => null
+        ];
+
+        $CommonModel = new CommonModel();
 
 
+        $sql = "SELECT
+                    product.uid AS product_id,
+                    product.name AS name,
+                    product.description AS description,
+                    product.created_at AS created_at,
+                    categories.name AS category,
+                    product_item.price AS base_price,
+                    product_item.discount AS base_discount,
+                    product_item.product_tags AS tags,
+                    product_item.publish_date AS publish_date,
+                    product_item.status AS status,
+                    product_item.visibility AS visibility,
+                    product_item.manufacturer_brand AS manufacturer_brand,
+                    product_item.manufacturer_name AS manufacturer_name,
+                    product_meta_detalis.meta_title,
+                    product_meta_detalis.meta_description,
+                    product_meta_detalis.meta_keywords
+                FROM
+                    product
+                JOIN
+                    product_item ON product.uid = product_item.product_id
+                JOIN
+                    product_meta_detalis ON product.uid = product_meta_detalis.product_id
+                JOIN 
+                    categories ON product.category_id = categories.uid;";
+                    
+        $products = $CommonModel->customQuery($sql);
+
+
+
+
+        $resp["data"] = $products;
+        return $resp;
     }
 
 
@@ -98,6 +138,13 @@ class Product_Controller extends Api_Controller
 
 
 
+    public function GET_product()
+    {
+        $data = $this->request->getGet();
+
+        $resp = $this->products($data);
+        return $this->response->setJSON($resp);
+    }
 
     public function POST_add_product()
     {
