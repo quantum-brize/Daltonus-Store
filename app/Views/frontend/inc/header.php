@@ -276,11 +276,11 @@
                                                     </p>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="address.html" class="nav-link" data-key="t-address">
+                                                    <a href="<?= base_url('address')?>" class="nav-link" data-key="t-address">
                                                         Address</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="track-order.html" class="nav-link"
+                                                    <a href="<?= base_url('track/order')?>" class="nav-link"
                                                         data-key="t-track-order">Track Order</a>
                                                 </li>
                                                 <li class="nav-item">
@@ -534,7 +534,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="contact-us.html" data-key="t-contact">Contact</a>
+                    <a class="nav-link" href="<?= base_url('contact-us')?>" data-key="t-contact">Contact</a>
                 </li>
             </ul>
         </div>

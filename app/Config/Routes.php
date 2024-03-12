@@ -31,6 +31,9 @@ $routes->get('/privacy-policy',                 'Frontend\Frontend_Controller::p
 $routes->get('/faq',                            'Frontend\Frontend_Controller::faq');
 $routes->get('/invoice',                        'Frontend\Order_Controller::invoice');
 $routes->get('/order/success',                  'Frontend\Order_Controller::order_success');
+$routes->get('/contact-us',                     'Frontend\Frontend_Controller::contact_us');
+$routes->get('/address',                        'Frontend\Frontend_Controller::address');
+$routes->get('/track/order',                  'Frontend\Order_Controller::track_order');
 
 
 

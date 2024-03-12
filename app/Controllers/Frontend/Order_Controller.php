@@ -15,9 +15,14 @@ class Order_Controller extends Main_Controller
     {
         $this->load_page('/frontend/invoice', PAGE_DATA_FRONTEND);
     }
-    
+
     public function order_success(): void
     {
         $this->load_page('/frontend/order_success', PAGE_DATA_FRONTEND);
+    }
+
+    public function track_order(): void
+    {
+        $this->load_page('/frontend/track_order', PAGE_DATA_FRONTEND);
     }
 }
