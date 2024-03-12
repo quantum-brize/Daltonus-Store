@@ -33,7 +33,7 @@ $routes->get('/invoice',                        'Frontend\Order_Controller::invo
 $routes->get('/order/success',                  'Frontend\Order_Controller::order_success');
 $routes->get('/contact-us',                     'Frontend\Frontend_Controller::contact_us');
 $routes->get('/address',                        'Frontend\Frontend_Controller::address');
-$routes->get('/track/order',                  'Frontend\Order_Controller::track_order');
+$routes->get('/track/order',                    'Frontend\Order_Controller::track_order');
 
 
 
@@ -59,7 +59,7 @@ $routes->get('/api/categories',                 'Api\Category_Controller::GET_ca
 $routes->post('/api/category/add',              'Api\Category_Controller::POST_add_category');
 $routes->post('/api/category/update',           'Api\Category_Controller::POST_update_category');
 $routes->post('/api/category/delete',           'Api\Category_Controller::POST_delete_category');
-$routes->get('/api/product',                   'Api\Product_Controller::GET_product');
+$routes->get('/api/product',                    'Api\Product_Controller::GET_product');
 $routes->post('/api/product/add',               'Api\Product_Controller::POST_add_product');
 
 

@@ -125,10 +125,12 @@ class Product_Controller extends Api_Controller
                     
         $products = $CommonModel->customQuery($sql);
 
+        if(count($products) > 0){
+            $resp["status"] = true;
+            $resp["data"] = $products;
+            $resp["message"] = 'Products Found';
+        }
 
-
-
-        $resp["data"] = $products;
         return $resp;
     }
 
