@@ -30,11 +30,32 @@ class Frontend_Controller extends Main_Controller
         $this->load_page('/frontend/terms_conditions', PAGE_DATA_FRONTEND);
     }
 
+    public function privacy_policy(): void
+    {
+        $this->load_page('/frontend/privacy_policy', PAGE_DATA_FRONTEND);
+    }
+
+    public function faq(): void
+    {
+        $this->load_page('/frontend/faq', PAGE_DATA_FRONTEND);
+    }
+
+    public function contact_us(): void
+    {
+        $this->load_page('/frontend/contact_us', PAGE_DATA_FRONTEND);
+    }
+
     /**USERS */
     public function account(): void
     {
         $this->load_page('/frontend/account', PAGE_DATA_FRONTEND);
     }
+
+    public function address(): void
+    {
+        $this->load_page('/frontend/address', PAGE_DATA_FRONTEND);
+    }
+
 
 
     public function logout()

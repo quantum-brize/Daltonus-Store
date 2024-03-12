@@ -27,6 +27,13 @@ $routes->get('/users/account',                  'Frontend\Frontend_Controller::a
 $routes->get('/about-us',                       'Frontend\Frontend_Controller::about_us');
 $routes->get('/purchase-guide',                 'Frontend\Frontend_Controller::purchase_guide');
 $routes->get('/terms-conditions',               'Frontend\Frontend_Controller::terms_conditions');
+$routes->get('/privacy-policy',                 'Frontend\Frontend_Controller::privacy_policy');
+$routes->get('/faq',                            'Frontend\Frontend_Controller::faq');
+$routes->get('/invoice',                        'Frontend\Order_Controller::invoice');
+$routes->get('/order/success',                  'Frontend\Order_Controller::order_success');
+$routes->get('/contact-us',                     'Frontend\Frontend_Controller::contact_us');
+$routes->get('/address',                        'Frontend\Frontend_Controller::address');
+$routes->get('/track/order',                  'Frontend\Order_Controller::track_order');
 
 
 
