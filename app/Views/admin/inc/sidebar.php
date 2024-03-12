@@ -116,11 +116,6 @@
                                     Add Product
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link">
-                                    Inventory
-                                </a>
-                            </li>
                         </ul>
                     </div>
 

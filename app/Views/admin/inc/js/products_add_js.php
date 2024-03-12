@@ -51,11 +51,33 @@
             },
             success: function (resp) {
                 let html = ''
-            
-                html += `<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
-                            <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>`
+
+                if(resp.status){
+                    html += `<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                <i class="ri-checkbox-circle-fill label-icon"></i>${resp.message}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>`
+                    $('#product-title-input').val(``)
+                    editor.setData(``)
+                    $('#choices-category-input').val(``)
+                    $('#datepicker-publish-input').val(``)
+                    $('#product-tags-input').val(``)
+                    $('#choices-publish-visibility-input').val(``)
+                    $('#choices-publish-status-input').val(``)
+                    $('#manufacturer-name-input').val(``)
+                    $('#manufacturer-brand-input').val(``)
+                    $('#meta-title-input').val(``)
+                    $('#meta-keywords-input').val(``)
+                    $('#meta-description-input').val(``)
+                    $('#product-price-input').val(``)
+                    $('#product-discount-input').val(``)
+                }else{
+                    html += `<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>`
+                }
+
                 
                 $('#alert').html(html)
                 console.log(resp)
