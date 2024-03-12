@@ -19,7 +19,7 @@ class CommonModel extends Model
             return $query->getResult();
         } catch (\Exception $e) {
             // Log or handle the exception as needed
-            return null;
+            return $e;
         }
     }
 }
