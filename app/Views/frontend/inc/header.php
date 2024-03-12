@@ -451,23 +451,24 @@
                                 Service</a>
                         </li>
                         <li class="nav-item">
-                            <a href="privacy-policy.html" class="nav-link" data-key="t-privacy-policy">Privacy
+                            <a href="<?= base_url('privacy-policy')?>" class="nav-link" data-key="t-privacy-policy">Privacy
                                 Policy</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="store-locator.html" class="nav-link" data-key="t-store-locator">Store
                                 Locator</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href="<?= base_url('faq')?>" class="nav-link" data-key="t-faq">FAQ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="ecommerce-faq.html" class="nav-link" data-key="t-faq">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="invoice.html" class="nav-link" data-key="t-invoice">Invoice</a>
+                            <a href="<?= base_url('invoice')?>" class="nav-link" data-key="t-invoice">Invoice</a>
                         </li>
                         <li class="nav-item dropdown dropdown-hover">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-                                data-key="t-email-template">Email Template</a>
-                            <ul class="dropdown-menu submenu">
+                            <a href="<?= base_url('order/success')?>" class="nav-link"
+                                data-key="t-email-template">Order
+                                        Success</a>
+                            <!-- <ul class="dropdown-menu submenu">
                                 <li>
                                     <a class="nav-link" href="email-black-friday.html" data-key="t-black-friday">Black
                                         Friday</a>
@@ -484,14 +485,14 @@
                                     <a class="nav-link" href="email-order-success-2.html"
                                         data-key="t-order-success-2">Order Success 2</a>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="../components/index.html" class="nav-link" target="_blank"
                                 data-key="t-components">Components
                                 <span class="badge bg-danger align-bottom ms-1">1.0</span></a>
-                        </li>
-                        <li class="nav-item dropdown dropdown-hover">
+                        </li> -->
+                        <!-- <li class="nav-item dropdown dropdown-hover">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
                                 data-key="t-multi-level">Multi Level</a>
                             <ul class="dropdown-menu submenu">
@@ -528,7 +529,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
 

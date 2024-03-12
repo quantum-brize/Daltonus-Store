@@ -24,4 +24,6 @@ class Product_Controller extends Main_Controller
     {
         $this->load_page('/frontend/products_category', PAGE_DATA_FRONTEND);
     }
+
+    
 }
