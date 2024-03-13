@@ -564,11 +564,11 @@
     </div>
     <!-- end modal -->
 
-    <a
+    <!-- <a
       href="../backend/index.html"
       class="btn btn-warning position-fixed bottom-0 start-0 m-5 z-3 btn-hover d-none d-lg-block"
       ><i class="bi bi-database align-middle me-1"></i> Backend</a
-    >
+    > -->
 
     <!--start back-to-top-->
     <button
