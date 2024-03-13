@@ -24,11 +24,10 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown dropdown-hover">
-                    <a class="nav-link dropdown-toggle" data-key="t-demos" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Demos
+                    <a class="nav-link dropdown-toggle" data-key="t-demos" href="<?= base_url('/')?>" role="button">
+                        Home
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-md dropdown-menu-center dropdown-menu-list submenu">
+                    <!-- <ul class="dropdown-menu dropdown-menu-md dropdown-menu-center dropdown-menu-list submenu">
                         <li class="nav-item">
                             <a href="index.html" class="nav-link" data-key="t-main-layout">Main Layout</a>
                         </li>
@@ -44,7 +43,7 @@
                             <a href="trend-fashion.html" class="nav-link" data-key="t-trend-fashion">Trend
                                 Fashion</a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <li class="nav-item dropdown dropdown-hover dropdown-mega-full">
                     <a class="nav-link dropdown-toggle" data-key="t-catalog" href="#" role="button"
@@ -995,9 +994,9 @@
 </div>
 <!-- end modal -->
 
-<a href="../backend/index.html"
+<!-- <a href="../backend/index.html"
     class="btn btn-warning position-fixed bottom-0 start-0 m-5 z-3 btn-hover d-none d-lg-block"><i
-        class="bi bi-database align-middle me-1"></i> Backend</a>
+        class="bi bi-database align-middle me-1"></i> Backend</a> -->
 
 <!--start back-to-top-->
 <button onclick="topFunction()" class="btn btn-info btn-icon" style="bottom: 50px" id="back-to-top">
