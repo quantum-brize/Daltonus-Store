@@ -23,7 +23,9 @@ $routes->post('/verify-otp-action',             'Frontend\Frontend_Controller::v
 $routes->get('/product/list',                   'Frontend\Product_Controller::product_list');
 $routes->get('/product/details',                'Frontend\Product_Controller::product_details');
 $routes->get('/product/category',               'Frontend\Product_Controller::product_category');
-$routes->get('/users/account',                  'Frontend\Frontend_Controller::account');
+$routes->get('/user/account',                   'Frontend\Frontend_Controller::account');
+$routes->get('/user/address',                   'Frontend\Frontend_Controller::address');
+$routes->get('/user/cart',                      'Frontend\Product_Controller::cart');
 $routes->get('/about-us',                       'Frontend\Frontend_Controller::about_us');
 $routes->get('/purchase-guide',                 'Frontend\Frontend_Controller::purchase_guide');
 $routes->get('/terms-conditions',               'Frontend\Frontend_Controller::terms_conditions');
@@ -34,11 +36,9 @@ $routes->get('/order/success',                  'Frontend\Order_Controller::orde
 $routes->get('/order/track',                    'Frontend\Order_Controller::track_order');
 $routes->get('/order/history',                  'Frontend\Order_Controller::order_history');
 $routes->get('/contact-us',                     'Frontend\Frontend_Controller::contact_us');
-$routes->get('/address',                        'Frontend\Frontend_Controller::address');
 $routes->get('/payment',                        'Frontend\Order_Controller::payment');
 $routes->get('/review',                         'Frontend\Product_Controller::review');
 $routes->get('/conformation',                   'Frontend\Order_Controller::conformation');
-$routes->get('/cart',                           'Frontend\Product_Controller::cart');
 $routes->get('/wishlist',                       'Frontend\Product_Controller::wishlist');
 
 
