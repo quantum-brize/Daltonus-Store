@@ -30,6 +30,7 @@
     <!-- App Css-->
     <link href="<?= base_url() ?>public/assets_admin/css/app.min.css" rel="stylesheet" type="text/css">
     <link href="<?= base_url() ?>public/assets_admin/css/custom.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.min.css">
     <? //require_once(APPPATH . 'views/inc/main_css.php'); ?>
     <?php
     if (!empty($header_asset_link)) {

@@ -146,6 +146,7 @@ defined('TABLE_PRODUCT_CONFIG')     || define('TABLE_PRODUCT_CONFIG', 'product_c
 defined('TABLE_PRODUCT_IMAGE')      || define('TABLE_PRODUCT_IMAGE', 'product_images');
 defined('TABLE_VARIATION')          || define('TABLE_VARIATION', 'variation');
 defined('TABLE_VARIATION_OPTON')    || define('TABLE_VARIATION_OPTON', 'variation_option');
+defined('TABLE_VENDOR')             || define('TABLE_VENDOR', 'vendor');
 
 
 //////////////////////////////////////////////__UID_PRIFIX

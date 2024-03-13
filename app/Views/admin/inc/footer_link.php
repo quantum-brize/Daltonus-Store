@@ -8,6 +8,7 @@
     <script src="<?=base_url()?>public/assets_admin/js/app.js"></script>
     <!-- jQuery from CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.min.js"></script>
 
 
 

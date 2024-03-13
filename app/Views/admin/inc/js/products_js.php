@@ -1,5 +1,9 @@
 <script>
     load_products()
+
+    $(document).ready( function () {
+        $('#table-product-list-all').DataTable();
+    });
     function load_products() {
         $.ajax({
             url: "<?= base_url('/api/product') ?>",
@@ -9,12 +13,11 @@
             },
             success: function (resp) {
                 if (resp.status) {
-                    if(resp.data.length > 0){
-                        $.each(resp.data, function(index,product){
+                    if (resp.data.length > 0) {
+                        $.each(resp.data, function (index, product) {
                             console.log(product)
                         })
                     }
-                    $('#table-product-list-all').html()
                 }
 
             },

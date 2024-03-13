@@ -7,7 +7,7 @@ use App\Models\ProductItemModel;
 use App\Models\ProductConfigModel;
 use App\Models\ProductMetaDetalisModel;
 use App\Models\CommonModel;
-
+use App\Models\VendorModel;
 
 class Product_Controller extends Api_Controller
 {
@@ -24,6 +24,10 @@ class Product_Controller extends Api_Controller
             'message' => 'Product not added',
             'data' => null
         ];
+        $VendorModel = new VendorModel();
+        $vendorRow = $VendorModel->where('user_id', $data['user_id'])->first();
+        $vendor_id = !empty($vendorRow['uid']) ? $vendorRow['uid'] : '';
+
 
         if (empty($data['title'])) {
             $resp['message'] = 'Your Product Has No Name';
@@ -33,9 +37,12 @@ class Product_Controller extends Api_Controller
             $resp['message'] = 'Set The Price Of Your Product';
         } else if (empty($data['categoryId'])) {
             $resp['message'] = 'Set The Category Of Your Product';
+        } else if (empty($vendor_id)) {
+            $resp['message'] = 'Vendor Not Found';
         } else {
             $produt_data = [
                 'uid' => $this->generate_uid(UID_PRODUCT),
+                'vendor_id' => $vendor_id,
                 'category_id' => $data['categoryId'],
                 'name' => $data['title'],
                 'description' => $data['details'],
@@ -59,6 +66,7 @@ class Product_Controller extends Api_Controller
                 'meta_description' => $data['metaDescription'],
                 'meta_keywords' => $data['metaKeywords'],
             ];
+
 
             $ProductModel = new ProductModel();
             $ProductItemModel = new ProductItemModel();
@@ -122,10 +130,10 @@ class Product_Controller extends Api_Controller
                     product_meta_detalis ON product.uid = product_meta_detalis.product_id
                 JOIN 
                     categories ON product.category_id = categories.uid;";
-                    
+
         $products = $CommonModel->customQuery($sql);
 
-        if(count($products) > 0){
+        if (count($products) > 0) {
             $resp["status"] = true;
             $resp["data"] = $products;
             $resp["message"] = 'Products Found';

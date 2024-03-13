@@ -33,6 +33,7 @@
             data: {
                 title: title,
                 details: details,
+                user_id: "<?=$_SESSION[SES_ADMIN_USER_ID]?>", 
                 categoryId: categoryId,
                 productTags: productTags,
                 status: status,
