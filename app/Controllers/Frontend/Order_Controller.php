@@ -25,4 +25,19 @@ class Order_Controller extends Main_Controller
     {
         $this->load_page('/frontend/track_order', PAGE_DATA_FRONTEND);
     }
+
+    public function payment(): void
+    {
+        $this->load_page('/frontend/payment', PAGE_DATA_FRONTEND);
+    }
+
+    public function conformation(): void
+    {
+        $this->load_page('/frontend/conformation', PAGE_DATA_FRONTEND);
+    }
+
+    public function order_history(): void
+    {
+        $this->load_page('/frontend/order_history', PAGE_DATA_FRONTEND);
+    }
 }

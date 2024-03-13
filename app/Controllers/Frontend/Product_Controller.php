@@ -25,5 +25,20 @@ class Product_Controller extends Main_Controller
         $this->load_page('/frontend/products_category', PAGE_DATA_FRONTEND);
     }
 
+    public function review(): void
+    {
+        $this->load_page('/frontend/review', PAGE_DATA_FRONTEND);
+    }
+
+    public function cart(): void
+    {
+        $this->load_page('/frontend/cart', PAGE_DATA_FRONTEND);
+    }
+
+    public function wishlist(): void
+    {
+        $this->load_page('/frontend/wishlist', PAGE_DATA_FRONTEND);
+    }
+
     
 }

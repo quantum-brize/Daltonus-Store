@@ -246,8 +246,7 @@
                             <div class="col-lg-5 d-none d-lg-block">
                                 <div class="card rounded-start rounded-0 border-0 h-100 mb-0 overflow-hidden" style="
                         background-image: url('<?=base_url()?>public/assets/images/ecommerce/img-2.jpg');
-                        background-size: cover;
-                      ">
+                        background-size: cover;">
                                     <div class="bg-overlay bg-primary" style="opacity: 0.9"></div>
                                     <div
                                         class="card-body d-flex align-items-center justify-content-center position-relative">
@@ -284,19 +283,19 @@
                                                         data-key="t-track-order">Track Order</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="payment.html" class="nav-link"
+                                                    <a href="<?= base_url('payment')?>" class="nav-link"
                                                         data-key="t-payment">Payment</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="review.html" class="nav-link"
+                                                    <a href="<?= base_url('review')?>" class="nav-link"
                                                         data-key="t-review">Review</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="confirmation.html" class="nav-link"
+                                                    <a href="<?= base_url('conformation')?>" class="nav-link"
                                                         data-key="t-confirmation">Confirmation</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="order-history.html" class="nav-link"
+                                                    <a href="<?= base_url('order/history')?>" class="nav-link"
                                                         data-key="t-my-orders-order-history">My Orders / Order
                                                         History</a>
                                                 </li>
@@ -312,15 +311,15 @@
                                                 </p>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="shop-cart.html" class="nav-link"
+                                                <a href="<?= base_url('cart')?>" class="nav-link"
                                                     data-key="t-shopping-cart">Shopping Cart</a>
                                             </li>
-                                            <li class="nav-item">
+                                            <!-- <li class="nav-item">
                                                 <a href="checkout.html" class="nav-link"
                                                     data-key="t-checkout">Checkout</a>
-                                            </li>
+                                            </li> -->
                                             <li class="nav-item">
-                                                <a href="wishlist.html" class="nav-link"
+                                                <a href="<?= base_url('wishlist')?>" class="nav-link"
                                                     data-key="t-wishlist">Wishlist</a>
                                             </li>
                                         </ul>
