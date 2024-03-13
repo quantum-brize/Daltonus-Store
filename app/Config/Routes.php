@@ -34,6 +34,12 @@ $routes->get('/order/success',                  'Frontend\Order_Controller::orde
 $routes->get('/contact-us',                     'Frontend\Frontend_Controller::contact_us');
 $routes->get('/address',                        'Frontend\Frontend_Controller::address');
 $routes->get('/track/order',                    'Frontend\Order_Controller::track_order');
+$routes->get('/payment',                        'Frontend\Order_Controller::payment');
+$routes->get('/review',                         'Frontend\Product_Controller::review');
+$routes->get('/conformation',                   'Frontend\Order_Controller::conformation');
+$routes->get('/order/history',                  'Frontend\Order_Controller::order_history');
+$routes->get('/cart',                           'Frontend\Product_Controller::cart');
+$routes->get('/wishlist',                       'Frontend\Product_Controller::wishlist');
 
 
 
