@@ -274,11 +274,11 @@
                                                     </p>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="<?= base_url('address')?>" class="nav-link" data-key="t-address">
+                                                    <a href="<?= base_url('user/address')?>" class="nav-link" data-key="t-address">
                                                         Address</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="<?= base_url('track/order')?>" class="nav-link"
+                                                    <a href="<?= base_url('order/track')?>" class="nav-link"
                                                         data-key="t-track-order">Track Order</a>
                                                 </li>
                                                 <li class="nav-item">
@@ -310,7 +310,7 @@
                                                 </p>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="<?= base_url('cart')?>" class="nav-link"
+                                                <a href="<?= base_url('user/cart')?>" class="nav-link"
                                                     data-key="t-shopping-cart">Shopping Cart</a>
                                             </li>
                                             <!-- <li class="nav-item">
@@ -393,7 +393,7 @@
                                 data-key="t-users">Users</a>
                             <ul class="dropdown-menu submenu">
                                 <li>
-                                    <a class="nav-link" href="<?= base_url('users/account')?>" data-key="t-my-account">My Account</a>
+                                    <a class="nav-link" href="<?= base_url('user/account')?>" data-key="t-my-account">My Account</a>
                                 </li>
                                 <li>
                                     <a class="nav-link" href="auth-signin-basic.html" data-key="t-sign-in">Sign
@@ -542,7 +542,8 @@
         <div class="d-flex align-items-center">
             <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
                 data-bs-toggle="modal" data-bs-target="#searchModal">
-                <i class="bx bx-search fs-22"></i>
+                <!-- <i class="bx bx-search fs-22"></i> -->
+                <i class="fas fa-search fa-lg"></i>
             </button>
             <div class="topbar-head-dropdown ms-1 header-item">
                 <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"

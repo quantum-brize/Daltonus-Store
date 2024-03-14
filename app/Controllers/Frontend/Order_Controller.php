@@ -38,6 +38,6 @@ class Order_Controller extends Main_Controller
 
     public function order_history(): void
     {
-        $this->load_page('/frontend/order_history', PAGE_DATA_FRONTEND);
+        $this->load_page('/frontend/order_success', PAGE_DATA_FRONTEND);
     }
 }
