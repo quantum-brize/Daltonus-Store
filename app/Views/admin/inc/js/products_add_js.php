@@ -29,14 +29,7 @@
             formData.append('metaTitle', $('#meta-title-input').val());
             formData.append('metaKeywords', $('#meta-keywords-input').val());
             formData.append('metaDescription', $('#meta-description-input').val());
-            // Append files
-            console.log($('#product_images')[0].dropzone.getAcceptedFiles());
-
-            return false;
-            var files = $('#product_images')[0].dropzone.getAcceptedFiles();
-            for (var i = 0; i < files.length; i++) {
-                formData.append('files[]', files[i]);
-            }
+          
 
             $.ajax({
                 url: "<?= base_url('/api/product/add') ?>",
