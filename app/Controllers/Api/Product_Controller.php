@@ -158,6 +158,7 @@ class Product_Controller extends Api_Controller
 
     public function POST_add_product()
     {
+        $this->prd($this->request->getFiles());
 
         $data = $this->request->getPost();
         $resp = $this->add_product($data);

@@ -45,7 +45,7 @@ class Product_Controller extends Admin_Controller{
             'data_page' => [],
             'data_header' => [
                 'header_link' => ['products_add_css.php'],
-                'header_asset_link' => [],
+                'header_asset_link' => ['assets_admin/libs/dropzone/dropzone.css'],
                 'title' => 'Products | Add',
                 'header' => [],
                 'sidebar' => ['products'=>true],
@@ -53,7 +53,10 @@ class Product_Controller extends Admin_Controller{
             ],
             'data_footer' => [
                 'footer_link' => ['products_add_js.php'],
-                'footer_asset_link'=> ['assets_admin/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js',],
+                'footer_asset_link'=> [
+                    'assets_admin/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js',
+                    'assets_admin/libs/dropzone/dropzone-min.js',
+                    'assets_admin/js/pages/form-file-upload.init.js'],
                 'footer' => [],
                 'site' => 'admin'
             ]
