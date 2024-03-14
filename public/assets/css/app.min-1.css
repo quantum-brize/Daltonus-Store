@@ -2295,7 +2295,8 @@
 
 @media (min-width:992px) {
     .dropdown-hover:hover>.dropdown-menu {
-        display: block
+        display: block;
+        /* width: 100% !impotant; */
     }
 
     .dropdown-hover:hover .dropdown-toggle::after {

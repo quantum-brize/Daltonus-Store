@@ -22,4 +22,15 @@
 	<link href="<?=base_url()?>public/assets/css/app.min-1.css" rel="stylesheet" type="text/css" />
 	<!-- custom Css-->
 	<link href="<?=base_url()?>public/assets/css/custom.min-1.css" rel="stylesheet" type="text/css" />
+
+	<!-- Icons library -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+	<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+	<link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
