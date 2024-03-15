@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg ecommerce-navbar" id="navbar">
     <div class="container">
-        <a class="navbar-brand d-none d-lg-block" href="index.html">
+        <a class="navbar-brand d-none d-lg-block" href="<?= base_url('/')?>">
             <div class="logo-dark">
                 <img src="<?=base_url()?>public/assets/images/logo-dark-1.png" alt="" height="25" />
             </div>

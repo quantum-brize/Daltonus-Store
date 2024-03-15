@@ -452,7 +452,7 @@
                             <div class="card-body p-4">
                                 <img src="<?= base_url()?>/public/assets/images/products/img-5-1.png" alt="" class="avatar-xl">
                                 <div class="mt-4">
-                                    <a href="product-list-defualt.html" class="stretched-link">
+                                    <a href="<?= base_url('product/list')?>" class="stretched-link">
                                         <h5 class="fs-15 mb-0">Footwear</h5>
                                     </a>
                                 </div>
@@ -464,7 +464,7 @@
                             <div class="card-body p-4">
                                 <img src="<?= base_url()?>/public/assets/images/products/img-16.png" alt="" class="avatar-xl">
                                 <div class="mt-4">
-                                    <a href="product-list-defualt.html" class="stretched-link">
+                                    <a href="<?= base_url('product/list')?>" class="stretched-link">
                                         <h5 class="fs-15 mb-0">Electronics</h5>
                                     </a>
                                 </div>
@@ -476,7 +476,7 @@
                             <div class="card-body p-4">
                                 <img src="<?= base_url()?>/public/assets/images/products/img-8-1.png" alt="" class="avatar-xl">
                                 <div class="mt-4">
-                                    <a href="product-list-defualt.html" class="stretched-link">
+                                    <a href="<?= base_url('product/list')?>" class="stretched-link">
                                         <h5 class="fs-15 mb-0">Men's</h5>
                                     </a>
                                 </div>
@@ -488,7 +488,7 @@
                             <div class="card-body p-4">
                                 <img src="<?= base_url()?>/public/assets/images/products/img-11-1.png" alt="" class="avatar-xl">
                                 <div class="mt-4">
-                                    <a href="product-list-defualt.html" class="stretched-link">
+                                    <a href="<?= base_url('product/list')?>" class="stretched-link">
                                         <h5 class="fs-15 mb-0">Women's</h5>
                                     </a>
                                 </div>
@@ -513,7 +513,7 @@
             <div class="container-fluid">
                 <div class="row gy-4">
                     <div class="col-xxl-4 col-md-6">
-                        <a href="product-list-defualt.html" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
+                        <a href="<?= base_url('product/list')?>" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
                             <img src="<?= base_url()?>/public/assets/images/ecommerce/features/img-3.jpg" class="img-fluid rounded" alt="">
                             <div class="bg-overlay blue"></div>
                             <div class="product-content p-4">
@@ -526,7 +526,7 @@
                         </a>
                     </div><!--end col-->
                     <div class="col-xxl-4 col-md-6">
-                        <a href="product-list-defualt.html" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block right">
+                        <a href="<?= base_url('product/list')?>" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block right">
                             <img src="<?= base_url()?>/public/assets/images/ecommerce/features/img-2.jpg" class="img-fluid rounded" alt="">
                             <div class="bg-overlay"></div>
                             <div class="product-content p-4 text-end">
@@ -539,7 +539,7 @@
                         </a>
                     </div><!--end col-->
                     <div class="col-xxl-4 col-md-6">
-                        <a href="product-grid-defualt.html" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
+                        <a href="<?= base_url('product/list')?>" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
                             <img src="<?= base_url()?>/public/assets/images/ecommerce/features/img-1.jpg" class="img-fluid rounded" alt="">
                             <div class="product-content p-4">
                                 <p class="text-uppercase fw-semibold text-secondary fs-15 mb-2">Summer Sales</p>
@@ -569,7 +569,7 @@
                         <div class="text-center">
                             <img src="<?= base_url()?>/public/assets/images/products/img-6-1.png" alt="" class="img-fluid rounded-circle bg-warning-subtle border border-2 border-warning border-opacity-10 p-4">
                             <div class="mt-4">
-                                <a href="#!">
+                                <a href="<?= base_url('product/list')?>">
                                     <h5 class="mb-2 fs-15">Clothes</h5>
                                 </a>
                                 <p class="text-muted fs-12">96 Products</p>
@@ -580,7 +580,7 @@
                         <div class="text-center">
                             <img src="<?= base_url()?>/public/assets/images/products/img-20.png" alt="" class="img-fluid rounded-circle bg-dark-subtle border border-2 border-dark border-opacity-10 p-4">
                             <div class="mt-4">
-                                <a href="#!">
+                                <a href="<?= base_url('product/list')?>">
                                     <h5 class="mb-2 fs-15">Electronics</h5>
                                 </a>
                                 <p class="text-muted fs-12">25 Products</p>
@@ -591,7 +591,7 @@
                         <div class="text-center">
                             <img src="<?= base_url()?>/public/assets/images/products/img-18.png" alt="" class="img-fluid rounded-circle bg-warning-subtle border border-2 border-warning border-opacity-10 p-4">
                             <div class="mt-4">
-                                <a href="#!">
+                                <a href="<?= base_url('product/list')?>">
                                     <h5 class="mb-2 fs-15">Cosmetic</h5>
                                 </a>
                                 <p class="text-muted fs-12">10 Products</p>
@@ -602,7 +602,7 @@
                         <div class="text-center">
                             <img src="<?= base_url()?>/public/assets/images/products/img-1-1.png" alt="" class="img-fluid rounded-circle bg-danger-subtle border border-2 border-danger border-opacity-10 p-4">
                             <div class="mt-4">
-                                <a href="#!">
+                                <a href="<?= base_url('product/list')?>">
                                     <h5 class="mb-2 fs-15">Bags</h5>
                                 </a>
                                 <p class="text-muted fs-12">58 Products</p>
@@ -613,7 +613,7 @@
                         <div class="text-center">
                             <img src="<?= base_url()?>/public/assets/images/products/img-15-1.png" alt="" class="img-fluid rounded-circle bg-info-subtle border border-2 border-info border-opacity-10 p-4">
                             <div class="mt-4">
-                                <a href="#!">
+                                <a href="<?= base_url('product/list')?>">
                                     <h5 class="mb-2 fs-15">Handbags & Clutches</h5>
                                 </a>
                                 <p class="text-muted fs-12">64 Products</p>
@@ -624,7 +624,7 @@
                         <div class="text-center">
                             <img src="<?= base_url()?>/public/assets/images/products/img-5-1.png" alt="" class="img-fluid rounded-circle bg-danger-subtle border border-2 border-danger border-opacity-10 p-4">
                             <div class="mt-4">
-                                <a href="#!">
+                                <a href="<?= base_url('product/list')?>">
                                     <h5 class="mb-2 fs-15">Footwear</h5>
                                 </a>
                                 <p class="text-muted fs-12">342 Products</p>
@@ -657,7 +657,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body text-center">
-                                            <a href="product-list.html" class="stretched-link">
+                                            <a href="<?= base_url('product/details')?>" class="stretched-link">
                                                 <h6 class="fs-16 lh-base text-truncate">Handbags & Clutches</h6>
                                             </a>
                                         </div>
@@ -671,7 +671,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body text-center">
-                                            <a href="product-list.html" class="stretched-link">
+                                            <a href="<?= base_url('product/list')?>" class="stretched-link">
                                                 <h6 class="fs-16 lh-base text-truncate">Electronics</h6>
                                             </a>
                                         </div>
@@ -685,7 +685,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body text-center">
-                                            <a href="product-list.html" class="stretched-link">
+                                            <a href="<?= base_url('product/list')?>" class="stretched-link">
                                                 <h6 class="fs-16 lh-base text-truncate">Footwear</h6>
                                             </a>
                                         </div>
@@ -699,7 +699,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body text-center">
-                                            <a href="product-list.html" class="stretched-link">
+                                            <a href="<?= base_url('product/list')?>" class="stretched-link">
                                                 <h6 class="fs-16 lh-base text-truncate">Furniture & Decor</h6>
                                             </a>
                                         </div>

@@ -430,7 +430,7 @@
                         <h4 class="text-white mb-0">Shopping Cart</h4>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb breadcrumb-light justify-content-center mb-0 fs-15">
-                                <li class="breadcrumb-item"><a href="#!">Shop</a></li>
+                                <li class="breadcrumb-item"><a href="<?= base_url('product/list')?>">Shop</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
                             </ol>
                         </nav>
@@ -771,7 +771,7 @@
                                 <li><input type="radio" name="sizes10" id="product-color-104"><label class="avatar-xxs btn btn-danger p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-104"></label></li>
                                 <li><input type="radio" name="sizes10" id="product-color-105"><label class="avatar-xxs btn btn-light p-0 d-flex align-items-center justify-content-center rounded-circle" for="product-color-105"></label></li>
                             </ul>
-                            <a href="#!">
+                            <a href="<?= base_url('product/list')?>">
                                 <h6 class="text-capitalize fs-15 lh-base text-truncate mb-0">Carven Lounge Chair Red</h6>
                             </a>
                             <div class="mt-2">

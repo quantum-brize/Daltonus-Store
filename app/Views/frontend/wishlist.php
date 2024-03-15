@@ -430,7 +430,7 @@
                             <h4 class="text-white mb-0">Wishlist</h4>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-light justify-content-center mb-0 fs-15">
-                                    <li class="breadcrumb-item"><a href="#!">Shop</a></li>
+                                    <li class="breadcrumb-item"><a href="<?= base_url('product/list')?>">Shop</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
                                 </ol>
                             </nav>
@@ -468,7 +468,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <a href="product-details.html"><h6 class="fs-16">World's Most Expensive T Shirt</h6></a>
+                                                    <a href="<?= base_url('product/details')?>"><h6 class="fs-16">World's Most Expensive T Shirt</h6></a>
                                                     <p class="mb-0 text-muted fs-13">Women's Clothes</p>
                                                 </div>
                                             </div>
@@ -636,7 +636,7 @@
                             </div>
                             <div class="content mx-4 pt-5">
                                 <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
-                                    <a href="#!">
+                                    <a href="<?= base_url('product/details')?>">
                                         <h6 class="text-capitalize fs-16 lh-base text-truncate">Striped High Neck Casual Men Orange Sweater</h6>
                                     </a>
                                     <p class="text-muted"><i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.7)</p>
