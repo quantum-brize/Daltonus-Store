@@ -431,7 +431,7 @@
                         <h4 class="text-white mb-0">Order Confirm</h4>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb breadcrumb-light justify-content-center mb-0 fs-15">
-                                <li class="breadcrumb-item"><a href="#!">Shop</a></li>
+                                <li class="breadcrumb-item"><a href="<?= base_url('product/list')?>">Shop</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Confirmation</li>
                             </ol>
                         </nav>
@@ -459,8 +459,8 @@
                                 <p class="text-muted mb-2">You will receive an order confirmation email with details of your order.</p>
                                 <p class="text-muted mb-0">Order ID: 267676GHERT105467</p>
                                 <div class="mt-4 pt-2 hstack gap-2 justify-content-center">
-                                    <a href="order-history.html" class="btn btn-primary btn-hover">View Order <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
-                                    <a href="index.html" class="btn btn-soft-danger btn-hover">Back To Home <i class="ri-home-4-line align-bottom ms-1"></i></a>
+                                    <a href="<?= base_url('order/history')?>" class="btn btn-primary btn-hover">View Order <i class="ri-arrow-right-line align-bottom ms-1"></i></a>
+                                    <a href="<?= base_url('/')?>" class="btn btn-soft-danger btn-hover">Back To Home <i class="ri-home-4-line align-bottom ms-1"></i></a>
                                 </div>
                             </div>
                         </div>

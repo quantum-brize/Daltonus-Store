@@ -1050,7 +1050,7 @@
                 environment where employees can communicate with each other
                 without having to go through any extra steps.
               </p>
-              <a href="#!" class="fw-medium link-effect"
+              <a href="<?= base_url('product/list')?>" class="fw-medium link-effect"
                 >Shop Now <i class="bi bi-arrow-right ms-2"></i
               ></a>
             </div>

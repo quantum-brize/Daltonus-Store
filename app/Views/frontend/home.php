@@ -154,7 +154,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <a href="#!" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
+                <a href="<?= base_url('product/list')?>" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
                     <img src="<?=base_url()?>public/assets/images/ecommerce/features/img-3.jpg" class="img-fluid rounded" alt="" />
                     <div class="bg-overlay blue"></div>
                     <div class="product-content p-4">
@@ -169,7 +169,7 @@
                 </a>
             </div>
             <div class="col-lg-6">
-                <a href="#!" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
+                <a href="<?= base_url('product/list')?>" class="product-banner-1 mt-4 mt-lg-0 rounded overflow-hidden position-relative d-block">
                     <img src="<?=base_url()?>public/assets/images/ecommerce/features/img-1.jpg" class="img-fluid rounded" alt="" />
                     <div class="product-content p-4">
                         <p class="text-uppercase fw-medium text-secondary mb-2">
@@ -265,7 +265,7 @@
                             </div>
                             <div class="card-body">
                                 <div>
-                                    <a href="product-details.html">
+                                    <a href="<?= base_url('product/details')?>">
                                         <h6 class="fs-15 lh-base text-truncate mb-0">
                                             Man Relaxed Fit T-shirt
                                         </h6>
@@ -687,7 +687,7 @@
                     </div>
 
                     <div class="mt-4 pt-2 d-flex gap-2">
-                        <a href="#!" class="btn btn-primary w-md btn-hover">Shopping Now</a>
+                        <a href="<?= base_url('product/list')?>" class="btn btn-primary w-md btn-hover">Shopping Now</a>
                         <a href="#!" class="btn btn-danger w-md btn-hover">Subscribe</a>
                     </div>
                 </div>
@@ -734,7 +734,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div>
-                                        <a href="product-details.html">
+                                        <a href="<?= base_url('product/details')?>">
                                             <h6 class="fs-15 lh-base text-truncate mb-0">
                                                 Petronas Baseball Cap
                                             </h6>

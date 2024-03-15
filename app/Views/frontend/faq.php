@@ -430,7 +430,7 @@
                             <h1 class="text-white mb-0">Frequently Asked Questions</h1>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb breadcrumb-light justify-content-center mt-4 fs-15">
-                                    <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                                    <li class="breadcrumb-item"><a href="<?= base_url('product/list')?>">Shop</a></li>
                                     <li class="breadcrumb-item active" aria-current="page">Faq's</li>
                                 </ol>
                             </nav>
@@ -467,7 +467,7 @@
                                         <i class="bi bi-box-seam"></i>
                                     </div>
                                 </div>
-                                <h5 class="fs-16 mb-3"><a href="#" class="text-body stretched-link">Order</a></h5>
+                                <h5 class="fs-16 mb-3"><a href="<?= base_url('order/history')?>" class="text-body stretched-link">Order</a></h5>
                             </div>
                         </div>
                     </div>
@@ -480,7 +480,7 @@
                                         <i class="bi bi-cash-coin"></i>
                                     </div>
                                 </div>
-                                <h5 class="fs-16 mb-3"><a href="#" class="text-body stretched-link">Payments</a></h5>
+                                <h5 class="fs-16 mb-3"><a href="<?= base_url('payment')?>" class="text-body stretched-link">Payments</a></h5>
                             </div>
                         </div>
                     </div>

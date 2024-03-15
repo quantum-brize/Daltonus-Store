@@ -860,7 +860,7 @@
                                     </div>
                                     <div class="mt-4 text-center">
                                         <h4 class="text-body mb-3">$63.00 <span class="text-muted fs-12"><del>$123.99</del></span></h4>
-                                        <a href="#!" class="stretched-link"><h5 class="mb-4">Ninja Pro Max Smartwatch</h5></a>
+                                        <a href="<?= base_url('product/details')?>" class="stretched-link"><h5 class="mb-4">Ninja Pro Max Smartwatch</h5></a>
                                     </div>
                                     <div class="progress animated-progress custom-progress">
                                         <div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
@@ -907,7 +907,7 @@
                                     <div data-countdown="Oct 30, 2023" class="countdownlist"></div>
                                 </div>
                                 <div class="card border-0 p-4 position-relative rounded-3 shadow-lg">
-                                    <a href="#!">
+                                    <a href="<?= base_url('product/details')?>">
                                         <h6 class="text-capitalize fs-16 lh-base text-truncate">World's most expensive t-shirt</h6>
                                     </a>
                                     <p class="text-muted"><i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-fill text-warning align-bottom"></i> <i class="ri-star-half-fill text-warning align-bottom"></i> (4.9)</p>
