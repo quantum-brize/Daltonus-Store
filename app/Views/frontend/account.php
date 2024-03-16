@@ -460,13 +460,13 @@
                             <div class="card-body">
                                 <ul class="nav nav-pills flex-column gap-3" role="tablist">
                                     <li class="nav-item " role="presentation">
-                                        <a class="nav-link fs-15 active" data-bs-toggle="tab" href="<?= base_url('user/account')?>" role="tab" aria-selected="true"><i class="bi bi-person-circle align-middle me-1"></i> Account Info</a>
+                                        <a class="nav-link fs-15 active" data-bs-toggle="tab" href="#custom-v-pills-profile" role="tab" aria-selected="true"><i class="bi bi-person-circle align-middle me-1"></i> Account Info</a>
                                     </li>
                                     <li class="nav-item " role="presentation">
-                                        <a class="nav-link fs-15" data-bs-toggle="tab" href="<?= base_url('wishlist')?>" role="tab" aria-selected="false" tabindex="-1"><i class="bi bi-bookmark-check align-middle me-1"></i> Wish list</a>
+                                        <a class="nav-link fs-15" data-bs-toggle="tab" href="<#custom-v-pills-list" role="tab" aria-selected="false" tabindex="-1"><i class="bi bi-bookmark-check align-middle me-1"></i> Wish list</a>
                                     </li>
                                     <li class="nav-item " role="presentation">
-                                        <a class="nav-link fs-15" data-bs-toggle="tab" href="<?= base_url('order/history')?>" role="tab" aria-selected="false" tabindex="-1"><i class="bi bi-bag align-middle me-1"></i> Order</a>
+                                        <a class="nav-link fs-15" data-bs-toggle="tab" href="#custom-v-pills-order" role="tab" aria-selected="false" tabindex="-1"><i class="bi bi-bag align-middle me-1"></i> Order</a>
                                     </li>
                                     <li class="nav-item " role="presentation">
                                         <a class="nav-link fs-15" data-bs-toggle="tab" href="#custom-v-pills-setting" role="tab" aria-selected="false" tabindex="-1"><i class="bi bi-gear align-middle me-1"></i> Settings</a>

@@ -42,6 +42,9 @@ $routes->get('/conformation',                   'Frontend\Order_Controller::conf
 $routes->get('/wishlist',                       'Frontend\Product_Controller::wishlist');
 
 
+// Frontend Api  Routes
+$routes->get('/api/user/data',                  'Frontend\User_Controller::get_user_data');
+
 
 // Admin Routes
 $routes->get('/admin',                          'Admin\Admin_Controller::index');

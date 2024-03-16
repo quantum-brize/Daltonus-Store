@@ -4,6 +4,11 @@ namespace App\Controllers;
 
 class Main_Controller extends BaseController
 {
+	public function __construct()
+    {
+        // Load session library
+        $this->session = \Config\Services::session();
+    }
 
     public function load_page($page, $data): void
 	{
@@ -55,6 +60,24 @@ class Main_Controller extends BaseController
 		return rand(1000, 9999);
 	}
 
+	public function is_logedin(){
+		$this->pr($this->session->get(SES_USER_USER_ID));
+        // $session = \Config\Services::session();
+		// session_start();
+		// Retrieve session data
+		// $userID = $_SESSION[SES_USER_USER_ID];
+		// $username = $_SESSION['username'];
+        // $session_data = $this->session->get();
+		// $this->prd($session_data);
+        // if(!empty($session_data)){
+        //     return $session_data;
+        // }else{
+        //     return "False!";
+        // }
+    }
+
+	
+
 
 	public function single_upload($file,$path){
 		if ($file->isValid() && !$file->hasMoved()) {
@@ -64,5 +87,6 @@ class Main_Controller extends BaseController
         }
         return null;
 	}
+
 
 }

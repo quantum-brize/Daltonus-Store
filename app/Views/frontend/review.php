@@ -447,6 +447,7 @@
         <section class="section">
             <div class="container">
                 <div class="row" data-masonry='{"percentPosition": true }'>
+                <?php for($i=0; $i<9; $i++){?>
                     <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
@@ -462,8 +463,10 @@
                                 <p class="mb-0 text-muted fs-15">Really don't regret buying it. great job done the design is simply fabulous love your job.</p>
                             </div>
                         </div>
-                    </div><!--end col-->
-                    <div class="col-lg-4 col-md-6">
+                    </div>
+                    <?php }?>
+                    <!--end col-->
+                    <!-- <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <img src="<?= base_url()?>/public/assets/images/users/avatar-8-1.jpg" alt="" class="avatar-sm rounded">
@@ -478,8 +481,9 @@
                                 <p class="mb-0 text-muted fs-15">High theme quality. Very good support, they spent almost an hour remotely to fix a problem. I hope this theme will have a long term support.</p>
                             </div>
                         </div>
-                    </div><!--end col-->
-                    <div class="col-lg-4 col-md-6">
+                    </div> -->
+                    <!--end col-->
+                    <!-- <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <img src="<?= base_url()?>/public/assets/images/users/avatar-2-1.jpg" alt="" class="avatar-sm rounded">
@@ -494,8 +498,9 @@
                                 <p class="mb-0 text-muted fs-15">Very good support and also code works brilliantly and well documented</p>
                             </div>
                         </div>
-                    </div><!--end col-->
-                    <div class="col-lg-4 col-md-6">
+                    </div> -->
+                    <!--end col-->
+                    <!-- <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <img src="<?= base_url()?>/public/assets/images/users/avatar-1-1.jpg" alt="" class="avatar-sm rounded">
@@ -510,8 +515,9 @@
                                 <p class="mb-0 text-muted fs-15">Thank you for supporting CakePHP 4, we have purchased the template because of this support, please push forward more integration</p>
                             </div>
                         </div>
-                    </div><!--end col-->
-                    <div class="col-lg-4 col-md-6">
+                    </div> -->
+                    <!--end col-->
+                    <!-- <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <img src="<?= base_url()?>/public/assets/images/users/avatar-4-1.jpg" alt="" class="avatar-sm rounded">
@@ -526,8 +532,9 @@
                                 <p class="mb-0 text-muted fs-15">Gracias por las correciones que hiceron para esta version 1.4. Ahora definitivamente la calificacion debe ser de 5 estrellas. Excelente trabajo muchachos!</p>
                             </div>
                         </div>
-                    </div><!--end col-->
-                    <div class="col-lg-4 col-md-6">
+                    </div> -->
+                    <!--end col-->
+                    <!-- <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <img src="<?= base_url()?>/public/assets/images/users/avatar-3-1.jpg" alt="" class="avatar-sm rounded">
@@ -542,8 +549,9 @@
                                 <p class="mb-0 text-muted fs-15">We have used your other templates as well and seems it's amazing with the design and code quality. Wish you best for the future updates. Keep updated you will be #1 in near future.</p>
                             </div>
                         </div>
-                    </div><!--end col-->
-                    <div class="col-lg-4 col-md-6">
+                    </div> -->
+                    <!--end col-->
+                    <!-- <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <img src="<?= base_url()?>/public/assets/images/users/avatar-5-1.jpg" alt="" class="avatar-sm rounded">
@@ -558,8 +566,9 @@
                                 <p class="mb-0 text-muted fs-15">This is an incredible framework worth so much in the right hands! Nowhere else are you going to get so much flexibility and great code for a few dollars. Highly recommend purchasing today! Like right now!</p>
                             </div>
                         </div>
-                    </div><!--end col-->
-                    <div class="col-lg-4 col-md-6">
+                    </div> -->
+                    <!--end col-->
+                    <!-- <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <img src="<?= base_url()?>/public/assets/images/users/avatar-6-1.jpg" alt="" class="avatar-sm rounded">
@@ -574,8 +583,9 @@
                                 <p class="mb-0 text-muted fs-15">Good design & good support. Go for it.</p>
                             </div>
                         </div>
-                    </div><!--end col-->
-                    <div class="col-lg-4 col-md-6">
+                    </div> -->
+                    <!--end col-->
+                    <!-- <div class="col-lg-4 col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <img src="<?= base_url()?>/public/assets/images/users/avatar-7-1.jpg" alt="" class="avatar-sm rounded">
@@ -590,7 +600,8 @@
                                 <p class="mb-0 text-muted fs-15">great product. look forward to the vue and react versions</p>
                             </div>
                         </div>
-                    </div><!--end col-->
+                    </div> -->
+                    <!--end col-->
                 </div><!--end row-->
             </div><!--end container-->
         </section>

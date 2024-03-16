@@ -582,23 +582,23 @@
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
                     <h6 class="dropdown-header">Welcome Diana!</h6>
-                    <a class="dropdown-item" href="order-history.html"><i
+                    <a class="dropdown-item" href="<?=base_url('order/history')?>"><i
                             class="bi bi-cart4 text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Order History</span></a>
-                    <a class="dropdown-item" href="track-order.html"><i
+                    <a class="dropdown-item" href="<?=base_url('order/track')?>"><i
                             class="bi bi-truck text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Track Orders</span></a>
                     <a class="dropdown-item" href="../backend/index.html"><i
                             class="bi bi-speedometer2 text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Dashboard</span></a>
-                    <a class="dropdown-item" href="ecommerce-faq.html"><i
+                    <a class="dropdown-item" href="<?=base_url('faq')?>"><i
                             class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Help</span></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="account.html"><i
+                    <a class="dropdown-item" href="<?=base_url('user/account')?>"><i
                             class="bi bi-coin text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Balance : <b>$8451.36</b></span></a>
-                    <a class="dropdown-item" href="account.html"><span
+                    <a class="dropdown-item" href="<?=base_url('user/account')?>"><span
                             class="badge bg-success-subtle text-success mt-1 float-end">New</span><i
                             class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Settings</span></a>
