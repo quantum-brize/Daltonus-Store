@@ -8,6 +8,7 @@ use App\Models\ProductConfigModel;
 use App\Models\ProductMetaDetalisModel;
 use App\Models\CommonModel;
 use App\Models\VendorModel;
+use App\Models\ProductImagesModel;
 
 class Product_Controller extends Api_Controller
 {
@@ -26,20 +27,26 @@ class Product_Controller extends Api_Controller
         ];
         $VendorModel = new VendorModel();
         $vendorRow = $VendorModel->where('user_id', $data['user_id'])->first();
-        $vendor_id = !empty($vendorRow['uid']) ? $vendorRow['uid'] : '';
+        $vendor_id = !empty ($vendorRow['uid']) ? $vendorRow['uid'] : '';
+        $uploadedFiles = $this->request->getFiles();
 
 
-        if (empty($data['title'])) {
+
+        if (empty ($data['title'])) {
             $resp['message'] = 'Your Product Has No Name';
-        } else if (empty($data['details'])) {
+        } else if (empty ($data['details'])) {
             $resp['message'] = 'Please add Some Details About Your Product';
-        } else if (empty($data['price'])) {
+        } else if (empty ($data['price'])) {
             $resp['message'] = 'Set The Price Of Your Product';
-        } else if (empty($data['categoryId'])) {
+        } else if (empty ($data['categoryId'])) {
             $resp['message'] = 'Set The Category Of Your Product';
-        } else if (empty($vendor_id)) {
+        } else if (empty ($vendor_id)) {
             $resp['message'] = 'Vendor Not Found';
+        } else if (empty ($uploadedFiles['images'])) {
+            $resp['message'] = 'Please Add One Product Image';
         } else {
+
+
             $produt_data = [
                 'uid' => $this->generate_uid(UID_PRODUCT),
                 'vendor_id' => $vendor_id,
@@ -67,6 +74,17 @@ class Product_Controller extends Api_Controller
                 'meta_keywords' => $data['metaKeywords'],
             ];
 
+            $ProductImagesModel = new ProductImagesModel();
+            foreach ($uploadedFiles['images'] as $file) {
+                $file_src = $this->single_upload($file, PATH_PRODUCT_IMG);
+                $product_image_data = [
+                    'uid' => $this->generate_uid(UID_PRODUCT_IMG),
+                    'product_id' => $produt_data['uid'],
+                    'type' => 'path',
+                    'src' => $file_src
+                ];
+                $ProductImagesModel->insert($product_image_data);
+            }
 
             $ProductModel = new ProductModel();
             $ProductItemModel = new ProductItemModel();
@@ -112,6 +130,7 @@ class Product_Controller extends Api_Controller
                     product.created_at AS created_at,
                     categories.name AS category,
                     product_item.price AS base_price,
+                    product_item.sku AS product_stock,
                     product_item.discount AS base_discount,
                     product_item.product_tags AS tags,
                     product_item.publish_date AS publish_date,
@@ -121,7 +140,9 @@ class Product_Controller extends Api_Controller
                     product_item.manufacturer_name AS manufacturer_name,
                     product_meta_detalis.meta_title,
                     product_meta_detalis.meta_description,
-                    product_meta_detalis.meta_keywords
+                    product_meta_detalis.meta_keywords,
+                    users.user_name AS vendor,
+                    vendor.uid AS vendor_id
                 FROM
                     product
                 JOIN
@@ -129,11 +150,20 @@ class Product_Controller extends Api_Controller
                 JOIN
                     product_meta_detalis ON product.uid = product_meta_detalis.product_id
                 JOIN 
-                    categories ON product.category_id = categories.uid;";
+                    categories ON product.category_id = categories.uid
+                JOIN
+                    vendor ON product.vendor_id = vendor.uid
+                JOIN
+                    users ON vendor.user_id = users.uid;";
 
         $products = $CommonModel->customQuery($sql);
 
         if (count($products) > 0) {
+            $ProductImagesModel = new ProductImagesModel();
+            foreach($products as $key => $product){
+                $products[$key]->product_img = $ProductImagesModel->where('product_id', $product->product_id)->findAll();
+            }
+
             $resp["status"] = true;
             $resp["data"] = $products;
             $resp["message"] = 'Products Found';
@@ -158,8 +188,6 @@ class Product_Controller extends Api_Controller
 
     public function POST_add_product()
     {
-        $this->prd($this->request->getFiles());
-
         $data = $this->request->getPost();
         $resp = $this->add_product($data);
         return $this->response->setJSON($resp);

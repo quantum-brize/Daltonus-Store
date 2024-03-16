@@ -41,7 +41,17 @@
                             </div>
                         </div>
                     </div>
-                
+                    <div class="card">
+                        <div class="card-body">
+                            <label class="form-label" for="product-image-input">Product Image</label>
+                            <input type="file" id="file-input"  multiple>
+                            <label for="file-input" id="btn_upload" class="btn btn-success">
+                                <i class="fas fa-upload"></i> &nbsp; Select Product Image
+                            </label>
+                            <p id="num-of-files"></p>
+                            <div id="images"></div>
+                        </div>
+                    </div>
 
                     <div class="card">
                         <div class="card-header">

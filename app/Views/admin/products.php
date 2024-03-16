@@ -23,7 +23,7 @@
             <div class="col-xl-3 col-lg-4">
                 <div class="card">
                     <div class="card-header">
-                        <div class="d-flex mb-3">
+                        <div class="d-flex mb-1">
                             <div class="flex-grow-1">
                                 <h5 class="fs-16">Filters</h5>
                             </div>
@@ -32,90 +32,12 @@
                             </div>
                         </div>
 
-                        <div class="filter-choices-input">
-                            <input class="form-control" data-choices="" data-choices-removeitem="" type="text"
-                                id="filter-choices-input" value="T-Shirts">
-                        </div>
+                      
                     </div>
 
                     <div class="accordion accordion-flush filter-accordion">
 
-                        <div class="card-body border-bottom">
-                            <div>
-                                <p class="text-muted text-uppercase fs-12 fw-medium mb-2">Products</p>
-                                <ul class="list-unstyled mb-0 filter-list">
-                                    <li>
-                                        <a href="#" class="d-flex py-1 align-items-center">
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-13 mb-0 listname">Grocery</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex py-1 align-items-center">
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-13 mb-0 listname">Fashion</h5>
-                                            </div>
-                                            <div class="flex-shrink-0 ms-2">
-                                                <span class="badge bg-light text-muted">5</span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex py-1 align-items-center">
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-13 mb-0 listname">Watches</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex py-1 align-items-center">
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-13 mb-0 listname">Electronics</h5>
-                                            </div>
-                                            <div class="flex-shrink-0 ms-2">
-                                                <span class="badge bg-light text-muted">5</span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex py-1 align-items-center">
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-13 mb-0 listname">Furniture</h5>
-                                            </div>
-                                            <div class="flex-shrink-0 ms-2">
-                                                <span class="badge bg-light text-muted">6</span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex py-1 align-items-center">
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-13 mb-0 listname">Automotive Accessories</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="d-flex py-1 align-items-center">
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-13 mb-0 listname">Appliances</h5>
-                                            </div>
-                                            <div class="flex-shrink-0 ms-2">
-                                                <span class="badge bg-light text-muted">7</span>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="d-flex py-1 align-items-center">
-                                            <div class="flex-grow-1">
-                                                <h5 class="fs-13 mb-0 listname">Kids</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    
 
                         <div class="card-body border-bottom">
                             <p class="text-muted text-uppercase fs-12 fw-medium mb-4">Price</p>
@@ -128,61 +50,6 @@
                             </div>
                         </div>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingBrands">
-                                <button class="accordion-button bg-transparent shadow-none" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseBrands"
-                                    aria-expanded="true" aria-controls="flush-collapseBrands">
-                                    <span class="text-muted text-uppercase fs-12 fw-medium">Brands</span> <span
-                                        class="badge bg-success rounded-pill align-middle ms-1 filter-badge"></span>
-                                </button>
-                            </h2>
-
-                            <div id="flush-collapseBrands" class="accordion-collapse collapse show"
-                                aria-labelledby="flush-headingBrands">
-                                <div class="accordion-body text-body pt-0">
-                                    <div class="search-box search-box-sm">
-                                        <input type="text" class="form-control bg-light border-0" id="searchBrandsList"
-                                            placeholder="Search Brands...">
-                                        <i class="ri-search-line search-icon"></i>
-                                    </div>
-                                    <div class="d-flex flex-column gap-2 mt-3 filter-check">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Boat"
-                                                id="productBrandRadio5" checked="">
-                                            <label class="form-check-label" for="productBrandRadio5">Boat</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="OnePlus"
-                                                id="productBrandRadio4">
-                                            <label class="form-check-label" for="productBrandRadio4">OnePlus</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Realme"
-                                                id="productBrandRadio3">
-                                            <label class="form-check-label" for="productBrandRadio3">Realme</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="Sony"
-                                                id="productBrandRadio2">
-                                            <label class="form-check-label" for="productBrandRadio2">Sony</label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="JBL"
-                                                id="productBrandRadio1" checked="">
-                                            <label class="form-check-label" for="productBrandRadio1">JBL</label>
-                                        </div>
-
-                                        <div>
-                                            <button type="button"
-                                                class="btn btn-link text-decoration-none text-uppercase fw-medium p-0">1,235
-                                                More</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end accordion-item -->
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="flush-headingDiscount">
@@ -334,7 +201,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-sm">
+                                <div class="col-sm" style="display: none;">
                                     <div class="d-flex justify-content-sm-end">
                                         <div class="search-box ms-2">
                                             <input type="text" class="form-control" id="searchProductList"
@@ -389,26 +256,26 @@
 
                             <div class="tab-content text-muted">
                                 <div class="tab-pane active" id="productnav-all" role="tabpanel">
-                                   
-                                        <table id="table-product-list-all" class="table display">
-                                            <thead>
-                                                <tr>
-                                                    <th>Column 1</th>
-                                                    <th>Column 2</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Row 1 Data 1</td>
-                                                    <td>Row 1 Data 2</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Row 2 Data 1</td>
-                                                    <td>Row 2 Data 2</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    
+
+                                    <table id="table-product-list-all" class="table nowrap align-middle" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th>Category</th>
+                                                <th>Publish date</th>
+                                                <th>Visibility</th>
+                                                <th>Stock</th>
+                                                <th>Price</th>
+                                                <th>Discount</th>
+                                                <th>Created by</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table-product-list-all-body">
+                                            
+                                        </tbody>
+                                    </table>
+
                                 </div>
                                 <!-- end tab pane -->
 
