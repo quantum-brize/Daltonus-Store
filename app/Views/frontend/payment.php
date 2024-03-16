@@ -653,6 +653,7 @@
                     </div><!--end col-->
                 </div><!--end row-->
                 <div class="row">
+                    <?php for($i=0; $i<4; $i++){?>
                     <div class="col-xxl-3 col-lg-4 col-md-6">
                         <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
                             <div class="bg-light bg-opacity-50 rounded py-4 position-relative">
@@ -680,8 +681,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!--end col-->
-                    <div class="col-xxl-3 col-lg-4 col-md-6">
+                    </div>
+                    <?php }?>
+                    <!--end col-->
+                    <!-- <div class="col-xxl-3 col-lg-4 col-md-6">
                         <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
                             <div class="bg-light bg-opacity-50 rounded py-4 position-relative">
                                 <img src="<?= base_url()?>/public/assets/images/products/img-7-1.png" alt="" style="max-height: 200px;max-width: 100%;" class="mx-auto d-block rounded-2">
@@ -707,8 +710,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!--end col-->
-                    <div class="col-xxl-3 col-lg-4 col-md-6">
+                    </div> -->
+                    <!--end col-->
+                    <!-- <div class="col-xxl-3 col-lg-4 col-md-6">
                         <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
                             <div class="bg-light bg-opacity-50 rounded py-4 position-relative"> 
                                 <img src="<?= base_url()?>/public/assets/images/products/img-3-1.png" alt="" style="max-height: 200px;max-width: 100%;" class="mx-auto d-block rounded-2">
@@ -736,8 +740,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!--end col-->
-                    <div class="col-xxl-3 col-lg-4 col-md-6">
+                    </div> -->
+                    <!--end col-->
+                    <!-- <div class="col-xxl-3 col-lg-4 col-md-6">
                         <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden card-animate">
                             <div class="bg-light bg-opacity-50 rounded py-4 position-relative"> 
                                 <img src="<?= base_url()?>/public/assets/images/products/img-2-1.png" alt="" style="max-height: 200px;max-width: 100%;" class="mx-auto d-block rounded-2">
@@ -761,7 +766,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!--end col-->
+                    </div> -->
+                    <!--end col-->
                 </div><!--end row-->
             </div><!--end container-->
         </section>

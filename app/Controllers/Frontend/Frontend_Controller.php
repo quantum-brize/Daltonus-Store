@@ -10,6 +10,12 @@ class Frontend_Controller extends Main_Controller
 {
 
 
+    public function __construct()
+    {
+        // Load session library
+        $this->session = \Config\Services::session();
+    }
+
     public function index(): void
     {
         $this->load_page('/frontend/home', PAGE_DATA_FRONTEND);
@@ -154,9 +160,17 @@ class Frontend_Controller extends Main_Controller
             ->getResultArray();
         $UsersData = !empty($UsersData[0]) ? $UsersData[0] : null;
         if (!empty($UsersData)) {
-            $session = \Config\Services::session();
-            $session->set(SES_USER_USER_ID, $UsersData['uid']);
-            $session->set(SES_USER_TYPE, $UsersData['type']);
+            // session_start();
+            // $_SESSION['user_id'] = $UsersData['uid'];
+            // $_SESSION['user_type'] = $UsersData['type'];
+
+            // $session = \Config\Services::session();
+            // $session->set(SES_USER_USER_ID, $UsersData['uid']);
+            // $session->set(SES_USER_TYPE, $UsersData['type']);
+
+            $this->session->set(SES_USER_USER_ID, $UsersData['uid']);
+            $this->session->set(SES_USER_TYPE, $UsersData['type']);
+            // $this->pr($this->session->get());
             $response = [
                 "status" => true,
                 "message" => "User Found",

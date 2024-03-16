@@ -459,6 +459,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php for($i=0; $i<5; $i++){?>
                                     <tr>
                                         <td>
                                             <div class="d-flex gap-3">
@@ -486,7 +487,8 @@
                                             </ul>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <?php }?>
+                                    <!-- <tr>
                                         <td>
                                             <div class="d-flex gap-3">
                                                 <div class="avatar-sm flex-shrink-0">
@@ -601,7 +603,7 @@
                                                 </li>
                                             </ul>
                                         </td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>

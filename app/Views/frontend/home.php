@@ -227,6 +227,9 @@
                 </div>
 
                 <div class="row gallery-wrapper mt-4 pt-2">
+                    <?php
+                        for($i=0; $i<8; $i++){
+                    ?>
                     <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot arrival"
                         data-category="hot arrival">
                         <div class="card overflow-hidden">
@@ -282,9 +285,10 @@
                             </div>
                         </div>
                     </div>
+                    <?php }?>
                     <!-- end col -->
 
-                    <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot" data-category="seller hot">
+                    <!-- <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot" data-category="seller hot">
                         <div class="card overflow-hidden">
                             <div class="bg-info-subtle rounded-top py-4">
                                 <div class="gallery-product">
@@ -330,10 +334,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- end col -->
 
-                    <div class="element-item col-xxl-3 col-xl-4 col-sm-6 trendy" data-category="trendy">
+                    <!-- <div class="element-item col-xxl-3 col-xl-4 col-sm-6 trendy" data-category="trendy">
                         <div class="card overflow-hidden">
                             <div class="bg-danger-subtle rounded-top py-4">
                                 <div class="gallery-product">
@@ -383,10 +387,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- end col -->
 
-                    <div class="element-item col-xxl-3 col-xl-4 col-sm-6 trendy" data-category="trendy">
+                    <!-- <div class="element-item col-xxl-3 col-xl-4 col-sm-6 trendy" data-category="trendy">
                         <div class="card overflow-hidden">
                             <div class="bg-warning-subtle rounded-top py-4">
                                 <div class="gallery-product">
@@ -433,10 +437,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- end col -->
 
-                    <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller arrival" data-category="arrival">
+                    <!-- <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller arrival" data-category="arrival">
                         <div class="card overflow-hidden">
                             <div class="bg-danger-subtle rounded-top py-4">
                                 <div class="gallery-product">
@@ -486,10 +490,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- end col -->
 
-                    <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot" data-category="seller hot">
+                    <!-- <div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot" data-category="seller hot">
                         <div class="card overflow-hidden">
                             <div class="bg-success-subtle rounded-top py-4">
                                 <div class="gallery-product">
@@ -539,10 +543,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- end col -->
 
-                    <div class="element-item col-xxl-3 col-xl-4 col-sm-6 project hot arrival"
+                    <!-- <div class="element-item col-xxl-3 col-xl-4 col-sm-6 project hot arrival"
                         data-category="hot arrival">
                         <div class="card overflow-hidden">
                             <div class="bg-info-subtle rounded-top py-4">
@@ -590,10 +594,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- end col -->
 
-                    <div class="element-item col-xxl-3 col-xl-4 col-sm-6 trendy" data-category="trendy">
+                    <!-- <div class="element-item col-xxl-3 col-xl-4 col-sm-6 trendy" data-category="trendy">
                         <div class="card overflow-hidden">
                             <div class="bg-danger-subtle rounded-top py-4">
                                 <div class="gallery-product">
@@ -646,7 +650,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- end col -->
                 </div>
 
@@ -724,6 +728,7 @@
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-wrapper pt-5">
+                        <?php for($i=0; $i<5; $i++){?>
                         <div class="swiper-slide">
                             <div class="card overflow-hidden">
                                 <div class="bg-dark-subtle rounded-top py-4">
@@ -755,8 +760,9 @@
                                 </div>
                             </div>
                         </div>
+                        <?php }?>
 
-                        <div class="swiper-slide">
+                        <!-- <div class="swiper-slide">
                             <div class="card overflow-hidden">
                                 <div class="bg-warning-subtle rounded-top py-4">
                                     <div class="gallery-product">
@@ -786,9 +792,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="swiper-slide">
+                        <!-- <div class="swiper-slide">
                             <div class="card overflow-hidden">
                                 <div class="bg-primary-subtle rounded-top py-4">
                                     <div class="gallery-product">
@@ -818,9 +824,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="swiper-slide">
+                        <!-- <div class="swiper-slide">
                             <div class="card overflow-hidden">
                                 <div class="bg-danger-subtle rounded-top py-4">
                                     <div class="gallery-product">
@@ -850,9 +856,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="swiper-slide">
+                        <!-- <div class="swiper-slide">
                             <div class="card overflow-hidden">
                                 <div class="bg-secondary-subtle rounded-top py-4">
                                     <div class="gallery-product">
@@ -882,7 +888,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

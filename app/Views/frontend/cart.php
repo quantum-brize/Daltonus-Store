@@ -460,6 +460,7 @@
                             <a href="#!" class="text-decoration-underline link-secondary">Clear Cart</a>
                         </div>
                     </div>
+                    <?php for($i=0; $i<4; $i++){?>
                     <div class="card product">
                         <div class="card-body p-4">
                             <div class="row gy-3">
@@ -471,7 +472,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm">
-                                    <a href="#!">
+                                    <a href="<?= base_url('product/details')?>">
                                         <h5 class="fs-16 lh-base mb-1">Branded Smart Chair Red</h5>
                                     </a>
                                     <ul class="list-inline text-muted fs-13 mb-3">
@@ -514,9 +515,10 @@
                         </div>
                         <!-- end card footer -->
                     </div>
+                    <?php }?>
                     <!--end card-->
                     
-                    <div class="card product">
+                    <!-- <div class="card product">
                         <div class="card-body p-4">
                             <div class="row gy-3">
                                 <div class="col-sm-auto">
@@ -567,10 +569,9 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- end card footer -->
-                    </div>
+                    </div> -->
                     <!--end card-->
-                    <div class="card product">
+                    <!-- <div class="card product">
                         <div class="card-body p-4">
                             <div class="row gy-3">
                                 <div class="col-sm-auto">
@@ -622,10 +623,9 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- end card footer -->
-                    </div>
+                    </div> -->
                     <!--end card-->
-                    <div class="card product">
+                    <!-- <div class="card product">
                         <div class="card-body p-4">
                             <div class="row gy-3">
                                 <div class="col-sm-auto">
@@ -676,8 +676,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- end card footer -->
-                    </div>
+                    </div> -->
                     <!--end card-->
                 </div>
                 <!--end col-->
