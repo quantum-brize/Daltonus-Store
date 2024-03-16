@@ -156,6 +156,7 @@ defined('UID_CATEGORY')     || define('UID_CATEGORY', 'CAT');
 defined('UID_PRODUCT')      || define('UID_PRODUCT', 'PRO');
 defined('UID_PRODUCT_ITEM') || define('UID_PRODUCT_ITEM', 'PRI');
 defined('UID_PRODUCT_META') || define('UID_PRODUCT_META', 'PRM');
+defined('UID_PRODUCT_IMG')  || define('UID_PRODUCT_IMG', 'PRG');
 
 
 //////////////////////////////////////////////__STATUS
@@ -176,6 +177,9 @@ defined('SES_USER_USER_ID')  || define('SES_USER_USER_ID', 'USER_user_id');
 defined('SES_USER_TYPE')     || define('SES_USER_TYPE', 'USER_user_type');
 defined('SES_ADMIN_USER_ID') || define('SES_ADMIN_USER_ID', 'ADMIN_user_id');
 defined('SES_ADMIN_TYPE')    || define('SES_ADMIN_TYPE', 'ADMIN_user_type');
+
+//////////////////////////////////////////////__PATH
+defined('PATH_PRODUCT_IMG')  ||  define('PATH_PRODUCT_IMG', WRITEPATH . 'uploads\product_images');
 
 
 //////////////////////////////////////////////__PAGEDATA

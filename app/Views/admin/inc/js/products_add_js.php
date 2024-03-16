@@ -1,7 +1,32 @@
 <script>
+  
     $(document).ready(function () {
+
         get_categories()
         var editor;
+
+        let $fileInput = $("#file-input");
+        let $imageContainer = $("#images");
+        let $numOfFiles = $("#num-of-files");
+
+        function preview() {
+            $imageContainer.html("");
+            $numOfFiles.text(`${$fileInput[0].files.length} Files Selected`);
+
+            $.each($fileInput[0].files, function (index, file) {
+                let reader = new FileReader();
+                let $figure = $("<figure>");
+                let $figCap = $("<figcaption>").text(file.name);
+                $figure.append($figCap);
+                reader.onload = function () {
+                    let $img = $("<img>").attr("src", reader.result);
+                    $figure.prepend($img);
+                }
+                $imageContainer.append($figure);
+                reader.readAsDataURL(file);
+            });
+        }
+        $fileInput.change(preview);
 
         ClassicEditor.create(document.querySelector("#ckeditor-classic")).then(function (createdEditor) {
             editor = createdEditor;
@@ -29,7 +54,11 @@
             formData.append('metaTitle', $('#meta-title-input').val());
             formData.append('metaKeywords', $('#meta-keywords-input').val());
             formData.append('metaDescription', $('#meta-description-input').val());
-          
+
+            $.each($('#file-input')[0].files, function (index, file) {
+                formData.append('images[]', file);
+            });
+
 
             $.ajax({
                 url: "<?= base_url('/api/product/add') ?>",
@@ -64,7 +93,8 @@
                         $('#meta-description-input').val(``)
                         $('#product-price-input').val(``)
                         $('#product-discount-input').val(``)
-
+                        $imageContainer.html(``);
+                        $numOfFiles.html(``);
                     } else {
                         html += `<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
                                 <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}

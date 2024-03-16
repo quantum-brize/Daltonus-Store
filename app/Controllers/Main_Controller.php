@@ -55,4 +55,14 @@ class Main_Controller extends BaseController
 		return rand(1000, 9999);
 	}
 
+
+	public function single_upload($file,$path){
+		if ($file->isValid() && !$file->hasMoved()) {
+            $newName = $file->getRandomName();
+            $file->move($path, $newName);
+            return $newName;
+        }
+        return null;
+	}
+
 }
