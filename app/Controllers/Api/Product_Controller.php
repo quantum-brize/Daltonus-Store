@@ -130,6 +130,7 @@ class Product_Controller extends Api_Controller
                     product.created_at AS created_at,
                     categories.name AS category,
                     product_item.price AS base_price,
+                    product_item.sku AS product_stock,
                     product_item.discount AS base_discount,
                     product_item.product_tags AS tags,
                     product_item.publish_date AS publish_date,
@@ -139,7 +140,9 @@ class Product_Controller extends Api_Controller
                     product_item.manufacturer_name AS manufacturer_name,
                     product_meta_detalis.meta_title,
                     product_meta_detalis.meta_description,
-                    product_meta_detalis.meta_keywords
+                    product_meta_detalis.meta_keywords,
+                    users.user_name AS vendor,
+                    vendor.uid AS vendor_id
                 FROM
                     product
                 JOIN
@@ -147,11 +150,20 @@ class Product_Controller extends Api_Controller
                 JOIN
                     product_meta_detalis ON product.uid = product_meta_detalis.product_id
                 JOIN 
-                    categories ON product.category_id = categories.uid;";
+                    categories ON product.category_id = categories.uid
+                JOIN
+                    vendor ON product.vendor_id = vendor.uid
+                JOIN
+                    users ON vendor.user_id = users.uid;";
 
         $products = $CommonModel->customQuery($sql);
 
         if (count($products) > 0) {
+            $ProductImagesModel = new ProductImagesModel();
+            foreach($products as $key => $product){
+                $products[$key]->product_img = $ProductImagesModel->where('product_id', $product->product_id)->findAll();
+            }
+
             $resp["status"] = true;
             $resp["data"] = $products;
             $resp["message"] = 'Products Found';

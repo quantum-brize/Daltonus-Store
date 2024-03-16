@@ -1,15 +1,7 @@
 <!doctype html>
 
-<html 
-    lang="en" 
-    data-layout="vertical" 
-    data-topbar="light" 
-    data-sidebar="dark" 
-    data-sidebar-size="lg"
-    data-sidebar-image="none" 
-    data-preloader="disable" 
-    data-theme="default" 
-    data-theme-colors="default">
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg"
+    data-sidebar-image="none" data-preloader="disable" data-theme="default" data-theme-colors="default">
 
 <head>
 
@@ -31,17 +23,17 @@
     <link href="<?= base_url() ?>public/assets_admin/css/app.min.css" rel="stylesheet" type="text/css">
     <link href="<?= base_url() ?>public/assets_admin/css/custom.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.min.css">
-    <? //require_once(APPPATH . 'views/inc/main_css.php'); ?>
+    <? //require_once(APPPATH . 'views/inc/main_css.php');    ?>
     <?php
-    if (!empty($header_asset_link)) {
+    if (!empty ($header_asset_link)) {
         foreach ($header_asset_link as $link) {
             echo "<link href='" . base_url() . 'public/' . $link . "' rel='stylesheet' type='text/css'>";
         }
     }
 
-    if (!empty($header_link)) {
+    if (!empty ($header_link)) {
         foreach ($header_link as $link) {
-            require_once('css/' . $link);
+            require_once ('css/' . $link);
         }
     }
     ?>
@@ -56,9 +48,67 @@
             justify-content: center;
             left: 0px;
         }
-        /* .simplebar-content{
-            position: fixed;
-        } */
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+
+        /* Scrollbar Track */
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Scrollbar Thumb */
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            /* Blueish thumb color */
+            border-radius: 10px;
+        }
+
+        /* Scrollbar Thumb Hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.8);
+            /* Lighter blueish thumb color on hover */
+        }
+
+        /* Scrollbar Thumb Active */
+        ::-webkit-scrollbar-thumb:active {
+            background: rgba(255, 255, 255, 1);
+            /* Darkest blueish thumb color on click */
+        }
+
+        #table-product-list-all_wrapper {
+            overflow-x: scroll;
+        }
+
+        .dt-input {
+            position: relative;
+        }
+
+        .dt-input input {
+            width: 250px;
+            height: 32px;
+            background: #fcfcfc;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+            text-indent: 10px;
+        }
+
+        .dt-input .fa-search {
+            position: absolute;
+            top: 10px;
+            left: auto;
+            right: 10px;
+        }
+        .dt-input{
+            outline: none;
+        }
+        .dt-length label{
+            display: none;
+        }
     </style>
     <script>
         sessionStorage.setItem("data-bs-theme", "dark")
