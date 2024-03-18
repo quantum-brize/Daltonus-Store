@@ -61,7 +61,41 @@ class Product_Controller extends Admin_Controller{
 
         $this->isAuth('/admin/products_add',$data);
     }
- 
+    
+    public function load_single_product(){
+        
+        $data = PAGE_DATA_ADMIN;
+        $data = [
+            'data_page' => [],
+            'data_header' => [
+                'header_link' => ['product_single_css.php'],
+                'header_asset_link' => [
+                    'assets_admin/libs/nouislider/nouislider.min.css',
+                    'assets_admin/libs/gridjs/theme/mermaid.min.css',
+                    'assets_admin/css/app.min.css',
+                    'assets_admin/css/custom.min.css'
+                ],
+                'title' => 'Products',
+                'header' => [],
+                'sidebar' => ['products'=>true],
+                'site' => 'admin'
+            ],
+            'data_footer' => [
+                'footer_link' => ['product_single_js.php'],
+                'footer_asset_link'=> [
+                    'assets_admin/libs/nouislider/nouislider.min.js',
+                    'assets_admin/libs/wnumb/wNumb.min.js',
+                    'assets_admin/libs/gridjs/gridjs.umd.js',
+                    'assets_admin/js/pages/ecommerce-product-list.init.js',
+                ],
+                'footer' => [],
+                'site' => 'admin'
+            ]
+        ];
+
+        $this->isAuth('/admin/product_single',$data);
+    } 
+
 
 
 }

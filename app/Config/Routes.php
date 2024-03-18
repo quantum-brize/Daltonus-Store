@@ -54,6 +54,7 @@ $routes->post('/admin/login-action',            'Admin\Admin_Controller::handle_
 $routes->get('/admin/categories',               'Admin\Category_Controller::index');
 $routes->get('/admin/products',                 'Admin\Product_Controller::index');
 $routes->get('/admin/products/add',             'Admin\Product_Controller::load_product_add');
+$routes->get('/admin/product',                  'Admin\Product_Controller::load_single_product');
 $routes->get('/admin/orders',                   'Admin\Orders_Controller::index');
 $routes->get('/admin/users/customers',          'Admin\User_Controller::load_customer');
 $routes->get('/admin/users/vendors',            'Admin\User_Controller::load_vendor');

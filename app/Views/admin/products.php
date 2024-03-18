@@ -263,6 +263,7 @@
                                                 <th>Product</th>
                                                 <th>Category</th>
                                                 <th>Publish date</th>
+                                                <th>Price</th>
                                                 <th>Visibility</th>
                                                 <th>Stock</th>
                                                 <th>Created by</th>

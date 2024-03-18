@@ -1,10 +1,9 @@
 <style>
     .product-img{
-        height: 50px;
-        width: 50px;
+        height: 60px;
+        width: 60px;
         object-fit: contain;
         background: white;
-        margin-bottom: 10px;
     }
     tbody tr{
         transition: 50ms;
