@@ -220,14 +220,14 @@
                                         <li class="nav-item">
                                             <a class="nav-link active fw-semibold" data-bs-toggle="tab"
                                                 href="#productnav-all" role="tab">
-                                                All <span
-                                                    class="badge bg-danger-subtle text-danger align-middle rounded-pill ms-1">12</span>
+                                                All <span id="all_product_count"
+                                                    class="badge bg-danger-subtle text-danger align-middle rounded-pill ms-1"></span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link fw-semibold" data-bs-toggle="tab"
                                                 href="#productnav-published" role="tab">
-                                                Published <span
+                                                Published <span 
                                                     class="badge bg-danger-subtle text-danger align-middle rounded-pill ms-1">5</span>
                                             </a>
                                         </li>
@@ -257,7 +257,7 @@
                             <div class="tab-content text-muted">
                                 <div class="tab-pane active" id="productnav-all" role="tabpanel">
 
-                                    <table id="table-product-list-all" class="table nowrap align-middle" style="width:100%">
+                                    <table id="table-product-list-all" class="table nowrap align-middle table-hover" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>Product</th>
@@ -265,10 +265,7 @@
                                                 <th>Publish date</th>
                                                 <th>Visibility</th>
                                                 <th>Stock</th>
-                                                <th>Price</th>
-                                                <th>Discount</th>
                                                 <th>Created by</th>
-                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody id="table-product-list-all-body">

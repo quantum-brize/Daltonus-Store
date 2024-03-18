@@ -1,7 +1,13 @@
 <script>
     load_products()
-
-    
+    function formatDate(dateString) {
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        const date = new Date(dateString);
+        const day = date.getDate();
+        const month = months[date.getMonth()];
+        const year = date.getFullYear();
+        return `${day} ${month} ${year}`;
+    }
     function load_products() {
         $.ajax({
             url: "<?= base_url('/api/product') ?>",
@@ -12,59 +18,30 @@
             success: function (resp) {
                 if (resp.status) {
                     if (resp.data.length > 0) {
+                        $('#all_product_count').html(resp.data.length)
                         let html = ``
 
                         $.each(resp.data, function (index, product) {
+                            let product_img = product.product_img.length > 0 ? product.product_img[0]['src'] : ''
                             html += `<tr>
-                                            <td>
-                                                <img src="" alt="" class="avatar-xxs me-2">
-                                                <a href="javascript:void(0);" class="currency_name">Litecoin (LTC)</a>
+                                            <td class="text-center">
+                                                <p>${product.name.slice(0, 15) + (product.name.length > 15 ? '...' : '')}</p>
+                                                <img src="<?= base_url('public/uploads/product_images/') ?>${product_img}" alt="" class="product-img">
                                             </td>
-                                            <td>
+                                            <td class="text-center">
                                                 ${product.category}
                                             </td>
-                                            <td>
-                                                ${product.publish_date == '' ? product.created_at : product.publish_date}
+                                            <td class="text-center">
+                                                ${product.publish_date == '' ? formatDate(product.created_at) : formatDate(product.publish_date)}
                                             </td>
-                                            <td>
-                                                ${product.visibility}
+                                            <td class="text-center">
+                                                <sapn class="badge bg-success-subtle text-success text-uppercase">${product.visibility}</sapn>
                                             </td>
-                                            <td>
-                                                ${product.product_stock}
+                                            <td class="text-center">
+                                                <sapn class="badge bg-danger-subtle text-danger text-uppercase">${product.product_stock}</sapn>
                                             </td>
-                                            <td>
-                                                ${product.base_price}
-                                            </td>
-                                            <td>    
-                                                ${product.base_discount}
-                                            </td>
-                                            <td>
+                                            <td class="text-center">
                                                 ${product.vendor}
-                                            </td>
-                                            
-                                            <td>
-                                                <div class="dropdown d-inline-block">
-                                                    <button class="btn btn-soft-secondary btn-sm dropdown"
-                                                        type="button" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
-                                                        <i class="ri-more-fill align-middle"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu dropdown-menu-end">
-                                                        <li><a href="#!" class="dropdown-item"><i
-                                                                    class="ri-eye-fill align-bottom me-2 text-muted"></i>
-                                                                View</a></li>
-                                                        <li><a class="dropdown-item edit-item-btn"><i
-                                                                    class="ri-pencil-fill align-bottom me-2 text-muted"></i>
-                                                                Edit</a></li>
-                                                        <li>
-                                                            <a class="dropdown-item remove-item-btn">
-                                                                <i
-                                                                    class="ri-delete-bin-fill align-bottom me-2 text-muted"></i>
-                                                                Delete
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
                                             </td>
                                         </tr>`
                         })
