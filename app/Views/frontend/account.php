@@ -471,6 +471,9 @@
                                     <li class="nav-item " role="presentation">
                                         <a class="nav-link fs-15" data-bs-toggle="tab" href="#custom-v-pills-setting" role="tab" aria-selected="false" tabindex="-1"><i class="bi bi-gear align-middle me-1"></i> Settings</a>
                                     </li>
+                                    <li class="nav-item " role="presentation">
+                                        <a class="nav-link fs-15" data-bs-toggle="tab" href="#custom-v-pills-change-password" role="tab" aria-selected="false" tabindex="-1"><i class="bi bi-key align-middle me-1"></i> Change Password</a>
+                                    </li>
                                     <li class="nav-item">
                                         <a class="nav-link fs-15" href="<?=base_url('logout')?>"><i class="bi bi-box-arrow-right align-middle me-1"></i> Logout</a>
                                     </li>
@@ -500,7 +503,7 @@
                                                                 <td>
                                                                     Customer Name
                                                                 </td>
-                                                                <td class="fw-medium">
+                                                                <td class="fw-medium" id="customer_name">
                                                                     Raquel Murillo
                                                                 </td>
                                                             </tr>
@@ -508,16 +511,14 @@
                                                                 <td>
                                                                     Mobile / Phone Number
                                                                 </td>
-                                                                <td class="fw-medium">
-                                                                    +(253) 01234 5678
+                                                                <td class="fw-medium" id="customer_number">
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     Email Address
                                                                 </td>
-                                                                <td class="fw-medium">
-                                                                    raque@toner.com
+                                                                <td class="fw-medium" id="customer_email">
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -897,102 +898,97 @@
                                                             <h5 class="fs-16 text-decoration-underline mb-4">Personal Details</h5>
                                                         </div>
                                                         <div class="col-lg-6">
+                                                        <div class='form-group' id="userImage">
+                                                            <div>
+                                                                <label for="formGroupExampleInput2">Image</label>
+                                                            </div>
+                                                            <img src="https://usercontent.one/wp/www.vocaleurope.eu/wp-content/uploads/no-image.jpg?media=1642546813"
+                                                                height="100" id="user_img" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="file" class="form-control-file" placeholder="User Image"
+                                                                    name="user_img[]" required />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
                                                             <div class="mb-3">
-                                                                <label for="firstnameInput" class="form-label">First Name</label>
-                                                                <input type="text" class="form-control" id="firstnameInput" placeholder="Enter your firstname" value="Raquel">
+                                                                <label for="firstnameInput" class="form-label">Name</label>
+                                                                <input type="text" class="form-control" id="firstnameInput" placeholder="Enter your firstname">
+                                                                <span id="name_val" style="color: red;"></span>
                                                             </div>
                                                         </div>
                                                         <!--end col-->
-                                                        <div class="col-lg-6">
+                                                        <!-- <div class="col-lg-6">
                                                             <div class="mb-3">
                                                                 <label for="lastnameInput" class="form-label">Last Name</label>
-                                                                <input type="text" class="form-control" id="lastnameInput" placeholder="Enter your lastname" value="Murillo">
+                                                                <input type="text" class="form-control" id="lastnameInput" placeholder="Enter your lastname">
                                                             </div>
-                                                        </div>
+                                                        </div> -->
                                                         <!--end col-->
                                                         <div class="col-lg-6">
                                                             <div class="mb-3">
                                                                 <label for="phonenumberInput" class="form-label">Phone Number</label>
-                                                                <input type="text" class="form-control" id="phonenumberInput" placeholder="Enter your phone number" value="+(253) 01234 5678">
+                                                                <input type="text" class="form-control" id="phonenumberInput" placeholder="Enter your phone number">
+                                                                <span id="number_val" style="color: red;"></span>
                                                             </div>
                                                         </div>
                                                         <!--end col-->
                                                         <div class="col-lg-6">
                                                             <div class="mb-3">
                                                                 <label for="emailInput" class="form-label">Email Address</label>
-                                                                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" value="raque@toner.com">
+                                                                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email">
+                                                                <span id="email_val" style="color: red;"></span>
                                                             </div>
                                                         </div>
                                                         <!--end col-->
                                                         <div class="col-lg-4">
                                                             <div class="mb-3">
                                                                 <label for="cityInput" class="form-label">City</label>
-                                                                <input type="text" class="form-control" id="cityInput" placeholder="City" value="Phoenix">
+                                                                <input type="text" class="form-control" id="cityInput" placeholder="City">
                                                             </div>
                                                         </div>
                                                         <!--end col-->
                                                         <div class="col-lg-4">
                                                             <div class="mb-3">
                                                                 <label for="countryInput" class="form-label">Country</label>
-                                                                <input type="text" class="form-control" id="countryInput" placeholder="Country" value="USA">
+                                                                <input type="text" class="form-control" id="countryInput" placeholder="Country">
                                                             </div>
                                                         </div>
                                                         <!--end col-->
                                                         <div class="col-lg-4">
                                                             <div class="mb-3">
                                                                 <label for="zipcodeInput" class="form-label">Zip Code</label>
-                                                                <input type="text" class="form-control" minlength="5" maxlength="6" id="zipcodeInput" placeholder="Enter zipcode" value="90011">
+                                                                <input type="text" class="form-control" minlength="5" maxlength="6" id="zipcodeInput" placeholder="Enter zipcode">
                                                             </div>
                                                         </div>
                                                         <!--end col-->
-                                                        <div class="col-lg-12">
-                                                            <div class="mb-3 pb-2">
-                                                                <label for="exampleFormControlTextarea" class="form-label">Description</label>
-                                                                <textarea class="form-control" id="exampleFormControlTextarea" placeholder="Enter your description" rows="3">Hi I'm Raquel Murillo, It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is European languages are members of the same family.</textarea>
+                                                        <div class="col-lg-4">
+                                                            <div class="mb-3">
+                                                                <label for="cityInput" class="form-label">District</label>
+                                                                <input type="text" class="form-control" id="districtInput" placeholder="District">
                                                             </div>
                                                         </div>
+                                                        <!--end col-->
+                                                        <div class="col-lg-4">
+                                                            <div class="mb-3">
+                                                                <label for="countryInput" class="form-label">State</label>
+                                                                <input type="text" class="form-control" id="stateInput" placeholder="State">
+                                                            </div>
+                                                        </div>
+                                                        <!--end col-->
+                                                        <div class="col-lg-4">
+                                                            <div class="mb-3">
+                                                                <label for="zipcodeInput" class="form-label">Locality</label>
+                                                                <input type="text" class="form-control" minlength="5" maxlength="6" id="localityInput" placeholder="Enter zipcode">
+                                                            </div>
+                                                        </div>
+                                                        <input type="hidden" class="form-control" id="user_id">
                                                         <!--end col-->
                                                     </div>
                                                     <!--end row-->
                                                 </form>
                                                 <!--end tab-pane-->
-                                                <div class="mb-3" id="changePassword">
-                                                    <h5 class="fs-16 text-decoration-underline mb-4">Change Password</h5>
-                                                    <form action="javascript:void(0);">
-                                                        <div class="row g-2">
-                                                            <div class="col-lg-4">
-                                                                <div>
-                                                                    <label for="oldpasswordInput" class="form-label">Old Password*</label>
-                                                                    <input type="password" class="form-control" id="oldpasswordInput" placeholder="Enter current password">
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-lg-4">
-                                                                <div>
-                                                                    <label for="newpasswordInput" class="form-label">New Password*</label>
-                                                                    <input type="password" class="form-control" id="newpasswordInput" placeholder="Enter new password">
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-lg-4">
-                                                                <div>
-                                                                    <label for="confirmpasswordInput" class="form-label">Confirm Password*</label>
-                                                                    <input type="password" class="form-control" id="confirmpasswordInput" placeholder="Confirm password">
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                            <div class="col-lg-12">
-                                                                <div class="mb-3">
-                                                                    <a href="auth-pass-reset-basic.html" class="link-primary text-decoration-underline">Forgot Password ?</a>
-                                                                </div>
-                                                            </div>
-                                                            <!--end col-->
-                                                        </div>
-                                                        <!--end row-->
-                                                    </form>
-                                                </div>
-                                                <!--end tab-pane-->
-                                                <div class="mb-3" id="privacy">
+                                                <!-- <div class="mb-3" id="privacy">
                                                     <h5 class="fs-16 text-decoration-underline mb-4">Privacy Policy</h5>
                                                     <div class="mb-3">
                                                         <h5 class="fs-15 mb-2">Security:</h5>
@@ -1084,6 +1080,59 @@
                                                             </li>
                                                         </ul>
                                                     </div>
+                                                </div> -->
+                                                <!--end tab-pane-->
+                                                <div class="text-sm-end">
+                                                    <button type="submit" id="update_profile" class="btn btn-secondary d-block d-sm-inline-block"><i class="ri-edit-box-line align-middle me-2"></i> Update Profile</button>
+                                                </div>
+                                            </div>
+                                            <!-- end card-body -->
+                                        </div>
+                                        <!--end card-->
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                            </div>
+                            <!--end tab-pane-->
+                            <div class="tab-pane fade" id="custom-v-pills-change-password" role="tabpanel">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="mb-3" id="changePassword">
+                                                    <h5 class="fs-16 text-decoration-underline mb-4">Change Password</h5>
+                                                    <form action="javascript:void(0);">
+                                                        <div class="row g-2">
+                                                            <div class="col-lg-4">
+                                                                <div>
+                                                                    <label for="oldpasswordInput" class="form-label">Old Password*</label>
+                                                                    <input type="password" class="form-control" id="oldpasswordInput" placeholder="Enter current password">
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-lg-4">
+                                                                <div>
+                                                                    <label for="newpasswordInput" class="form-label">New Password*</label>
+                                                                    <input type="password" class="form-control" id="newpasswordInput" placeholder="Enter new password">
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-lg-4">
+                                                                <div>
+                                                                    <label for="confirmpasswordInput" class="form-label">Confirm Password*</label>
+                                                                    <input type="password" class="form-control" id="confirmpasswordInput" placeholder="Confirm password">
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                            <div class="col-lg-12">
+                                                                <div class="mb-3">
+                                                                    <a href="auth-pass-reset-basic.html" class="link-primary text-decoration-underline">Forgot Password ?</a>
+                                                                </div>
+                                                            </div>
+                                                            <!--end col-->
+                                                        </div>
+                                                        <!--end row-->
+                                                    </form>
                                                 </div>
                                                 <!--end tab-pane-->
                                                 <div class="text-sm-end">
@@ -1389,3 +1438,91 @@
                 </div>
             </div>
         </div>
+
+        
+<script>
+    $(document).ready(function () {
+        // alert("hello")
+        $.ajax({
+            url: "<?= base_url('api/user/data') ?>",
+            type: "GET",
+            success: function (resp) {
+                resp = JSON.parse(resp)
+                console.log(resp.user_data.number)
+                if (resp.status == true) {
+                   console.log(resp.number)
+                   
+                    $("#user_id").val(resp.user_id)
+                    $("#firstnameInput").val(resp.user_data.user_name)
+                    $("#phonenumberInput").val(resp.user_data.number)
+                    $("#emailInput").val(resp.user_data.email)
+
+                    $("#customer_name").text(resp.user_data.user_name)
+                    $("#customer_number").text(resp.user_data.number)
+                    $("#customer_email").text(resp.user_data.email)
+
+                } else {
+                    console.log(resp.message)
+                }
+            },
+            error: function () {
+            }
+        })
+
+        $("#update_profile").click(function(){
+            var user_id = $("#user_id").val()
+            var name = $("#firstnameInput").val()
+            var number = $("#phonenumberInput").val()
+            var email = $("#emailInput").val()
+
+            var city = $("#cityInput").val()
+            var country = $("#countryInput").val()
+            var zip = $("#zipcodeInput").val()
+            var district = $("#districtInput").val()
+            var state = $("#stateInput").val()
+            var locality = $("#localityInput").val()
+
+            if(name == ""){
+                $("#name_val").text("Please enter name!")
+            }else{
+                $("#name_val").text("")
+            }
+            if(number == ""){
+                $("#number_val").text("Please enter number!")
+            }else{
+                $("#number_val").text("")
+            }
+            if(email == ""){
+                $("#email_val").text("Please enter email!")
+            }else{
+                $("#email_val").text("")
+            }
+
+            if(name != "" && number != "" && email != ""){
+                alert("hello")
+            }
+
+
+            
+        });
+    })
+
+    $(document).on('change', 'input[name="user_img[]"]', function (e) {
+    console.log(1)
+    var files = e.target.files;
+    $('#userImage').html(''); // Clear existing previews
+
+    for (var i = 0; i < files.length; i++) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#userImage').append(`<img src="${e.target.result}" height="100" id="user_img"/>`);
+        };
+
+        reader.readAsDataURL(files[i]);
+        }
+    });
+
+
+
+</script>
