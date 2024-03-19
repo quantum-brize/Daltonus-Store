@@ -432,11 +432,11 @@
                     <div class="col-lg-12">
                         <div class="pt-3">
                             <div class="mt-n5 d-flex gap-3 flex-wrap align-items-end">
-                                <img src="<?= base_url()?>/public/assets/images/users/avatar-1-1.jpg" alt="" class="avatar-xl rounded p-1 bg-light mt-n3">
+                                <img src="https://usercontent.one/wp/www.vocaleurope.eu/wp-content/uploads/no-image.jpg?media=1642546813" alt="" class="avatar-xl rounded p-1 bg-light mt-n3" id="user_avtar_img">
                                 <div>
-                                    <h5 class="fs-18">Raquel Murillo</h5>
-                                    <div class="text-muted">
-                                        <i class="bi bi-geo-alt"></i> Phoenix, USA
+                                    <h5 class="fs-18" id="user_full_name"></h5>
+                                    <div class="text-muted"id="user_location">
+                                        <!-- <i class="bi bi-geo-alt"></i> -->
                                     </div>
                                 </div>
                                 <div class="ms-md-auto">
@@ -504,7 +504,6 @@
                                                                     Customer Name
                                                                 </td>
                                                                 <td class="fw-medium" id="customer_name">
-                                                                    Raquel Murillo
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -525,16 +524,14 @@
                                                                 <td>
                                                                     Location
                                                                 </td>
-                                                                <td class="fw-medium">
-                                                                    Phoenix, USA
+                                                                <td class="fw-medium" id="customer_location">
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
                                                                     Since Member
                                                                 </td>
-                                                                <td class="fw-medium">
-                                                                    Aug, 2022
+                                                                <td class="fw-medium" id="customer_since_member">
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -906,8 +903,8 @@
                                                                 height="100" id="user_img" />
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="file" class="form-control-file" placeholder="User Image"
-                                                                    name="user_img[]" required />
+                                                                <input type="file" class="form-control-file" placeholder="User Image" id="user_img_input"
+                                                                    name="user_img[]" multiple />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-12">
@@ -979,7 +976,7 @@
                                                         <div class="col-lg-4">
                                                             <div class="mb-3">
                                                                 <label for="zipcodeInput" class="form-label">Locality</label>
-                                                                <input type="text" class="form-control" minlength="5" maxlength="6" id="localityInput" placeholder="Enter zipcode">
+                                                                <input type="text" class="form-control" id="localityInput" placeholder="Enter Locality">
                                                             </div>
                                                         </div>
                                                         <input type="hidden" class="form-control" id="user_id">
@@ -1450,16 +1447,33 @@
                 resp = JSON.parse(resp)
                 console.log(resp.user_data.number)
                 if (resp.status == true) {
-                   console.log(resp.number)
+                   console.log(resp.user_img)
                    
+                   
+                   $("#user_avtar_img").attr("src", "<?= base_url()?>"+resp.user_img.img);
+                   $("#user_full_name").text(resp.user_data.user_name);
+                   $("#user_location").append(`<i class="bi bi-geo-alt"></i>${resp.address.city}`);
+
                     $("#user_id").val(resp.user_id)
                     $("#firstnameInput").val(resp.user_data.user_name)
                     $("#phonenumberInput").val(resp.user_data.number)
                     $("#emailInput").val(resp.user_data.email)
+                    $("#cityInput").val(resp.address.city)
+                    $("#countryInput").val(resp.address.country)
+                    $("#zipcodeInput").val(resp.address.zipcode)
+                    $("#districtInput").val(resp.address.district)
+                    $("#stateInput").val(resp.address.state)
+                    $("#localityInput").val(resp.address.locality)
+
+                    $("#user_img").attr("src", "<?= base_url()?>"+resp.user_img.img);
+                    
+                
 
                     $("#customer_name").text(resp.user_data.user_name)
                     $("#customer_number").text(resp.user_data.number)
                     $("#customer_email").text(resp.user_data.email)
+                    $("#customer_location").text(resp.address.country)
+                    $("#customer_since_member").text(resp.user_data.created_at)
 
                 } else {
                     console.log(resp.message)
@@ -1499,7 +1513,80 @@
             }
 
             if(name != "" && number != "" && email != ""){
-                alert("hello")
+                // alert("hello")
+                var formData = new FormData();
+
+                formData.append('name', name);
+                formData.append('number', number);
+                formData.append('email', email);
+                formData.append('city', city);
+                formData.append('country', country);
+                formData.append('zip', zip);
+                formData.append('district', district);
+                formData.append('state', state);
+                formData.append('locality', locality);
+                formData.append('user_id', user_id);
+                console.log(formData.get('name'));
+
+                $.each($('#user_img_input')[0].files, function (index, file) {
+                    formData.append('images[]', file);
+                });
+                $.ajax({
+                    url: "<?= base_url('/api/update/user') ?>",
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    beforeSend: function () {
+                        $('#update_profile').html(`<div class="spinner-border" role="status"></div>`)
+                        $('#update_profile').attr('disabled', true)
+
+                    },
+                    success: function (resp) {
+                        console.log(resp)
+
+                        if (resp.status) {
+                            window.location.href = "<?= base_url('/user/account') ?>";
+                            // html += `<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                            //         <i class="ri-checkbox-circle-fill label-icon"></i>${resp.message}
+                            //         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            //     </div>`
+                            // $('#product-title-input').val(``)
+                            // editor.setData(``)
+                            // $('#choices-category-input').val(``)
+                            // $('#datepicker-publish-input').val(``)
+                            // $('#product-tags-input').val(``)
+                            // $('#choices-publish-visibility-input').val(``)
+                            // $('#choices-publish-status-input').val(``)
+                            // $('#manufacturer-name-input').val(``)
+                            // $('#manufacturer-brand-input').val(``)
+                            // $('#meta-title-input').val(``)
+                            // $('#meta-keywords-input').val(``)
+                            // $('#meta-description-input').val(``)
+                            // $('#product-price-input').val(``)
+                            // $('#product-discount-input').val(``)
+                            // $imageContainer.html(``);
+                            // $numOfFiles.html(``);
+                        } else {
+                            console.log(resp.status)
+                            // html += `<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                            //         <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}
+                            //         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            //     </div>`
+                        }
+
+
+                        $('#alert').html(html)
+                        console.log(resp)
+                    },
+                    error: function (err) {
+                        console.log(err)
+                    },
+                    complete: function () {
+                        $('#product_add_btn').html(`submit`)
+                        $('#product_add_btn').attr('disabled', false)
+                    }
+                })
             }
 
 

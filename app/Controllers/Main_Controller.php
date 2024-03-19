@@ -62,20 +62,7 @@ class Main_Controller extends BaseController
 
 	public function is_logedin(){
 		$userID = $this->session->get(SES_USER_USER_ID);
-		// $this->pr($this->session->get(SES_USER_USER_ID));
 		return $userID;
-        // $session = \Config\Services::session();
-		// session_start();
-		// Retrieve session data
-		// $userID = $_SESSION[SES_USER_USER_ID];
-		// $username = $_SESSION['username'];
-        // $session_data = $this->session->get();
-		// $this->prd($session_data);
-        // if(!empty($session_data)){
-        //     return $session_data;
-        // }else{
-        //     return "False!";
-        // }
     }
 
 	

@@ -554,7 +554,7 @@
                 </button>
             </div>
 
-            <div class="dropdown topbar-head-dropdown ms-2 header-item dropdown-hover-end">
+            <div class="dropdown topbar-head-dropdown ms-2 header-item ">
                 <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="bi bi-sun align-middle fs-20"></i>
@@ -570,42 +570,8 @@
                         default)</a>
                 </div>
             </div>
-            <div class="dropdown header-item dropdown-hover-end">
-                <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="<?=base_url()?>public/assets/images/users/avatar-1-1.jpg"
-                        alt="Header Avatar" />
-                </button>
-                <!-- <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ph-user-circle fs-22"></i>
-                        </button>    -->
-                <div class="dropdown-menu dropdown-menu-end">
-                    <!-- item-->
-                    <h6 class="dropdown-header">Welcome Diana!</h6>
-                    <a class="dropdown-item" href="<?=base_url('order/history')?>"><i
-                            class="bi bi-cart4 text-muted fs-16 align-middle me-1"></i>
-                        <span class="align-middle">Order History</span></a>
-                    <a class="dropdown-item" href="<?=base_url('order/track')?>"><i
-                            class="bi bi-truck text-muted fs-16 align-middle me-1"></i>
-                        <span class="align-middle">Track Orders</span></a>
-                    <a class="dropdown-item" href="../backend/index.html"><i
-                            class="bi bi-speedometer2 text-muted fs-16 align-middle me-1"></i>
-                        <span class="align-middle">Dashboard</span></a>
-                    <a class="dropdown-item" href="<?=base_url('faq')?>"><i
-                            class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i>
-                        <span class="align-middle">Help</span></a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?=base_url('user/account')?>"><i
-                            class="bi bi-coin text-muted fs-16 align-middle me-1"></i>
-                        <span class="align-middle">Balance : <b>$8451.36</b></span></a>
-                    <a class="dropdown-item" href="<?=base_url('user/account')?>"><span
-                            class="badge bg-success-subtle text-success mt-1 float-end">New</span><i
-                            class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i>
-                        <span class="align-middle">Settings</span></a>
-                    <a class="dropdown-item" href="<?=base_url('logout')?>"><i
-                            class="bi bi-box-arrow-right text-muted fs-16 align-middle me-1"></i>
-                        <span class="align-middle" data-key="t-logout">Logout</span></a>
-                </div>
+            <div class="dropdown header-item" id="authorised_account">
+                
             </div>
         </div>
     </div>
@@ -1157,3 +1123,68 @@
         </div>
     </div>
 </div>
+
+<script>
+     $(document).ready(function () {
+        $.ajax({
+            url: "<?= base_url('api/user/data') ?>",
+            type: "GET",
+            success: function (resp) {
+                resp = JSON.parse(resp)
+                console.log(resp.user_data.number)
+                if (resp.status) {
+                   console.log(resp.number)
+                   html = `<button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user" src="<?=base_url()?>${resp.user_img.img}"
+                        alt="Header Avatar" />
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <h6 class="dropdown-header" id="user_name">${resp.user_data.user_name}</h6>
+                    <a class="dropdown-item" href="<?=base_url('order/history')?>"><i
+                            class="bi bi-cart4 text-muted fs-16 align-middle me-1"></i>
+                        <span class="align-middle">Order History</span></a>
+                    <a class="dropdown-item" href="<?=base_url('order/track')?>"><i
+                            class="bi bi-truck text-muted fs-16 align-middle me-1"></i>
+                        <span class="align-middle">Track Orders</span></a>
+                    <a class="dropdown-item" href="../backend/index.html"><i
+                            class="bi bi-speedometer2 text-muted fs-16 align-middle me-1"></i>
+                        <span class="align-middle">Dashboard</span></a>
+                    <a class="dropdown-item" href="<?=base_url('faq')?>"><i
+                            class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i>
+                        <span class="align-middle">Help</span></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="<?=base_url('user/account')?>"><i
+                            class="bi bi-coin text-muted fs-16 align-middle me-1"></i>
+                        <span class="align-middle">Balance : <b>$8451.36</b></span></a>
+                    <a class="dropdown-item" href="<?=base_url('user/account')?>"><span
+                            class="badge bg-success-subtle text-success mt-1 float-end">New</span><i
+                            class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i>
+                        <span class="align-middle">Settings</span></a>
+                    <a class="dropdown-item" href="<?=base_url('logout')?>"><i
+                            class="bi bi-box-arrow-right text-muted fs-16 align-middle me-1"></i>
+                        <span class="align-middle" data-key="t-logout">Logout</span></a>
+                </div>`
+                $('#authorised_account').html(html)
+                } else {
+                    console.log(resp.message)
+                    html = `<button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" src="https://usercontent.one/wp/www.vocaleurope.eu/wp-content/uploads/no-image.jpg?media=1642546813"
+                                alt="Header Avatar" />
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" style="height:150px">
+                            <div class="ms-md-auto mt-5">
+                                <a href="<?=base_url('login')?>" class="btn btn-success btn-hover ml-5">Login</a>
+                            </div>
+                        </div>`
+                    $('#authorised_account').html(html)
+
+                }
+            },
+            error: function () {
+            }
+        })
+     })
+    
+</script>

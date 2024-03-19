@@ -260,7 +260,7 @@
 
 .header-profile-user {
     height: 32px;
-    width: 32px
+    width: 32px;
 }
 
 .topbar-badge-sm {
@@ -2313,10 +2313,10 @@
     }
 
     .dropdown-hover-end:hover .dropdown-toggle::after {
-        -webkit-transition: all .5s ease;
+        /* -webkit-transition: all .5s ease;
         transition: all .5s ease;
         -webkit-transform: rotate(180deg);
-        transform: rotate(180deg)
+        transform: rotate(180deg) */
     }
 
     .dropdown-menu.dropdown-menu-center {

@@ -6,6 +6,8 @@ use App\Controllers\Main_Controller;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\UsersModel;
+use App\Models\AddressModel;
+use App\Models\UserImageModel;
 
 class User_Controller extends Main_Controller
 {
@@ -32,11 +34,27 @@ class User_Controller extends Main_Controller
             ->get()
             ->getResultArray();
             $UsersData = !empty($UsersData[0]) ? $UsersData[0] : null;
+
+            $UserAddressModel = new AddressModel();
+            $AddressData = $UserAddressModel
+            ->where('user_id', $user_id)
+            ->get()
+            ->getResultArray();
+            $AddressData = !empty($AddressData[0]) ? $AddressData[0] : null;
+
+            $UserImageModel = new UserImageModel();
+            $ImageData = $UserImageModel
+            ->where('user_id', $user_id)
+            ->get()
+            ->getResultArray();
+            $ImageData = !empty($ImageData[0]) ? $ImageData[0] : null;
             $response = [
                 "status" => true,
                 "message" => "Data fetched",
                 "user_id" => $user_id,
-                "user_data" => $UsersData
+                "user_data" => $UsersData,
+                "address" => $AddressData,
+                "user_img" => $ImageData
             ];
         }
         echo json_encode($response); 
