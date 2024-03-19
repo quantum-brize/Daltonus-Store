@@ -71,6 +71,7 @@ $routes->post('/api/category/update',           'Api\Category_Controller::POST_u
 $routes->post('/api/category/delete',           'Api\Category_Controller::POST_delete_category');
 $routes->get('/api/product',                    'Api\Product_Controller::GET_product');
 $routes->post('/api/product/add',               'Api\Product_Controller::POST_add_product');
+$routes->post('/api/update/user',               'Api\UserController::POST_update_user');
 
 
 

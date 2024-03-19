@@ -52,9 +52,15 @@ class Frontend_Controller extends Main_Controller
     }
 
     /**USERS */
-    public function account(): void
+    public function account()
     {
-        $this->load_page('/frontend/account', PAGE_DATA_FRONTEND);
+        $user_id = $this->is_logedin();
+        if(!empty($user_id)){
+            $this->load_page('/frontend/account', PAGE_DATA_FRONTEND);
+        }else{
+            return redirect()->to('login');
+        }
+        
     }
 
     public function address(): void

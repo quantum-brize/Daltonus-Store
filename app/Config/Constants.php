@@ -157,6 +157,8 @@ defined('UID_PRODUCT')      || define('UID_PRODUCT', 'PRO');
 defined('UID_PRODUCT_ITEM') || define('UID_PRODUCT_ITEM', 'PRI');
 defined('UID_PRODUCT_META') || define('UID_PRODUCT_META', 'PRM');
 defined('UID_PRODUCT_IMG')  || define('UID_PRODUCT_IMG', 'PRG');
+defined('UID_ADDRESS')      || define('UID_ADDRESS', 'ADRS');
+defined('UID_USER_IMG')     || define('UID_USER_IMG', 'UIMG');
 
 
 //////////////////////////////////////////////__STATUS
@@ -180,6 +182,7 @@ defined('SES_ADMIN_TYPE')    || define('SES_ADMIN_TYPE', 'ADMIN_user_type');
 
 //////////////////////////////////////////////__PATH
 defined('PATH_PRODUCT_IMG')  ||  define('PATH_PRODUCT_IMG', ROOTPATH . 'public\uploads\product_images');
+defined('PATH_USER_IMG')     ||  define('PATH_USER_IMG', ROOTPATH . 'public\uploads\user_images');
 
 
 //////////////////////////////////////////////__PAGEDATA
