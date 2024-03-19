@@ -145,7 +145,7 @@ defined('TABLE_PRODUCT_ITEM')       || define('TABLE_PRODUCT_ITEM', 'product_ite
 defined('TABLE_PRODUCT_CONFIG')     || define('TABLE_PRODUCT_CONFIG', 'product_config');
 defined('TABLE_PRODUCT_IMAGE')      || define('TABLE_PRODUCT_IMAGE', 'product_images');
 defined('TABLE_VARIATION')          || define('TABLE_VARIATION', 'variation');
-defined('TABLE_VARIATION_OPTON')    || define('TABLE_VARIATION_OPTON', 'variation_option');
+defined('TABLE_VARIATION_OPTION')   || define('TABLE_VARIATION_OPTION', 'variation_option');
 defined('TABLE_VENDOR')             || define('TABLE_VENDOR', 'vendor');
 
 

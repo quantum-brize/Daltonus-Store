@@ -55,6 +55,7 @@ $routes->get('/admin/categories',               'Admin\Category_Controller::inde
 $routes->get('/admin/products',                 'Admin\Product_Controller::index');
 $routes->get('/admin/products/add',             'Admin\Product_Controller::load_product_add');
 $routes->get('/admin/product',                  'Admin\Product_Controller::load_single_product');
+$routes->get('/admin/product/variant/add',      'Admin\Product_Controller::load_add_variants');
 $routes->get('/admin/orders',                   'Admin\Orders_Controller::index');
 $routes->get('/admin/users/customers',          'Admin\User_Controller::load_customer');
 $routes->get('/admin/users/vendors',            'Admin\User_Controller::load_vendor');
@@ -70,6 +71,7 @@ $routes->post('/api/category/add',              'Api\Category_Controller::POST_a
 $routes->post('/api/category/update',           'Api\Category_Controller::POST_update_category');
 $routes->post('/api/category/delete',           'Api\Category_Controller::POST_delete_category');
 $routes->get('/api/product',                    'Api\Product_Controller::GET_product');
+$routes->get('/api/product/variant/options',    'Api\Product_Controller::GET_variation_options');
 $routes->post('/api/product/add',               'Api\Product_Controller::POST_add_product');
 
 

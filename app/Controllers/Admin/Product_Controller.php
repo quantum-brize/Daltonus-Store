@@ -69,12 +69,7 @@ class Product_Controller extends Admin_Controller{
             'data_page' => [],
             'data_header' => [
                 'header_link' => ['product_single_css.php'],
-                'header_asset_link' => [
-                    'assets_admin/libs/nouislider/nouislider.min.css',
-                    'assets_admin/libs/gridjs/theme/mermaid.min.css',
-                    'assets_admin/css/app.min.css',
-                    'assets_admin/css/custom.min.css'
-                ],
+                'header_asset_link' => [],
                 'title' => 'Products',
                 'header' => [],
                 'sidebar' => ['products'=>true],
@@ -82,12 +77,7 @@ class Product_Controller extends Admin_Controller{
             ],
             'data_footer' => [
                 'footer_link' => ['product_single_js.php'],
-                'footer_asset_link'=> [
-                    'assets_admin/libs/nouislider/nouislider.min.js',
-                    'assets_admin/libs/wnumb/wNumb.min.js',
-                    'assets_admin/libs/gridjs/gridjs.umd.js',
-                    'assets_admin/js/pages/ecommerce-product-list.init.js',
-                ],
+                'footer_asset_link'=> [],
                 'footer' => [],
                 'site' => 'admin'
             ]
@@ -95,6 +85,30 @@ class Product_Controller extends Admin_Controller{
 
         $this->isAuth('/admin/product_single',$data);
     } 
+
+    public function load_add_variants(){
+        $data = PAGE_DATA_ADMIN;
+        $data = [
+            'data_page' => [],
+            'data_header' => [
+                'header_link' => ['product_variant_add_css.php'],
+                'header_asset_link' => [],
+                'title' => 'Products',
+                'header' => [],
+                'sidebar' => ['products'=>true],
+                'site' => 'admin'
+            ],
+            'data_footer' => [
+                'footer_link' => ['product_variant_add_js.php'],
+                'footer_asset_link'=> [],
+                'footer' => [],
+                'site' => 'admin'
+            ]
+        ];
+
+        $this->isAuth('/admin/product_variant_add',$data);
+
+    }
 
 
 

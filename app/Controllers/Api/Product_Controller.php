@@ -9,6 +9,8 @@ use App\Models\ProductMetaDetalisModel;
 use App\Models\CommonModel;
 use App\Models\VendorModel;
 use App\Models\ProductImagesModel;
+use App\Models\VariationModel;
+use App\Models\VariationOptionModel;
 
 class Product_Controller extends Api_Controller
 {
@@ -47,7 +49,7 @@ class Product_Controller extends Api_Controller
         } else {
 
 
-            $produt_data = [
+            $product_data = [
                 'uid' => $this->generate_uid(UID_PRODUCT),
                 'vendor_id' => $vendor_id,
                 'category_id' => $data['categoryId'],
@@ -56,7 +58,7 @@ class Product_Controller extends Api_Controller
             ];
             $product_item_data = [
                 'uid' => $this->generate_uid(UID_PRODUCT_ITEM),
-                'product_id' => $produt_data['uid'],
+                'product_id' => $product_data['uid'],
                 'price' => $data['price'],
                 'discount' => $data['discount'],
                 'product_tags' => $data['productTags'],
@@ -68,7 +70,7 @@ class Product_Controller extends Api_Controller
             ];
             $product_meta_data = [
                 'uid' => $this->generate_uid(UID_PRODUCT_META),
-                'product_id' => $produt_data['uid'],
+                'product_id' => $product_data['uid'],
                 'meta_title' => $data['metaTitle'],
                 'meta_description' => $data['metaDescription'],
                 'meta_keywords' => $data['metaKeywords'],
@@ -79,7 +81,7 @@ class Product_Controller extends Api_Controller
                 $file_src = $this->single_upload($file, PATH_PRODUCT_IMG);
                 $product_image_data = [
                     'uid' => $this->generate_uid(UID_PRODUCT_IMG),
-                    'product_id' => $produt_data['uid'],
+                    'product_id' => $product_data['uid'],
                     'type' => 'path',
                     'src' => $file_src
                 ];
@@ -94,7 +96,7 @@ class Product_Controller extends Api_Controller
             // Transaction Start
             $ProductModel->transStart();
             try {
-                $ProductModel->insert($produt_data);
+                $ProductModel->insert($product_data);
                 $ProductItemModel->insert($product_item_data);
                 $ProductMetaDetalisModel->insert($product_meta_data);
                 // Commit the transaction if all queries are successful
@@ -107,7 +109,7 @@ class Product_Controller extends Api_Controller
 
             $resp['status'] = true;
             $resp['message'] = 'Product added';
-            $resp['data'] = ['product_id' => $produt_data['uid']];
+            $resp['data'] = ['product_id' => $product_data['uid']];
         }
         return $resp;
     }
@@ -172,6 +174,21 @@ class Product_Controller extends Api_Controller
         return $resp;
     }
 
+    private function variation_options(){
+        $resp = [
+            'status' => false,
+            'message' => 'Product not added',
+            'data' => null
+        ];  
+        $VariationModel = new VariationModel();
+        $VariationOptionModel = new VariationOptionModel();
+
+
+
+
+        return $resp;
+    }
+
 
 
 
@@ -193,4 +210,10 @@ class Product_Controller extends Api_Controller
         return $this->response->setJSON($resp);
 
     }
+    public function GET_variation_options(){
+        $resp = $this->variation_options();
+        return $this->response->setJSON($resp);
+
+    }
+
 }
