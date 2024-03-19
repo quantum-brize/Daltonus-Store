@@ -162,7 +162,7 @@ class Product_Controller extends Api_Controller
 
         if (count($products) > 0) {
             $ProductImagesModel = new ProductImagesModel();
-            foreach($products as $key => $product){
+            foreach ($products as $key => $product) {
                 $products[$key]->product_img = $ProductImagesModel->where('product_id', $product->product_id)->findAll();
             }
 
@@ -174,16 +174,31 @@ class Product_Controller extends Api_Controller
         return $resp;
     }
 
-    private function variation_options(){
+    private function variation_options()
+    {
         $resp = [
             'status' => false,
             'message' => 'Product not added',
             'data' => null
-        ];  
+        ];
         $VariationModel = new VariationModel();
         $VariationOptionModel = new VariationOptionModel();
 
+        try {
+            $variations = $VariationModel->findAll();
 
+            foreach($variations as $key => $val){
+                $variations[$key]['options'] = $VariationOptionModel->where('variation_id', $val['uid'])->findAll();
+            }
+
+            echo json_encode($variations);
+            $this->prd($variations);
+
+        } catch (\Exception $e) {
+            // Rollback the transaction if an error occurs
+            $VariationModel->transRollback();
+            throw $e;
+        }
 
 
         return $resp;
@@ -210,7 +225,8 @@ class Product_Controller extends Api_Controller
         return $this->response->setJSON($resp);
 
     }
-    public function GET_variation_options(){
+    public function GET_variation_options()
+    {
         $resp = $this->variation_options();
         return $this->response->setJSON($resp);
 
