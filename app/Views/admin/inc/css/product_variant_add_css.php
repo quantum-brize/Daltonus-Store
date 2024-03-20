@@ -26,7 +26,7 @@
         display: block;
         position: relative;
         color: #ffffff;
-        font-size: 18px;
+        font-size: 14px;
         text-align: center;
         margin: auto;
         border-radius: 5px;

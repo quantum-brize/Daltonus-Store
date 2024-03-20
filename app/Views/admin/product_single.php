@@ -24,7 +24,7 @@
             <div class="col-xl-3 col-lg-4">
                 <div class="card">
                     <div class="card-header">
-                        <div class="d-flex mb-1 align-items-center">
+                        <div class="d-flex align-items-center">
                             <div class="flex-grow-1">
                                 <h5 class="fs-16">Product</h5>
                             </div>
@@ -36,10 +36,7 @@
 
                     </div>
 
-                    <div class="accordion accordion-flush filter-accordion">
-
-
-
+                    <div class="card-body">
 
 
 
@@ -52,18 +49,34 @@
             <div class="col-xl-9 col-lg-8">
                 <div>
                     <div class="card">
-                        <div class="card-header border-0">
-                            <div class="d-flex mb-1 align-items-center">
+                        <div class="card-header">
+                            <div class="d-flex  align-items-center">
                                 <div class="flex-grow-1">
                                     <h5 class="fs-16">All Product Variants</h5>
                                 </div>
                                 <div class="flex-shrink-0">
-                                    <a href="<?=base_url('/admin/product/variant/add?p_id='.$_GET['p_id'])?>" class="btn btn-success">Add Variants</a>
+                                    <a href="<?= base_url('/admin/product/variant/add?p_id=' . $_GET['p_id']) ?>"
+                                        class="btn btn-success">Add Variant</a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="card-body">
+                            <table id="table-product-variant" class="table nowrap align-middle table-hover"
+                                style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Variant</th>
+                                        <th>Price</th>
+                                        <th>discount</th>
+                                        <th>Stock</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-product-variant-body">
+
+                                </tbody>
+                            </table>
 
 
 

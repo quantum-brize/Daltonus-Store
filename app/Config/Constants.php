@@ -147,6 +147,7 @@ defined('TABLE_PRODUCT_IMAGE')      || define('TABLE_PRODUCT_IMAGE', 'product_im
 defined('TABLE_VARIATION')          || define('TABLE_VARIATION', 'variation');
 defined('TABLE_VARIATION_OPTION')   || define('TABLE_VARIATION_OPTION', 'variation_option');
 defined('TABLE_VENDOR')             || define('TABLE_VENDOR', 'vendor');
+defined('TABLE_VARIANT_IMG')        || define('TABLE_VARIANT_IMG', 'variation_Images');
 
 
 //////////////////////////////////////////////__UID_PRIFIX
@@ -160,6 +161,9 @@ defined('UID_PRODUCT_IMG')  || define('UID_PRODUCT_IMG', 'PRG');
 defined('UID_ADDRESS')      || define('UID_ADDRESS', 'ADRS');
 defined('UID_USER_IMG')     || define('UID_USER_IMG', 'UIMG');
 defined('UID_MESSAGE')     || define('UID_MESSAGE', 'MSG');
+defined('UID_VAR_OPT')      || define('UID_VAR_OPT', 'VRO');
+defined('UID_VAR_IMG')      || define('UID_VAR_IMG', 'VRI');
+defined('UID_PRO_CONFIG')   || define('UID_PRO_CONFIG', 'PCON');
 
 
 //////////////////////////////////////////////__STATUS
@@ -182,8 +186,9 @@ defined('SES_ADMIN_USER_ID') || define('SES_ADMIN_USER_ID', 'ADMIN_user_id');
 defined('SES_ADMIN_TYPE')    || define('SES_ADMIN_TYPE', 'ADMIN_user_type');
 
 //////////////////////////////////////////////__PATH
-defined('PATH_PRODUCT_IMG')  ||  define('PATH_PRODUCT_IMG', ROOTPATH . 'public\uploads\product_images');
-defined('PATH_USER_IMG')     ||  define('PATH_USER_IMG', ROOTPATH . 'public\uploads\user_images');
+defined('PATH_PRODUCT_IMG')  || define('PATH_PRODUCT_IMG', ROOTPATH . 'public\uploads\product_images');
+defined('PATH_VARIANT_IMG')  || define('PATH_VARIANT_IMG', ROOTPATH . 'public\uploads\variant_images');
+defined('PATH_USER_IMG')     || define('PATH_USER_IMG', ROOTPATH . 'public\uploads\user_images');
 
 
 //////////////////////////////////////////////__PAGEDATA
