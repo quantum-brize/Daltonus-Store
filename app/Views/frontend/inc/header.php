@@ -1133,10 +1133,15 @@
                 // resp = JSON.parse(resp)
                 console.log(resp.user_data.number)
                 if (resp.status) {
-                   console.log(resp.number)
+                //    console.log(resp.number)
+                    var image_url = `https://usercontent.one/wp/www.vocaleurope.eu/wp-content/uploads/no-image.jpg?media=1642546813`
+                   if(resp.user_img != null){
+                    image_url =`<?=base_url()?>${resp.user_img.img}`
+                   }
+
                    html = `<button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="<?=base_url()?>${resp.user_img.img}"
+                    <img class="rounded-circle header-profile-user" src="${image_url}"
                         alt="Header Avatar" />
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
@@ -1167,7 +1172,6 @@
                 </div>`
                 $('#authorised_account').html(html)
                 } else {
-                    console.log(resp.message)
                     html = `<button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <img class="rounded-circle header-profile-user" src="https://usercontent.one/wp/www.vocaleurope.eu/wp-content/uploads/no-image.jpg?media=1642546813"
