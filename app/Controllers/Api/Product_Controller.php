@@ -11,6 +11,7 @@ use App\Models\VendorModel;
 use App\Models\ProductImagesModel;
 use App\Models\VariationModel;
 use App\Models\VariationOptionModel;
+use App\Models\VariantImagesModel;
 
 class Product_Controller extends Api_Controller
 {
@@ -113,7 +114,67 @@ class Product_Controller extends Api_Controller
         }
         return $resp;
     }
+    private function add_new_variant($data)
+    {
+        $resp = [
+            'status' => false,
+            'message' => 'Product not added',
+            'data' => null
+        ];
 
+        $colorVarOptData = [
+            'uid' => $this->generate_uid(UID_VAR_OPT),
+            'variation_id' => $data['colorId'],
+            'value' => $data['colorVal']
+        ];
+        $var1 = [
+            'uid' => $this->generate_uid(UID_PRO_CONFIG),
+            'product_id' => $data['productId'],
+            'variation_option_id' => $colorVarOptData['uid'],
+            'price' => $data['price'],
+            'discount' => $data['discount'],
+            'sku' => $data['stock'],
+        ];
+        $var2 = [
+            'uid' => $var1['uid'],
+            'product_id' => $data['productId'],
+            'variation_option_id' => $data['sizeId'],
+            'price' => $data['price'],
+            'discount' => $data['discount'],
+            'sku' => $data['stock'],
+        ];
+
+        $uploadedFiles = $this->request->getFiles();
+        $VariantImagesModel = new VariantImagesModel();
+        foreach ($uploadedFiles['images'] as $file) {
+            $file_src = $this->single_upload($file, PATH_VARIANT_IMG);
+            $product_image_data = [
+                'uid' => $this->generate_uid(UID_VAR_IMG),
+                'config_id' => $var1['uid'],
+                'type' => 'path',
+                'src' => $file_src
+            ];
+            $VariantImagesModel->insert($product_image_data);
+        }
+
+        $VariationOptionModel = new VariationOptionModel();
+        $ProductConfigModel = new ProductConfigModel();
+        try {
+            $VariationOptionModel->insert($colorVarOptData);
+            $ProductConfigModel->insert($var1);
+            $ProductConfigModel->insert($var2);
+            $resp = [
+                'status' => true,
+                'message' => 'Product added',
+                'data' => ['variant_id' => $var1['uid']]
+            ];
+
+        } catch (\Exception $e) {
+            $resp['message'] = $e;
+        }
+
+        return $resp;
+    }
     private function products($data)
     {
         $resp = [
@@ -178,7 +239,7 @@ class Product_Controller extends Api_Controller
     {
         $resp = [
             'status' => false,
-            'message' => 'Product not added',
+            'message' => 'varaints not found',
             'data' => null
         ];
         $VariationModel = new VariationModel();
@@ -187,12 +248,15 @@ class Product_Controller extends Api_Controller
         try {
             $variations = $VariationModel->findAll();
 
-            foreach($variations as $key => $val){
+            foreach ($variations as $key => $val) {
                 $variations[$key]['options'] = $VariationOptionModel->where('variation_id', $val['uid'])->findAll();
             }
 
-            echo json_encode($variations);
-            $this->prd($variations);
+            $resp = [
+                'status' => true,
+                'message' => 'varaints found',
+                'data' => $variations
+            ];
 
         } catch (\Exception $e) {
             // Rollback the transaction if an error occurs
@@ -203,6 +267,8 @@ class Product_Controller extends Api_Controller
 
         return $resp;
     }
+
+
 
 
 
@@ -230,6 +296,13 @@ class Product_Controller extends Api_Controller
         $resp = $this->variation_options();
         return $this->response->setJSON($resp);
 
+    }
+
+    public function POST_add_new_variant()
+    {
+        $data = $this->request->getPost();
+        $resp = $this->add_new_variant($data);
+        return $this->response->setJSON($resp);
     }
 
 }

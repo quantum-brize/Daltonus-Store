@@ -28,22 +28,99 @@
         var formData = new FormData();
     })
 
-    function lode_variants(){
+    function lode_variants() {
 
         $.ajax({
-            url: "<?= base_url('/api/product/variant/options')?>",
-            beforeSend: function(){
-
+            url: "<?= base_url('/api/product/variant/options') ?>",
+            type: 'GET',
+            beforeSend: function () { },
+            success: function (resp) {
+                if (resp.status == true) {
+                    $.each(resp.data, function (varIndex, varItem) {
+                        if (varItem.name == 'size') {
+                            let sizeHtml = ''
+                            $.each(varItem.options, function (optIndex, optItem) {
+                                sizeHtml += `<option value="${optItem.uid}">${optItem.value}</option>`
+                            })
+                            $('#size').html(sizeHtml)
+                        }else if(varItem.name == 'color'){
+                            $('#color_id').val(varItem.uid)
+                        }
+                    })
+                }
             },
-            success: function(resp){
-                console.log(resp)
-            },
-            error: function(err){
+            error: function (err) {
                 console.log(err)
             }
         })
 
     }
+
+
+    var quantitiy = 0;
+    $('.quantity-right-plus').click(function (e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        // If is not undefined
+        $('#quantity').val(quantity + 1);
+        // Increment
+    });
+
+    $('.quantity-left-minus').click(function (e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var quantity = parseInt($('#quantity').val());
+        // If is not undefined
+        // Increment
+        if (quantity > 0) {
+            $('#quantity').val(quantity - 1);
+        }
+    });
+
+
+    $('#variant_add_btn').on('click', function () {
+        var formData = new FormData();
+        formData.append('sizeId',    $('#size').val());
+        formData.append('colorVal',  $('#colorPicker').val());
+        formData.append('colorId',   $('#color_id').val());
+        formData.append('productId', '<?= $_GET['p_id'] ?>');
+        formData.append('price',     $('#product-price-input').val())
+        formData.append('discount',  $('#product-discount-input').val())
+        formData.append('stock',     $('#quantity').val())
+
+        $.each($('#file-input')[0].files, function (index, file) {
+            formData.append('images[]', file);
+        });
+
+
+        $.ajax({
+            url: "<?= base_url('/api/product/variant/add') ?>",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            beforeSend: function () {
+                $('#variant_add_btn').html('<div class="spinner-border" role="status"></div>')
+                $('#variant_add_btn').attr('disabled', true)
+            },
+            success: function (resp) {
+                if(resp.status){
+                    $('#variant_add_btn').html('Save')
+                    $('#variant_add_btn').attr('disabled', false)
+                    window.location.href = "<?= base_url('/admin/product?p_id='.$_GET['p_id']) ?>";
+                }   
+            },
+            error: function (err) {
+                console.log(err)
+                $('#variant_add_btn').html('Save')
+                $('#variant_add_btn').attr('disabled', false)
+            }
+        })
+
+    })
 
 
 </script>

@@ -35,10 +35,10 @@ $routes->get('/invoice',                        'Frontend\Order_Controller::invo
 $routes->get('/order/success',                  'Frontend\Order_Controller::order_success');
 $routes->get('/order/track',                    'Frontend\Order_Controller::track_order');
 $routes->get('/order/history',                  'Frontend\Order_Controller::order_history');
+$routes->get('/order/conformation',             'Frontend\Order_Controller::conformation');
 $routes->get('/contact-us',                     'Frontend\Frontend_Controller::contact_us');
 $routes->get('/payment',                        'Frontend\Order_Controller::payment');
 $routes->get('/review',                         'Frontend\Product_Controller::review');
-$routes->get('/conformation',                   'Frontend\Order_Controller::conformation');
 $routes->get('/wishlist',                       'Frontend\Product_Controller::wishlist');
 
 
@@ -71,8 +71,9 @@ $routes->post('/api/category/add',              'Api\Category_Controller::POST_a
 $routes->post('/api/category/update',           'Api\Category_Controller::POST_update_category');
 $routes->post('/api/category/delete',           'Api\Category_Controller::POST_delete_category');
 $routes->get('/api/product',                    'Api\Product_Controller::GET_product');
-$routes->get('/api/product/variant/options',    'Api\Product_Controller::GET_variation_options');
 $routes->post('/api/product/add',               'Api\Product_Controller::POST_add_product');
+$routes->get('/api/product/variant/options',    'Api\Product_Controller::GET_variation_options');
+$routes->post('/api/product/variant/add',       'Api\Product_Controller::POST_add_new_variant');
 $routes->post('/api/update/user',               'Api\UserController::POST_update_user');
 
 
