@@ -1130,7 +1130,7 @@
             url: "<?= base_url('api/user') ?>",
             type: "GET",
             success: function (resp) {
-                resp = JSON.parse(resp)
+                // resp = JSON.parse(resp)
                 console.log(resp.user_data.number)
                 if (resp.status) {
                    console.log(resp.number)
