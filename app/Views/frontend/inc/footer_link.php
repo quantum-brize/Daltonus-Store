@@ -12,6 +12,18 @@
 	<script src="<?=base_url()?>public/assets/js/frontend/menu.init.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+	<?php
+        if (!empty ($footer_asset_link)) {
+            foreach ($footer_asset_link as $link) {
+                echo "<script src='" . base_url() . 'public/' . $link . "'></script>";
+            }
+        }
+        if (!empty ($footer_link)) {
+            foreach ($footer_link as $link) {
+                require_once ('js/' . $link);
+            }
+        }
+    ?>
 
 </body>
 

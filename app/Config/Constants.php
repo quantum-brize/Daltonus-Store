@@ -159,6 +159,7 @@ defined('UID_PRODUCT_META') || define('UID_PRODUCT_META', 'PRM');
 defined('UID_PRODUCT_IMG')  || define('UID_PRODUCT_IMG', 'PRG');
 defined('UID_ADDRESS')      || define('UID_ADDRESS', 'ADRS');
 defined('UID_USER_IMG')     || define('UID_USER_IMG', 'UIMG');
+defined('UID_MESSAGE')     || define('UID_MESSAGE', 'MSG');
 
 
 //////////////////////////////////////////////__STATUS

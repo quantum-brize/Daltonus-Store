@@ -42,9 +42,6 @@ $routes->get('/conformation',                   'Frontend\Order_Controller::conf
 $routes->get('/wishlist',                       'Frontend\Product_Controller::wishlist');
 
 
-// Frontend Api  Routes
-$routes->get('/api/user/data',                  'Frontend\User_Controller::get_user_data');
-
 
 // Admin Routes
 $routes->get('/admin',                          'Admin\Admin_Controller::index');
@@ -73,7 +70,10 @@ $routes->post('/api/category/delete',           'Api\Category_Controller::POST_d
 $routes->get('/api/product',                    'Api\Product_Controller::GET_product');
 $routes->get('/api/product/variant/options',    'Api\Product_Controller::GET_variation_options');
 $routes->post('/api/product/add',               'Api\Product_Controller::POST_add_product');
-$routes->post('/api/update/user',               'Api\UserController::POST_update_user');
+$routes->post('/api/update/user',               'Api\User_Controller::POST_update_user');
+$routes->post('/api/change/password',           'Api\User_Controller::POST_change_password');
+$routes->post('/api/message',                   'Api\User_Controller::POST_message');
+$routes->get('/api/user',                       'Api\User_Controller::GET_get_user');
 
 
 

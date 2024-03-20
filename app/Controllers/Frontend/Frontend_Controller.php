@@ -48,7 +48,23 @@ class Frontend_Controller extends Main_Controller
 
     public function contact_us(): void
     {
-        $this->load_page('/frontend/contact_us', PAGE_DATA_FRONTEND);
+        $data = PAGE_DATA_FRONTEND;
+            $data = [
+                'data_page' => [],
+                'data_header' => [
+                    'header_link' => [],
+                    'title' => '',
+                    'header' => [],
+                    'sidebar' => [],
+                    'site' => 'frontend'
+                ],
+                'data_footer' => [
+                    'footer_link' => ['contact_us_js.php'],
+                    'footer' => [],
+                    'site' => 'frontend'
+                ]
+            ];
+        $this->load_page('/frontend/contact_us', $data);
     }
 
     /**USERS */
@@ -56,7 +72,23 @@ class Frontend_Controller extends Main_Controller
     {
         $user_id = $this->is_logedin();
         if(!empty($user_id)){
-            $this->load_page('/frontend/account', PAGE_DATA_FRONTEND);
+            $data = PAGE_DATA_FRONTEND;
+            $data = [
+                'data_page' => [],
+                'data_header' => [
+                    'header_link' => [],
+                    'title' => '',
+                    'header' => [],
+                    'sidebar' => [],
+                    'site' => 'frontend'
+                ],
+                'data_footer' => [
+                    'footer_link' => ['account_js.php'],
+                    'footer' => [],
+                    'site' => 'frontend'
+                ]
+            ];
+            $this->load_page('/frontend/account', $data);
         }else{
             return redirect()->to('login');
         }
