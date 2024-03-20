@@ -235,6 +235,30 @@ class Product_Controller extends Api_Controller
         return $resp;
     }
 
+    private function variation($p_id){
+        $resp = [
+            'status' => false,
+            'message' => 'Product not Found',
+            'data' => null
+        ];
+        
+        $CommonModel = new CommonModel();
+        $sql = "SELECT
+                    product_config.sku AS stock,
+                    product_config.price ,
+                    product_config.discount,
+                    variation.name,
+                    variation_option.value
+                FROM    
+                    product_config
+                JOIN    
+                    variation_option ON product_config.uid  = variation_option.variation_id
+                JOIN    
+                    variation ON variation_option.variation_id = variation.uid";
+
+        return $resp;
+    }
+
     private function variation_options()
     {
         $resp = [
@@ -302,6 +326,12 @@ class Product_Controller extends Api_Controller
     {
         $data = $this->request->getPost();
         $resp = $this->add_new_variant($data);
+        return $this->response->setJSON($resp);
+    }
+
+    public function GET_variation(){
+        $p_id = $this->request->getGet('p_id');
+        $resp = $this->variation($p_id);
         return $this->response->setJSON($resp);
     }
 
