@@ -1127,7 +1127,7 @@
 <script>
      $(document).ready(function () {
         $.ajax({
-            url: "<?= base_url('api/user/data') ?>",
+            url: "<?= base_url('api/user') ?>",
             type: "GET",
             success: function (resp) {
                 resp = JSON.parse(resp)

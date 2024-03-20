@@ -160,9 +160,11 @@ defined('UID_PRODUCT_META') || define('UID_PRODUCT_META', 'PRM');
 defined('UID_PRODUCT_IMG')  || define('UID_PRODUCT_IMG', 'PRG');
 defined('UID_ADDRESS')      || define('UID_ADDRESS', 'ADRS');
 defined('UID_USER_IMG')     || define('UID_USER_IMG', 'UIMG');
+defined('UID_MESSAGE')     || define('UID_MESSAGE', 'MSG');
 defined('UID_VAR_OPT')      || define('UID_VAR_OPT', 'VRO');
 defined('UID_VAR_IMG')      || define('UID_VAR_IMG', 'VRI');
 defined('UID_PRO_CONFIG')   || define('UID_PRO_CONFIG', 'PCON');
+
 
 //////////////////////////////////////////////__STATUS
 defined('STATUS_PENDING')   || define('STATUS_PENDING', 'pending');

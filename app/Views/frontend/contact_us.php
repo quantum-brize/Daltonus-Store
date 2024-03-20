@@ -503,7 +503,7 @@
 
                 <div class="col-lg-8">
                     <div class="custom-form card p-4 p-lg-5">
-                        <form name="myForm" action="#!">
+                        <!-- <form name="myForm" action="#!"> -->
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="text-center mb-4">
@@ -514,33 +514,44 @@
                                     <div class="form-group mt-3">
                                         <label for="nameInput" class="form-label">Name<span class="text-danger">*</span></label>
                                         <input name="nameInput" id="nameInput" type="text" class="form-control" placeholder="Enter name">
+                                        <span id="nameInput_val" style="color:red;"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group mt-3">
                                         <label for="emailInput" class="form-label">Email<span class="text-danger">*</span></label>
                                         <input name="emailInput" id="emailInput" type="email" class="form-control" placeholder="Enter email">
+                                        <span id="emailInput_val" style="color:red;"></span>
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
+                                <div class="col-lg-6">
+                                    <div class="form-group mt-3">
+                                        <label for="phoneInput" class="form-label">Phone<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="phoneInput" placeholder="Enter Phone no...">
+                                        <span id="phoneInput_val" style="color:red;"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
                                     <div class="form-group mt-3">
                                         <label for="subjectInput" class="form-label">Subject<span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" id="subjectInput" placeholder="Enter Subject..">
+                                        <span id="subjectInput_val" style="color:red;"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group mt-3">
                                         <label for="messageInput" class="form-label">Message<span class="text-danger">*</span></label>
                                         <textarea name="messageInput" id="messageInput" rows="4" class="form-control" placeholder="Enter message..."></textarea>
+                                        <span id="messageInput_val" style="color:red;"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="text-end mt-4">
-                                        <button type="submit" id="submit" name="submit" class="btn btn-primary">Send Message <i class="bi bi-arrow-right-short align-middle fs-16 ms-1"></i></button>
+                                        <button id="getInTouchSubmit" name="submit" class="btn btn-primary">Send Message <i class="bi bi-arrow-right-short align-middle fs-16 ms-1"></i></button>
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        <!-- </form> -->
                     </div>
                 </div>
             </div>

@@ -1,3 +1,4 @@
+
 <!--cart -->
 <div class="offcanvas offcanvas-end product-list" tabindex="-1" id="ecommerceCart" aria-labelledby="ecommerceCartLabel">
             <div class="offcanvas-header border-bottom">
@@ -541,8 +542,8 @@
                                                 <div class="mt-4">
                                                     <h6 class="fs-16 text-decoration-underline">Billing & Shipping Address</h6>
                                                 </div>
-                                                <div class="row mt-4">
-                                                    <div class="col-md-6">
+                                                <div class="row mt-4" id="user_address">
+                                                    <!-- <div class="col-md-6">
                                                         <div class="card mb-md-0">
                                                             <div class="card-body"> 
                                                                 <div class="float-end clearfix"> <a href="address.html" class="badge bg-primary-subtle text-primary "><i class="ri-pencil-fill align-bottom me-1"></i> Edit</a> </div>
@@ -554,8 +555,8 @@
                                                                 </div> 
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-6">
+                                                    </div> -->
+                                                    <!-- <div class="col-md-6">
                                                         <div class="card mb-0">
                                                             <div class="card-body">
                                                                 <div class="float-end clearfix"> <a href="address.html" class="badge bg-primary-subtle text-primary "><i class="ri-pencil-fill align-bottom me-1"></i> Edit</a> </div>
@@ -567,7 +568,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <!-- end row -->
                                             </div>
@@ -1104,6 +1105,7 @@
                                                                 <div>
                                                                     <label for="oldpasswordInput" class="form-label">Old Password*</label>
                                                                     <input type="password" class="form-control" id="oldpasswordInput" placeholder="Enter current password">
+                                                                    <span id="changeOldPass" style="color:red;"></span>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1111,6 +1113,7 @@
                                                                 <div>
                                                                     <label for="newpasswordInput" class="form-label">New Password*</label>
                                                                     <input type="password" class="form-control" id="newpasswordInput" placeholder="Enter new password">
+                                                                    <span id="changeNewPass" style="color:red;"></span>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1118,6 +1121,7 @@
                                                                 <div>
                                                                     <label for="confirmpasswordInput" class="form-label">Confirm Password*</label>
                                                                     <input type="password" class="form-control" id="confirmpasswordInput" placeholder="Confirm password">
+                                                                    <span id="changeConfirmPass" style="color:red;"></span>
                                                                 </div>
                                                             </div>
                                                             <!--end col-->
@@ -1133,7 +1137,7 @@
                                                 </div>
                                                 <!--end tab-pane-->
                                                 <div class="text-sm-end">
-                                                    <a href="#!" class="btn btn-secondary d-block d-sm-inline-block"><i class="ri-edit-box-line align-middle me-2"></i> Update Profile</a>
+                                                <button type="submit" id="change_password" class="btn btn-secondary d-block d-sm-inline-block"><i class="ri-edit-box-line align-middle me-2"></i> Change Password</button>
                                                 </div>
                                             </div>
                                             <!-- end card-body -->
@@ -1435,181 +1439,3 @@
                 </div>
             </div>
         </div>
-
-        
-<script>
-    $(document).ready(function () {
-        // alert("hello")
-        $.ajax({
-            url: "<?= base_url('api/user/data') ?>",
-            type: "GET",
-            success: function (resp) {
-                resp = JSON.parse(resp)
-                console.log(resp.user_data.number)
-                if (resp.status == true) {
-                   console.log(resp.user_img)
-                   
-                   
-                   $("#user_avtar_img").attr("src", "<?= base_url()?>"+resp.user_img.img);
-                   $("#user_full_name").text(resp.user_data.user_name);
-                   $("#user_location").append(`<i class="bi bi-geo-alt"></i>${resp.address.city}`);
-
-                    $("#user_id").val(resp.user_id)
-                    $("#firstnameInput").val(resp.user_data.user_name)
-                    $("#phonenumberInput").val(resp.user_data.number)
-                    $("#emailInput").val(resp.user_data.email)
-                    $("#cityInput").val(resp.address.city)
-                    $("#countryInput").val(resp.address.country)
-                    $("#zipcodeInput").val(resp.address.zipcode)
-                    $("#districtInput").val(resp.address.district)
-                    $("#stateInput").val(resp.address.state)
-                    $("#localityInput").val(resp.address.locality)
-
-                    $("#user_img").attr("src", "<?= base_url()?>"+resp.user_img.img);
-                    
-                
-
-                    $("#customer_name").text(resp.user_data.user_name)
-                    $("#customer_number").text(resp.user_data.number)
-                    $("#customer_email").text(resp.user_data.email)
-                    $("#customer_location").text(resp.address.country)
-                    $("#customer_since_member").text(resp.user_data.created_at)
-
-                } else {
-                    console.log(resp.message)
-                }
-            },
-            error: function () {
-            }
-        })
-
-        $("#update_profile").click(function(){
-            var user_id = $("#user_id").val()
-            var name = $("#firstnameInput").val()
-            var number = $("#phonenumberInput").val()
-            var email = $("#emailInput").val()
-
-            var city = $("#cityInput").val()
-            var country = $("#countryInput").val()
-            var zip = $("#zipcodeInput").val()
-            var district = $("#districtInput").val()
-            var state = $("#stateInput").val()
-            var locality = $("#localityInput").val()
-
-            if(name == ""){
-                $("#name_val").text("Please enter name!")
-            }else{
-                $("#name_val").text("")
-            }
-            if(number == ""){
-                $("#number_val").text("Please enter number!")
-            }else{
-                $("#number_val").text("")
-            }
-            if(email == ""){
-                $("#email_val").text("Please enter email!")
-            }else{
-                $("#email_val").text("")
-            }
-
-            if(name != "" && number != "" && email != ""){
-                // alert("hello")
-                var formData = new FormData();
-
-                formData.append('name', name);
-                formData.append('number', number);
-                formData.append('email', email);
-                formData.append('city', city);
-                formData.append('country', country);
-                formData.append('zip', zip);
-                formData.append('district', district);
-                formData.append('state', state);
-                formData.append('locality', locality);
-                formData.append('user_id', user_id);
-                console.log(formData.get('name'));
-
-                $.each($('#user_img_input')[0].files, function (index, file) {
-                    formData.append('images[]', file);
-                });
-                $.ajax({
-                    url: "<?= base_url('/api/update/user') ?>",
-                    type: "POST",
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    beforeSend: function () {
-                        $('#update_profile').html(`<div class="spinner-border" role="status"></div>`)
-                        $('#update_profile').attr('disabled', true)
-
-                    },
-                    success: function (resp) {
-                        console.log(resp)
-
-                        if (resp.status) {
-                            window.location.href = "<?= base_url('/user/account') ?>";
-                            // html += `<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
-                            //         <i class="ri-checkbox-circle-fill label-icon"></i>${resp.message}
-                            //         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            //     </div>`
-                            // $('#product-title-input').val(``)
-                            // editor.setData(``)
-                            // $('#choices-category-input').val(``)
-                            // $('#datepicker-publish-input').val(``)
-                            // $('#product-tags-input').val(``)
-                            // $('#choices-publish-visibility-input').val(``)
-                            // $('#choices-publish-status-input').val(``)
-                            // $('#manufacturer-name-input').val(``)
-                            // $('#manufacturer-brand-input').val(``)
-                            // $('#meta-title-input').val(``)
-                            // $('#meta-keywords-input').val(``)
-                            // $('#meta-description-input').val(``)
-                            // $('#product-price-input').val(``)
-                            // $('#product-discount-input').val(``)
-                            // $imageContainer.html(``);
-                            // $numOfFiles.html(``);
-                        } else {
-                            console.log(resp.status)
-                            // html += `<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
-                            //         <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}
-                            //         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            //     </div>`
-                        }
-
-
-                        $('#alert').html(html)
-                        console.log(resp)
-                    },
-                    error: function (err) {
-                        console.log(err)
-                    },
-                    complete: function () {
-                        $('#product_add_btn').html(`submit`)
-                        $('#product_add_btn').attr('disabled', false)
-                    }
-                })
-            }
-
-
-            
-        });
-    })
-
-    $(document).on('change', 'input[name="user_img[]"]', function (e) {
-    console.log(1)
-    var files = e.target.files;
-    $('#userImage').html(''); // Clear existing previews
-
-    for (var i = 0; i < files.length; i++) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#userImage').append(`<img src="${e.target.result}" height="100" id="user_img"/>`);
-        };
-
-        reader.readAsDataURL(files[i]);
-        }
-    });
-
-
-
-</script>
