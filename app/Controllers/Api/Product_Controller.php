@@ -235,27 +235,79 @@ class Product_Controller extends Api_Controller
         return $resp;
     }
 
-    private function variation($p_id){
+    private function variation($p_id)
+    {
         $resp = [
             'status' => false,
             'message' => 'Product not Found',
             'data' => null
         ];
-        
+
         $CommonModel = new CommonModel();
         $sql = "SELECT
+                    product_config.uid,
                     product_config.sku AS stock,
-                    product_config.price ,
+                    product_config.price,
                     product_config.discount,
                     variation.name,
                     variation_option.value
-                FROM    
+                FROM
                     product_config
-                JOIN    
-                    variation_option ON product_config.uid  = variation_option.variation_id
-                JOIN    
-                    variation ON variation_option.variation_id = variation.uid";
+                JOIN
+                    variation_option ON product_config.variation_option_id = variation_option.uid
+                JOIN
+                    variation ON variation_option.variation_id = variation.uid
+                WHERE 
+                    product_config.product_id = '{$p_id}'";
 
+        $variants = $CommonModel->customQuery($sql);
+        if (count($variants) > 0) {
+            $VariantImagesModel = new VariantImagesModel();
+            foreach ($variants as $key => $variant) {
+                $variants[$key]->product_img = $VariantImagesModel->where('config_id', $variant->uid)->findAll();
+            }
+
+            $mergedArray = [];
+
+            foreach ($variants as $variant) {
+                $uid = $variant->uid;
+                $color = $variant->name === 'color' ? $variant->value : null;
+                $size = $variant->name === 'size' ? $variant->value : null;
+
+                if (!isset ($mergedArray[$uid])) {
+                    // If the UID doesn't exist in mergedArray, initialize it
+                    $mergedArray[$uid] = $variant;
+                    // Initialize empty arrays for product_img
+                    $mergedArray[$uid]->product_img = [];
+                } else {
+                    // If UID exists, merge the product_img array
+                    $mergedArray[$uid]->product_img = array_merge($mergedArray[$uid]->product_img, $variant->product_img);
+                }
+
+                // Set color and size directly in the object
+                if ($color !== null) {
+                    $mergedArray[$uid]->color = $color;
+                    unset($mergedArray[$uid]->name);
+                    unset($mergedArray[$uid]->value);
+                }
+
+                if ($size !== null) {
+                    $mergedArray[$uid]->size = $size;
+                    unset($mergedArray[$uid]->name);
+                    unset($mergedArray[$uid]->value);
+                }
+            }
+            $normalArray = [];
+
+            foreach ($mergedArray as $key => $value) {
+                $normalArray[$key] = (array)$value;
+            }
+
+
+            $resp["status"] = true;
+            $resp["data"] =     $mergedArray;
+            $resp["message"] = 'Products Found';
+        }
         return $resp;
     }
 
@@ -329,7 +381,8 @@ class Product_Controller extends Api_Controller
         return $this->response->setJSON($resp);
     }
 
-    public function GET_variation(){
+    public function GET_variation()
+    {
         $p_id = $this->request->getGet('p_id');
         $resp = $this->variation($p_id);
         return $this->response->setJSON($resp);
