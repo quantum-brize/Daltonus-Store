@@ -21,7 +21,7 @@
         <!-- end page title -->
 
         <div class="row">
-            <div class="col-xl-3 col-lg-4">
+            <div class="col-xl-4 col-lg-4">
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex align-items-center">
@@ -37,16 +37,45 @@
                     </div>
 
                     <div class="card-body">
-
-
-
+                        <table class="table">
+                            <tbody id="product_details">
+                                <tr>
+                                    <td>id</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Category</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Price</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Discount</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Final Price</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Total Stock</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Sold</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <!-- end card -->
             </div>
             <!-- end col -->
 
-            <div class="col-xl-9 col-lg-8">
+            <div class="col-xl-8 col-lg-8">
                 <div>
                     <div class="card">
                         <div class="card-header">
@@ -62,7 +91,8 @@
                         </div>
 
                         <div class="card-body">
-                            <table id="table-product-variant" class="table nowrap align-middle table-hover" style="width:100%">
+                            <table id="table-product-variant" class="table nowrap align-middle table-hover"
+                                style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Product</th>

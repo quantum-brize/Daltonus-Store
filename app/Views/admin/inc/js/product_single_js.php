@@ -1,9 +1,9 @@
 <script>
     $(document).ready(function () {
-        load_variants()
-        get_product_data('<?= $_GET['p_id'] ?>')
+       
+        get_product_data('<?= $_GET['p_id'] ?>');
      
-        var product
+        var product;
 
         function get_product_data(p_id) {
             $.ajax({
@@ -14,11 +14,39 @@
                 },
                 beforeSend: function () { },
                 success: function (resp) {
-                    console.log(resp)
+                    console.log(resp);
                     if (resp.status) {
                         product = resp.data;
-                       
-
+                        let html = `<tr>
+                                        <td>id</td>
+                                        <td style="text-align: right;">${product.product_id}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Category</td>
+                                        <td style="text-align: right;">${product.category}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Price</td>
+                                        <td style="text-align: right;">${product.base_price}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Discount</td>
+                                        <td style="text-align: right;">${product.base_discount}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Final Price</td>
+                                        <td style="text-align: right;">${product.category}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Stock</td>
+                                        <td style="text-align: right;">${product.product_stock}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sold</td>
+                                        <td style="text-align: right;">${product.category}</td>
+                                    </tr>`
+                        $('#product_details').html(html);
+                        load_variants();
                     }
                 },
                 error: function (err) {
@@ -28,22 +56,18 @@
             })
         }
 
-
         function load_variants() {
-
             $.ajax({
                 url: "<?= base_url('/api/product/variant') ?>",
                 type: 'GET',
                 data: {
                     p_id: '<?= $_GET['p_id'] ?>'
                 },
-                beforeSend: function () {
-
-                },
+                beforeSend: function () {},
                 success: function (resp) {
-                    console.log(resp)
+                    console.log(resp);
                     if (resp.status) {
-                        let html = ''
+                        let html = '';
                         $.each(resp.data, function (vIndex, vItem) {
                             html += `<tr>
                                     <td class="text-left">
@@ -64,9 +88,9 @@
                                     <td class="text-left">
                                         <sapn class="badge bg-success-subtle text-success text-uppercase">${vItem.stock}</span>
                                     </td>
-                                <tr>`
-                        })
-                        $('#table-product-variant-body').html(html)
+                                </tr>`;
+                        });
+                        $('#table-product-variant-body').html(html);
                         $('#table-product-variant').DataTable();
                     }
                 },
@@ -74,10 +98,8 @@
                     console.log(err)
                 }
 
-            })
-
-
+            });
         }
-    })
+    });
 
 </script>
