@@ -62,13 +62,13 @@
                         </div>
 
                         <div class="card-body">
-                            <table id="table-product-variant" class="table nowrap align-middle table-hover"
-                                style="width:100%">
+                            <table id="table-product-variant" class="table nowrap align-middle table-hover" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Product</th>
                                         <th>Variant</th>
                                         <th>Price</th>
+                                        <th>Final Price</th>
                                         <th>discount</th>
                                         <th>Stock</th>
                                     </tr>

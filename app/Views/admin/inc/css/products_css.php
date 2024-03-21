@@ -19,6 +19,6 @@
         justify-content: center;
     }
     td{
-       text-align:  center;
+       text-align:  left;
     }
 </style>

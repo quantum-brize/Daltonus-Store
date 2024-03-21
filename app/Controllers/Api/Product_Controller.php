@@ -185,39 +185,49 @@ class Product_Controller extends Api_Controller
 
         $CommonModel = new CommonModel();
 
-
         $sql = "SELECT
-                    product.uid AS product_id,
-                    product.name AS name,
-                    product.description AS description,
-                    product.created_at AS created_at,
-                    categories.name AS category,
-                    product_item.price AS base_price,
-                    product_item.sku AS product_stock,
-                    product_item.discount AS base_discount,
-                    product_item.product_tags AS tags,
-                    product_item.publish_date AS publish_date,
-                    product_item.status AS status,
-                    product_item.visibility AS visibility,
-                    product_item.manufacturer_brand AS manufacturer_brand,
-                    product_item.manufacturer_name AS manufacturer_name,
-                    product_meta_detalis.meta_title,
-                    product_meta_detalis.meta_description,
-                    product_meta_detalis.meta_keywords,
-                    users.user_name AS vendor,
-                    vendor.uid AS vendor_id
-                FROM
-                    product
-                JOIN
-                    product_item ON product.uid = product_item.product_id
-                JOIN
-                    product_meta_detalis ON product.uid = product_meta_detalis.product_id
-                JOIN 
-                    categories ON product.category_id = categories.uid
-                JOIN
-                    vendor ON product.vendor_id = vendor.uid
-                JOIN
-                    users ON vendor.user_id = users.uid;";
+            product.uid AS product_id,
+            product.name AS name,
+            product.description AS description,
+            product.created_at AS created_at,
+            categories.name AS category,
+            product_item.price AS base_price,
+            product_item.sku AS product_stock,
+            product_item.discount AS base_discount,
+            product_item.product_tags AS tags,
+            product_item.publish_date AS publish_date,
+            product_item.status AS status,
+            product_item.visibility AS visibility,
+            product_item.manufacturer_brand AS manufacturer_brand,
+            product_item.manufacturer_name AS manufacturer_name,
+            product_meta_detalis.meta_title,
+            product_meta_detalis.meta_description,
+            product_meta_detalis.meta_keywords,
+            users.user_name AS vendor,
+            vendor.uid AS vendor_id
+        FROM
+            product
+        JOIN
+            product_item ON product.uid = product_item.product_id
+        JOIN
+            product_meta_detalis ON product.uid = product_meta_detalis.product_id
+        JOIN 
+            categories ON product.category_id = categories.uid
+        JOIN
+            vendor ON product.vendor_id = vendor.uid
+        JOIN
+            users ON vendor.user_id = users.uid";
+
+        if (!empty ($data['p_id'])) {
+            $p_id = $data['p_id'];
+            $sql .= " WHERE
+                product.uid = '{$p_id}';";
+        } else {
+            $sql .= ";";
+        }
+
+
+        //$this->prd()
 
         $products = $CommonModel->customQuery($sql);
 
@@ -228,7 +238,7 @@ class Product_Controller extends Api_Controller
             }
 
             $resp["status"] = true;
-            $resp["data"] = $products;
+            $resp["data"] = !empty ($data['p_id']) ? $products[0] : $products;
             $resp["message"] = 'Products Found';
         }
 
@@ -269,7 +279,7 @@ class Product_Controller extends Api_Controller
 
             $mergedArray = [];
 
-            foreach ($variants as $variant) {
+            foreach ($variants as $key => $variant) {
                 $uid = $variant->uid;
                 $color = $variant->name === 'color' ? $variant->value : null;
                 $size = $variant->name === 'size' ? $variant->value : null;
@@ -297,15 +307,12 @@ class Product_Controller extends Api_Controller
                     unset($mergedArray[$uid]->value);
                 }
             }
-            $normalArray = [];
-
-            foreach ($mergedArray as $key => $value) {
-                $normalArray[$key] = (array)$value;
-            }
+            $mergedArray = array_values($mergedArray);
+            //$this->prd($mergedArray);
 
 
             $resp["status"] = true;
-            $resp["data"] =     $mergedArray;
+            $resp["data"] = $mergedArray;
             $resp["message"] = 'Products Found';
         }
         return $resp;
