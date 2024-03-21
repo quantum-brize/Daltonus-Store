@@ -192,7 +192,6 @@
                         }
 
 
-                        $('#alert').html(html)
                         console.log(resp)
                     },
                     error: function (err) {
@@ -214,33 +213,65 @@
             type: "GET",
             success: function (resp) {
                 // resp = JSON.parse(resp)
-                console.log(resp.user_data.number)
+                console.log(resp.user_data)
                 if (resp.status == true) {
-                   console.log(resp.user_img)
+                   console.log(resp)
                    
                    
-                   $("#user_avtar_img").attr("src", "<?= base_url()?>"+resp.user_img.img);
+                   
                    $("#user_full_name").text(resp.user_data.user_name);
-                   $("#user_location").empty();
-                   $("#user_location").append(`<i class="bi bi-geo-alt"></i>${resp.address.city}`);
-
                     $("#user_id").val(resp.user_id)
                     $("#firstnameInput").val(resp.user_data.user_name)
                     $("#phonenumberInput").val(resp.user_data.number)
                     $("#emailInput").val(resp.user_data.email)
-                    $("#cityInput").val(resp.address.city)
-                    $("#countryInput").val(resp.address.country)
-                    $("#zipcodeInput").val(resp.address.zipcode)
-                    $("#districtInput").val(resp.address.district)
-                    $("#stateInput").val(resp.address.state)
-                    $("#localityInput").val(resp.address.locality)
 
-                    $("#user_img").attr("src", "<?= base_url()?>"+resp.user_img.img);
+                    if(resp.address != null){
+                        $("#cityInput").val(resp.address.city)
+                        $("#countryInput").val(resp.address.country)
+                        $("#zipcodeInput").val(resp.address.zipcode)
+                        $("#districtInput").val(resp.address.district)
+                        $("#stateInput").val(resp.address.state)
+                        $("#localityInput").val(resp.address.locality)
+                        $("#customer_location").text(resp.address.city)
+
+                        $("#user_location").empty();
+                        $("#user_location").append(`<i class="bi bi-geo-alt"></i>${resp.address.city}`);  
+                    }
+
+                    if(resp.user_img != null){
+                        $("#user_avtar_img").attr("src", "<?= base_url()?>"+resp.user_img.img);
+                        $("#user_img").attr("src", "<?= base_url()?>"+resp.user_img.img);
+                    }
+
+                    if(resp.all_address != null){
+                        $('#user_address').empty();
+                        $.each(resp.all_address, function(index, add_data) {
+                                html = `<div class="col-md-6">
+                                                            <div class="card mb-md-0">
+                                                                <div class="card-body"> 
+                                                                    <div class="float-end clearfix"> <a href="address.html" class="badge bg-primary-subtle text-primary ">${add_data.is_primary}</a> </div>
+                                                                    <div> 
+                                                                        <p class="mb-3 fw-semibold fs-12 d-block text-muted text-uppercase">Home Address</p> 
+                                                                        <h6 class="fs-14 mb-2 d-block">${resp.user_data.user_name}</h6> 
+                                                                        <span class="text-muted fw-normal text-wrap mb-1 d-block">${add_data.locality}, ${add_data.city}, ${add_data.zipcode}</span> 
+                                                                        <span class="text-muted fw-normal d-block">${add_data.district}, ${add_data.state}</span> 
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                        </div>`
+                            $('#user_address').append(html);
+                        });
+                    }
+
+                    
+                    
+
+                    
                     
                     $("#customer_name").text(resp.user_data.user_name)
                     $("#customer_number").text(resp.user_data.number)
                     $("#customer_email").text(resp.user_data.email)
-                    $("#customer_location").text(resp.address.city)
+                    
                     var dateParts = resp.user_data.created_at.split(" ")[0].split("-");
                     var year = dateParts[0];
                     var month = dateParts[1];
@@ -248,23 +279,7 @@
                     var formattedDate = day + "/" + month + "/" + year;
                     $("#customer_since_member").text(formattedDate)
 
-                    $('#user_address').empty();
-                    $.each(resp.all_address, function(index, add_data) {
-                            html = `<div class="col-md-6">
-                                                        <div class="card mb-md-0">
-                                                            <div class="card-body"> 
-                                                                <div class="float-end clearfix"> <a href="address.html" class="badge bg-primary-subtle text-primary ">${add_data.is_primary}</a> </div>
-                                                                <div> 
-                                                                    <p class="mb-3 fw-semibold fs-12 d-block text-muted text-uppercase">Home Address</p> 
-                                                                    <h6 class="fs-14 mb-2 d-block">${resp.user_data.user_name}</h6> 
-                                                                    <span class="text-muted fw-normal text-wrap mb-1 d-block">${add_data.locality}, ${add_data.city}, ${add_data.zipcode}</span> 
-                                                                    <span class="text-muted fw-normal d-block">${add_data.district}, ${add_data.state}</span> 
-                                                                </div> 
-                                                            </div>
-                                                        </div>
-                                                    </div>`
-                        $('#user_address').append(html);
-                    });
+                    
 
                 } else {
                     console.log(resp.message)
