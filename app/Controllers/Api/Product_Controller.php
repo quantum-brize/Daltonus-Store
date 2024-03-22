@@ -351,6 +351,24 @@ class Product_Controller extends Api_Controller
         return $resp;
     }
 
+    private function user_id()
+    {
+        $resp = [
+            'status' => false,
+            'message' => 'User id not found',
+            'data' => null
+        ];
+        $user_id = $this->is_logedin();
+        if(!empty($user_id)){
+            $resp['status'] = true;
+            $resp['message'] = 'User id found';
+            $resp['data'] = $user_id;
+        }
+        
+        // $this->prd($resp);
+
+        return $resp;
+    }
 
 
 
@@ -358,6 +376,14 @@ class Product_Controller extends Api_Controller
 
 
 
+
+    public function GET_user_id()
+    {
+        $data = $this->request->getGet();
+
+        $resp = $this->user_id($data);
+        return $this->response->setJSON($resp);
+    }
 
     public function GET_product()
     {

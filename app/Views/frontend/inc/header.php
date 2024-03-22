@@ -1188,6 +1188,32 @@
             error: function () {
             }
         })
+
+        $.ajax({
+            url: "<?= base_url('/api/user/cart') ?>",
+            type: "GET",
+            success: function (resp) {
+                
+                if (resp.status) {
+                    console.log(resp)
+                        // $.each(resp.data, function(index, product) {
+                        //     console.log(product)
+                        //     if(index <= 8){
+                        //         var original_price = product.base_discount ? product.base_price - (product.base_price * product.base_discount / 100) : product.base_price;
+                        //         var base_price = product.base_discount ? product.base_discount : ""; 
+                        //         html = ``
+                        //         $('#all_products').append(html);
+                        //     }
+                        // })
+                } else {
+                    console.log(resp)
+                }
+                
+            },
+            error: function (err) {
+                console.log(err)
+            },
+        })
      })
     
 </script>

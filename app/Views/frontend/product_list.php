@@ -1096,7 +1096,7 @@
                     </div>
                 </div>
                 <div class="row" id="product-grid">
-                    <div class="col-xxl-3 col-lg-4 col-md-6">
+                    <!-- <div class="col-xxl-3 col-lg-4 col-md-6">
                         <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden">
                             <div class="bg-light bg-opacity-50 rounded py-4 position-relative"> <img
                                     src="<?= base_url()?>/public/assets/images/products/img-8.png" alt=""
@@ -1140,8 +1140,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-xxl-3 col-lg-4 col-md-6">
+                    </div> -->
+                    <!-- <div class="col-xxl-3 col-lg-4 col-md-6">
                         <div class="card ecommerce-product-widgets border-0 rounded-0 shadow-none overflow-hidden">
                             <div class="bg-light bg-opacity-50 rounded py-4 position-relative"> <img
                                     src="<?= base_url()?>/public/assets/images/products/img-15.png" alt=""
@@ -1553,7 +1553,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row" id="pagination-element" style="display: flex;">
                     <div class="col-lg-12">
