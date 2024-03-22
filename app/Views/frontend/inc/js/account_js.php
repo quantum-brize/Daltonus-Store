@@ -52,7 +52,7 @@
                     formData.append('images[]', file);
                 });
                 $.ajax({
-                    url: "<?= base_url('/api/update/user') ?>",
+                    url: "<?= base_url('/api/user/update') ?>",
                     type: "POST",
                     data: formData,
                     contentType: false,

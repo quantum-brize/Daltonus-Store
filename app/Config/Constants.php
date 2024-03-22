@@ -148,7 +148,7 @@ defined('TABLE_VARIATION')          || define('TABLE_VARIATION', 'variation');
 defined('TABLE_VARIATION_OPTION')   || define('TABLE_VARIATION_OPTION', 'variation_option');
 defined('TABLE_VENDOR')             || define('TABLE_VENDOR', 'vendor');
 defined('TABLE_VARIANT_IMG')        || define('TABLE_VARIANT_IMG', 'variation_Images');
-
+defined('TABLE_CART')               || define('TABLE_CART','user_cart');
 
 //////////////////////////////////////////////__UID_PRIFIX
 defined('UID_USER')         || define('UID_USER', 'USR');
@@ -160,10 +160,11 @@ defined('UID_PRODUCT_META') || define('UID_PRODUCT_META', 'PRM');
 defined('UID_PRODUCT_IMG')  || define('UID_PRODUCT_IMG', 'PRG');
 defined('UID_ADDRESS')      || define('UID_ADDRESS', 'ADRS');
 defined('UID_USER_IMG')     || define('UID_USER_IMG', 'UIMG');
-defined('UID_MESSAGE')     || define('UID_MESSAGE', 'MSG');
+defined('UID_MESSAGE')      || define('UID_MESSAGE', 'MSG');
 defined('UID_VAR_OPT')      || define('UID_VAR_OPT', 'VRO');
 defined('UID_VAR_IMG')      || define('UID_VAR_IMG', 'VRI');
 defined('UID_PRO_CONFIG')   || define('UID_PRO_CONFIG', 'PCON');
+defined('UID_CART')         || define('UID_CART', 'CRT');
 
 
 //////////////////////////////////////////////__STATUS

@@ -28,8 +28,16 @@
                             <div class="flex-grow-1">
                                 <h5 class="fs-16">Product</h5>
                             </div>
-                            <div class="flex-shrink-0">
-                                <a href="#" class="btn btn-success">View</a>
+                            <div class="flex">
+                                <a href="#" class="btn btn-success ">
+                                    <i class="ri ri-eye-line"></i>
+                                </a>
+                                <a href="#" class="btn btn-secondary">
+                                    <i class="ri ri-edit-line"></i>
+                                </a>
+                                <a href="#" class="btn btn-danger ">
+                                    <i class="ri ri-delete-bin-line"></i>
+                                </a>
                             </div>
                         </div>
 

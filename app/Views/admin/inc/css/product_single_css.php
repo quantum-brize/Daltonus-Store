@@ -8,7 +8,7 @@
     tbody tr{
         transition: 50ms;
     }
-    tbody tr:hover{
+    #table-product-variant tbody tr:hover{
         cursor: pointer;
        
     }
@@ -20,5 +20,8 @@
     }
     td{
        text-align:  left;
+    }
+    #table-product-variant_wrapper{
+        overflow-x:scroll ;
     }
 </style>

@@ -19,31 +19,31 @@
                         product = resp.data;
                         let html = `<tr>
                                         <td>id</td>
-                                        <td style="text-align: right;">${product.product_id}</td>
+                                        <td style="text-align: right" class="text-secondary">${product.product_id}</td>
                                     </tr>
                                     <tr>
                                         <td>Category</td>
-                                        <td style="text-align: right;">${product.category}</td>
+                                        <td style="text-align: right" class="text-secondary">${product.category}</td>
                                     </tr>
                                     <tr>
                                         <td>Price</td>
-                                        <td style="text-align: right;">${product.base_price}</td>
+                                        <td style="text-align: right" class="text-secondary">${product.base_price}</td>
                                     </tr>
                                     <tr>
                                         <td>Discount</td>
-                                        <td style="text-align: right;">${product.base_discount}</td>
+                                        <td style="text-align: right" class="text-secondary">${product.base_discount}</td>
                                     </tr>
                                     <tr>
                                         <td>Final Price</td>
-                                        <td style="text-align: right;">${product.category}</td>
+                                        <td style="text-align: right" class="text-secondary">${product.category}</td>
                                     </tr>
                                     <tr>
                                         <td>Total Stock</td>
-                                        <td style="text-align: right;">${product.product_stock}</td>
+                                        <td style="text-align: right" class="text-secondary">${product.product_stock}</td>
                                     </tr>
                                     <tr>
                                         <td>Sold</td>
-                                        <td style="text-align: right;">${product.category}</td>
+                                        <td style="text-align: right" class="text-secondary">${product.category}</td>
                                     </tr>`
                         $('#product_details').html(html);
                         load_variants();
