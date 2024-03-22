@@ -448,13 +448,13 @@
                         <div class="row">
                             <div class="col-md-2">
                                 <div thumbsslider="" class="swiper productSwiper mb-3 mb-lg-0">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
+                                    <div class="swiper-wrapper" id="side_image">
+                                        <!-- <div class="swiper-slide">
                                             <div class="product-thumb rounded cursor-pointer">
                                                 <img src="<?= base_url()?>/public/assets/images/products/img-31-1.png" alt="" class="img-fluid">
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
+                                        </div> -->
+                                        <!-- <div class="swiper-slide">
                                             <div class="product-thumb rounded cursor-pointer">
                                                 <img src="<?= base_url()?>/public/assets/images/products/img-33-1.png" alt="" class="img-fluid">
                                             </div>
@@ -473,7 +473,7 @@
                                             <div class="product-thumb rounded cursor-pointer">
                                                 <img src="<?= base_url()?>/public/assets/images/products/img-34-1.png" class="img-fluid">
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div><!--end col-->
@@ -483,11 +483,11 @@
                                         <span class="trending-ribbon-text">Trending</span> <i class="ri-flashlight-fill text-white align-bottom float-end ms-1"></i>
                                     </div>
                                     <div class="swiper productSwiper2">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide ">
+                                        <div class="swiper-wrapper" id="main_image">
+                                            <!-- <div class="swiper-slide ">
                                                 <img src="<?= base_url()?>/public/assets/images/products/img-31-1.png" alt="" class="img-fluid">
-                                            </div>
-                                            <div class="swiper-slide">
+                                            </div> -->
+                                            <!-- <div class="swiper-slide">
                                                 <img src="<?= base_url()?>/public/assets/images/products/img-33-1.png" alt="" class="img-fluid">
                                             </div>
                                             <div class="swiper-slide">
@@ -498,7 +498,7 @@
                                             </div>
                                             <div class="swiper-slide">
                                                 <img src="<?= base_url()?>/public/assets/images/products/img-34-1.png" alt="" class="img-fluid">
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="swiper-button-next bg-transparent"></div>
                                         <div class="swiper-button-prev bg-transparent"></div>
@@ -533,9 +533,9 @@
                                     </div>
                                     <span class="fw-medium"> (50 Review)</span>
                                 </div>
-                                <h4 class="lh-base mb-1">Opinion Striped Round Neck Green T-shirt</h4>
-                                <p class="text-muted mb-4">The best part about stripped t shirt denim & white sneakers or wear it with a cool chinos and blazer to dress up <a href="javascript:void(0);" class="link-info">Read More</a></p>
-                                <h5 class="fs-24 mb-4">$185.79 <span class="text-muted fs-14"><del>$280.99</del></span> <span class="fs-14 ms-2 text-danger"> (50% off)</span></h5>
+                                <h4 class="lh-base mb-1" id="product_name"></h4>
+                                <p class="text-muted mb-4" id="product_description"></p>
+                                <h5 class="fs-24 mb-4" id="product_price"></h5>
                                 <ul class="list-unstyled vstack gap-2">
                                     <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>In stock</li>
                                     <li class=""><i class="bi bi-check2-circle me-2 align-middle text-success"></i>Free delivery available</li>

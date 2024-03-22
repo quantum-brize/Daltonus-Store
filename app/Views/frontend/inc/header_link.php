@@ -12,16 +12,16 @@
 	<link rel="shortcut icon" href="<?=base_url()?>public/assets/images/favicon-1.ico" />
 
 	<!--Swiper slider css-->
-	<link href="<?=base_url()?>public/assets/libs/swiper/swiper-bundle.min-1.css" rel="stylesheet" type="text/css" />
+	<link href="<?=base_url()?>public/assets/libs/swiper/swiper-bundle.min-1.css" rel="stylesheet" type="" />
 
 	<!-- Bootstrap Css -->
-	<link href="<?=base_url()?>public/assets/css/bootstrap.min-1.css" rel="stylesheet" type="text/css" />
+	<link href="<?=base_url()?>public/assets/css/bootstrap.min-1.css" rel="stylesheet" type="" />
 	<!-- Icons Css -->
-	<link href="<?=base_url()?>public/assets/css/icons.min-1.css" rel="stylesheet" type="text/css" />
+	<link href="<?=base_url()?>public/assets/css/icons.min-1.css" rel="stylesheet" type="" />
 	<!-- App Css-->
-	<link href="<?=base_url()?>public/assets/css/app.min-1.css" rel="stylesheet" type="text/css" />
+	<link href="<?=base_url()?>public/assets/css/app.min-1.css" rel="stylesheet" type="" />
 	<!-- custom Css-->
-	<link href="<?=base_url()?>public/assets/css/custom.min-1.css" rel="stylesheet" type="text/css" />
+	<link href="<?=base_url()?>public/assets/css/custom.min-1.css" rel="stylesheet" type="" />
 
 	 <!-- Include the Toastify CSS file -->
 	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -41,5 +41,18 @@
 
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-	  
+
+	  <?php
+    if (!empty ($header_asset_link)) {
+        foreach ($header_asset_link as $link) {
+            echo "<link href='" . base_url() . 'public/' . $link . "' rel='stylesheet' type='text/css'>";
+        }
+    }
+
+    if (!empty ($header_link)) {
+        foreach ($header_link as $link) {
+            require_once ('css/' . $link);
+        }
+    }
+    ?>
 </head>

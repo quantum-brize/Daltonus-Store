@@ -18,7 +18,23 @@ class Frontend_Controller extends Main_Controller
 
     public function index(): void
     {
-        $this->load_page('/frontend/home', PAGE_DATA_FRONTEND);
+        $data = PAGE_DATA_FRONTEND;
+            $data = [
+                'data_page' => [],
+                'data_header' => [
+                    'header_link' => ['home_css.php'],
+                    'title' => '',
+                    'header' => [],
+                    'sidebar' => [],
+                    'site' => 'frontend'
+                ],
+                'data_footer' => [
+                    'footer_link' => ['home_js.php'],
+                    'footer' => [],
+                    'site' => 'frontend'
+                ]
+            ];
+        $this->load_page('/frontend/home',  $data);
     }
 
     public function about_us(): void

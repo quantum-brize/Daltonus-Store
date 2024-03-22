@@ -241,7 +241,7 @@ class Product_Controller extends Api_Controller
             $resp["data"] = !empty ($data['p_id']) ? $products[0] : $products;
             $resp["message"] = 'Products Found';
         }
-
+        // $this->prd($resp);
         return $resp;
     }
 
