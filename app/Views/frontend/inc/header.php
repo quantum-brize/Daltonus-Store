@@ -361,14 +361,13 @@
                                     </ul>
                                 </li> -->
                                 <li class="dropdown dropdown-hover">
-                                    <a href="<?= base_url('product-list')?>" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                        aria-expanded="false" data-key="t-list-view">List View</a>
-                                    <ul class="dropdown-menu submenu">
+                                    <a href="<?= base_url('product/list')?>" class="nav-link dropdown-toggle" data-key="t-list-view">List View</a>
+                                    <!-- <ul class="dropdown-menu submenu">
                                         <li>
                                             <a class="nav-link" href="<?= base_url('product/list')?>"
                                                 data-key="t-default">default</a>
                                         </li>
-                                        <!-- <li>
+                                        <li>
                                             <a class="nav-link" href="<?= base_url('')?>"
                                                 data-key="t-left-sidebar">Left Sidebar</a>
                                         </li>
@@ -379,8 +378,8 @@
                                         <li>
                                             <a class="nav-link" href="<?= base_url('')?>" data-key="t-no-sidebar">No
                                                 Sidebar</a>
-                                        </li> -->
-                                    </ul>
+                                        </li>
+                                    </ul> -->
                                 </li>
                                 <li>
                                     <a class="nav-link" href="<?= base_url('product/details')?>" data-key="t-product-details">Product

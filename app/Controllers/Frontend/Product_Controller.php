@@ -17,7 +17,23 @@ class Product_Controller extends Main_Controller
     
     public function product_details(): void
     {
-        $this->load_page('/frontend/product_details', PAGE_DATA_FRONTEND);
+        $data = PAGE_DATA_FRONTEND;
+        $data = [
+            'data_page' => [],
+            'data_header' => [
+                'header_link' => [],
+                'title' => '',
+                'header' => [],
+                'sidebar' => [],
+                'site' => 'frontend'
+            ],
+            'data_footer' => [
+                'footer_link' => ['product_details_js.php'],
+                'footer' => [],
+                'site' => 'frontend'
+            ]
+        ];
+        $this->load_page('/frontend/product_details', $data);
     }
 
     public function product_category(): void
