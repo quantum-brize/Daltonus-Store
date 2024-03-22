@@ -78,8 +78,8 @@ $routes->post('/api/message',                   'Api\User_Controller::POST_messa
 $routes->get('/api/user',                       'Api\User_Controller::GET_get_user');
 $routes->get('/api/user/cart',                  'Api\Cart_Controller::GET_cart');
 $routes->post('/api/user/cart/add',             'Api\Cart_Controller::POST_cart_add');
-$routes->post('/api/user/cart/remove',          'Api\Cart_Controller::POST_cart_remove');
-$routes->post('/api/user/cart/empty',           'Api\Cart_Controller::POST_cart_empty');
+$routes->get('/api/user/cart/remove',           'Api\Cart_Controller::GET_cart_remove');
+$routes->get('/api/user/cart/empty',            'Api\Cart_Controller::GET_cart_empty');
 
 
 
