@@ -136,5 +136,3 @@ class Product_Controller extends Admin_Controller{
 
 
 }
-
-?>
