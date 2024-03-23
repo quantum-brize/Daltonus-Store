@@ -111,6 +111,29 @@ class Product_Controller extends Admin_Controller{
     }
 
 
+    public function load_product_update(){
+        $data = PAGE_DATA_ADMIN;
+        $data = [
+            'data_page' => [],
+            'data_header' => [
+                'header_link' => ['product_update_css.php'],
+                'header_asset_link' => [],
+                'title' => 'Products',
+                'header' => [],
+                'sidebar' => ['products'=>true],
+                'site' => 'admin'
+            ],
+            'data_footer' => [
+                'footer_link' => ['product_update_js.php'],
+                'footer_asset_link'=> ['assets_admin/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js'],
+                'footer' => [],
+                'site' => 'admin'
+            ]
+        ];
+        $this->isAuth('/admin/product_update',$data);
+    }
+
+
 
 }
 

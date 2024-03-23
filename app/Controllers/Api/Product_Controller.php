@@ -379,9 +379,7 @@ class Product_Controller extends Api_Controller
 
     public function GET_user_id()
     {
-        $data = $this->request->getGet();
-
-        $resp = $this->user_id($data);
+        $resp = $this->user_id();
         return $this->response->setJSON($resp);
     }
 

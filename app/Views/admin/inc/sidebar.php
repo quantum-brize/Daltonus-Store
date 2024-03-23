@@ -107,12 +107,12 @@
                     <div class="<?= isset($sidebar['products']) ? '' : 'collapse' ?> menu-dropdown" id="sidebarProduct">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="<?=base_url('/admin/products')?>" class="nav-link"> 
+                                <a href="<?=base_url('/admin/product/list')?>" class="nav-link"> 
                                     All Products
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?=base_url('/admin/products/add')?>" class="nav-link">
+                                <a href="<?=base_url('/admin/product/add')?>" class="nav-link">
                                     Add Product
                                 </a>
                             </li>
