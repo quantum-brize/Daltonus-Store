@@ -29,13 +29,13 @@
                                 <h5 class="fs-16">Product</h5>
                             </div>
                             <div class="flex">
-                                <a href="#" class="btn btn-success ">
+                                <a href="<?= base_url('/admin/product/view?p_id='.$_GET['p_id'])?>" class="btn btn-success ">
                                     <i class="ri ri-eye-line"></i>
                                 </a>
-                                <a href="#" class="btn btn-secondary">
+                                <a href="<?= base_url('/admin/product/update?p_id='.$_GET['p_id'])?>" class="btn btn-secondary">
                                     <i class="ri ri-edit-line"></i>
                                 </a>
-                                <a href="#" class="btn btn-danger ">
+                                <a href="<?= base_url('/admin/product/delete?p_id='.$_GET['p_id'])?>" class="btn btn-danger ">
                                     <i class="ri ri-delete-bin-line"></i>
                                 </a>
                             </div>

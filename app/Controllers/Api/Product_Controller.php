@@ -105,7 +105,7 @@ class Product_Controller extends Api_Controller
             } catch (\Exception $e) {
                 // Rollback the transaction if an error occurs
                 $ProductModel->transRollback();
-                throw $e;
+                $resp['message'] = $e->getMessage();
             }
 
             $resp['status'] = true;
@@ -114,6 +114,86 @@ class Product_Controller extends Api_Controller
         }
         return $resp;
     }
+
+    private function update_product($data)
+    {
+        $resp = [
+            'status' => false,
+            'message' => 'Product not Updated',
+        ];
+        if (empty ($data['title'])) {
+            $resp['message'] = 'Your Product Has No Name';
+        } else if (empty ($data['details'])) {
+            $resp['message'] = 'Please add Some Details About Your Product';
+        } else if (empty ($data['price'])) {
+            $resp['message'] = 'Set The Price Of Your Product';
+        } else if (empty ($data['categoryId'])) {
+            $resp['message'] = 'Set The Category Of Your Product';
+        } else {
+            $product_data = [
+                'category_id' => $data['categoryId'],
+                'name' => $data['title'],
+                'description' => $data['details'],
+            ];
+            $product_item_data = [
+                'price' => $data['price'],
+                'discount' => $data['discount'],
+                'product_tags' => $data['productTags'],
+                'publish_date' => $data['publishDate'],
+                'status' => $data['status'],
+                'visibility' => $data['visibility'],
+                'manufacturer_brand' => $data['manufacturerBrand'],
+                'manufacturer_name' => $data['manufacturerName']
+            ];
+
+            $product_meta_data = [
+                'meta_title' => $data['metaTitle'],
+                'meta_description' => $data['metaDescription'],
+                'meta_keywords' => $data['metaKeywords'],
+            ];
+
+            $ProductModel = new ProductModel();
+            $ProductItemModel = new ProductItemModel();
+            $ProductMetaDetalisModel = new ProductMetaDetalisModel();
+
+
+            // Transaction Start
+            $ProductModel->transStart();
+            //$this->pr($product_data);
+            //$this->pr($product_item_data);
+            //$this->prd($product_meta_data);
+
+            try {
+                $ProductModel->set($product_data)
+                    ->where('uid', $data['product_id'])
+                    ->update();
+                $ProductItemModel->set($product_item_data)
+                    ->where('product_id', $data['product_id'])
+                    ->update();
+                $ProductMetaDetalisModel->set($product_meta_data)
+                    ->where('product_id', $data['product_id'])
+                    ->update();
+                    
+                // Commit the transaction if all queries are successful
+                $ProductModel->transCommit();
+                $resp = [
+                    'status' => true,
+                    'message' => 'Product Updated',
+                ];
+
+            } catch (\Exception $e) {
+                // Rollback the transaction if an error occurs
+                $ProductModel->transRollback();
+                $resp['message'] = $e->getMessage();
+            }
+
+        }
+
+        return $resp;
+
+    }
+
+
     private function add_new_variant($data)
     {
         $resp = [
@@ -191,6 +271,8 @@ class Product_Controller extends Api_Controller
             product.description AS description,
             product.created_at AS created_at,
             categories.name AS category,
+            categories.uid AS category_id,
+            product_item.uid AS product_item_id,
             product_item.price AS base_price,
             product_item.sku AS product_stock,
             product_item.discount AS base_discount,
@@ -200,6 +282,7 @@ class Product_Controller extends Api_Controller
             product_item.visibility AS visibility,
             product_item.manufacturer_brand AS manufacturer_brand,
             product_item.manufacturer_name AS manufacturer_name,
+            product_meta_detalis.uid AS meta_id,
             product_meta_detalis.meta_title,
             product_meta_detalis.meta_description,
             product_meta_detalis.meta_keywords,
@@ -359,16 +442,17 @@ class Product_Controller extends Api_Controller
             'data' => null
         ];
         $user_id = $this->is_logedin();
-        if(!empty($user_id)){
+        if (!empty ($user_id)) {
             $resp['status'] = true;
             $resp['message'] = 'User id found';
             $resp['data'] = $user_id;
         }
-        
+
         // $this->prd($resp);
 
         return $resp;
     }
+
 
 
 
@@ -404,6 +488,14 @@ class Product_Controller extends Api_Controller
         return $this->response->setJSON($resp);
 
     }
+
+    public function POST_update_product()
+    {
+        $data = $this->request->getPost();
+        $resp = $this->update_product($data);
+        return $this->response->setJSON($resp);
+    }
+
 
     public function POST_add_new_variant()
     {

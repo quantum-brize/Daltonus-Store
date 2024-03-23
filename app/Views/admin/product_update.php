@@ -5,12 +5,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                    <h4 class="mb-sm-0">Create Product</h4>
+                    <h4 class="mb-sm-0">Update Product</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                            <li class="breadcrumb-item active">Create Product</li>
+                            <li class="breadcrumb-item active">Update Product</li>
                         </ol>
                     </div>
 
@@ -30,6 +30,9 @@
                                 <input type="text" class="form-control d-none" id="product-id-input">
                                 <input type="text" class="form-control" id="product-title-input" value=""
                                     placeholder="Enter product title" required="">
+                                <input type="text" class="form-control" id="product-id-input" hidden>
+                                <input type="text" class="form-control" id="product-item-id-input" hidden>
+                                <input type="text" class="form-control" id="product-meta-id-input" hidden>
                                 <div class="invalid-feedback">Please Enter a product title.</div>
                             </div>
                             <div>
@@ -250,7 +253,7 @@
 
         </div>
         <div class="text-start mb-3">
-            <button class="btn btn-success w-sm" id="product_add_btn">Submit</button>
+            <button class="btn btn-success w-sm" id="product_update_btn">Submit</button>
         </div>
     </div>
     <!-- container-fluid -->
