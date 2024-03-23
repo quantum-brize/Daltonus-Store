@@ -80,6 +80,7 @@ $routes->get('/api/user/cart',                  'Api\Cart_Controller::GET_cart')
 $routes->post('/api/user/cart/add',             'Api\Cart_Controller::POST_cart_add');
 $routes->get('/api/user/cart/remove',           'Api\Cart_Controller::GET_cart_remove');
 $routes->get('/api/user/cart/empty',            'Api\Cart_Controller::GET_cart_empty');
+$routes->get('/api/user/id',                    'Api\Product_Controller::GET_user_id');
 
 
 
