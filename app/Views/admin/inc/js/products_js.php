@@ -12,8 +12,9 @@
     }
 
     function redirect_single_product(product_id) {
-        if (!$(event.target).hasClass('btn-number')) {
-            // Perform redirect only if the click was not on a quantity button
+        if ($(event.target).hasClass('stock_number_bx') || $(event.target).hasClass('btn-number')) {
+            return false
+        }else{
             window.location.href = "<?= base_url('/admin/product?p_id=') ?>" + product_id;
         }
     }
@@ -38,12 +39,20 @@
                 $(`#btn-stock-sub-${product_id}`).attr('disabled', false)
                 if(resp.status){
                     $(`#input-stock-${product_id}`).val(stock)
+                    $('#alert').html(`<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                                        <i class="ri-checkbox-circle-fill label-icon"></i><strong>${resp.message}</strong>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                    </div>`) 
                 }
             },
             error: function(err){
                 console.log(err)
                 $(`#btn-stock-add-${product_id}`).attr('disabled', false)
                 $(`#btn-stock-sub-${product_id}`).attr('disabled', false)
+                $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                                    <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Internal Server Error
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>`)
             }
         })
 
@@ -55,7 +64,11 @@
             url: "<?= base_url('/api/product') ?>",
             type: "GET",
             beforeSend: function () {
-
+                $('#table-product-list-all-body').html(`<tr >
+                        <td colspan="7"  style="text-align:center;">
+                            <div class="spinner-border" role="status"></div>
+                        </td>
+                    </tr>`)
             },
             success: function (resp) {
                 if (resp.status) {
@@ -85,7 +98,7 @@
                                             </td>
                                             <td >
                                                 <div class="input-group stock_number_bx">
-                                                    <span class="input-group-btn">
+                                                    <span class="input-group-btn btn-number">
                                                         <button 
                                                             type="button" 
                                                             class="quantity-left-minus btn btn-danger btn-number"
@@ -103,7 +116,7 @@
                                                         value="${product.product_stock}" 
                                                         id="input-stock-${product.product_id}"
                                                         readonly>
-                                                    <span class="input-group-btn">
+                                                    <span class="input-group-btn btn-number">
                                                         <button 
                                                             type="button" 
                                                             class="quantity-right-plus btn btn-success btn-number"

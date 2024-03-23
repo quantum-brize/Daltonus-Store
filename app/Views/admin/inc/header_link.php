@@ -23,7 +23,7 @@
     <link href="<?= base_url() ?>public/assets_admin/css/app.min.css" rel="stylesheet" type="text/css">
     <link href="<?= base_url() ?>public/assets_admin/css/custom.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.min.css">
-    <? //require_once(APPPATH . 'views/inc/main_css.php');    ?>
+    <? //require_once(APPPATH . 'views/inc/main_css.php');     ?>
     <?php
     if (!empty ($header_asset_link)) {
         foreach ($header_asset_link as $link) {
@@ -103,12 +103,17 @@
             left: auto;
             right: 10px;
         }
-        .dt-input{
+
+        .dt-input {
             outline: none;
         }
-        .dt-length label{
+
+        .dt-length label {
             display: none;
         }
+
+
+      
     </style>
     <script>
         sessionStorage.setItem("data-bs-theme", "dark")
