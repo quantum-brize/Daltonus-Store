@@ -79,11 +79,11 @@
                                     </tr>
                                     <tr>
                                         <td>Discount</td>
-                                        <td style="text-align: right" class="text-secondary">${product.base_discount} ₹</td>
+                                        <td style="text-align: right" class="text-secondary">${product.base_discount} %</td>
                                     </tr>
                                     <tr>
                                         <td>Final Price</td>
-                                        <td style="text-align: right" class="text-secondary">${calculateFinalPrice(product.base_price,product.base_discount)} ₹</td>
+                                        <td style="text-align: right" class="text-success fs-16 ">${calculateFinalPrice(product.base_price,product.base_discount)} ₹</td>
                                     </tr>
                                     <tr>
                                         <td>Total Stock</td>
@@ -141,8 +141,8 @@
                                         <div class="mt-1" style="background-color: ${vItem.color}; height: 20px; width: 40px;"></div>
                                     </td>
                                     <td >${vItem.price} ₹</td>
-                                    <td >${vItem.discount} ₹</td>
-                                    <td>${calculateFinalPrice(vItem.price , vItem.discount)} ₹</td>
+                                    <td >${vItem.discount} %</td>
+                                    <td class="text-success fs-16">${calculateFinalPrice(vItem.price , vItem.discount)} ₹</td>
                                     <td >
                                         <div class="input-group stock_number_bx">
                                             <span class="input-group-btn btn-number">

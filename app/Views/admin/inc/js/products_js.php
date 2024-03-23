@@ -1,6 +1,15 @@
 <script>
     load_products();
-
+    function calculateFinalPrice(originalPrice, discountPercentage) {
+        // Calculate the discount amount
+        var discountAmount = (originalPrice * discountPercentage) / 100;
+        
+        // Calculate the final price after applying the discount
+        var finalPrice = originalPrice - discountAmount;
+        
+        // Return the final price
+        return finalPrice;
+    }
 
     function formatDate(dateString) {
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -90,8 +99,9 @@
                                                 ${product.publish_date == '' ? formatDate(product.created_at) : formatDate(product.publish_date)}
                                             </td>
                                             <td >
-                                                ${product.base_price}
-                                                ${product.base_discount}
+                                                Base Price : ${product.base_price} ₹<br>
+                                                Discount : ${product.base_discount} %<br>
+                                                Final Price : <b class="fs-16 text-success">${calculateFinalPrice(product.base_price, product.base_discount)} ₹</b>
                                             </td>
                                             <td >
                                                 <sapn class="badge bg-success-subtle text-success text-uppercase">${product.visibility}</sapn>

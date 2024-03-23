@@ -106,8 +106,8 @@
                                         <th>Product</th>
                                         <th>Variant</th>
                                         <th>Price</th>
-                                        <th>Final Price</th>
                                         <th>discount</th>
+                                        <th>Final Price</th>
                                         <th>Stock</th>
                                     </tr>
                                 </thead>
