@@ -1,8 +1,56 @@
 <script>
+    function calculateFinalPrice(originalPrice, discountPercentage) {
+        // Calculate the discount amount
+        var discountAmount = (originalPrice * discountPercentage) / 100;
+        
+        // Calculate the final price after applying the discount
+        var finalPrice = originalPrice - discountAmount;
+        
+        // Return the final price
+        return finalPrice;
+    }
+    function updateStock(product_id, type) {
+            let stock = parseInt($(`#input-stock-${product_id}`).val())
+            stock = type == 'add' ? stock + 1 : stock - 1;
+
+            $.ajax({
+                url: "<?= base_url('/api/product/variant/stock/update') ?>",
+                type: "GET",
+                data: {
+                    p_id: product_id,
+                    stock: stock
+                },
+                beforeSend: function () {
+                    $(`#btn-stock-add-${product_id}`).attr('disabled', true)
+                    $(`#btn-stock-sub-${product_id}`).attr('disabled', true)
+                },
+                success: function (resp) {
+                    $(`#btn-stock-add-${product_id}`).attr('disabled', false)
+                    $(`#btn-stock-sub-${product_id}`).attr('disabled', false)
+                    if (resp.status) {
+                        $(`#input-stock-${product_id}`).val(stock)
+                        $('#alert').html(`<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                                        <i class="ri-checkbox-circle-fill label-icon"></i><strong>${resp.message}</strong>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                    </div>`)
+                    }
+                },
+                error: function (err) {
+                    console.log(err)
+                    $(`#btn-stock-add-${product_id}`).attr('disabled', false)
+                    $(`#btn-stock-sub-${product_id}`).attr('disabled', false)
+                    $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                                    <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Internal Server Error
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                </div>`)
+                }
+            })
+
+        }
     $(document).ready(function () {
-       
+
         get_product_data('<?= $_GET['p_id'] ?>');
-     
+
         var product;
 
         function get_product_data(p_id) {
@@ -27,15 +75,15 @@
                                     </tr>
                                     <tr>
                                         <td>Price</td>
-                                        <td style="text-align: right" class="text-secondary">${product.base_price}</td>
+                                        <td style="text-align: right" class="text-secondary">${product.base_price} ₹</td>
                                     </tr>
                                     <tr>
                                         <td>Discount</td>
-                                        <td style="text-align: right" class="text-secondary">${product.base_discount}</td>
+                                        <td style="text-align: right" class="text-secondary">${product.base_discount} ₹</td>
                                     </tr>
                                     <tr>
                                         <td>Final Price</td>
-                                        <td style="text-align: right" class="text-secondary">${product.category}</td>
+                                        <td style="text-align: right" class="text-secondary">${calculateFinalPrice(product.base_price,product.base_discount)} ₹</td>
                                     </tr>
                                     <tr>
                                         <td>Total Stock</td>
@@ -56,6 +104,9 @@
             })
         }
 
+        
+
+
         function load_variants() {
             $.ajax({
                 url: "<?= base_url('/api/product/variant') ?>",
@@ -63,14 +114,21 @@
                 data: {
                     p_id: '<?= $_GET['p_id'] ?>'
                 },
-                beforeSend: function () {},
+                beforeSend: function () {
+                    $('#table-product-variant-body').html(`<tr >
+                        <td colspan="7"  style="text-align:center">
+                            <div class="spinner-border" role="status"></div>
+                        </td>
+                    </tr>`);
+
+                },
                 success: function (resp) {
-                    console.log(resp);
                     if (resp.status) {
                         let html = '';
                         $.each(resp.data, function (vIndex, vItem) {
+                            console.log(vItem);
                             html += `<tr>
-                                    <td class="text-left">
+                                    <td >
                                         ${vItem.product_img.length > 0
                                     ?
                                     `<img src="<?= base_url('public/uploads/variant_images/') ?>${vItem.product_img[0].src}" alt="" class="product-img">`
@@ -78,15 +136,45 @@
                                     `<img src="<?= base_url('public/uploads/product_images/') ?>${product.product_img[0].src}" alt="" class="product-img">`
                                 }
                                     </td>
-                                    <td class="text-left">
+                                    <td style="text-align:left !important">
                                         size : ${vItem.size}<br>
                                         <div class="mt-1" style="background-color: ${vItem.color}; height: 20px; width: 40px;"></div>
                                     </td>
-                                    <td class="text-left">${vItem.price}</td>
-                                    <td class="text-left">${vItem.discount}</td>
-                                    <td class="text-left">${vItem.discount}</td>
-                                    <td class="text-left">
-                                        <sapn class="badge bg-success-subtle text-success text-uppercase">${vItem.stock}</span>
+                                    <td >${vItem.price} ₹</td>
+                                    <td >${vItem.discount} ₹</td>
+                                    <td>${calculateFinalPrice(vItem.price , vItem.discount)} ₹</td>
+                                    <td >
+                                        <div class="input-group stock_number_bx">
+                                            <span class="input-group-btn btn-number">
+                                                <button 
+                                                    type="button" 
+                                                    class="quantity-left-minus btn btn-danger btn-number"
+                                                    data-type="minus" 
+                                                    data-field=""
+                                                    id="btn-stock-sub-${vItem.uid}"
+                                                    onClick="updateStock('${vItem.uid}','sub')">
+                                                    <span>-</span>
+                                                </button>
+                                            </span>
+                                            <input 
+                                                type="text" 
+                                                name="quantity" 
+                                                class="stock_number btn-number" 
+                                                value="${vItem.stock}" 
+                                                id="input-stock-${vItem.uid}"
+                                                readonly>
+                                            <span class="input-group-btn btn-number">
+                                                <button 
+                                                    type="button" 
+                                                    class="quantity-right-plus btn btn-success btn-number"
+                                                    data-type="plus" 
+                                                    data-field=""
+                                                    id="btn-stock-add-${vItem.uid}"
+                                                    onClick="updateStock('${vItem.uid}','add')">
+                                                    <span>+</span>
+                                                </button>
+                                            </span>
+                                        </div>
                                     </td>
                                 </tr>`;
                         });

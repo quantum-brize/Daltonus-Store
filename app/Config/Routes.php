@@ -61,29 +61,30 @@ $routes->get('/admin/users/vendors',            'Admin\User_Controller::load_ven
 
 
 // Api Routes
-$routes->get('/api',                            'Api\Api_Controller::index');
-$routes->get('/api/categories/all',             'Api\Category_Controller::GET_categories');
-$routes->get('/api/categories/single',          'Api\Category_Controller::GET_category_single');
-$routes->get('/api/categories',                 'Api\Category_Controller::GET_category');
-$routes->post('/api/category/add',              'Api\Category_Controller::POST_add_category');
-$routes->post('/api/category/update',           'Api\Category_Controller::POST_update_category');
-$routes->post('/api/category/delete',           'Api\Category_Controller::POST_delete_category');
-$routes->get('/api/product',                    'Api\Product_Controller::GET_product');
-$routes->post('/api/product/add',               'Api\Product_Controller::POST_add_product');
-$routes->post('/api/product/update',            'Api\Product_Controller::POST_update_product');
-$routes->get('/api/product/variant',            'Api\Product_Controller::GET_variation');
-$routes->get('/api/product/variant/options',    'Api\Product_Controller::GET_variation_options');
-$routes->post('/api/product/variant/add',       'Api\Product_Controller::POST_add_new_variant');
-$routes->get('/api/product/stock/update',       'Api\Product_Controller::GET_product_stock_update');
-$routes->post('/api/user/update',               'Api\User_Controller::POST_update_user');
-$routes->post('/api/change/password',           'Api\User_Controller::POST_change_password');
-$routes->post('/api/message',                   'Api\User_Controller::POST_message');
-$routes->get('/api/user',                       'Api\User_Controller::GET_get_user');
-$routes->get('/api/user/cart',                  'Api\Cart_Controller::GET_cart');
-$routes->post('/api/user/cart/add',             'Api\Cart_Controller::POST_cart_add');
-$routes->get('/api/user/cart/remove',           'Api\Cart_Controller::GET_cart_remove');
-$routes->get('/api/user/cart/empty',            'Api\Cart_Controller::GET_cart_empty');
-$routes->get('/api/user/id',                    'Api\Product_Controller::GET_user_id');
+$routes->get('/api',                                'Api\Api_Controller::index');
+$routes->get('/api/categories/all',                 'Api\Category_Controller::GET_categories');
+$routes->get('/api/categories/single',              'Api\Category_Controller::GET_category_single');
+$routes->get('/api/categories',                     'Api\Category_Controller::GET_category');
+$routes->post('/api/category/add',                  'Api\Category_Controller::POST_add_category');
+$routes->post('/api/category/update',               'Api\Category_Controller::POST_update_category');
+$routes->post('/api/category/delete',               'Api\Category_Controller::POST_delete_category');
+$routes->get('/api/product',                        'Api\Product_Controller::GET_product');
+$routes->post('/api/product/add',                   'Api\Product_Controller::POST_add_product');
+$routes->post('/api/product/update',                'Api\Product_Controller::POST_update_product');
+$routes->get('/api/product/variant',                'Api\Product_Controller::GET_variation');
+$routes->get('/api/product/variant/options',        'Api\Product_Controller::GET_variation_options');
+$routes->post('/api/product/variant/add',           'Api\Product_Controller::POST_add_new_variant');
+$routes->get('/api/product/variant/stock/update',   'Api\Product_Controller::GET_product_config_stock_update');
+$routes->get('/api/product/stock/update',           'Api\Product_Controller::GET_product_stock_update');
+$routes->post('/api/user/update',                   'Api\User_Controller::POST_update_user');
+$routes->post('/api/change/password',               'Api\User_Controller::POST_change_password');
+$routes->post('/api/message',                       'Api\User_Controller::POST_message');
+$routes->get('/api/user',                           'Api\User_Controller::GET_get_user');
+$routes->get('/api/user/cart',                      'Api\Cart_Controller::GET_cart');
+$routes->post('/api/user/cart/add',                 'Api\Cart_Controller::POST_cart_add');
+$routes->get('/api/user/cart/remove',               'Api\Cart_Controller::GET_cart_remove');
+$routes->get('/api/user/cart/empty',                'Api\Cart_Controller::GET_cart_empty');
+$routes->get('/api/user/id',                        'Api\Product_Controller::GET_user_id');
 
 
 
