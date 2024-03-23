@@ -453,12 +453,44 @@ class Product_Controller extends Api_Controller
         return $resp;
     }
 
+    private function product_stock_update($data){
+        $resp = [
+            'status' => false,
+            'message' => 'Stock Not Updated',
+            'data' => null
+        ];
+
+       
+        try{
+            $ProductItemModel = new ProductItemModel();
+
+            $isUpdated = $ProductItemModel->set(['sku' => $data['stock']])
+                    ->where('product_id', $data['p_id'])
+                    ->update();
+            if($isUpdated == '1'){
+                $resp = [
+                    'status' => true,
+                    'message' => 'Stock Updated',
+                    'data' => ['updatedStock' => $data['stock']]
+                ];
+            }
+        }catch (\Exception $e) {
+            $resp['message'] = $e;
+        }
+        return  $resp;
+
+    }
 
 
 
 
 
+    public function GET_product_stock_update(){
+        $data = $this->request->getGet();
 
+        $resp = $this->product_stock_update($data);
+        return $this->response->setJSON($resp);
+    }
 
 
     public function GET_user_id()

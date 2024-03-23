@@ -21,4 +21,13 @@
     td{
        text-align:  left;
     }
+    .stock_number{
+        padding: 0px 10px 0px 10px;
+        width: 20px;
+        box-sizing: content-box;
+        border: none;
+        outline: none;
+        text-align: center;
+    }
+
 </style>

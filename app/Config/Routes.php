@@ -74,6 +74,7 @@ $routes->post('/api/product/update',            'Api\Product_Controller::POST_up
 $routes->get('/api/product/variant',            'Api\Product_Controller::GET_variation');
 $routes->get('/api/product/variant/options',    'Api\Product_Controller::GET_variation_options');
 $routes->post('/api/product/variant/add',       'Api\Product_Controller::POST_add_new_variant');
+$routes->get('/api/product/stock/update',       'Api\Product_Controller::GET_product_stock_update');
 $routes->post('/api/user/update',               'Api\User_Controller::POST_update_user');
 $routes->post('/api/change/password',           'Api\User_Controller::POST_change_password');
 $routes->post('/api/message',                   'Api\User_Controller::POST_message');

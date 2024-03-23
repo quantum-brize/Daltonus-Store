@@ -28,7 +28,7 @@
                             <div class="row g-4">
                                 <div class="col-sm-auto">
                                     <div>
-                                        <a href="<?= base_url('/admin/products/add') ?>" class="btn btn-success"
+                                        <a href="<?= base_url('/admin/product/add') ?>" class="btn btn-success"
                                             id="addproduct-btn">
                                             <i class="ri-add-line align-bottom me-1"></i>
                                             AddProduct
@@ -62,13 +62,14 @@
                                             <a class="nav-link fw-semibold" data-bs-toggle="tab"
                                                 href="#productnav-published" role="tab">
                                                 Published <span 
-                                                    class="badge bg-danger-subtle text-danger align-middle rounded-pill ms-1">5</span>
+                                                    class="badge bg-danger-subtle text-danger align-middle rounded-pill ms-1">0</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link fw-semibold" data-bs-toggle="tab"
                                                 href="#productnav-draft" role="tab">
-                                                Draft
+                                                Draft<span 
+                                                    class="badge bg-danger-subtle text-danger align-middle rounded-pill ms-1">0</span>
                                             </a>
                                         </li>
                                     </ul>

@@ -43,7 +43,8 @@
                         <div class="col-6">
                             <label for="colorPicker" class="form-label">Color</label>
                             <input type="text" id="color_id" hidden>
-                            <input type="color" class="form-control form-control-color w-100" id="colorPicker" value="#364574">
+                            <input type="color" class="form-control form-control-color w-100" id="colorPicker"
+                                value="#364574">
                         </div>
                     </div>
                 </div>
@@ -126,19 +127,22 @@
                     </div>
 
                     <div class="card-body">
-                         <label class="form-label">Add Stock</label>
+                        <label class="form-label">Add Stock</label>
                         <div class="input-group">
                             <span class="input-group-btn">
-                                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="">
+                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                                    data-type="minus" data-field="">
                                     <span ">-</span>
                                 </button>
                             </span>
-                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="0">
-                            <span class="input-group-btn">
-                                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
-                                    <span>+</span>
-                                </button>
-                            </span>
+                            <input type=" text" id="quantity" name="quantity" class="form-control input-number"
+                                        value="0">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                                                data-type="plus" data-field="">
+                                                <span>+</span>
+                                            </button>
+                                        </span>
                         </div>
                     </div>
                     <!-- end card body -->
