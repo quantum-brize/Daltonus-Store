@@ -207,6 +207,57 @@
                                                         <i class="ri-checkbox-circle-fill label-icon"></i><strong>${resp.message}</strong>
                                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                                     </div>`) 
+
+                            var storedData = localStorage.getItem('cartData');
+                            var retrievedData = JSON.parse(storedData);
+                            if(retrievedData != ""){
+                                $.ajax({
+                                    url: "<?= base_url('/api/user/id') ?>",
+                                    type: "GET",
+                                    success: function (resp) {
+                                        
+                                        if (resp.status) {
+                                            $.each(retrievedData, function(index, cart) {
+                                                $.ajax({
+                                                    url: "<?= base_url('/api/user/cart/add') ?>",
+                                                    type: "POST",
+                                                    data:{product_id:cart.product_id, 
+                                                        user_id:resp.data,
+                                                        variation_id:cart.variation_id,
+                                                        qty:cart.qty,
+                                                        },
+                                                    success: function (resp) {
+                                                        
+                                                        if (resp.status) {
+                                                            var updatedData = retrievedData.filter(function(item) {
+                                                                item.product_id !== cart.product_id;
+                                                            });
+                                                            var updatedDataJSON = JSON.stringify(updatedData);
+                                                            localStorage.setItem('cartData', updatedDataJSON);
+                                                        } else {
+                                                            console.log(resp)
+                                                           
+                                                        }
+                                                        
+                                                    },
+                                                    error: function (err) {
+                                                        console.log(err)
+                                                    },
+                                                })
+                                            })
+                                                
+                                            
+                                        } else {
+                                            
+                                        }
+                                    },
+                                    error: function (err) {
+                                        console.log(err)
+                                    },
+                                })
+                                
+                            }
+
                             window.location.href = `<?= base_url()?>`;
                         } else {
                             $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">

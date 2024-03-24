@@ -60,6 +60,7 @@ class Cart_Controller extends Api_Controller
             // Selecting the cart with the specified User
             $cart = $UserCartModel->where('user_id', $user_id)->findAll();
 
+            // $this->prd($cart);
             // Check if the cart exists
             if ($cart) {
                 // Cart exists

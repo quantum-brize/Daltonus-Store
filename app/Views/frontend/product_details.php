@@ -508,7 +508,7 @@
                             <div class="col-lg-12">
                                 <div class="mt-3">
                                     <div class="hstack gap-2">
-                                        <button type="button" class="btn btn-success btn-hover w-100">
+                                        <button type="button" onclick="add_to_cart()" class="btn btn-success btn-hover w-100">
                                             <i class="bi bi-basket2 me-2"></i> Add To Cart
                                         </button>
                                         <button type="button" class="btn btn-primary btn-hover w-100">
