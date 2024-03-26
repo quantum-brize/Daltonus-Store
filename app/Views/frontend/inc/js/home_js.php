@@ -7,7 +7,7 @@
             success: function (resp) {
                 
                 if (resp.status) {
-                    // console.log(resp)
+                    console.log(resp.data)
                     // $('#user_address').empty();  
                         $.each(resp.data, function(index, product) {
                             // console.log(product)

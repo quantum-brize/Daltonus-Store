@@ -5,12 +5,12 @@ namespace App\Controllers;
 class Main_Controller extends BaseController
 {
 	public function __construct()
-    {
-        // Load session library
-        $this->session = \Config\Services::session();
-    }
+	{
+		// Load session library
+		$this->session = \Config\Services::session();
+	}
 
-    public function load_page($page, $data): void
+	public function load_page($page, $data): void
 	{
 		$this->load_headers($data['data_header']);
 		echo view($page, $data['data_page']);
@@ -19,8 +19,8 @@ class Main_Controller extends BaseController
 	private function load_headers($data): void
 	{
 		echo view('/' . $data['site'] . '/inc/header_link.php', $data);
-		echo view('/' . $data['site'] . '/inc/header.php',  $data);
-		echo view('/' . $data['site'] . '/inc/sidebar.php',  $data);
+		echo view('/' . $data['site'] . '/inc/header.php', $data);
+		echo view('/' . $data['site'] . '/inc/sidebar.php', $data);
 	}
 
 	private function load_footers($data): void
@@ -29,11 +29,11 @@ class Main_Controller extends BaseController
 		echo view('/' . $data['site'] . '/inc/footer_link.php', $data);
 	}
 
-    public function index(): void
-    {
-        echo ENVIRONMENT;
-    }
-    public function prd($data): void
+	public function index(): void
+	{
+		echo ENVIRONMENT;
+	}
+	public function prd($data): void
 	{
 		echo '<pre>';
 		print_r($data);
@@ -46,7 +46,7 @@ class Main_Controller extends BaseController
 		print_r($data);
 		echo '</pre>';
 	}
-    private function uid()
+	private function uid()
 	{
 		return strtoupper(bin2hex(openssl_random_pseudo_bytes(4)));
 	}
@@ -56,26 +56,44 @@ class Main_Controller extends BaseController
 		return $purpose . $this->uid() . date('Ymd');
 	}
 
-	public function generate_otp(){
+	public function generate_otp()
+	{
 		return rand(1000, 9999);
 	}
 
-	public function is_logedin(){
+	public function is_logedin()
+	{
 		$userID = $this->session->get(SES_USER_USER_ID);
 		return $userID;
-    }
-
-	
-
-
-	public function single_upload($file,$path){
-		if ($file->isValid() && !$file->hasMoved()) {
-            $newName = $file->getRandomName();
-            $file->move($path, $newName);
-            return $newName;
-        }
-        return null;
 	}
 
 
+
+
+
+	public function single_upload($file, $path)
+	{
+		if ($file->isValid() && !$file->hasMoved()) {
+			try {
+				$newName = $file->getRandomName();
+            	$file->move($path , $newName);
+				// Log successful upload
+				$this->log('File uploaded successfully: ' . $newName);
+				return $newName;
+			} catch (\Exception $e) {
+				// Log upload error
+				$this->log('Error uploading file: ' . $e->getMessage());
+				return $e->getMessage();
+			}
+		} else {
+			// Log invalid file or already moved file
+			$this->log('Invalid file or file already moved');
+			return null;
+		}
+	}
+	private function log($message)
+	{
+		// You can implement your logging mechanism here, such as writing to a file or database
+		error_log($message);
+	}
 }
