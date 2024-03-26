@@ -17,9 +17,9 @@
                                 html = `<div class="element-item col-xxl-3 col-xl-4 col-sm-6 seller hot arrival" data-category="hot arrival">
                                             <div class="card overflow-hidden">
                                                 <a href="<?= base_url('product/details?id=')?>${product.product_id}">
-                                                    <div class="bg-warning-subtle rounded-top py-4">
+                                                    <div class="bg-warning-subtle rounded-top">
                                                         <div class="gallery-product">
-                                                            <img src="<?=base_url()?>public/uploads/product_images/${product.product_img[0].src}" alt="" style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
+                                                            <img src="<?=base_url()?>public/uploads/product_images/${product.product_img.length > 0?product.product_img[0].src : ''}" alt="" style="max-height: 215px; max-width: 100%" class="mx-auto d-block" />
                                                         </div>
                                                         <p class="fs-11 fw-medium badge bg-primary py-2 px-3 product-lable mb-0"> Best Arrival </p>
                                                         <div class="gallery-product-actions">

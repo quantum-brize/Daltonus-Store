@@ -3,7 +3,7 @@
         // alert("hello")
         get_user_data();
 
-        $("#update_profile").click(function(){
+        $("#update_profile").click(function () {
             var user_id = $("#user_id").val()
             var name = $("#firstnameInput").val()
             var number = $("#phonenumberInput").val()
@@ -16,23 +16,23 @@
             var state = $("#stateInput").val()
             var locality = $("#localityInput").val()
 
-            if(name == ""){
+            if (name == "") {
                 $("#name_val").text("Please enter name!")
-            }else{
+            } else {
                 $("#name_val").text("")
             }
-            if(number == ""){
+            if (number == "") {
                 $("#number_val").text("Please enter number!")
-            }else{
+            } else {
                 $("#number_val").text("")
             }
-            if(email == ""){
+            if (email == "") {
                 $("#email_val").text("Please enter email!")
-            }else{
+            } else {
                 $("#email_val").text("")
             }
 
-            if(name != "" && number != "" && email != ""){
+            if (name != "" && number != "" && email != "") {
                 // alert("hello")
                 var formData = new FormData();
 
@@ -107,7 +107,7 @@
             }
         });
 
-        $("#change_password").click(function(){
+        $("#change_password").click(function () {
             var user_id = $("#user_id").val()
             var old_password = $("#oldpasswordInput").val()
             var new_password = $("#newpasswordInput").val()
@@ -115,33 +115,33 @@
             flag1 = true
             flag2 = true
 
-            if(old_password == ""){
+            if (old_password == "") {
                 $('#changeOldPass').text('Please enter old password.')
-            }else{
+            } else {
                 $('#changeOldPass').text('')
             }
 
-            if(new_password == ""){
+            if (new_password == "") {
                 $('#changeNewPass').text('Please enter new password.')
-            }else if(new_password.length < 6){
+            } else if (new_password.length < 6) {
                 $('#changeNewPass').text('New password must be 6 digits.')
                 flag1 = false
-            }else{
+            } else {
                 $('#changeNewPass').text('')
             }
 
-            if(confirm_password == ""){
+            if (confirm_password == "") {
                 $('#changeConfirmPass').text('Please enter confirm password.')
-            }else if(confirm_password != new_password){
+            } else if (confirm_password != new_password) {
                 $('#changeConfirmPass').text('Does not match with new password!')
                 flag2 = false
-            }else{
+            } else {
                 $('#changeConfirmPass').text('')
             }
-            
-            
 
-            if(old_password != "" && new_password != "" && confirm_password != "" && flag1 && flag2){
+
+
+            if (old_password != "" && new_password != "" && confirm_password != "" && flag1 && flag2) {
                 var formData = new FormData();
 
                 formData.append('user_id', user_id);
@@ -188,7 +188,7 @@
                                 },
 
                             }).showToast();
-                            
+
                         }
 
 
@@ -207,7 +207,7 @@
         })
     })
 
-    function get_user_data(){
+    function get_user_data() {
         $.ajax({
             url: "<?= base_url('api/user') ?>",
             type: "GET",
@@ -215,17 +215,17 @@
                 // resp = JSON.parse(resp)
                 console.log(resp.user_data)
                 if (resp.status == true) {
-                   console.log(resp)
-                   
-                   
-                   
-                   $("#user_full_name").text(resp.user_data.user_name);
+                    console.log(resp)
+
+
+
+                    $("#user_full_name").text(resp.user_data.user_name);
                     $("#user_id").val(resp.user_id)
                     $("#firstnameInput").val(resp.user_data.user_name)
                     $("#phonenumberInput").val(resp.user_data.number)
                     $("#emailInput").val(resp.user_data.email)
 
-                    if(resp.address != null){
+                    if (resp.address != null) {
                         $("#cityInput").val(resp.address.city)
                         $("#countryInput").val(resp.address.country)
                         $("#zipcodeInput").val(resp.address.zipcode)
@@ -235,18 +235,18 @@
                         $("#customer_location").text(resp.address.city)
 
                         $("#user_location").empty();
-                        $("#user_location").append(`<i class="bi bi-geo-alt"></i>${resp.address.city}`);  
+                        $("#user_location").append(`<i class="bi bi-geo-alt"></i>${resp.address.city}`);
                     }
 
-                    if(resp.user_img != null){
-                        $("#user_avtar_img").attr("src", "<?= base_url()?>"+resp.user_img.img);
-                        $("#user_img").attr("src", "<?= base_url()?>"+resp.user_img.img);
+                    if (resp.user_img != null) {
+                        $("#user_avtar_img").attr("src", "<?= base_url('public/uploads/user_images/') ?>" + resp.user_img.img);
+                        $("#user_img").attr("src", "<?= base_url('public/uploads/user_images/') ?>" + resp.user_img.img);
                     }
 
-                    if(resp.all_address != null){
+                    if (resp.all_address != null) {
                         $('#user_address').empty();
-                        $.each(resp.all_address, function(index, add_data) {
-                                html = `<div class="col-md-6">
+                        $.each(resp.all_address, function (index, add_data) {
+                            html = `<div class="col-md-6">
                                                             <div class="card mb-md-0">
                                                                 <div class="card-body"> 
                                                                     <div class="float-end clearfix"> <a href="address.html" class="badge bg-primary-subtle text-primary ">${add_data.is_primary}</a> </div>
@@ -263,15 +263,15 @@
                         });
                     }
 
-                    
-                    
 
-                    
-                    
+
+
+
+
                     $("#customer_name").text(resp.user_data.user_name)
                     $("#customer_number").text(resp.user_data.number)
                     $("#customer_email").text(resp.user_data.email)
-                    
+
                     var dateParts = resp.user_data.created_at.split(" ")[0].split("-");
                     var year = dateParts[0];
                     var month = dateParts[1];
@@ -279,7 +279,7 @@
                     var formattedDate = day + "/" + month + "/" + year;
                     $("#customer_since_member").text(formattedDate)
 
-                    
+
 
                 } else {
                     console.log(resp.message)
@@ -303,7 +303,7 @@
             };
 
             reader.readAsDataURL(files[i]);
-            }
+        }
     });
 
 

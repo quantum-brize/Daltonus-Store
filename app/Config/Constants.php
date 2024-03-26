@@ -187,9 +187,9 @@ defined('SES_ADMIN_USER_ID') || define('SES_ADMIN_USER_ID', 'ADMIN_user_id');
 defined('SES_ADMIN_TYPE')    || define('SES_ADMIN_TYPE', 'ADMIN_user_type');
 
 //////////////////////////////////////////////__PATH
-defined('PATH_PRODUCT_IMG')  || define('PATH_PRODUCT_IMG', WRITEPATH  . 'uploads/product_images');
-defined('PATH_VARIANT_IMG')  || define('PATH_VARIANT_IMG', WRITEPATH  . 'uploads/variant_images');
-defined('PATH_USER_IMG')     || define('PATH_USER_IMG', WRITEPATH  . 'uploads/user_images');
+defined('PATH_PRODUCT_IMG')  || define('PATH_PRODUCT_IMG', ROOTPATH  . 'public/uploads/product_images');
+defined('PATH_VARIANT_IMG')  || define('PATH_VARIANT_IMG', ROOTPATH  . 'public/uploads/variant_images');
+defined('PATH_USER_IMG')     || define('PATH_USER_IMG', ROOTPATH  . 'public/uploads/user_images');
 
 
 //////////////////////////////////////////////__PAGEDATA

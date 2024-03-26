@@ -549,7 +549,8 @@
                     data-bs-toggle="offcanvas" data-bs-target="#ecommerceCart" aria-controls="ecommerceCart">
                     <i class="ph-shopping-cart fs-18"></i>
                     <span
-                        class="position-absolute topbar-badge cartitem-badge fs-10 translate-middle badge rounded-pill bg-danger">4</span>
+                        id="cart_icon_count"
+                        class="position-absolute topbar-badge cartitem-badge fs-10 translate-middle badge rounded-pill bg-danger">0</span>
                 </button>
             </div>
 
@@ -1125,7 +1126,7 @@
 
 <script>
      $(document).ready(function () {
-
+        get_cart_data();
         $.ajax({
             url: "<?= base_url('api/user') ?>",
             type: "GET",
@@ -1136,7 +1137,7 @@
                 //    console.log(resp.number)
                     var image_url = `https://usercontent.one/wp/www.vocaleurope.eu/wp-content/uploads/no-image.jpg?media=1642546813`
                    if(resp.user_img != null){
-                    image_url =`<?=base_url()?>${resp.user_img.img}`
+                    image_url =`<?=base_url('public/uploads/user_images/')?>${resp.user_img.img}`
                    }
 
                    html = `<button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
@@ -1213,9 +1214,11 @@
                             $('#cart_item').empty()
                             $('#total_cart_item_count').text(0)
                             if (resp.status) {
+                                console.log('--')
                                 console.log(resp)
                                 html = ""
                                 var total_item = "";
+                                $('#cart_icon_count').html(resp.data.length)
                                 $.each(resp.data, function(index, cart) {
                                     html = `<li class="list-group-item product">
                                                 <div class="d-flex gap-3">

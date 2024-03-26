@@ -108,7 +108,7 @@ class Product_Controller extends Api_Controller
                 $resp['message'] = $e->getMessage();
             }
 
-            $resp['status'] = false;
+            $resp['status'] = true;
             $resp['message'] = 'Product added';
             $resp['data'] = ['product_id' => $product_data['uid']];
         }

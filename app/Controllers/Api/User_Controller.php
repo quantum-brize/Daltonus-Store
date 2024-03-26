@@ -109,7 +109,7 @@ class User_Controller extends Api_Controller
                 ->getResultArray();
                 $UserImageData = !empty($UsersData[0]) ? $UsersData[0] : null;
                 foreach ($uploadedFiles['images'] as $file) {
-                    $file_src = 'public\uploads\user_images/'.$this->single_upload($file, PATH_USER_IMG);
+                    $file_src = $this->single_upload($file, PATH_USER_IMG);
                     $UserImagesModel->transStart();
                     try {
                         if(!empty($UserImageData)){
