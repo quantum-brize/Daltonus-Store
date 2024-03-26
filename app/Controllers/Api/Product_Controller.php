@@ -255,7 +255,7 @@ class Product_Controller extends Api_Controller
 
         return $resp;
     }
-    private function products($data)
+    public function products($data)
     {
         $resp = [
             'status' => false,

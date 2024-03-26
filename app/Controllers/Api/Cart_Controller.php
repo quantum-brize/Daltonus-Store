@@ -4,7 +4,7 @@ namespace App\Controllers\Api;
 
 use App\Models\UserCartModel;
 use Config\Exceptions;
-
+use App\Controllers\Api\Product_Controller;
 class Cart_Controller extends Api_Controller
 {
     public function index(): void
@@ -59,8 +59,15 @@ class Cart_Controller extends Api_Controller
 
             // Selecting the cart with the specified User
             $cart = $UserCartModel->where('user_id', $user_id)->findAll();
+            if(count($cart) > 0){
+                $Product_Controller = new Product_Controller();
+                foreach($cart as $index => $item){
+                    $product = $Product_Controller->products(['p_id'=>$item['product_id']]);
+                    $cart[$index]['product'] = $product['data'];
+                }
 
-            // $this->prd($cart);
+            }
+
             // Check if the cart exists
             if ($cart) {
                 // Cart exists

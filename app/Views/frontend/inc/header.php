@@ -1,12 +1,11 @@
-
 <nav class="navbar navbar-expand-lg ecommerce-navbar" id="navbar">
     <div class="container">
-        <a class="navbar-brand d-none d-lg-block" href="<?= base_url('/')?>">
+        <a class="navbar-brand d-none d-lg-block" href="<?= base_url('/') ?>">
             <div class="logo-dark">
-                <img src="<?=base_url()?>public/assets/images/logo-dark-1.png" alt="" height="25" />
+                <img src="<?= base_url() ?>public/assets/images/logo-dark-1.png" alt="" height="25" />
             </div>
             <div class="logo-light">
-                <img src="<?=base_url()?>public/assets/images/logo-light-1.png" alt="" height="25" />
+                <img src="<?= base_url() ?>public/assets/images/logo-light-1.png" alt="" height="25" />
             </div>
         </a>
         <button class="btn btn-soft-primary btn-icon d-lg-none" type="button" data-bs-toggle="collapse"
@@ -18,13 +17,14 @@
             <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0" id="navigation-menu">
                 <li class="nav-item d-block d-lg-none">
                     <a class="d-block p-3 h-auto text-center" href="index.html">
-                        <img src="<?=base_url()?>public/assets/images/logo-dark-1.png" alt="" height="25" class="card-logo-dark mx-auto" />
-                        <img src="<?=base_url()?>public/assets/images/logo-light-1.png" alt="" height="25"
+                        <img src="<?= base_url() ?>public/assets/images/logo-dark-1.png" alt="" height="25"
+                            class="card-logo-dark mx-auto" />
+                        <img src="<?= base_url() ?>public/assets/images/logo-light-1.png" alt="" height="25"
                             class="card-logo-light mx-auto" />
                     </a>
                 </li>
                 <li class="nav-item dropdown dropdown-hover">
-                    <a class="nav-link dropdown-toggle" data-key="t-demos" href="<?= base_url('/')?>" role="button">
+                    <a class="nav-link dropdown-toggle" data-key="t-demos" href="<?= base_url('/') ?>" role="button">
                         Home
                     </a>
                     <!-- <ul class="dropdown-menu dropdown-menu-md dropdown-menu-center dropdown-menu-list submenu">
@@ -54,7 +54,7 @@
                         <div class="row g-0 g-lg-4">
                             <div class="col-lg-2 d-none d-lg-block">
                                 <div class="card rounded-start rounded-0 border-0 h-100 mb-0 overflow-hidden" style="
-                        background-image: url('<?=base_url()?>public/assets/images/ecommerce/img-1.jpg');
+                        background-image: url('<?= base_url() ?>public/assets/images/ecommerce/img-1.jpg');
                         background-size: cover;
                       ">
                                     <div class="bg-overlay bg-light bg-opacity-25"></div>
@@ -196,36 +196,37 @@
                                     <div class="row g-2">
                                         <div class="col-lg-4">
                                             <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="<?=base_url()?>public/assets/images/brands/img-8.png" alt="" class="avatar-sm" />
-                                            </a>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="<?=base_url()?>public/assets/images/brands/img-2-1.png" alt=""
+                                                <img src="<?= base_url() ?>public/assets/images/brands/img-8.png" alt=""
                                                     class="avatar-sm" />
                                             </a>
                                         </div>
                                         <div class="col-lg-4">
                                             <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="<?=base_url()?>public/assets/images/brands/img-3-1.png" alt=""
+                                                <img src="<?= base_url() ?>public/assets/images/brands/img-2-1.png" alt=""
                                                     class="avatar-sm" />
                                             </a>
                                         </div>
                                         <div class="col-lg-4">
                                             <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="<?=base_url()?>public/assets/images/brands/img-4-1.png" alt=""
+                                                <img src="<?= base_url() ?>public/assets/images/brands/img-3-1.png" alt=""
                                                     class="avatar-sm" />
                                             </a>
                                         </div>
                                         <div class="col-lg-4">
                                             <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="<?=base_url()?>public/assets/images/brands/img-5-1.png" alt=""
+                                                <img src="<?= base_url() ?>public/assets/images/brands/img-4-1.png" alt=""
                                                     class="avatar-sm" />
                                             </a>
                                         </div>
                                         <div class="col-lg-4">
                                             <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
-                                                <img src="<?=base_url()?>public/assets/images/brands/img-6-1.png" alt=""
+                                                <img src="<?= base_url() ?>public/assets/images/brands/img-5-1.png" alt=""
+                                                    class="avatar-sm" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <a href="#!" class="d-block p-2 border border-dashed text-center rounded-3">
+                                                <img src="<?= base_url() ?>public/assets/images/brands/img-6-1.png" alt=""
                                                     class="avatar-sm" />
                                             </a>
                                         </div>
@@ -244,7 +245,7 @@
                         <div class="row g-0 g-lg-4">
                             <div class="col-lg-5 d-none d-lg-block">
                                 <div class="card rounded-start rounded-0 border-0 h-100 mb-0 overflow-hidden" style="
-                        background-image: url('<?=base_url()?>public/assets/images/ecommerce/img-2.jpg');
+                        background-image: url('<?= base_url() ?>public/assets/images/ecommerce/img-2.jpg');
                         background-size: cover;">
                                     <div class="bg-overlay bg-primary" style="opacity: 0.9"></div>
                                     <div
@@ -274,27 +275,28 @@
                                                     </p>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="<?= base_url('user/address')?>" class="nav-link" data-key="t-address">
+                                                    <a href="<?= base_url('user/address') ?>" class="nav-link"
+                                                        data-key="t-address">
                                                         Address</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="<?= base_url('order/track')?>" class="nav-link"
+                                                    <a href="<?= base_url('order/track') ?>" class="nav-link"
                                                         data-key="t-track-order">Track Order</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="<?= base_url('payment')?>" class="nav-link"
+                                                    <a href="<?= base_url('payment') ?>" class="nav-link"
                                                         data-key="t-payment">Payment</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="<?= base_url('review')?>" class="nav-link"
+                                                    <a href="<?= base_url('review') ?>" class="nav-link"
                                                         data-key="t-review">Review</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="<?= base_url('conformation')?>" class="nav-link"
+                                                    <a href="<?= base_url('conformation') ?>" class="nav-link"
                                                         data-key="t-confirmation">Confirmation</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="<?= base_url('order/history')?>" class="nav-link"
+                                                    <a href="<?= base_url('order/history') ?>" class="nav-link"
                                                         data-key="t-my-orders-order-history">My Orders / Order
                                                         History</a>
                                                 </li>
@@ -310,7 +312,7 @@
                                                 </p>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="<?= base_url('user/cart')?>" class="nav-link"
+                                                <a href="<?= base_url('user/cart') ?>" class="nav-link"
                                                     data-key="t-shopping-cart">Shopping Cart</a>
                                             </li>
                                             <!-- <li class="nav-item">
@@ -318,7 +320,7 @@
                                                     data-key="t-checkout">Checkout</a>
                                             </li> -->
                                             <li class="nav-item">
-                                                <a href="<?= base_url('wishlist')?>" class="nav-link"
+                                                <a href="<?= base_url('wishlist') ?>" class="nav-link"
                                                     data-key="t-wishlist">Wishlist</a>
                                             </li>
                                         </ul>
@@ -343,46 +345,48 @@
                                         aria-expanded="false" data-key="t-grid-view">Grid View</a>
                                     <ul class="dropdown-menu submenu">
                                         <li>
-                                            <a class="nav-link" href="<?= base_url('product-grid-default')?>"
+                                            <a class="nav-link" href="<?= base_url('product-grid-default') ?>"
                                                 data-key="t-default">default</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="<?= base_url('product-grid-sidebar-banner')?>"
+                                            <a class="nav-link" href="<?= base_url('product-grid-sidebar-banner') ?>"
                                                 data-key="t-sidebar-with-banner">Sidebar with Banner</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="<?= base_url('product-grid-right')?>"
+                                            <a class="nav-link" href="<?= base_url('product-grid-right') ?>"
                                                 data-key="t-right-sidebar">Right Sidebar</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="<?= base_url('product-grid')?>" data-key="t-no-sidebar">No
+                                            <a class="nav-link" href="<?= base_url('product-grid') ?>" data-key="t-no-sidebar">No
                                                 Sidebar</a>
                                         </li>
                                     </ul>
                                 </li> -->
                                 <li class="dropdown dropdown-hover">
-                                    <a href="<?= base_url('product/list')?>" class="nav-link dropdown-toggle" data-key="t-list-view">List View</a>
+                                    <a href="<?= base_url('product/list') ?>" class="nav-link dropdown-toggle"
+                                        data-key="t-list-view">List View</a>
                                     <!-- <ul class="dropdown-menu submenu">
                                         <li>
-                                            <a class="nav-link" href="<?= base_url('product/list')?>"
+                                            <a class="nav-link" href="<?= base_url('product/list') ?>"
                                                 data-key="t-default">default</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="<?= base_url('')?>"
+                                            <a class="nav-link" href="<?= base_url('') ?>"
                                                 data-key="t-left-sidebar">Left Sidebar</a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="<?= base_url('')?>"
+                                            <a class="nav-link" href="<?= base_url('') ?>"
                                                 data-key="t-right-sidebar">Right Sidebar</a>
                                          </li>
                                         <li>
-                                            <a class="nav-link" href="<?= base_url('')?>" data-key="t-no-sidebar">No
+                                            <a class="nav-link" href="<?= base_url('') ?>" data-key="t-no-sidebar">No
                                                 Sidebar</a>
                                         </li>
                                     </ul> -->
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="<?= base_url('product/details')?>" data-key="t-product-details">Product
+                                    <a class="nav-link" href="<?= base_url('product/details') ?>"
+                                        data-key="t-product-details">Product
                                         Details</a>
                                 </li>
                             </ul>
@@ -392,7 +396,8 @@
                                 data-key="t-users">Users</a>
                             <ul class="dropdown-menu submenu">
                                 <li>
-                                    <a class="nav-link" href="<?= base_url('user/account')?>" data-key="t-my-account">My Account</a>
+                                    <a class="nav-link" href="<?= base_url('user/account') ?>" data-key="t-my-account">My
+                                        Account</a>
                                 </li>
                                 <li>
                                     <a class="nav-link" href="auth-signin-basic.html" data-key="t-sign-in">Sign
@@ -419,7 +424,7 @@
                                         Step Verify</a>
                                 </li>
                                 <li>
-                                    <a class="nav-link" href="<?=base_url('logout')?>" data-key="t-logout">Logout</a>
+                                    <a class="nav-link" href="<?= base_url('logout') ?>" data-key="t-logout">Logout</a>
                                 </li>
                                 <li>
                                     <a class="nav-link" href="auth-404.html" data-key="t-error-404">Error 404</a>
@@ -434,21 +439,25 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('product/category')?>" class="nav-link" data-key="t-categories">Categories</a>
+                            <a href="<?= base_url('product/category') ?>" class="nav-link"
+                                data-key="t-categories">Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('about-us')?>" class="nav-link" data-key="t-about">About</a>
+                            <a href="<?= base_url('about-us') ?>" class="nav-link" data-key="t-about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('purchase-guide')?>" class="nav-link" data-key="t-purchase-guide">Purchase
+                            <a href="<?= base_url('purchase-guide') ?>" class="nav-link"
+                                data-key="t-purchase-guide">Purchase
                                 Guide</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('terms-conditions')?>" class="nav-link" data-key="t-terms-of-service">Terms of
+                            <a href="<?= base_url('terms-conditions') ?>" class="nav-link"
+                                data-key="t-terms-of-service">Terms of
                                 Service</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('privacy-policy')?>" class="nav-link" data-key="t-privacy-policy">Privacy
+                            <a href="<?= base_url('privacy-policy') ?>" class="nav-link"
+                                data-key="t-privacy-policy">Privacy
                                 Policy</a>
                         </li>
                         <!-- <li class="nav-item">
@@ -456,15 +465,14 @@
                                 Locator</a>
                         </li> -->
                         <li class="nav-item">
-                            <a href="<?= base_url('faq')?>" class="nav-link" data-key="t-faq">FAQ</a>
+                            <a href="<?= base_url('faq') ?>" class="nav-link" data-key="t-faq">FAQ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?= base_url('invoice')?>" class="nav-link" data-key="t-invoice">Invoice</a>
+                            <a href="<?= base_url('invoice') ?>" class="nav-link" data-key="t-invoice">Invoice</a>
                         </li>
                         <li class="nav-item dropdown dropdown-hover">
-                            <a href="<?= base_url('order/success')?>" class="nav-link"
-                                data-key="t-email-template">Order
-                                        Success</a>
+                            <a href="<?= base_url('order/success') ?>" class="nav-link" data-key="t-email-template">Order
+                                Success</a>
                             <!-- <ul class="dropdown-menu submenu">
                                 <li>
                                     <a class="nav-link" href="email-black-friday.html" data-key="t-black-friday">Black
@@ -531,7 +539,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('contact-us')?>" data-key="t-contact">Contact</a>
+                    <a class="nav-link" href="<?= base_url('contact-us') ?>" data-key="t-contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -545,16 +553,16 @@
                 <i class="fas fa-search fa-lg"></i>
             </button>
             <div class="topbar-head-dropdown ms-1 header-item">
-                <button type="button" id="open_cart_modal" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
-                    data-bs-toggle="offcanvas" data-bs-target="#ecommerceCart" aria-controls="ecommerceCart">
+                <button type="button" id="open_cart_modal"
+                    class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted" data-bs-toggle="offcanvas"
+                    data-bs-target="#ecommerceCart" aria-controls="ecommerceCart">
                     <i class="ph-shopping-cart fs-18"></i>
-                    <span
-                        id="cart_icon_count"
+                    <span id="cart_icon_count"
                         class="position-absolute topbar-badge cartitem-badge fs-10 translate-middle badge rounded-pill bg-danger">0</span>
                 </button>
             </div>
 
-            <div class="dropdown topbar-head-dropdown ms-2 header-item ">
+            <!-- <div class="dropdown topbar-head-dropdown ms-2 header-item ">
                 <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="bi bi-sun align-middle fs-20"></i>
@@ -569,9 +577,9 @@
                             class="bi bi-moon-stars align-middle me-2"></i> Auto (system
                         default)</a>
                 </div>
-            </div>
+            </div> -->
             <div class="dropdown header-item" id="authorised_account">
-                
+
             </div>
         </div>
     </div>
@@ -594,7 +602,7 @@
                         <div class="flex-shrink-0">
                             <div class="avatar-md" style="height: 100%">
                                 <div class="avatar-title bg-warning-subtle rounded-3">
-                                    <img src="<?=base_url()?>public/assets/images/products/img-4-1.png" alt="" class="avatar-sm" />
+                                    <img src="<?= base_url() ?>public/assets/images/products/img-4-1.png" alt="" class="avatar-sm" />
                                 </div>
                             </div>
                         </div>
@@ -631,7 +639,7 @@
                         <div class="flex-shrink-0">
                             <div class="avatar-md" style="height: 100%">
                                 <div class="avatar-title bg-info-subtle rounded-3">
-                                    <img src="<?=base_url()?>public/assets/images/products/img-1-1.png" alt="" class="avatar-sm" />
+                                    <img src="<?= base_url() ?>public/assets/images/products/img-1-1.png" alt="" class="avatar-sm" />
                                 </div>
                             </div>
                         </div>
@@ -668,7 +676,7 @@
                         <div class="flex-shrink-0">
                             <div class="avatar-md" style="height: 100%">
                                 <div class="avatar-title bg-danger-subtle rounded-3">
-                                    <img src="<?=base_url()?>public/assets/images/products/img-6-1.png" alt="" class="avatar-sm" />
+                                    <img src="<?= base_url() ?>public/assets/images/products/img-6-1.png" alt="" class="avatar-sm" />
                                 </div>
                             </div>
                         </div>
@@ -705,7 +713,7 @@
                         <div class="flex-shrink-0">
                             <div class="avatar-md" style="height: 100%">
                                 <div class="avatar-title bg-primary-subtle rounded-3">
-                                    <img src="<?=base_url()?>public/assets/images/products/img-8-1.png" alt="" class="avatar-sm" />
+                                    <img src="<?= base_url() ?>public/assets/images/products/img-8-1.png" alt="" class="avatar-sm" />
                                 </div>
                             </div>
                         </div>
@@ -744,19 +752,19 @@
                     <tbody>
                         <tr>
                             <td>Sub Total :</td>
-                            <td class="text-end cart-subtotal">$1183.57</td>
+                            <td class="text-end cart-subtotal" id="cart_subtotal">₹ 0</td>
                         </tr>
                         <tr>
-                            <td>Discount <span class="text-muted">(Toner15)</span>:</td>
-                            <td class="text-end cart-discount">- $177.54</td>
+                            <td>Discount <span class="text-muted"></span>:</td>
+                            <td class="text-end cart-discount" id="cart_discount">- ₹ 0</td>
                         </tr>
                         <tr>
                             <td>Shipping Charge :</td>
-                            <td class="text-end cart-shipping">$65.00</td>
+                            <td class="text-end cart-shipping" id="cart_shipping">₹ 0</td>
                         </tr>
                         <tr>
                             <td>Estimated Tax (12.5%) :</td>
-                            <td class="text-end cart-tax">$147.95</td>
+                            <td class="text-end cart-tax" id="cart-tax">₹ 0</td>
                         </tr>
                     </tbody>
                 </table>
@@ -767,7 +775,7 @@
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h6 class="m-0 fs-16 text-muted">Total:</h6>
             <div class="px-2">
-                <h6 class="m-0 fs-16 cart-total">$1218.98</h6>
+                <h6 class="m-0 fs-16 cart-total">₹ 0</h6>
             </div>
         </div>
         <div class="row g-2">
@@ -777,7 +785,7 @@
                 </button>
             </div>
             <div class="col-6">
-                <a href="#!" target="_blank" class="btn btn-info w-100">Continue to Checkout</a>
+                <a href="#!" target="_blank" class="btn btn-info w-100">Checkout</a>
             </div>
         </div>
     </div>
@@ -852,7 +860,7 @@
                             </h5>
                             <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
                                 <div class="d-flex align-items-center">
-                                    <img src="<?=base_url()?>public/assets/images/users/avatar-1-1.jpg" alt=""
+                                    <img src="<?= base_url() ?>public/assets/images/users/avatar-1-1.jpg" alt=""
                                         class="avatar-xs rounded-circle flex-shrink-0 me-2" />
                                     <div>
                                         <h6 class="mb-0">Ayaan Bowen</h6>
@@ -862,7 +870,7 @@
                             </a>
                             <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
                                 <div class="d-flex align-items-center">
-                                    <img src="<?=base_url()?>public/assets/images/users/avatar-7-1.jpg" alt=""
+                                    <img src="<?= base_url() ?>public/assets/images/users/avatar-7-1.jpg" alt=""
                                         class="avatar-xs rounded-circle flex-shrink-0 me-2" />
                                     <div>
                                         <h6 class="mb-0">Alexander Kristi</h6>
@@ -872,7 +880,7 @@
                             </a>
                             <a href="javascript:void(0);" class="list-group-item dropdown-item notify-item">
                                 <div class="d-flex align-items-center">
-                                    <img src="<?=base_url()?>public/assets/images/users/avatar-5-1.jpg" alt=""
+                                    <img src="<?= base_url() ?>public/assets/images/users/avatar-5-1.jpg" alt=""
                                         class="avatar-xs rounded-circle flex-shrink-0 me-2" />
                                     <div>
                                         <h6 class="mb-0">Alan Carla</h6>
@@ -911,7 +919,8 @@
                     <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">
                         Close
                     </button>
-                    <button type="button" onclick="delete_the_cart_item()" class="btn w-sm btn-danger" id="remove-product">
+                    <button type="button" onclick="delete_the_cart_item()" class="btn w-sm btn-danger"
+                        id="remove-product">
                         Yes, Delete It!
                     </button>
                 </div>
@@ -923,7 +932,7 @@
 </div>
 <!-- /.modal -->
 
-<div class="modal fade" id="subscribeModal" tabindex="-1" aria-hidden="true">
+<!-- <div class="modal fade" id="subscribeModal" tabindex="-1" aria-hidden="true" style="display: none !important;">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content border-0">
             <div class="modal-body p-0 bg-info-subtle rounded">
@@ -951,14 +960,14 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="p-4 pb-0">
-                            <img src="<?=base_url()?>public/assets/images/subscribe.png" alt="" class="img-fluid" />
+                            <img src="<?= base_url() ?>public/assets/images/subscribe.png" alt="" class="img-fluid" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- end modal -->
 
 <!-- <a href="../backend/index.html"
@@ -990,7 +999,7 @@
                         <li class="chat-list left">
                             <div class="conversation-list">
                                 <div class="chat-avatar">
-                                    <img src="<?=base_url()?>public/assets/images/logo-sm-1.png" alt="" />
+                                    <img src="<?= base_url() ?>public/assets/images/logo-sm-1.png" alt="" />
                                 </div>
                                 <div class="user-chat-content">
                                     <div class="ctext-wrap">
@@ -1065,7 +1074,7 @@
                         <li class="chat-list left">
                             <div class="conversation-list">
                                 <div class="chat-avatar">
-                                    <img src="<?=base_url()?>public/assets/images/logo-sm-1.png" alt="" />
+                                    <img src="<?= base_url() ?>public/assets/images/logo-sm-1.png" alt="" />
                                 </div>
                                 <div class="user-chat-content">
                                     <div class="ctext-wrap">
@@ -1125,8 +1134,18 @@
 </div>
 
 <script>
-     $(document).ready(function () {
-        get_cart_data();
+    get_cart_data();
+    function calculateFinalPrice(originalPrice, discountPercentage) {
+        // Calculate the discount amount
+        var discountAmount = (originalPrice * discountPercentage) / 100;
+
+        // Calculate the final price after applying the discount
+        var finalPrice = originalPrice - discountAmount;
+
+        // Return the final price
+        return finalPrice;
+    }
+    $(document).ready(function () {
         $.ajax({
             url: "<?= base_url('api/user') ?>",
             type: "GET",
@@ -1134,44 +1153,44 @@
                 // resp = JSON.parse(resp)
                 // console.log(resp.user_data.number)
                 if (resp.status) {
-                //    console.log(resp.number)
+                    //    console.log(resp.number)
                     var image_url = `https://usercontent.one/wp/www.vocaleurope.eu/wp-content/uploads/no-image.jpg?media=1642546813`
-                   if(resp.user_img != null){
-                    image_url =`<?=base_url('public/uploads/user_images/')?>${resp.user_img.img}`
-                   }
+                    if (resp.user_img != null) {
+                        image_url = `<?= base_url('public/uploads/user_images/') ?>${resp.user_img.img}`
+                    }
 
-                   html = `<button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                    html = `<button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user" src="${image_url}"
                         alt="Header Avatar" />
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <h6 class="dropdown-header" id="user_name">${resp.user_data.user_name}</h6>
-                    <a class="dropdown-item" href="<?=base_url('order/history')?>"><i
+                    <a class="dropdown-item" href="<?= base_url('order/history') ?>"><i
                             class="bi bi-cart4 text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Order History</span></a>
-                    <a class="dropdown-item" href="<?=base_url('order/track')?>"><i
+                    <a class="dropdown-item" href="<?= base_url('order/track') ?>"><i
                             class="bi bi-truck text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Track Orders</span></a>
                     <a class="dropdown-item" href="../backend/index.html"><i
                             class="bi bi-speedometer2 text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Dashboard</span></a>
-                    <a class="dropdown-item" href="<?=base_url('faq')?>"><i
+                    <a class="dropdown-item" href="<?= base_url('faq') ?>"><i
                             class="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Help</span></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?=base_url('user/account')?>"><i
+                    <a class="dropdown-item" href="<?= base_url('user/account') ?>"><i
                             class="bi bi-coin text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Balance : <b>$8451.36</b></span></a>
-                    <a class="dropdown-item" href="<?=base_url('user/account')?>"><span
+                    <a class="dropdown-item" href="<?= base_url('user/account') ?>"><span
                             class="badge bg-success-subtle text-success mt-1 float-end">New</span><i
                             class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle">Settings</span></a>
-                    <a class="dropdown-item" href="<?=base_url('logout')?>"><i
+                    <a class="dropdown-item" href="<?= base_url('logout') ?>"><i
                             class="bi bi-box-arrow-right text-muted fs-16 align-middle me-1"></i>
                         <span class="align-middle" data-key="t-logout">Logout</span></a>
                 </div>`
-                $('#authorised_account').html(html)
+                    $('#authorised_account').html(html)
                 } else {
                     html = `<button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -1180,7 +1199,7 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-end" style="height:150px">
                             <div class="ms-md-auto mt-5">
-                                <a href="<?=base_url('login')?>" class="btn btn-success btn-hover ml-5">Login</a>
+                                <a href="<?= base_url('login') ?>" class="btn btn-success btn-hover ml-5">Login</a>
                             </div>
                         </div>`
                     $('#authorised_account').html(html)
@@ -1191,26 +1210,26 @@
             }
         })
 
-        $("#open_cart_modal").click(function(){
+        $("#open_cart_modal").click(function () {
             get_cart_data()
         });
-        
-     })
 
-     function get_cart_data(){
+    })
+
+    function get_cart_data() {
         $.ajax({
             url: "<?= base_url('/api/user/id') ?>",
             type: "GET",
             success: function (resp) {
-                
+
                 if (resp.status) {
                     // console.log(user_id) 
                     $.ajax({
                         url: "<?= base_url('/api/user/cart') ?>",
                         type: "GET",
-                        data:{user_id:resp.data},
+                        data: { user_id: resp.data },
                         success: function (resp) {
-                            
+
                             $('#cart_item').empty()
                             $('#total_cart_item_count').text(0)
                             if (resp.status) {
@@ -1219,30 +1238,37 @@
                                 html = ""
                                 var total_item = "";
                                 $('#cart_icon_count').html(resp.data.length)
-                                $.each(resp.data, function(index, cart) {
+                                $.each(resp.data, function (index, cart) {
                                     html = `<li class="list-group-item product">
                                                 <div class="d-flex gap-3">
                                                     <div class="flex-shrink-0">
                                                         <div class="avatar-md" style="height: 100%">
                                                             <div class="avatar-title bg-warning-subtle rounded-3">
-                                                                <img src="<?=base_url()?>public/assets/images/products/img-4-1.png" alt="" class="avatar-sm" />
+                                                                <img
+                                                                    style="width: 100%;object-fit: contain;height: 100%; background: #fff; outline: 1px solid #e9ebec;"
+                                                                    src="<?= base_url()?>public/uploads/product_images/${cart.product.product_img[0].src}" 
+                                                                    alt=""/>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="flex-grow-1">
-                                                        <a href="#!">
-                                                            <h5 class="fs-15">Borosil Paper Cup</h5>
+                                                        <a href="<?=base_url('/product/details?id=')?>${cart.product.product_id}">
+                                                            <h5 class="fs-15">${cart.product.name}</h5>
                                                         </a>
                                                         <div class="d-flex mb-3 gap-2">
                                                             <div class="text-muted fw-medium mb-0">
-                                                                $<span class="product-price">24.00</span>
+                                                                <span class="product-price">₹ ${calculateFinalPrice(cart.product.base_price,cart.product.base_discount )}</span>
                                                             </div>
                                                             <div class="vr"></div>
-                                                            <span class="text-success fw-medium">In Stock</span>
+                                                            ${
+                                                                cart.product.product_stock == '0' ?
+                                                                '<span class="text-danger fw-medium">Out of Stock</span>' :
+                                                                '<span class="text-success fw-medium">In Stock</span>'
+                                                            }
                                                         </div>
                                                         <div class="input-step">
                                                             <button type="button" class="minus">–</button>
-                                                            <input type="number" class="product-quantity" value="2" min="0" max="100" readonly="" />
+                                                            <input type="number" class="product-quantity" value="1" min="0" max="100" readonly="" />
                                                             <button type="button" class="plus">+</button>
                                                         </div>
                                                     </div>
@@ -1251,26 +1277,26 @@
                                                             <i class="ri-close-fill fs-16"></i>
                                                         </button>
                                                         <div class="fw-medium mb-0 fs-16">
-                                                            $<span class="product-line-price">48.00</span>
+                                                        <span class="product-line-price">₹ ${calculateFinalPrice(cart.product.base_price,cart.product.base_discount )}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </li>`
                                     $('#cart_item').append(html)
-                                    total_item = index +1
+                                    total_item = index + 1
                                 })
                                 $('#total_cart_item_count').text(total_item)
-                                
+
                             } else {
                                 console.log(resp)
                             }
-                            
+
                         },
                         error: function (err) {
                             console.log(err)
                         },
                     })
-                       
+
                 } else {
                     console.log(resp)
                     var storedData = localStorage.getItem('cartData');
@@ -1278,17 +1304,17 @@
                     console.log(retrievedData);
                     $('#cart_item').empty()
                     $('#total_cart_item_count').text(0)
-                    if(retrievedData != ""){
+                    if (retrievedData != "") {
                         html = ""
                         // $('#cart_item').empty()
                         var total_item = "";
-                        $.each(retrievedData, function(index, cart) {
+                        $.each(retrievedData, function (index, cart) {
                             html = `<li class="list-group-item product">
                                         <div class="d-flex gap-3">
                                             <div class="flex-shrink-0">
                                                 <div class="avatar-md" style="height: 100%">
                                                     <div class="avatar-title bg-warning-subtle rounded-3">
-                                                        <img src="<?=base_url()?>public/assets/images/products/img-4-1.png" alt="" class="avatar-sm" />
+                                                        <img src="<?= base_url() ?>public/assets/images/products/img-4-1.png" alt="" class="avatar-sm" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -1320,62 +1346,62 @@
                                         </div>
                                     </li>`
                             $('#cart_item').append(html)
-                            total_item = index +1
+                            total_item = index + 1
                         })
                         $('#total_cart_item_count').text(total_item)
                     }
-                    
+
                 }
             },
             error: function (err) {
                 console.log(err)
             },
         })
-     }
+    }
 
-     let cart_item_id = ""
-     function remove_cart_item(cart_id){
+    let cart_item_id = ""
+    function remove_cart_item(cart_id) {
         $('#removeItemModal').modal('show')
         cart_item_id = cart_id;
         console.log(cart_item_id)
     }
 
     let local_storage_cart_item_id = ""
-     function remove_cart_item_local_storage(cart_id){
+    function remove_cart_item_local_storage(cart_id) {
         $('#removeItemModal').modal('show')
         local_storage_cart_item_id = cart_id;
-     }
+    }
 
-     function delete_the_cart_item(){
+    function delete_the_cart_item() {
         console.log(cart_item_id)
-       
-        if(cart_item_id != ""){
+
+        if (cart_item_id != "") {
             $.ajax({
                 url: "<?= base_url('/api/user/cart/remove') ?>",
                 type: "GET",
-                data:{cart_id:cart_item_id},
+                data: { cart_id: cart_item_id },
                 success: function (resp) {
-                    
+
                     if (resp.status) {
                         console.log(resp)
                         Toastify({
                             text: resp.message.toUpperCase(),
-                            duration: 3000,
-                            position: "right",
+                            duration: 2000,
+                            position: "center",
                             stopOnFocus: true,
                             style: {
                                 background: resp.status ? 'gray' : 'darkred',
                             },
 
                         }).showToast();
-                        
+
                         cart_item_id = "";
                         $('#removeItemModal').modal('hide')
                     } else {
                         Toastify({
                             text: resp.message.toUpperCase(),
-                            duration: 3000,
-                            position: "right",
+                            duration: 2000,
+                            position: "center",
                             stopOnFocus: true,
                             style: {
                                 background: resp.status ? 'gray' : 'darkred',
@@ -1385,19 +1411,19 @@
                         console.log(resp)
                     }
                     get_cart_data()
-                    
+
                 },
                 error: function (err) {
                     console.log(err)
                 },
             })
-        }else if(local_storage_cart_item_id != ""){
+        } else if (local_storage_cart_item_id != "") {
             var storageData = localStorage.getItem('cartData');
 
             if (storageData) {
                 var retrievedData = JSON.parse(storageData);
 
-                var updatedData = retrievedData.filter(function(item) {
+                var updatedData = retrievedData.filter(function (item) {
                     return item.product_id !== local_storage_cart_item_id;
                 });
                 var updatedDataJSON = JSON.stringify(updatedData);
@@ -1409,7 +1435,7 @@
                     position: "right",
                     stopOnFocus: true,
                     style: {
-                        background:'gray',
+                        background: 'gray',
                     },
 
                 }).showToast();
@@ -1417,10 +1443,10 @@
             get_cart_data()
 
         }
-        
 
-     }
 
-    
-    
+    }
+
+
+
 </script>
