@@ -37,6 +37,98 @@ class Admin_Controller extends Main_Controller
 
         $this->isAuth('/admin/dashboard',$data);
     }
+
+    public function banner(): void
+    {
+        $data = PAGE_DATA_ADMIN;
+        $data = [
+            'data_page' => [],
+            'data_header' => [
+                'header_link' => ['banners_css.php'],
+                'header_asset_link' => [
+                    'assets_admin/libs/nouislider/nouislider.min.css',
+                    'assets_admin/libs/gridjs/theme/mermaid.min.css',
+                    'assets_admin/css/app.min.css',
+                    'assets_admin/css/custom.min.css'
+                ],
+                'title' => 'Banners',
+                'header' => [],
+                'sidebar' => ['banners'=>true],
+                'site' => 'admin'
+            ],
+            'data_footer' => [
+                'footer_link' => ['banners_js.php'],
+                'footer_asset_link' => [
+                    'assets_admin/libs/nouislider/nouislider.min.js',
+                    'assets_admin/libs/wnumb/wNumb.min.js',
+                    'assets_admin/libs/gridjs/gridjs.umd.js',
+                    'assets_admin/js/pages/ecommerce-product-list.init.js',
+                ],
+                'footer' => [],
+                'site' => 'admin'
+            ]
+        ];
+
+        $this->isAuth('/admin/banners', $data);
+    }
+
+    public function banners_add(): void
+    {
+        $data = PAGE_DATA_ADMIN;
+        $data = [
+            'data_page' => [],
+            'data_header' => [
+                'header_link' => ['banners_add_css.php'],
+                'header_asset_link' => [
+                    'assets_admin/libs/nouislider/nouislider.min.css',
+                    'assets_admin/libs/gridjs/theme/mermaid.min.css',
+                    'assets_admin/css/app.min.css',
+                    'assets_admin/css/custom.min.css'
+                ],
+                'title' => 'Banners',
+                'header' => [],
+                'sidebar' => ['banners'=>true],
+                'site' => 'admin'
+            ],
+            'data_footer' => [
+                'footer_link' => ['banners_add_js.php'],
+                'footer_asset_link' => ['assets_admin/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js'],
+                'footer' => [],
+                'site' => 'admin'
+            ]
+        ];
+
+        $this->isAuth('/admin/banners_add', $data);
+    }
+
+    public function banners_update(): void
+    {
+        $data = PAGE_DATA_ADMIN;
+        $data = [
+            'data_page' => [],
+            'data_header' => [
+                'header_link' => ['banners_update_css.php'],
+                'header_asset_link' => [
+                    'assets_admin/libs/nouislider/nouislider.min.css',
+                    'assets_admin/libs/gridjs/theme/mermaid.min.css',
+                    'assets_admin/css/app.min.css',
+                    'assets_admin/css/custom.min.css'
+                ],
+                'title' => 'Banners',
+                'header' => [],
+                'sidebar' => ['banners'=>true],
+                'site' => 'admin'
+            ],
+            'data_footer' => [
+                'footer_link' => ['banner_update_js.php'],
+                'footer_asset_link' => ['assets_admin/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js'],
+                'footer' => [],
+                'site' => 'admin'
+            ]
+        ];
+
+        $this->isAuth('/admin/banner_update', $data);
+    }
     
     public function isAuth($page,$data){
         $session = \Config\Services::session();
