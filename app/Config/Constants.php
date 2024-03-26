@@ -124,8 +124,8 @@ define('EVENT_PRIORITY_HIGH', 10);
 
 
 //////////////////////////////////////////////__URL
-defined('BASE_URL') || define('BASE_URL', 'https://daltonusstore.com' );
-//defined('BASE_URL') || define('BASE_URL', 'http://localhost/Daltonus-Store' );
+// defined('BASE_URL') || define('BASE_URL', 'https://daltonusstore.com' );
+defined('BASE_URL') || define('BASE_URL', 'http://localhost/Daltonus-Store' );
 
 
 //////////////////////////////////////////////__DATABASE
@@ -165,6 +165,7 @@ defined('UID_VAR_OPT')      || define('UID_VAR_OPT', 'VRO');
 defined('UID_VAR_IMG')      || define('UID_VAR_IMG', 'VRI');
 defined('UID_PRO_CONFIG')   || define('UID_PRO_CONFIG', 'PCON');
 defined('UID_CART')         || define('UID_CART', 'CRT');
+defined('UID_BANNER')       || define('UID_BANNER', 'BNR');
 
 
 //////////////////////////////////////////////__STATUS
@@ -190,6 +191,7 @@ defined('SES_ADMIN_TYPE')    || define('SES_ADMIN_TYPE', 'ADMIN_user_type');
 defined('PATH_PRODUCT_IMG')  || define('PATH_PRODUCT_IMG', ROOTPATH  . 'public/uploads/product_images');
 defined('PATH_VARIANT_IMG')  || define('PATH_VARIANT_IMG', ROOTPATH  . 'public/uploads/variant_images');
 defined('PATH_USER_IMG')     || define('PATH_USER_IMG', ROOTPATH  . 'public/uploads/user_images');
+defined('PATH_BANNER_IMG')     || define('PATH_BANNER_IMG', ROOTPATH  . 'public/uploads/banner_images');
 
 
 //////////////////////////////////////////////__PAGEDATA

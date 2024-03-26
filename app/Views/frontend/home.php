@@ -1,7 +1,7 @@
 <section class="position-relative">
     <div id="ecommerceHero" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
+        <div class="carousel-inner" id="banner_img">
+            <!-- <div class="carousel-item active">
                 <div class="ecommerce-home bg-danger-subtle" style="
                 background-image: url('<?=base_url()?>public/assets/images/ecommerce/home/img-1.png');
               ">
@@ -26,8 +26,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item">
+            </div> -->
+            <!-- <div class="carousel-item">
                 <div class="ecommerce-home bg-primary-subtle" style="
                 background-image: url('<?=base_url()?>public/assets/images/ecommerce/home/img-2.png');
               ">
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#ecommerceHero" data-bs-slide="prev">
             <i class="ph-caret-left"></i>

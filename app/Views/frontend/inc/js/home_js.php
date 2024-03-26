@@ -74,7 +74,60 @@
         })
 
 
+        load_banners()
+
     })
+
+    function load_banners() {
+        $.ajax({
+            url: "<?= base_url('/api/banners') ?>",
+            type: "GET",
+            beforeSend: function () {
+            },
+            success: function (resp) {
+                if (resp.status) {
+                    $.each(resp.data, function(index, banner) {
+                        isActive = index === 0 ? 'active' : ''
+                        console.log(isActive);
+                        html = `<div class="carousel-item ${isActive}">
+                                    <div class="ecommerce-home bg-danger-subtle" style="
+                                    background-image: url('<?= base_url('public/uploads/banner_images/') ?>${banner.img}');">
+                                        <div class="container">
+                                            <div class="row justify-content-end">
+                                                <div class="col-lg-7">
+                                                    <div class="text-sm-end">
+                                                        <p class="fs-15 fw-semibold text-uppercase">
+                                                            <i class="ri-flashlight-fill text-primary align-bottom me-1"></i>
+                                                            In this season, find the best
+                                                        </p>
+                                                        <h1 class="display-4 fw-bold lh-base text-capitalize mb-3">
+                                                            ${banner.title}
+                                                        </h1>
+                                                        <p class="fs-20 mb-4">${banner.description}</p>
+                                                        <a href="${banner.link}" class="btn btn-danger btn-hover">
+                                                            <i class="ph-shopping-cart align-middle me-1"></i> Shop
+                                                            Now
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`
+                        $('#banner_img').append(html);
+                    })
+                }else{
+                }
+
+            },
+            error: function (err) {
+                console.log(err)
+            },
+            complete: function () {
+               
+            }
+        })
+    }
 
     function add_to_cart(p_id) {
 
