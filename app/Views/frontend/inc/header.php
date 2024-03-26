@@ -545,7 +545,7 @@
                 <i class="fas fa-search fa-lg"></i>
             </button>
             <div class="topbar-head-dropdown ms-1 header-item">
-                <button type="button" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
+                <button type="button" id="open_cart_modal" class="btn btn-icon btn-topbar btn-ghost-dark rounded-circle text-muted"
                     data-bs-toggle="offcanvas" data-bs-target="#ecommerceCart" aria-controls="ecommerceCart">
                     <i class="ph-shopping-cart fs-18"></i>
                     <span
@@ -581,14 +581,14 @@
     <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title" id="ecommerceCartLabel">
             My Cart
-            <span class="badge bg-danger align-middle ms-1 cartitem-badge">4</span>
+            <span class="badge bg-danger align-middle ms-1 cartitem-badge" id="total_cart_item_count"></span>
         </h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body px-0">
         <div data-simplebar="" class="h-100">
-            <ul class="list-group list-group-flush cartlist">
-                <li class="list-group-item product">
+            <ul class="list-group list-group-flush cartlist" id="cart_item">
+                <!-- <li class="list-group-item product">
                     <div class="d-flex gap-3">
                         <div class="flex-shrink-0">
                             <div class="avatar-md" style="height: 100%">
@@ -624,8 +624,8 @@
                             </div>
                         </div>
                     </div>
-                </li>
-                <li class="list-group-item product">
+                </li> -->
+                <!-- <li class="list-group-item product">
                     <div class="d-flex gap-3">
                         <div class="flex-shrink-0">
                             <div class="avatar-md" style="height: 100%">
@@ -735,7 +735,7 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> -->
             </ul>
 
             <div class="table-responsive mx-2 border-top border-top-dashed">
@@ -910,7 +910,7 @@
                     <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">
                         Close
                     </button>
-                    <button type="button" class="btn w-sm btn-danger" id="remove-product">
+                    <button type="button" onclick="delete_the_cart_item()" class="btn w-sm btn-danger" id="remove-product">
                         Yes, Delete It!
                     </button>
                 </div>
@@ -1125,12 +1125,13 @@
 
 <script>
      $(document).ready(function () {
+
         $.ajax({
             url: "<?= base_url('api/user') ?>",
             type: "GET",
             success: function (resp) {
                 // resp = JSON.parse(resp)
-                console.log(resp.user_data.number)
+                // console.log(resp.user_data.number)
                 if (resp.status) {
                 //    console.log(resp.number)
                     var image_url = `https://usercontent.one/wp/www.vocaleurope.eu/wp-content/uploads/no-image.jpg?media=1642546813`
@@ -1189,31 +1190,234 @@
             }
         })
 
+        $("#open_cart_modal").click(function(){
+            get_cart_data()
+        });
+        
+     })
+
+     function get_cart_data(){
         $.ajax({
-            url: "<?= base_url('/api/user/cart') ?>",
+            url: "<?= base_url('/api/user/id') ?>",
             type: "GET",
             success: function (resp) {
                 
                 if (resp.status) {
-                    console.log(resp)
-                        // $.each(resp.data, function(index, product) {
-                        //     console.log(product)
-                        //     if(index <= 8){
-                        //         var original_price = product.base_discount ? product.base_price - (product.base_price * product.base_discount / 100) : product.base_price;
-                        //         var base_price = product.base_discount ? product.base_discount : ""; 
-                        //         html = ``
-                        //         $('#all_products').append(html);
-                        //     }
-                        // })
+                    // console.log(user_id) 
+                    $.ajax({
+                        url: "<?= base_url('/api/user/cart') ?>",
+                        type: "GET",
+                        data:{user_id:resp.data},
+                        success: function (resp) {
+                            
+                            $('#cart_item').empty()
+                            $('#total_cart_item_count').text(0)
+                            if (resp.status) {
+                                console.log(resp)
+                                html = ""
+                                var total_item = "";
+                                $.each(resp.data, function(index, cart) {
+                                    html = `<li class="list-group-item product">
+                                                <div class="d-flex gap-3">
+                                                    <div class="flex-shrink-0">
+                                                        <div class="avatar-md" style="height: 100%">
+                                                            <div class="avatar-title bg-warning-subtle rounded-3">
+                                                                <img src="<?=base_url()?>public/assets/images/products/img-4-1.png" alt="" class="avatar-sm" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <a href="#!">
+                                                            <h5 class="fs-15">Borosil Paper Cup</h5>
+                                                        </a>
+                                                        <div class="d-flex mb-3 gap-2">
+                                                            <div class="text-muted fw-medium mb-0">
+                                                                $<span class="product-price">24.00</span>
+                                                            </div>
+                                                            <div class="vr"></div>
+                                                            <span class="text-success fw-medium">In Stock</span>
+                                                        </div>
+                                                        <div class="input-step">
+                                                            <button type="button" class="minus">–</button>
+                                                            <input type="number" class="product-quantity" value="2" min="0" max="100" readonly="" />
+                                                            <button type="button" class="plus">+</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-shrink-0 d-flex flex-column justify-content-between align-items-end">
+                                                        <button type="button" onclick="remove_cart_item('${cart.uid}')" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn">
+                                                            <i class="ri-close-fill fs-16"></i>
+                                                        </button>
+                                                        <div class="fw-medium mb-0 fs-16">
+                                                            $<span class="product-line-price">48.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>`
+                                    $('#cart_item').append(html)
+                                    total_item = index +1
+                                })
+                                $('#total_cart_item_count').text(total_item)
+                                
+                            } else {
+                                console.log(resp)
+                            }
+                            
+                        },
+                        error: function (err) {
+                            console.log(err)
+                        },
+                    })
+                       
                 } else {
                     console.log(resp)
+                    var storedData = localStorage.getItem('cartData');
+                    var retrievedData = JSON.parse(storedData);
+                    console.log(retrievedData);
+                    $('#cart_item').empty()
+                    $('#total_cart_item_count').text(0)
+                    if(retrievedData != ""){
+                        html = ""
+                        // $('#cart_item').empty()
+                        var total_item = "";
+                        $.each(retrievedData, function(index, cart) {
+                            html = `<li class="list-group-item product">
+                                        <div class="d-flex gap-3">
+                                            <div class="flex-shrink-0">
+                                                <div class="avatar-md" style="height: 100%">
+                                                    <div class="avatar-title bg-warning-subtle rounded-3">
+                                                        <img src="<?=base_url()?>public/assets/images/products/img-4-1.png" alt="" class="avatar-sm" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <a href="#!">
+                                                    <h5 class="fs-15">Borosil Paper Cup</h5>
+                                                </a>
+                                                <div class="d-flex mb-3 gap-2">
+                                                    <div class="text-muted fw-medium mb-0">
+                                                        $<span class="product-price">24.00</span>
+                                                    </div>
+                                                    <div class="vr"></div>
+                                                    <span class="text-success fw-medium">In Stock</span>
+                                                </div>
+                                                <div class="input-step">
+                                                    <button type="button" class="minus">–</button>
+                                                    <input type="number" class="product-quantity" value="2" min="0" max="100" readonly="" />
+                                                    <button type="button" class="plus">+</button>
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-0 d-flex flex-column justify-content-between align-items-end">
+                                                <button type="button" onclick="remove_cart_item_local_storage('${cart.product_id}')" class="btn btn-icon btn-sm btn-ghost-secondary remove-item-btn">
+                                                    <i class="ri-close-fill fs-16"></i>
+                                                </button>
+                                                <div class="fw-medium mb-0 fs-16">
+                                                    $<span class="product-line-price">48.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>`
+                            $('#cart_item').append(html)
+                            total_item = index +1
+                        })
+                        $('#total_cart_item_count').text(total_item)
+                    }
+                    
                 }
-                
             },
             error: function (err) {
                 console.log(err)
             },
         })
-     })
+     }
+
+     let cart_item_id = ""
+     function remove_cart_item(cart_id){
+        $('#removeItemModal').modal('show')
+        cart_item_id = cart_id;
+        console.log(cart_item_id)
+    }
+
+    let local_storage_cart_item_id = ""
+     function remove_cart_item_local_storage(cart_id){
+        $('#removeItemModal').modal('show')
+        local_storage_cart_item_id = cart_id;
+     }
+
+     function delete_the_cart_item(){
+        console.log(cart_item_id)
+       
+        if(cart_item_id != ""){
+            $.ajax({
+                url: "<?= base_url('/api/user/cart/remove') ?>",
+                type: "GET",
+                data:{cart_id:cart_item_id},
+                success: function (resp) {
+                    
+                    if (resp.status) {
+                        console.log(resp)
+                        Toastify({
+                            text: resp.message.toUpperCase(),
+                            duration: 3000,
+                            position: "right",
+                            stopOnFocus: true,
+                            style: {
+                                background: resp.status ? 'gray' : 'darkred',
+                            },
+
+                        }).showToast();
+                        
+                        cart_item_id = "";
+                        $('#removeItemModal').modal('hide')
+                    } else {
+                        Toastify({
+                            text: resp.message.toUpperCase(),
+                            duration: 3000,
+                            position: "right",
+                            stopOnFocus: true,
+                            style: {
+                                background: resp.status ? 'gray' : 'darkred',
+                            },
+
+                        }).showToast();
+                        console.log(resp)
+                    }
+                    get_cart_data()
+                    
+                },
+                error: function (err) {
+                    console.log(err)
+                },
+            })
+        }else if(local_storage_cart_item_id != ""){
+            var storageData = localStorage.getItem('cartData');
+
+            if (storageData) {
+                var retrievedData = JSON.parse(storageData);
+
+                var updatedData = retrievedData.filter(function(item) {
+                    return item.product_id !== local_storage_cart_item_id;
+                });
+                var updatedDataJSON = JSON.stringify(updatedData);
+                localStorage.setItem('cartData', updatedDataJSON);
+                $('#removeItemModal').modal('hide')
+                Toastify({
+                    text: 'Item Removed Successfully'.toUpperCase(),
+                    duration: 3000,
+                    position: "right",
+                    stopOnFocus: true,
+                    style: {
+                        background:'gray',
+                    },
+
+                }).showToast();
+            }
+            get_cart_data()
+
+        }
+        
+
+     }
+
+    
     
 </script>

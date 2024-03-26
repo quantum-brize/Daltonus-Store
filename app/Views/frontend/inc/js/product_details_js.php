@@ -1,4 +1,5 @@
 <script>
+    let product_id = "";
     $(document).ready(function () {
         // Get the URL parameters
         const queryString = window.location.search;
@@ -12,7 +13,7 @@
             success: function (resp) {
                 
                 if (resp.status) {
-                    console.log(resp.data)
+                    product_id = resp.data.product_id;
                     $('#product_name').text(resp.data.name)
 
                     var truncatedDescription = truncateText(resp.data.description, 150);
@@ -20,7 +21,7 @@
                     // Store the full description in a data attribute for later use
                     $('#product_description').data('full-description', resp.data.description);
 
-                    var original_price = resp.data.base_discount ? resp.data.base_price-(resp.data.base_price * (resp.data.base_discount / 100)) : resp.data.base_price;
+                    var original_price = resp.data.base_discount ? (resp.data.base_price - (resp.data.base_price * (resp.data.base_discount / 100))).toFixed(2) : resp.data.base_price.toFixed(2);
                     var base_price = resp.data.base_discount ? resp.data.base_price : "";
                     var base_discount = resp.data.base_discount ? resp.data.base_discount : "";
                     $('#product_price').html('₹'+original_price  + `<span class="text-muted fs-14" id="base_price"><del>₹${base_price}</del></span> <span class="fs-14 ms-2 text-danger">${base_discount}% off</span>`)
@@ -74,5 +75,118 @@
                 
                 $description.html(truncatedDescription);
             });
+
+            
     })
+    function add_to_cart() {
+        
+        $.ajax({
+            url: "<?= base_url('/api/user/id') ?>",
+            type: "GET",
+            success: function (resp) {
+                
+                if (resp.status) {
+                    console.log(resp.data) 
+                    $.ajax({
+                        url: "<?= base_url('/api/user/cart/add') ?>",
+                        type: "POST",
+                        data:{product_id:product_id, 
+                            user_id:resp.data,
+                            variation_id:'VAR00001',
+                            qty:'1',
+                            },
+                        success: function (resp) {
+                            
+                            if (resp.status) {
+                                Toastify({
+                                text: resp.message.toUpperCase(),
+                                duration: 3000,
+                                position: "center",
+                                stopOnFocus: true,
+                                style: {
+                                    background: resp.status ? 'darkgreen' : 'darkred',
+                                },
+
+                            }).showToast();
+                            } else {
+                                console.log(resp)
+                                Toastify({
+                                text: resp.message.toUpperCase(),
+                                duration: 3000,
+                                position: "center",
+                                stopOnFocus: true,
+                                style: {
+                                    background: resp.status ? 'darkgreen' : 'darkred',
+                                },
+
+                            }).showToast();
+                            }
+                            
+                        },
+                        error: function (err) {
+                            console.log(err)
+                        },
+                    })
+                    
+                } else {
+                    console.log(resp)
+                    var existingData = localStorage.getItem('cartData');
+                    var dataArray = existingData ? JSON.parse(existingData) : [];
+                    if (!Array.isArray(dataArray)) {
+                        dataArray = []; // Initialize as empty array if not already an array
+                    }
+                    var data = {
+                        product_id: product_id,
+                        variation_id: 'VAR00001',
+                        qty: '1'
+                    };
+                    dataArray.push(data);
+                    
+                    var jsonData = JSON.stringify(dataArray);
+                    localStorage.setItem('cartData', jsonData);
+                    
+
+                    // Retrieve data from local storage
+                    var storedData = localStorage.getItem('cartData');
+                    var retrievedData = JSON.parse(storedData);
+                    console.log(retrievedData); // This will log 'value1'
+
+                    if(retrievedData != ""){
+                        var message = 'Item added to cart'
+                        Toastify({
+                            text: message.toUpperCase(),
+                            duration: 3000,
+                            position: "center",
+                            stopOnFocus: true,
+                            style: {
+                                background: 'darkgreen',
+                            },
+
+                        }).showToast();
+                    }else{
+                        var message = 'Item added Faild!'
+                        Toastify({
+                            text: message.toUpperCase(),
+                            duration: 3000,
+                            position: "center",
+                            stopOnFocus: true,
+                            style: {
+                                background: 'darkred',
+                            },
+
+                        }).showToast(); 
+                    }
+                    
+                }
+
+                
+            },
+            error: function (err) {
+                console.log(err)
+            },
+        })
+
+    }
+
+
 </script>

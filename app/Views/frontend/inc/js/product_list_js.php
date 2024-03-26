@@ -12,7 +12,7 @@
                         $.each(resp.data, function(index, product) {
                             console.log(product)
                             if(index <= 8){
-                                var original_price = product.base_discount ? product.base_price - (product.base_price * product.base_discount / 100) : product.base_price;
+                                var original_price = product.base_discount ? (product.base_price - (product.base_price * product.base_discount / 100)).toFixed(2) : product.base_price.toFixed(2);
                                 var base_price = product.base_discount ? product.base_discount : ""; 
                                 var abc = `<h1>hello</h1>`
                                 html = `<div class="col-xxl-3 col-lg-4 col-md-6">
@@ -127,13 +127,18 @@
                        
                 } else {
                     console.log(resp)
+                    var existingData = localStorage.getItem('cartData');
+                    var dataArray = existingData ? JSON.parse(existingData) : [];
+                    if (!Array.isArray(dataArray)) {
+                    }
                     var data = {
                         product_id: p_id,
                         variation_id: 'VAR00001',
                         qty: '1'
                     };
+                    dataArray.push(data);
                     
-                    var jsonData = JSON.stringify(data);
+                    var jsonData = JSON.stringify(dataArray);
                     localStorage.setItem('cartData', jsonData);
                     
 
