@@ -71,7 +71,7 @@
                                 <i class="ri-checkbox-circle-fill label-icon"></i>${resp.message}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>`
-                            get_banner()
+                            // get_banner()
                     } else {
                         html += `<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
                                 <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - ${resp.message}
@@ -94,38 +94,33 @@
         })
 
         
-        get_banner()
+        // function get_banner(){
+            var currentUrl = window.location.href;
+            var urlParams = new URLSearchParams(currentUrl.split('?')[1]);
+            var bannerId = urlParams.get('banner_id');
+            $.ajax({
+                url: "<?= base_url('/api/banner/update') ?>",
+                type: "GET",
+                data:{banner_id:bannerId},
+                success: function (resp) {
+                    if (resp.status) {
+                    console.log(resp)
+                    $('#bannerTitle').val(resp.data.title)
+                    $('#bannerLink').val(resp.data.link)
+                      editor.setData(resp.data.description);
+                    $('#images').html(`<img src="<?= base_url('public/uploads/banner_images/') ?>${resp.data.img}" alt="">`)
+                    
+                    }else{
+                        console.log(resp)
+                    }
+                },
+                error: function (err) {
+                    console.log(err)
+                },
+            })
+        // }
     });
 
-    function get_banner(){
-        var currentUrl = window.location.href;
-        var urlParams = new URLSearchParams(currentUrl.split('?')[1]);
-        var bannerId = urlParams.get('banner_id');
-        $.ajax({
-            url: "<?= base_url('/api/banner/update') ?>",
-            type: "GET",
-            data:{banner_id:bannerId},
-            success: function (resp) {
-                if (resp.status) {
-                  console.log(resp)
-                  $('#bannerTitle').val(resp.data.title)
-                  $('#bannerLink').val(resp.data.link)
-                //   editor.setData(resp.data.description);
-                  $('#images').html(`<img src="<?= base_url('public/uploads/banner_images/') ?>${resp.data.img}" alt="">`)
-                 
-                }else{
-                    console.log(resp)
-                }
-            },
-            error: function (err) {
-                console.log(err)
-            },
-        })
-    }
-
-    // function banner_update_btn(){
-    //     alert('hello')
-    // }
 
         
 </script>

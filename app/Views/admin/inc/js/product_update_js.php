@@ -46,7 +46,7 @@
                 },
                 beforeSend: function () { },
                 success: function (resp) {
-                    console.log(resp)
+                    console.log(resp.data.category_id)
                     if (resp.status) {
                         let product = resp.data
                         $('#choices-category-input').val(product.category_id)
@@ -144,7 +144,7 @@
 
         function get_categories() {
             $.ajax({
-                url: "<?= base_url('/api/categories/single') ?>",
+                url: "<?= base_url('/api/categories') ?>",
                 type: "GET",
                 beforeSend: function () { },
                 success: function (resp) {
@@ -163,5 +163,32 @@
 
         }
 
+        
     });
+    function get_sub_category(parent_id) {
+        var selectElement = document.getElementById("choices-category-input");
+        var parent_id = selectElement.value;
+        console.log(parent_id)
+        $.ajax({
+            url: "<?= base_url('/api/categories') ?>",
+            type: "GET",
+            data: { parent_id: parent_id }, // Add a comma after this line
+            beforeSend: function () { },
+            success: function (resp) {
+                if (resp.status) {
+                    console.log(resp);
+                    let html = '<option value="">Select-category</option>'
+                    $.each(resp.data, function (key, val) {
+                            html += `<option value="${val.uid}">${val.name}</option>`
+                        })
+                    $('#choices-category-input').html(html)
+                }else{
+                    console.log(resp);
+                }
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
 </script>

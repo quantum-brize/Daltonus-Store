@@ -78,6 +78,36 @@
 
     })
 
+    // Function to determine if the image is light or dark
+    function isImageLight(imageUrl, threshold = 128) {
+        return new Promise((resolve, reject) => {
+            let img = new Image();
+            img.crossOrigin = 'Anonymous';
+            img.src = imageUrl;
+            img.onload = function() {
+                let canvas = document.createElement('canvas');
+                let ctx = canvas.getContext('2d');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+                let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                let brightnessSum = 0;
+                for (let i = 0; i < imageData.data.length; i += 4) {
+                    let r = imageData.data[i];
+                    let g = imageData.data[i + 1];
+                    let b = imageData.data[i + 2];
+                    let brightness = (r + g + b) / 3;
+                    brightnessSum += brightness;
+                }
+                let averageBrightness = brightnessSum / (imageData.data.length / 4);
+                resolve(averageBrightness >= threshold);
+            };
+            img.onerror = function() {
+                reject('Error loading image');
+            };
+        });
+    }
+
     function load_banners() {
         $.ajax({
             url: "<?= base_url('/api/banners') ?>",
@@ -87,34 +117,50 @@
             success: function (resp) {
                 if (resp.status) {
                     $.each(resp.data, function(index, banner) {
-                        isActive = index === 0 ? 'active' : ''
-                        console.log(isActive);
-                        html = `<div class="carousel-item ${isActive}">
-                                    <div class="ecommerce-home bg-danger-subtle" style="
-                                    background-image: url('<?= base_url('public/uploads/banner_images/') ?>${banner.img}');">
-                                        <div class="container">
-                                            <div class="row justify-content-end">
-                                                <div class="col-lg-7">
-                                                    <div class="text-sm-end">
-                                                        <p class="fs-15 fw-semibold text-uppercase">
-                                                            <i class="ri-flashlight-fill text-primary align-bottom me-1"></i>
-                                                            In this season, find the best
-                                                        </p>
-                                                        <h1 class="display-4 fw-bold lh-base text-capitalize mb-3">
-                                                            ${banner.title}
-                                                        </h1>
-                                                        <p class="fs-20 mb-4">${banner.description}</p>
-                                                        <a href="${banner.link}" class="btn btn-danger btn-hover">
-                                                            <i class="ph-shopping-cart align-middle me-1"></i> Shop
-                                                            Now
-                                                        </a>
+                        let fontColor = '';
+                        isImageLight(`<?= base_url('public/uploads/banner_images/') ?>${banner.img}`)
+                            .then(isLight => {
+                                if (isLight) {
+                                    // console.log('Image is light');
+                                    fontColor = 'black';
+                                } else {
+                                    // console.log('Image is dark');
+                                    fontColor = 'light';
+                                }
+                                console.log(fontColor);
+                            
+                                isActive = index === 0 ? 'active' : ''
+                                console.log(isActive);
+                                html = `<div class="carousel-item ${isActive}">
+                                            <div class="ecommerce-home bg-danger-subtle custom-carousel-height" style="
+                                            background-image: url('<?= base_url('public/uploads/banner_images/') ?>${banner.img}'); height: 300px;">
+                                                <div class="container">
+                                                    <div class="row justify-content-end">
+                                                        <div class="col-lg-7">
+                                                            <div class="text-sm-end">
+                                                                <p class="fs-15 fw-semibold text-uppercase text-${fontColor}">
+                                                                    <i class="ri-flashlight-fill text-primary align-bottom me-1"></i>
+                                                                    In this season, find the best
+                                                                </p>
+                                                                <h1 class="display-4 fw-bold lh-base text-capitalize mb-3 text-${fontColor}">
+                                                                    ${banner.title}
+                                                                </h1>
+                                                                <p class="fs-20 mb-4 text-${fontColor}">${banner.description}</p>
+                                                                <a href="${banner.link}" class="btn btn-danger btn-hover">
+                                                                    <i class="ph-shopping-cart align-middle me-1"></i> Shop
+                                                                    Now
+                                                                </a>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>`
-                        $('#banner_img').append(html);
+                                        </div>`
+                                $('#banner_img').append(html);
+                            })
+                            .catch(error => {
+                                console.error(error);
+                            });
                     })
                 }else{
                 }

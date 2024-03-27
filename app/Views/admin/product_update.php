@@ -221,7 +221,7 @@
                         <div class="card-body">
                             <p class="text-muted mb-2"> <a href="#" class="float-end text-decoration-underline">Add
                                     New</a>Select product category</p>
-                            <select class="form-select" id="choices-category-input" name="choices-category-input"
+                            <select class="form-select" id="choices-category-input" name="choices-category-input" onchange="get_sub_category()"
                                 data-choices="" data-choices-search-false="">
 
                             </select>
