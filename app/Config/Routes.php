@@ -88,11 +88,11 @@ $routes->post('/api/user/cart/add',                 'Api\Cart_Controller::POST_c
 $routes->get('/api/user/cart/remove',               'Api\Cart_Controller::GET_cart_remove');
 $routes->get('/api/user/cart/empty',                'Api\Cart_Controller::GET_cart_empty');
 $routes->get('/api/user/id',                        'Api\Product_Controller::GET_user_id');
-$routes->post('/api/banner/add',                    'Api\BannerController::POST_add_banner');
-$routes->get('/api/banners',                        'Api\BannerController::GET_banners');
-$routes->get('/api/banner/delete',                  'Api\BannerController::GET_delete_banner');
-$routes->get('/api/banner/update',                  'Api\BannerController::GET_update_banner');
-$routes->post('/api/update/banner',                  'Api\BannerController::POST_banner_update');
+$routes->post('/api/banner/add',                    'Api\Banner_Controller::POST_add_banner');
+$routes->get('/api/banners',                        'Api\Banner_Controller::GET_banners');
+$routes->get('/api/banner/delete',                  'Api\Banner_Controller::GET_delete_banner');
+$routes->get('/api/banner/update',                  'Api\Banner_Controller::GET_update_banner');
+$routes->post('/api/update/banner',                  'Api\Banner_Controller::POST_banner_update');
 
 
 

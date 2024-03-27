@@ -6,7 +6,7 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\BannersModel;
 
-class BannerController extends Api_Controller
+class Banner_Controller extends Api_Controller
 {
     private function add_banner($data)
     {
