@@ -538,6 +538,39 @@ class Product_Controller extends Api_Controller
         return $resp;
     }
 
+    private function discounts_add($data)
+    {
+        $resp = [
+            'status' => false,
+            'message' => 'Discount Dot Added',
+            'data' => []
+        ];
+
+        try {
+            $DiscountsModel = new DiscountsModel();
+            $insert_data = [
+                'uid' => $this->generate_uid(UID_DISCOUNTS),
+                'name' => $data['title'],
+                'minimum_purchase' => $data['minPurchase'],
+                'discount_percentage' => $data['discount'],
+                'status' => 'active'
+            ];
+            $isAdded = $DiscountsModel->insert($insert_data);
+            if (!empty($isAdded)) {
+                $resp = [
+                    'status' => true,
+                    'message' => 'Discounts Added',
+                    'data' => ['discount_id' => $insert_data['uid']]
+                ];
+            }
+
+        } catch (\Exception $e) {
+            $resp['message'] = $e;
+        }
+
+
+        return $resp;
+    }
 
 
 
@@ -614,6 +647,16 @@ class Product_Controller extends Api_Controller
         $resp = $this->discounts_all();
         return $this->response->setJSON($resp);
     }
+
+    public function POST_discounts_add()
+    {
+
+        $data = $this->request->getPost();
+        $resp = $this->discounts_add($data);
+        return $this->response->setJSON($resp);
+
+    }
+
 
 
 }

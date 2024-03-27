@@ -96,6 +96,7 @@ $routes->get('/api/banner/delete',                  'Api\BannerController::GET_d
 $routes->get('/api/banner/update',                  'Api\BannerController::GET_update_banner');
 $routes->post('/api/update/banner',                 'Api\BannerController::POST_banner_update');
 $routes->get('/api/discounts',                      'Api\Product_Controller::GET_discounts_all');
+$routes->post('/api/discounts/add',                 'Api\Product_Controller::POST_discounts_add');
 
 
 

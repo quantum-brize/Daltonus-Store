@@ -1,16 +1,18 @@
 <div class="page-content">
     <div class="container-fluid">
+        <div id="alert">
 
+        </div>
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                    <h4 class="mb-sm-0">Add  Banner</h4>
+                    <h4 class="mb-sm-0">Add Discounts</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                            <li class="breadcrumb-item active">Add Banner</li>
+                            <li class="breadcrumb-item active">Add Discounts</li>
                         </ol>
                     </div>
 
@@ -25,51 +27,27 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="mb-3">
-                                <label class="form-label" for="product-title-input">Banner Title</label>
-                                <input type="text" class="form-control" id="bannerTitle" value=""
-                                    placeholder="Enter product title" required="">
-                                <div class="invalid-feedback">Please Enter a banner title.</div>
+                                <label class="form-label" for="product-title-input">Discounts Title</label>
+                                <input type="text" class="form-control" id="dis_title" value="" placeholder="Enter Discounts Title" required>
                             </div>
-                            <div>
-                                <label>Description</label>
-
-                                <div id="ckeditor-classic">
-
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12  mb-3">
+                                    <label class="form-label" for="product-title-input">Minimum Purchase</label>
+                                    <input type="number" class="form-control" id="min_pur" value="" placeholder="Enter Minimum Purchase" required>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12  mb-3">
+                                    <label class="form-label" for="product-title-input">Discount Percentage</label>
+                                    <input type="number" class="form-control" id="dis_per" value="" placeholder="Enter Discount Percentage" required>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <label class="form-label" for="product-image-input">Banner Image</label>
-                            <input type="file" id="file-input"  multiple>
-                            <label for="file-input" id="btn_upload" class="btn btn-success">
-                                <i class="fas fa-upload"></i> &nbsp; Select Banner Image
-                            </label>
-                            <p id="num-of-files"></p>
-                            <div id="images"></div>
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label" for="product-title-input">Link</label>
-                        <input type="text" class="form-control" id="bannerLink" value=""
-                            placeholder="Put a link here" required="">
-                        <!-- <div class="invalid-feedback">Please Enter a product title.</div> -->
-                    </div>
-                    <!-- end card -->
-
                 </div>
-                <!-- end col -->
-
-                
-                <!-- end col -->
             </div>
-            <!-- end row -->
 
         </div>
         <div class="text-start mb-3">
-            <button class="btn btn-success w-sm" id="banner_add_btn">Submit</button>
+            <button class="btn btn-success w-sm" id="dis_add_btn">Submit</button>
         </div>
     </div>
     <!-- container-fluid -->
