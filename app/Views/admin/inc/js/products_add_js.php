@@ -118,7 +118,7 @@
 
         function get_categories() {
             $.ajax({
-                url: "<?= base_url('/api/categories/single') ?>",
+                url: "<?= base_url('/api/categories') ?>",
                 type: "GET",
                 beforeSend: function () { },
                 success: function (resp) {
@@ -138,7 +138,7 @@
         }
 
     });
-    
+
     function get_sub_category(parent_id) {
         var selectElement = document.getElementById("choices-category-input");
         var parent_id = selectElement.value;
