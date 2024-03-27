@@ -129,7 +129,54 @@ class Admin_Controller extends Main_Controller
 
         $this->isAuth('/admin/banner_update', $data);
     }
-    
+
+    public function  discounts_add(){
+        $data = PAGE_DATA_ADMIN;
+        $data = [
+            'data_page' => [],
+            'data_header' => [
+                'header_link' => ['discounts_add_css.php'],
+                'header_asset_link' => [],
+                'title' => 'Discounts',
+                'header' => [],
+                'sidebar' => ['discounts'=>true],
+                'site' => 'admin'
+            ],
+            'data_footer' => [
+                'footer_link' => ['discounts_add_js.php'],
+                'footer_asset_link' => [],
+                'footer' => [],
+                'site' => 'admin'
+            ]
+        ];
+
+        $this->isAuth('/admin/discounts_add', $data);
+    }
+
+    public function  discounts_list(){
+        $data = PAGE_DATA_ADMIN;
+        $data = [
+            'data_page' => [],
+            'data_header' => [
+                'header_link' => ['discounts_list_css.php'],
+                'header_asset_link' => [],
+                'title' => 'Discounts',
+                'header' => [],
+                'sidebar' => ['discounts'=>true],
+                'site' => 'admin'
+            ],
+            'data_footer' => [
+                'footer_link' => ['discounts_list_js.php'],
+                'footer_asset_link' => [],
+                'footer' => [],
+                'site' => 'admin'
+            ]
+        ];
+
+        $this->isAuth('/admin/discounts_list', $data);
+    }
+
+
     public function isAuth($page,$data){
         $session = \Config\Services::session();
         if(empty($session->get(SES_ADMIN_USER_ID))){

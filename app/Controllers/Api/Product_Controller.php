@@ -12,6 +12,7 @@ use App\Models\ProductImagesModel;
 use App\Models\VariationModel;
 use App\Models\VariationOptionModel;
 use App\Models\VariantImagesModel;
+use App\Models\DiscountsModel;
 
 class Product_Controller extends Api_Controller
 {
@@ -30,22 +31,22 @@ class Product_Controller extends Api_Controller
         ];
         $VendorModel = new VendorModel();
         $vendorRow = $VendorModel->where('user_id', $data['user_id'])->first();
-        $vendor_id = !empty ($vendorRow['uid']) ? $vendorRow['uid'] : '';
+        $vendor_id = !empty($vendorRow['uid']) ? $vendorRow['uid'] : '';
         $uploadedFiles = $this->request->getFiles();
 
 
 
-        if (empty ($data['title'])) {
+        if (empty($data['title'])) {
             $resp['message'] = 'Your Product Has No Name';
-        } else if (empty ($data['details'])) {
+        } else if (empty($data['details'])) {
             $resp['message'] = 'Please add Some Details About Your Product';
-        } else if (empty ($data['price'])) {
+        } else if (empty($data['price'])) {
             $resp['message'] = 'Set The Price Of Your Product';
-        } else if (empty ($data['categoryId'])) {
+        } else if (empty($data['categoryId'])) {
             $resp['message'] = 'Set The Category Of Your Product';
-        } else if (empty ($vendor_id)) {
+        } else if (empty($vendor_id)) {
             $resp['message'] = 'Vendor Not Found';
-        } else if (empty ($uploadedFiles['images'])) {
+        } else if (empty($uploadedFiles['images'])) {
             $resp['message'] = 'Please Add One Product Image';
         } else {
 
@@ -121,13 +122,13 @@ class Product_Controller extends Api_Controller
             'status' => false,
             'message' => 'Product not Updated',
         ];
-        if (empty ($data['title'])) {
+        if (empty($data['title'])) {
             $resp['message'] = 'Your Product Has No Name';
-        } else if (empty ($data['details'])) {
+        } else if (empty($data['details'])) {
             $resp['message'] = 'Please add Some Details About Your Product';
-        } else if (empty ($data['price'])) {
+        } else if (empty($data['price'])) {
             $resp['message'] = 'Set The Price Of Your Product';
-        } else if (empty ($data['categoryId'])) {
+        } else if (empty($data['categoryId'])) {
             $resp['message'] = 'Set The Category Of Your Product';
         } else {
             $product_data = [
@@ -173,7 +174,7 @@ class Product_Controller extends Api_Controller
                 $ProductMetaDetalisModel->set($product_meta_data)
                     ->where('product_id', $data['product_id'])
                     ->update();
-                    
+
                 // Commit the transaction if all queries are successful
                 $ProductModel->transCommit();
                 $resp = [
@@ -301,7 +302,7 @@ class Product_Controller extends Api_Controller
         JOIN
             users ON vendor.user_id = users.uid";
 
-        if (!empty ($data['p_id'])) {
+        if (!empty($data['p_id'])) {
             $p_id = $data['p_id'];
             $sql .= " WHERE
                 product.uid = '{$p_id}';";
@@ -321,7 +322,7 @@ class Product_Controller extends Api_Controller
             }
 
             $resp["status"] = true;
-            $resp["data"] = !empty ($data['p_id']) ? $products[0] : $products;
+            $resp["data"] = !empty($data['p_id']) ? $products[0] : $products;
             $resp["message"] = 'Products Found';
         }
         // $this->prd($resp);
@@ -367,7 +368,7 @@ class Product_Controller extends Api_Controller
                 $color = $variant->name === 'color' ? $variant->value : null;
                 $size = $variant->name === 'size' ? $variant->value : null;
 
-                if (!isset ($mergedArray[$uid])) {
+                if (!isset($mergedArray[$uid])) {
                     // If the UID doesn't exist in mergedArray, initialize it
                     $mergedArray[$uid] = $variant;
                     // Initialize empty arrays for product_img
@@ -442,7 +443,7 @@ class Product_Controller extends Api_Controller
             'data' => null
         ];
         $user_id = $this->is_logedin();
-        if (!empty ($user_id)) {
+        if (!empty($user_id)) {
             $resp['status'] = true;
             $resp['message'] = 'User id found';
             $resp['data'] = $user_id;
@@ -453,35 +454,37 @@ class Product_Controller extends Api_Controller
         return $resp;
     }
 
-    private function product_stock_update($data){
+    private function product_stock_update($data)
+    {
         $resp = [
             'status' => false,
             'message' => 'Stock Not Updated',
             'data' => null
         ];
 
-       
-        try{
+
+        try {
             $ProductItemModel = new ProductItemModel();
 
             $isUpdated = $ProductItemModel->set(['sku' => $data['stock']])
-                    ->where('product_id', $data['p_id'])
-                    ->update();
-            if($isUpdated == '1'){
+                ->where('product_id', $data['p_id'])
+                ->update();
+            if ($isUpdated == '1') {
                 $resp = [
                     'status' => true,
                     'message' => 'Stock Updated',
                     'data' => ['updatedStock' => $data['stock']]
                 ];
             }
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             $resp['message'] = $e;
         }
-        return  $resp;
+        return $resp;
 
     }
 
-    private function product_config_stock_update($data){
+    private function product_config_stock_update($data)
+    {
 
         $resp = [
             'status' => false,
@@ -489,38 +492,137 @@ class Product_Controller extends Api_Controller
             'data' => null
         ];
 
-       
-        try{
+
+        try {
             $ProductConfigModel = new ProductConfigModel();
 
             $isUpdated = $ProductConfigModel->set(['sku' => $data['stock']])
-                    ->where('uid', $data['p_id'])
-                    ->update();
-            if($isUpdated == '1'){
+                ->where('uid', $data['p_id'])
+                ->update();
+            if ($isUpdated == '1') {
                 $resp = [
                     'status' => true,
                     'message' => 'Stock Updated',
                     'data' => ['updatedStock' => $data['stock']]
                 ];
             }
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             $resp['message'] = $e;
         }
-        return  $resp;
+        return $resp;
 
+    }
+
+
+    private function discounts_all()
+    {
+        $resp = [
+            'status' => false,
+            'message' => 'no discounts found',
+            'data' => []
+        ];
+        try {
+            $DiscountsModel = new DiscountsModel();
+            $discounts = $DiscountsModel->findAll();
+            if (count($discounts) > 0) {
+                $resp = [
+                    'status' => true,
+                    'message' => 'discounts found',
+                    'data' => $discounts
+                ];
+            }
+        } catch (\Exception $e) {
+            $resp['message'] = $e;
+        }
+        return $resp;
+    }
+
+    private function discounts_add($data)
+    {
+        $resp = [
+            'status' => false,
+            'message' => 'Discount Dot Added',
+            'data' => []
+        ];
+
+        try {
+            $DiscountsModel = new DiscountsModel();
+            $insert_data = [
+                'uid' => $this->generate_uid(UID_DISCOUNTS),
+                'name' => $data['title'],
+                'minimum_purchase' => $data['minPurchase'],
+                'discount_percentage' => $data['discount'],
+                'status' => 'active'
+            ];
+            $isAdded = $DiscountsModel->insert($insert_data);
+            if (!empty($isAdded)) {
+                $resp = [
+                    'status' => true,
+                    'message' => 'Discounts Added',
+                    'data' => ['discount_id' => $insert_data['uid']]
+                ];
+            }
+
+        } catch (\Exception $e) {
+            $resp['message'] = $e;
+        }
+
+
+        return $resp;
+    }
+
+    private function discounts_delete($data)
+    {
+        $resp = [
+            'status' => false,
+            'message' => 'Discount Not deleted',
+            'data' => []
+        ];
+
+        try {
+            $DiscountsModel = new DiscountsModel();
+            $uid = $data['d_id'];
+            
+            $deleted = $DiscountsModel->where('uid', $uid)->delete();
+            if ($deleted) {
+                $resp['status'] = true;
+                $resp['message'] = 'Discount deleted successfully';
+            } else {
+                $resp['message'] = 'No record found with the given UID';
+            }
+
+        } catch (\Exception $e) {
+            $resp['message'] = $e->getMessage();
+        }
+
+
+        return $resp;
     }
 
 
 
 
-    public function GET_product_config_stock_update(){
+
+
+
+    public function GET_discounts_delete()
+    {
+        $data = $this->request->getGet();
+
+        $resp = $this->discounts_delete($data);
+        return $this->response->setJSON($resp);
+    }
+
+    public function GET_product_config_stock_update()
+    {
         $data = $this->request->getGet();
 
         $resp = $this->product_config_stock_update($data);
         return $this->response->setJSON($resp);
     }
 
-    public function GET_product_stock_update(){
+    public function GET_product_stock_update()
+    {
         $data = $this->request->getGet();
 
         $resp = $this->product_stock_update($data);
@@ -577,5 +679,23 @@ class Product_Controller extends Api_Controller
         $resp = $this->variation($p_id);
         return $this->response->setJSON($resp);
     }
+
+
+    public function GET_discounts_all()
+    {
+        $resp = $this->discounts_all();
+        return $this->response->setJSON($resp);
+    }
+
+    public function POST_discounts_add()
+    {
+
+        $data = $this->request->getPost();
+        $resp = $this->discounts_add($data);
+        return $this->response->setJSON($resp);
+
+    }
+
+
 
 }

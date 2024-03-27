@@ -60,6 +60,8 @@ $routes->get('/admin/users/vendors',            'Admin\User_Controller::load_ven
 $routes->get('/admin/banners',                  'Admin\Admin_Controller::banner');
 $routes->get('/admin/banners/add',              'Admin\Admin_Controller::banners_add');
 $routes->get('/admin/banners/update',           'Admin\Admin_Controller::banners_update');
+$routes->get('/admin/discounts/add',            'Admin\Admin_Controller::discounts_add');
+$routes->get('/admin/discounts',                'Admin\Admin_Controller::discounts_list');
 
 
 
@@ -88,11 +90,14 @@ $routes->post('/api/user/cart/add',                 'Api\Cart_Controller::POST_c
 $routes->get('/api/user/cart/remove',               'Api\Cart_Controller::GET_cart_remove');
 $routes->get('/api/user/cart/empty',                'Api\Cart_Controller::GET_cart_empty');
 $routes->get('/api/user/id',                        'Api\Product_Controller::GET_user_id');
-$routes->post('/api/banner/add',                    'Api\Banner_Controller::POST_add_banner');
-$routes->get('/api/banners',                        'Api\Banner_Controller::GET_banners');
-$routes->get('/api/banner/delete',                  'Api\Banner_Controller::GET_delete_banner');
-$routes->get('/api/banner/update',                  'Api\Banner_Controller::GET_update_banner');
-$routes->post('/api/update/banner',                  'Api\Banner_Controller::POST_banner_update');
+$routes->post('/api/banner/add',                    'Api\BannerController::POST_add_banner');
+$routes->get('/api/banners',                        'Api\BannerController::GET_banners');
+$routes->get('/api/banner/delete',                  'Api\BannerController::GET_delete_banner');
+$routes->get('/api/banner/update',                  'Api\BannerController::GET_update_banner');
+$routes->post('/api/update/banner',                 'Api\BannerController::POST_banner_update');
+$routes->get('/api/discounts',                      'Api\Product_Controller::GET_discounts_all');
+$routes->get('/api/discounts/delete',               'Api\Product_Controller::GET_discounts_delete');
+$routes->post('/api/discounts/add',                 'Api\Product_Controller::POST_discounts_add');
 
 
 

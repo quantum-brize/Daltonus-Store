@@ -1,16 +1,18 @@
 <div class="page-content">
     <div class="container-fluid">
+        <div id="alert">
 
+        </div>
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between bg-galaxy-transparent">
-                    <h4 class="mb-sm-0">Banners</h4>
+                    <h4 class="mb-sm-0">Discounts</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                            <li class="breadcrumb-item active">Banners</li>
+                            <li class="breadcrumb-item active">Discounts</li>
                         </ol>
                     </div>
 
@@ -28,10 +30,10 @@
                             <div class="row g-4">
                                 <div class="col-sm-auto">
                                     <div>
-                                        <a href="<?=base_url('/admin/banners/add')?>" class="btn btn-success"
+                                        <a href="<?=base_url('/admin/discounts/add')?>" class="btn btn-success"
                                             id="addproduct-btn">
                                             <i class="ri-add-line align-bottom me-1"></i>
-                                            AddBanner
+                                            Add Discounts
                                         </a>
                                     </div>
                                 </div>
@@ -49,31 +51,6 @@
 
                         <div class="card-header">
                             <div class="row align-items-center">
-                                <div class="col">
-                                    <ul class="nav nav-tabs-custom card-header-tabs border-bottom-0" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active fw-semibold" data-bs-toggle="tab"
-                                                href="#productnav-all" role="tab">
-                                                All <span id="all_banner_count"
-                                                    class="badge bg-danger-subtle text-danger align-middle rounded-pill ms-1"></span>
-                                            </a>
-                                        </li>
-                                        <!-- <li class="nav-item">
-                                            <a class="nav-link fw-semibold" data-bs-toggle="tab"
-                                                href="#productnav-published" role="tab">
-                                                Published <span 
-                                                    class="badge bg-danger-subtle text-danger align-middle rounded-pill ms-1">0</span>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link fw-semibold" data-bs-toggle="tab"
-                                                href="#productnav-draft" role="tab">
-                                                Draft<span 
-                                                    class="badge bg-danger-subtle text-danger align-middle rounded-pill ms-1">0</span>
-                                            </a>
-                                        </li> -->
-                                    </ul>
-                                </div>
                                 <div class="col-auto">
                                     <div id="selection-element">
                                         <div class="my-n1 d-flex align-items-center text-muted">
@@ -92,18 +69,17 @@
                             <div class="tab-content text-muted">
                                 <div class="tab-pane active" id="productnav-all" role="tabpanel">
 
-                                    <table id="table-banner-list-all" class="table nowrap align-middle table-hover" style="width:100%">
+                                    <table id="table-discounts-list-all" class="table nowrap table-hover" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Banner</th>
-                                                <th>Title</th>
-                                                <th>Description</th>
-                                                <th>Link</th>
-                                                <th>Edit</th>
-                                                <th>Delete</th>
+                                                <th style="text-align: center;">Discount</th>
+                                                <th style="text-align: center;">Minimum Purchase</th>
+                                                <th style="text-align: center;">Discount Percentage</th>
+                                                <th style="text-align: center;">Status</th>
+                                                <th style="text-align: center;">Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="table-banner-list-all-body">
+                                        <tbody id="table-discounts-list-all-body">
                                             
                                         </tbody>
                                     </table>

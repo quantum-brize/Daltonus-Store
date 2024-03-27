@@ -155,6 +155,12 @@
                     </a>
                 </li>
 
+                <li class="nav-item ">
+                    <a class="nav-link menu-link <?= isset($sidebar['discounts']) ? 'active' : '' ?>"
+                        href="<?=base_url('admin/discounts') ?>">
+                        <i class="ri ri-price-tag-line"></i> <span data-key="t-widgets">Discounts</span>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link menu-link <?= isset($sidebar['users']) ? 'active' : '' ?>" 

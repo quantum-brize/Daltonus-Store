@@ -124,8 +124,8 @@ define('EVENT_PRIORITY_HIGH', 10);
 
 
 //////////////////////////////////////////////__URL
-// defined('BASE_URL') || define('BASE_URL', 'https://daltonusstore.com' );
-defined('BASE_URL') || define('BASE_URL', 'http://localhost/Daltonus-Store' );
+defined('BASE_URL') || define('BASE_URL', 'https://daltonusstore.com' );
+// defined('BASE_URL') || define('BASE_URL', 'http://localhost/Daltonus-Store' );
 
 
 //////////////////////////////////////////////__DATABASE
@@ -149,6 +149,7 @@ defined('TABLE_VARIATION_OPTION')   || define('TABLE_VARIATION_OPTION', 'variati
 defined('TABLE_VENDOR')             || define('TABLE_VENDOR', 'vendor');
 defined('TABLE_VARIANT_IMG')        || define('TABLE_VARIANT_IMG', 'variation_Images');
 defined('TABLE_CART')               || define('TABLE_CART','user_cart');
+defined('TABLE_DISCOUNTS')          || define('TABLE_DISCOUNTS','discounts');
 
 //////////////////////////////////////////////__UID_PRIFIX
 defined('UID_USER')         || define('UID_USER', 'USR');
@@ -166,6 +167,7 @@ defined('UID_VAR_IMG')      || define('UID_VAR_IMG', 'VRI');
 defined('UID_PRO_CONFIG')   || define('UID_PRO_CONFIG', 'PCON');
 defined('UID_CART')         || define('UID_CART', 'CRT');
 defined('UID_BANNER')       || define('UID_BANNER', 'BNR');
+defined('UID_DISCOUNTS')    || define('UID_DISCOUNTS', 'DIS');
 
 
 //////////////////////////////////////////////__STATUS
