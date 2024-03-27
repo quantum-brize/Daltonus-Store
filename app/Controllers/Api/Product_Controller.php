@@ -13,7 +13,6 @@ use App\Models\VariationModel;
 use App\Models\VariationOptionModel;
 use App\Models\VariantImagesModel;
 use App\Models\DiscountsModel;
-use CodeIgniter\Debug\Exceptions;
 
 class Product_Controller extends Api_Controller
 {
@@ -572,7 +571,47 @@ class Product_Controller extends Api_Controller
         return $resp;
     }
 
+    private function discounts_delete($data)
+    {
+        $resp = [
+            'status' => false,
+            'message' => 'Discount Not deleted',
+            'data' => []
+        ];
 
+        try {
+            $DiscountsModel = new DiscountsModel();
+            $uid = $data['d_id'];
+            
+            $deleted = $DiscountsModel->where('uid', $uid)->delete();
+            if ($deleted) {
+                $resp['status'] = true;
+                $resp['message'] = 'Discount deleted successfully';
+            } else {
+                $resp['message'] = 'No record found with the given UID';
+            }
+
+        } catch (\Exception $e) {
+            $resp['message'] = $e->getMessage();
+        }
+
+
+        return $resp;
+    }
+
+
+
+
+
+
+
+    public function GET_discounts_delete()
+    {
+        $data = $this->request->getGet();
+
+        $resp = $this->discounts_delete($data);
+        return $this->response->setJSON($resp);
+    }
 
     public function GET_product_config_stock_update()
     {

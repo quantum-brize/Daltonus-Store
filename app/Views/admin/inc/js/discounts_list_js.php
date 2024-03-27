@@ -30,10 +30,10 @@
                                             ${item.discount_percentage}
                                         </td>
                                         <td style="text-align: center;">
-                                            ${item.status}
+                                            <sapn class="badge bg-success-subtle text-success text-uppercase"> ${item.status}</sapn>
                                         </td>
                                         <td style="text-align: center;">
-                                            <button class="btn btn-danger" id="dlt-${item.uid}">
+                                            <button class="btn btn-danger" id="dlt-${item.uid}" onClick="delete_dis('${item.uid}')">
                                             <i class="ri ri-delete-bin-line"></i>
                                             </button>
                                         </td>
@@ -60,6 +60,41 @@
 
     }
 
+
+    function delete_dis(uid){
+
+        $.ajax({
+            url: '<?= base_url('/api/discounts/delete') ?>',
+            type: "GET",
+            data: {
+                d_id : uid,
+            },
+            beforeSend: function(){
+                $(`#dlt-${uid}`).html(`<div class="spinner-border" role="status"></div>`)
+            },
+            success: function(resp){
+                if (resp.status == true) {
+                        $('#alert').html(`<div class="alert alert-success alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                <i class="ri-alert-line label-icon"></i>Discount Deleted
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>`)
+                    } else {
+                        $('#alert').html(`<div class="alert alert-warning alert-dismissible alert-label-icon label-arrow fade show material-shadow" role="alert">
+                                <i class="ri-alert-line label-icon"></i><strong>Warning</strong> - Internal server Error
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>`)
+                    }
+                    $(`#dlt-${uid}`).html(`<i class="ri ri-delete-bin-line"></i>`)
+                    load_discount_table();
+            },
+            error: function(err){
+                console.log(err)
+                $(`#dlt-${uid}`).html(`<i class="ri ri-delete-bin-line"></i>`)
+            }
+
+        })
+
+    }
 
 
 

@@ -1,6 +1,8 @@
 <div class="page-content">
     <div class="container-fluid">
+        <div id="alert">
 
+        </div>
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
